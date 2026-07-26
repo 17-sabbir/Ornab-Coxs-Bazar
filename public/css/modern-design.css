@@ -1,0 +1,289 @@
+/* Modern Design System for UERD */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --modern-primary: #158368;
+    --modern-secondary: #0f172a;
+    --modern-accent: #f59e0b;
+    --modern-light: #f8fafc;
+    --modern-glass: rgba(255, 255, 255, 0.7);
+    --modern-glass-border: rgba(255, 255, 255, 0.5);
+    --modern-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+    --modern-radius: 1.5rem;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    background-color: #f1f5f9;
+    color: #334155;
+}
+
+/* --- Hero / Breadcrumbs --- */
+.modern-breadcrumbs {
+    position: relative;
+    padding: 2rem 0 4rem;
+    background: linear-gradient(135deg, #158368 0%, #0d5f49 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(21, 131, 104, 0.2);
+    margin-bottom: -3rem;
+    /* Overlap content */
+    overflow: hidden;
+}
+
+.modern-breadcrumbs::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.4;
+}
+
+.modern-breadcrumbs h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modern-breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modern-breadcrumbs ol li+li {
+    padding-left: 0.5rem;
+}
+
+.modern-breadcrumbs ol li+li::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    color: rgba(255, 255, 255, 0.6);
+    content: "/";
+}
+
+.modern-breadcrumbs a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.modern-breadcrumbs a:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Cards & Content --- */
+.modern-container {
+    padding-top: 0;
+    /* Since breadcrumbs has negative margin */
+    padding-bottom: 5rem;
+}
+
+.modern-card {
+    background: white;
+    border-radius: var(--modern-radius);
+    padding: 3rem;
+    box-shadow: var(--modern-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.modern-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.modern-title {
+    font-weight: 800;
+    color: var(--modern-secondary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.modern-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 60px;
+    height: 4px;
+    background: var(--modern-accent);
+    border-radius: 2px;
+}
+
+.modern-text {
+    line-height: 1.8;
+    color: #475569;
+    font-size: 1.05rem;
+}
+
+/* --- Features / Icons --- */
+.feature-box {
+    text-align: center;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    height: 100%;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: var(--modern-primary);
+}
+
+.feature-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* background: linear-gradient(135deg, var(--modern-primary) 0%, #34d399 100%); */
+    background: #ecfdf5;
+    color: var(--modern-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+
+.feature-box:hover .feature-icon-wrapper {
+    background: var(--modern-primary);
+    color: white;
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* --- Buttons --- */
+.btn-modern {
+    background: var(--modern-primary);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 14px 0 rgba(21, 131, 104, 0.39);
+    transition: all 0.3s ease;
+}
+
+.btn-modern:hover {
+    background: #0d5f49;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(21, 131, 104, 0.23);
+    color: white;
+}
+
+/* --- Contact & Forms --- */
+.contact-info-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    border-left: 4px solid var(--modern-primary);
+}
+
+.form-control-modern {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.form-control-modern:focus {
+    background: white;
+    border-color: var(--modern-primary);
+    box-shadow: 0 0 0 4px rgba(21, 131, 104, 0.1);
+}
+
+/* --- Team Member --- */
+.team-modern-card {
+    background: white;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: var(--modern-shadow);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.team-modern-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-img-wrapper {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-modern-card:hover .team-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.team-content {
+    padding: 1.5rem;
+}
+
+.team-socials a {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: var(--modern-secondary);
+    margin: 0 4px;
+    transition: 0.3s;
+}
+
+.team-socials a:hover {
+    background: var(--modern-primary);
+    color: white;
+}
+
+/* --- Lists --- */
+.modern-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.modern-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--modern-primary);
+    font-weight: bold;
+}

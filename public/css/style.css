@@ -1,0 +1,447 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,100&display=swap'); */
+
+:root {
+  /* Branding Colors */
+  --primary-color: #102A43;
+  /* Deep Navy Blue */
+  --secondary-color: #627D98;
+  /* Slate Grey */
+  --accent-color: #F0B429;
+  /* Burnished Gold */
+  --white-color: #FFFFFF;
+  /* Clean White */
+  --text-dark: #0A2540;
+  /* Deep Navy for Text */
+
+  /* Bootstrap 5 Overrides */
+  --bs-primary: var(--primary-color);
+  --bs-secondary: var(--secondary-color);
+  --bs-warning: var(--accent-color);
+  --bs-light: var(--white-color);
+  --bs-dark: var(--text-dark);
+  --bs-body-bg: var(--white-color);
+  --bs-body-color: var(--text-dark);
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+
+.text-accent {
+  color: var(--accent-color) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent-color) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+.btn-accent {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+} */
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#logo {
+  width: 300px;
+  --primary-color: #198754;
+  /* Brand Green */
+  --secondary-color: #102A43;
+  /* Brand Navy */
+  --accent-color: #F0B429;
+  /* Brand Gold */
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  #logo {
+    width: 175px;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  #logo {
+    width: 175px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+.section-bg {
+  padding: 120px 0;
+  color: #fff;
+}
+
+.section-bg:before {
+  content: "";
+  background: #1b1b1b;
+  position: absolute;
+  bottom: 60px;
+  top: 60px;
+  left: 0;
+  right: 0;
+  /*transform: skewY(-3deg);*/
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 15px 0;
+  background: #2b2b2b;
+  min-height: 40px;
+  color: #fff;
+}
+
+.breadcrumbs h2 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs ol a {
+  color: #aaaaaa;
+}
+
+.breadcrumbs ol a:hover {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li+li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: var(--accent-color);
+  content: "/";
+}
+
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+.testimonials .testimonials-carousel,
+.testimonials .testimonials-slider {
+  overflow: hidden;
+}
+
+.testimonials .testimonial-item {
+  box-sizing: content-box;
+  padding: 30px;
+  margin: 30px 15px;
+  min-height: 200px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 15px;
+}
+
+.testimonials .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 10px;
+  border: 6px solid #fff;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.testimonials .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 25px 0 5px 0;
+  color: #111;
+}
+
+.testimonials .testimonial-item h4 {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+  color: #fceaea;
+  font-size: 26px;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+}
+
+.testimonials .testimonial-item p {
+  font-style: italic;
+  margin: 30px auto 15px auto;
+}
+
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #106eea;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #106eea;
+}
+
+
+/* top nav */
+ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+/*  desktop view */
+@media all and (min-width: 992px) {
+
+  /* Ensure dropdowns are hidden by default but shown on hover OR when active */
+  .navbar .nav-item .dropdown-menu {
+    display: none;
+    margin-top: 0;
+  }
+
+  /* Show on hover */
+  .navbar .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+
+  /* CRITICAL FIX: Ensure 'show' class works even without hover (keyboard/touch/click) */
+  .navbar .nav-item .dropdown-menu.show {
+    display: block;
+  }
+}
+
+/* desktop view end */
+.featuredImage img {
+  width: 100%;
+  height: 300px;
+}
+
+.featuredImage {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.featuredImage .overlay {
+  position: absolute;
+  bottom: 0;
+  padding-left: 25px;
+  padding-top: 15px;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  z-index: 5;
+  /* Improve visibility always */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 70%, transparent 100%);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.featuredImage .overlay::before {
+  content: "";
+  background: #090909;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  bottom: -150px;
+  z-index: -2;
+  opacity: 0.8;
+  transition: all 0.3s ease-out;
+}
+
+.featuredImage:hover .overlay {
+  color: rgb(255, 255, 255);
+}
+
+.container .featuredImage:hover .overlay .amount,
+.container .featuredImage:hover .overlay .h4,
+.container .featuredImage:hover .overlay .textmuted,
+.container .featuredImage:hover .overlay .fa-star,
+.container .featuredImage:hover .overlay .fa-star-half-alt,
+.container .featuredImage:hover .overlay .review {
+  color: rgb(255, 255, 255);
+}
+
+.featuredImage:hover .overlay::before {
+  bottom: 0px;
+}
+
+.textmuted {
+  color: #f8f8f8;
+  font-weight: 200;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+/* Text Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.typing-text {
+  overflow: hidden;
+  border-right: .15em solid rgb(254, 97, 97);
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  animation: typing 5s steps(60, end) infinite;
+  animation-delay: 1s;
+}
+
+/* Success Stories (Voices of Change) cards */
+.success-story-card {
+  background: #e8fbf3;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.success-story-quote {
+  font-size: 56px;
+  line-height: 1;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+.success-story-text {
+  color: #4d4d4d;
+  font-style: italic;
+  line-height: 1.8;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.success-story-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.success-story-name {
+  font-weight: 700;
+  color: #111;
+}
+
+.success-story-title {
+  color: #6b6b6b;
+  font-size: 14px;
+}

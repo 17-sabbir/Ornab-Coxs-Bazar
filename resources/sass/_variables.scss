@@ -1,0 +1,21 @@
+// Branding Colors
+$blue-dark: #102A43; // Primary - Deep Navy Blue
+$slate-grey: #627D98; // Secondary - Slate Grey
+$gold: #F0B429; // Accent - Burnished Gold
+$white: #ffffff; // Clean White
+
+// Override Bootstrap Variables
+$primary: $blue-dark;
+$secondary: $slate-grey;
+$warning: $gold;
+$light: $white;
+$dark: #0A2540; // Text color
+
+// Body
+$body-bg: $white;
+$body-color: $dark;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;

@@ -1,0 +1,197 @@
+:root {
+    /* Branding Colors - Vibrant Vision Interface */
+    /* Psychology:
+         - Teal: Healing, Trust, Growth
+         - Orange: Energy, Warmth, Highlights
+         - Ink: Credibility, High Contrast */
+
+    --primary-color: #158368;
+    /* Brand Teal */
+    --secondary-color: #131920;
+    /* Brand Ink/Navy */
+    --accent-color: #F97415;
+    /* Brand Vibrant Orange */
+
+    --white-color: #F8FAFC;
+    /* Canvas / Soft White */
+    --text-dark: #131920;
+    /* Ink */
+
+    /* New Palette Additions */
+    --brand-teal: #158368;
+    --brand-orange: #F97415;
+    --brand-rose: #E61932;
+    /* Urgency */
+    --brand-gold: #FCD32F;
+    /* Highlight */
+    --brand-indigo: #6466F1;
+    /* Decor */
+    --brand-canvas: #F8FAFC;
+
+    /* Bootstrap 5 Overrides */
+    --bs-primary: var(--primary-color);
+    --bs-secondary: var(--secondary-color);
+    --bs-warning: var(--accent-color);
+    --bs-danger: var(--brand-rose);
+    --bs-light: var(--white-color);
+    --bs-dark: var(--text-dark);
+    --bs-body-bg: var(--white-color);
+    --bs-body-color: var(--text-dark);
+
+    /* Explicit brand tokens */
+    --brand-green: var(--primary-color);
+    /* Backward compat */
+    --brand-navy: var(--secondary-color);
+    /* Backward compat */
+}
+
+/* Base utility overrides for specificity */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.bg-accent {
+    background-color: var(--accent-color) !important;
+}
+
+/* Admin Panel Specific Overrides (if needed) */
+/* Override admin sidebar active states to use primary color instead of default blue */
+.sidebar-wrapper .metismenu a:hover {
+    color: var(--brand-navy) !important;
+}
+
+.sidebar-wrapper .metismenu .mm-active>a {
+    color: #fff !important;
+    background-color: var(--brand-navy) !important;
+    border-left-color: var(--brand-navy) !important;
+}
+
+/* Admin Sidebar Override - Force Brand Colors */
+#menu>li>a:hover {
+    color: var(--brand-navy) !important;
+}
+
+#menu>li.mm-active>a {
+    background-color: var(--brand-navy) !important;
+    color: #fff !important;
+}
+
+#menu>li>a:hover .parent-icon {
+    color: var(--brand-navy) !important;
+}
+
+#menu>li.mm-active>a .parent-icon {
+    color: #fff !important;
+}
+
+/* Override all nth-child variants */
+#menu>li:nth-child(n)>a:hover {
+    color: var(--brand-navy) !important;
+}
+
+#menu>li:nth-child(n).mm-active>a {
+    background-color: var(--brand-navy) !important;
+    color: #fff !important;
+}
+
+#menu>li:nth-child(n)>a:hover .parent-icon {
+    color: var(--brand-navy) !important;
+}
+
+#menu>li:nth-child(n).mm-active>a .parent-icon {
+    color: #fff !important;
+}
+
+/* Submenus */
+#menu>li:nth-child(n) ul a:hover {
+    color: var(--brand-navy) !important;
+    background-color: rgba(16, 42, 67, 0.05) !important;
+}
+
+#menu>li:nth-child(n) ul a:hover i {
+    color: var(--brand-navy) !important;
+    opacity: 1;
+    font-size: 14px;
+}
+
+/* Dropdown Menu Visibility Fix */
+.navbar .dropdown-menu {
+    z-index: 9999 !important;
+    display: none;
+    /* Default state for JS toggle */
+    margin-top: 0;
+}
+
+/* Ensure dropdowns are visible on large screens with hover if JS fails or for CSS fallback */
+@media (min-width: 992px) {
+    .navbar .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+
+    .navbar .dropdown-menu {
+        display: none;
+        /* reinforced default */
+    }
+}
+
+/* Force show class to work regardless of media query context */
+.dropdown-menu.show {
+    display: block !important;
+}
+
+/* Navbar container adjustment to prevent clipping */
+.navbar-collapse,
+.navbar,
+.navbar .container,
+.navbar .container-fluid {
+    overflow: visible !important;
+}
+
+/* Ensure the header wrapper stays on top of subsequent sections */
+header,
+nav {
+    position: relative;
+    z-index: 1030;
+    /* Bootstrap standard for fixed/sticky headers */
+}
+
+/* Button overrides for older/custom classes */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #0A2540 !important;
+    /* Darker navy */
+    border-color: #0A2540 !important;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-warning {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+}
