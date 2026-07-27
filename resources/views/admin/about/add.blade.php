@@ -3,12 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-xl-12 mx-auto">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h6 class="mb-0 text-uppercase">About Us — Manage All Sections</h6>
-            <a href="{{ route('mission.vision.edit') }}" class="btn btn-outline-primary btn-sm rounded-pill px-3">
-                <i class="bx bx-target-lock me-1"></i> Mission &amp; Vision
-            </a>
-        </div>
+        <h6 class="mb-0 text-uppercase">About Us — Manage All Sections</h6>
         <hr/>
         
         @if (session()->has('success'))
@@ -40,9 +35,6 @@
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="corevalues-tab" data-bs-toggle="tab" data-bs-target="#corevalues" type="button" role="tab">Core Values</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="registration-tab" data-bs-toggle="tab" data-bs-target="#registration" type="button" role="tab">Registration Info</button>
                             </li>
                         </ul>
 
@@ -144,32 +136,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Registration Info -->
-                            <div class="tab-pane fade" id="registration" role="tabpanel">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h6 class="fw-bold text-uppercase text-muted mb-0">Registration Info</h6>
-                                    <a href="{{ route('admin.legal_registrations.index') }}" class="btn btn-sm btn-outline-primary rounded-pill px-3">
-                                        <i class='bx bx-list-ul me-1'></i> Manage Legal Reg. Status
-                                    </a>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 mb-3">
-                                        <label class="form-label fw-bold">Registration Info</label>
-                                        <textarea name="registration_info" class="form-control summernote" rows="5">{{ $about->registration_info ?? '' }}</textarea>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Image</label>
-                                        <input type="file" name="registration_image" class="form-control">
-                                        @if(isset($about->registration_image) && $about->registration_image)
-                                            <div class="mt-2">
-                                                <img src="{{ asset('images/about_us/'.$about->registration_image) }}" width="120" class="border rounded">
-                                            </div>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="col-12 mt-4">
                             <button class="btn btn-primary" type="submit">Save All</button>

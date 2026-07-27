@@ -18,7 +18,7 @@
       <div class="section-title">
         <h2>Frequently Asked Questions</h2>
         @if(isset($faqs) && count($faqs) > 0)
-            <div class="accordion accordion-flush border rounded" id="accordionFlushExample">
+            <div class="accordion accordion-flush border rounded" id="accordionFlushExample" style="max-height: 70vh; overflow-y: auto;">
                 @foreach($faqs as $index => $faq)
                 <div class="accordion-item">
                     <h3 class="accordion-header" id="flush-heading{{ $index }}">
@@ -29,11 +29,6 @@
                     <div id="flush-collapse{{ $index }}" class="accordion-collapse collapse {{ $index == 0 ? 'show' : '' }}" aria-labelledby="flush-heading{{ $index }}" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body text-start">
                             {!! nl2br(e($faq->answer)) !!}
-                            @if($faq->category)
-                            <div class="mt-2">
-                                <small class="badge bg-secondary">{{ $faq->category }}</small>
-                            </div>
-                            @endif
                         </div>
                     </div>
                 </div>

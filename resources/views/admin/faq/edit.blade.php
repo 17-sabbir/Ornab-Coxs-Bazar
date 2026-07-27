@@ -27,11 +27,7 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="col-md-6">
-                            <label for="category" class="form-label">Category (Optional)</label>
-                            <input type="text" name="category" class="form-control" id="category" value="{{ $data->category }}">
-                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label for="order" class="form-label">Order</label>
                             <input type="number" name="order" class="form-control" id="order" value="{{ $data->order }}">
                         </div>

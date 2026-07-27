@@ -26,7 +26,6 @@ class FaqController extends Controller
         $data = array(
             'question' => $request->question,
             'answer' => $request->answer,
-            'category' => $request->category,
             'order' => $request->order ?? 0
         );
 
@@ -67,7 +66,6 @@ class FaqController extends Controller
         $data = array(
             'question' => $request->question,
             'answer' => $request->answer,
-            'category' => $request->category,
             'order' => $request->order ?? 0
         );
 

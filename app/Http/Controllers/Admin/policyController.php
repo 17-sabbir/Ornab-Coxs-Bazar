@@ -18,7 +18,7 @@ class policyController extends Controller
     public function store(Request $request)
     {
         $validatedDate = $request->validate([
-            'name' => 'required',
+            'title' => 'required',
             'file' => 'required|mimes:pdf',
         ]);
 
@@ -29,7 +29,7 @@ class policyController extends Controller
         }
 
         $file = [
-            'name' => $request->name,
+            'title' => $request->title,
             'file' => $fileName
         ];
 
@@ -70,7 +70,7 @@ class policyController extends Controller
     public function update(Request $request, $id)
     {
         $validatedDate = $request->validate([
-            'name' => 'required',
+            'title' => 'required',
         ]);
 
         $files = DB::table('policy_guideline')->where('id', $id)->first();
@@ -90,7 +90,7 @@ class policyController extends Controller
 
 
         $policy_guideline = [
-            'name' => $request->name,
+            'title' => $request->title,
             'file' => $fileName
         ];
 

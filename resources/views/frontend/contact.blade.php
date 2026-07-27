@@ -239,7 +239,7 @@
       <!-- Map Section -->
       <div class="card border-0 shadow-lg rounded-4 overflow-hidden mt-5 position-relative" data-aos="fade-up">
             <div class="position-absolute top-0 start-0 w-100 h-100 bg-white opacity-25" style="pointer-events: none;"></div>
-            <iframe src="{{ application()->google_map_embed ?? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51935.893360276765!2d91.24836129296055!3d24.765454951047424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37512d06454c847f%3A0x155bfcd39e5c1c98!2sMilon%20Bazaar!5e0!3m2!1sen!2sbd!4v1771830819876!5m2!1sen!2sbd' }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="{{ application()->google_map_embed ?? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29711.083044610674!2d91.96255989655302!3d21.433749767245697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adc7266cb6de1d%3A0xbc13462b2ea76ec6!2sYasin%20Mansion!5e0!3m2!1sen!2sbd!4v1785163547013!5m2!1sen!2sbd' }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
     </div>

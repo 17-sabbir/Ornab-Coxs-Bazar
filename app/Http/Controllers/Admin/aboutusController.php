@@ -39,24 +39,21 @@ class aboutusController extends Controller
             'vision'          => 'nullable',
             'mission'         => 'nullable',
             'our_story'       => 'nullable',
-            'registration_info' => 'nullable',
             'about_image'        => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
             'vision_image'       => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
             'mission_image'      => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
             'story_image'        => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
-            'registration_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
         ]);
 
         $data = $request->only([
             'about_us', 'philosophy', 'core_values',
             'vision', 'mission', 'our_story',
-            'registration_info',
         ]);
 
         $existing = DB::table('about_us')->first();
 
         // Handle image uploads
-        $imageFields = ['about_image', 'vision_image', 'mission_image', 'story_image', 'registration_image'];
+        $imageFields = ['about_image', 'vision_image', 'mission_image', 'story_image'];
         foreach ($imageFields as $field) {
             if ($image = $request->file($field)) {
                 // Delete old image

@@ -10,22 +10,27 @@
 
                 <div class="row g-4 justify-content-center">
                     @forelse ($strategicPlans as $plan)
+                        @if (!empty($plan->pdf_file) || !empty($plan->description))
                         <div class="col-md-6 col-lg-4">
+                            @if (!empty($plan->pdf_file))
                             <a href="{{ asset('images/strategic_plans/pdfs/'.$plan->pdf_file) }}" target="_blank" download class="text-decoration-none">
+                            @endif
                                 <div class="modern-card h-100 p-0 overflow-hidden hover-lift d-flex flex-column">
 
                                     <div class="position-relative bg-light border-bottom p-4 text-center d-flex align-items-center justify-content-center" style="height: 200px;">
                                         @if (!empty($plan->image))
                                         <img src="{{ asset('images/strategic_plans/images/'.$plan->image) }}" alt="{{ $plan->title }}" class="img-fluid rounded shadow-sm" style="max-height: 100%; width: auto;">
-                                        @else
+                                        @elseif (!empty($plan->pdf_file))
                                         <div class="text-muted opacity-25">
                                             <i class="fa-solid fa-file-pdf fa-5x"></i>
                                         </div>
                                         @endif
 
+                                        @if (!empty($plan->pdf_file))
                                         <div class="position-absolute top-0 end-0 p-2">
                                             <span class="badge bg-danger rounded-pill"><i class="fa-solid fa-download me-1"></i> PDF</span>
                                         </div>
+                                        @endif
                                     </div>
 
                                     <div class="p-4 flex-grow-1 d-flex flex-column">
@@ -35,13 +40,18 @@
                                         @endif
                                     </div>
 
+                                    @if (!empty($plan->pdf_file))
                                     <div class="p-3 bg-light border-top text-center">
                                         <span class="fw-bold text-primary small text-uppercase">Click to Download</span>
                                     </div>
+                                    @endif
 
                                 </div>
+                            @if (!empty($plan->pdf_file))
                             </a>
+                            @endif
                         </div>
+                        @endif
                     @empty
                         <div class="col-12 text-center py-5">
                             <div class="modern-card">

@@ -277,6 +277,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     // __ Legal Registrations (Legal Reg. Status) __//
     Route::get('legal-registrations', [LegalRegistrationController::class, 'index'])->name('admin.legal_registrations.index');
     Route::post('legal-registrations', [LegalRegistrationController::class, 'store'])->name('admin.legal_registrations.store');
-    Route::get('legal-registrations/delete/{id}', [LegalRegistrationController::class, 'destroy'])->name('admin.legal_registrations.delete');
+    Route::get('legal-registrations/{id}/edit', [LegalRegistrationController::class, 'edit'])->name('admin.legal_registrations.edit');
+    Route::put('legal-registrations/{id}', [LegalRegistrationController::class, 'update'])->name('admin.legal_registrations.update');
+    Route::delete('legal-registrations/{id}', [LegalRegistrationController::class, 'destroy'])->name('admin.legal_registrations.destroy');
 
 });

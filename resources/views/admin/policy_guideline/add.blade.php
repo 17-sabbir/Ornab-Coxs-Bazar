@@ -16,9 +16,9 @@
                     <form class="row g-3" action="{{ route('policy.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-12">
-                            <label for="name" class="form-label">Name<span class="text-danger">*</span></label>
-                            <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Pdf Name" value="{{ old('name') }}">
-                            @error('name')
+                            <label for="title" class="form-label">Title<span class="text-danger">*</span></label>
+                            <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="Enter Pdf Title" value="{{ old('title') }}">
+                            @error('title')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>

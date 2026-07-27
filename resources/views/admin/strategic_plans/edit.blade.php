@@ -49,7 +49,7 @@
                             @if (!empty($strategicPlan->pdf_file))
                                 <span class="text-info">Old File: {{ $strategicPlan->pdf_file }}</span>
                             @else
-                                <span class="text-danger">No PDF uploaded yet (PDF is required)</span>
+                                <span class="text-muted">No PDF uploaded yet</span>
                             @endif
                             @error('pdf_file')
                                 <div class="text-danger">{{ $message }}</div>

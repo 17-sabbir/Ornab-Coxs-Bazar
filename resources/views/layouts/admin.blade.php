@@ -680,16 +680,23 @@
 				</a>
 			</li>
 			<li>
-				<a href="javascript:;" class="has-arrow">
-					<div class="parent-icon"><i class="bx bx-check-shield"></i>
+				<a href="{{ route('admin.legal_registrations.index') }}">
+					<div class="parent-icon"><i class="bx bx-certification"></i>
 					</div>
-					<div class="menu-title">{{ 'Transparency' }}</div>
+					<div class="menu-title">{{ 'Legal Registration Status' }}</div>
 				</a>
-				<ul>
-					<li><a href="{{ route('admin.annual_reports.index') }}"><i class="bx bx-right-arrow-alt"></i>Annual Reports</a></li>
-					<li><a href="{{ route('admin.financial_statements.index') }}"><i class="bx bx-right-arrow-alt"></i>Financial Statements</a></li>
-				</ul>
 			</li>
+ 			<li>
+ 				<a href="javascript:;" class="has-arrow">
+ 					<div class="parent-icon"><i class="bx bx-check-shield"></i>
+ 					</div>
+ 					<div class="menu-title">{{ 'Transparency' }}</div>
+ 				</a>
+ 				<ul>
+ 					<li><a href="{{ route('admin.annual_reports.index') }}"><i class="bx bx-right-arrow-alt"></i>Annual Reports</a></li>
+ 					<li><a href="{{ route('admin.financial_statements.index') }}"><i class="bx bx-right-arrow-alt"></i>Financial Statements</a></li>
+ 				</ul>
+ 			</li>
 			<li>
 				<a href="{{ route('subscribe.all') }}">
 					<div class="parent-icon"><i class="fadeIn animated bx bx-bell"></i>
@@ -760,13 +767,20 @@
 					<div class="menu-title">{{ 'Contact' }}</div>
 				</a>
 			</li>
-		<li>
-			<a href="{{ route('programs.index') }}">
-				<div class="parent-icon"><i class='bx bx-bullseye'></i>
-				</div>
-				<div class="menu-title">{{ 'Focus Area' }}</div>
-			</a>
-		</li>
+	<li>
+		<a href="{{ route('programs.index') }}">
+			<div class="parent-icon"><i class='bx bx-bullseye'></i>
+			</div>
+			<div class="menu-title">{{ 'Focus Area' }}</div>
+		</a>
+	</li>
+	<li>
+		<a href="{{ route('faq.index') }}">
+			<div class="parent-icon"><i class='bx bx-help-circle'></i>
+			</div>
+			<div class="menu-title">{{ 'FAQ' }}</div>
+		</a>
+	</li>
                 <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <div class="parent-icon"><i class='bx bx-log-out-circle'></i>

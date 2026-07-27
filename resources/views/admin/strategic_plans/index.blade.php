@@ -60,9 +60,13 @@
                                         @endif
                                     </td>
                                     <td class="align-middle">
-                                        <a href="{{ asset('images/strategic_plans/pdfs/'.$strategicPlan->pdf_file) }}" target="_blank" download class="fw-bold text-decoration-none">
+                                        @if (!empty($strategicPlan->pdf_file))
+                                            <a href="{{ asset('images/strategic_plans/pdfs/'.$strategicPlan->pdf_file) }}" target="_blank" download class="fw-bold text-decoration-none">
+                                                {{ $strategicPlan->title }}
+                                            </a>
+                                        @else
                                             {{ $strategicPlan->title }}
-                                        </a>
+                                        @endif
                                     </td>
                                     <td class="align-middle">{{ Str::limit($strategicPlan->description, 50, '...') }}</td>
                                     <td class="align-middle">{{ date('M d, Y', strtotime($strategicPlan->created_at)) }}</td>

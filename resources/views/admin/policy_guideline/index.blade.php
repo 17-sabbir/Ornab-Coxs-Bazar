@@ -3,7 +3,12 @@
 @section('content')
 <div class="row">
     <div class="col-xl-12 mx-auto">
-        <h6 class="mb-0 text-uppercase">All Policy & Guideline</h6>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="mb-0 text-uppercase">All Policy & Guideline</h6>
+            <a href="{{ route('policy.create') }}" class="btn btn-primary btn-sm rounded-pill px-3">
+                <i class="bx bx-plus-circle me-1"></i> Add Policy & Guideline
+            </a>
+        </div>
         <hr/>
         <div class="card">
             <div class="card-body">
@@ -34,7 +39,7 @@
                         <thead>
                             <tr>
                                 <th>SL.</th>
-                                <th>Name</th>
+                                    <th>Title</th>
                                 <th>File</th>
                                 <th>Action</th>
                             </tr>
@@ -44,7 +49,7 @@
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>
-                                        {{ Str::limit($value->name, 30, '...') }}
+                                        {{ Str::limit($value->title, 30, '...') }}
                                     </td>
                                     <td>
                                         {{ $value->file }}
