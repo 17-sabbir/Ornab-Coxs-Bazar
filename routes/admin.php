@@ -87,6 +87,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/gallery/delete/{id}', [galleryController::class, 'destroy'])->name('gallery.delete');
     Route::get('/gallery/edit/{id}', [galleryController::class, 'edit'])->name('gallery.edit');
     Route::post('/gallery/update/{id}', [galleryController::class, 'update'])->name('gallery.update');
+    Route::get('/gallery/albums', [galleryController::class, 'albums'])->name('gallery.albums');
 
     // Subscribe
     Route::get('admin/subscribe', [subscribeController::class, 'index'])->name('subscribe.all');

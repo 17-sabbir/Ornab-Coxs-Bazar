@@ -55,6 +55,7 @@
 			background-image: linear-gradient(180deg, var(--brand-sidebar-green) 0%, var(--brand-sidebar-green-dark) 100%);
         }
 
+
         /* COLORFUL ICONS STRATEGY */
 		/* Submenu accent colors inherit from the parent top-level item */
 		.sidebar-wrapper .metismenu > li { --submenu-accent: rgba(255,255,255,0.95); }
@@ -66,54 +67,134 @@
 		.sidebar-wrapper .metismenu > li:nth-child(6) { --submenu-accent: #e83e8c; }
 		.sidebar-wrapper .metismenu > li:nth-child(n+7) { --submenu-accent: var(--brand-gold); }
 
-        /* 1. Dashboard / Home - Blue */
-        .sidebar-wrapper .metismenu > li:nth-child(1) .parent-icon { color: #007bff; }
-		.sidebar-wrapper .metismenu > li:nth-child(1) a:hover { color: rgba(255,255,255,0.95) !important; background-color: var(--sidebar-hover-overlay); }
+        /* ============================================= */
+        /* EACH SIDEBAR ITEM - DISTINCT VIBRANT COLOR     */
+        /* ============================================= */
+        /* 1. Dashboard - Royal Blue */
+        .sidebar-wrapper .metismenu > li:nth-child(1) .parent-icon { color: #4A90D9; }
         .sidebar-wrapper .metismenu > li:nth-child(1).mm-active > a { 
-            background: linear-gradient(45deg, #007bff, #0062cc); box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); 
+            background: linear-gradient(45deg, #4A90D9, #357ABD); box-shadow: 0 4px 10px rgba(74, 144, 217, 0.3); 
         }
-
-        /* 2. Slider / Media - Purple */
-        .sidebar-wrapper .metismenu > li:nth-child(2) .parent-icon { color: #6f42c1; }
-		.sidebar-wrapper .metismenu > li:nth-child(2) a:hover { color: rgba(255,255,255,0.95) !important; background-color: var(--sidebar-hover-overlay); }
+        /* 2. Slider - Amethyst Purple */
+        .sidebar-wrapper .metismenu > li:nth-child(2) .parent-icon { color: #9B59B6; }
         .sidebar-wrapper .metismenu > li:nth-child(2).mm-active > a { 
-            background: linear-gradient(45deg, #6f42c1, #59359a); box-shadow: 0 4px 10px rgba(111, 66, 193, 0.3); 
+            background: linear-gradient(45deg, #9B59B6, #7D3C98); box-shadow: 0 4px 10px rgba(155, 89, 182, 0.3); 
         }
-
-        /* 3. About / Info - Tea/Cyan */
-        .sidebar-wrapper .metismenu > li:nth-child(3) .parent-icon { color: #17a2b8; }
-		.sidebar-wrapper .metismenu > li:nth-child(3) a:hover { color: rgba(255,255,255,0.95) !important; background-color: var(--sidebar-hover-overlay); }
+        /* 3. Projects - Coral Red */
+        .sidebar-wrapper .metismenu > li:nth-child(3) .parent-icon { color: #E74C3C; }
         .sidebar-wrapper .metismenu > li:nth-child(3).mm-active > a { 
-            background: linear-gradient(45deg, #17a2b8, #117a8b); box-shadow: 0 4px 10px rgba(23, 162, 184, 0.3); 
+            background: linear-gradient(45deg, #E74C3C, #C0392B); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); 
         }
-
-        /* 4. Programs / Projects - Orange */
-        .sidebar-wrapper .metismenu > li:nth-child(4) .parent-icon { color: #fd7e14; }
-		.sidebar-wrapper .metismenu > li:nth-child(4) a:hover { color: rgba(255,255,255,0.95) !important; background-color: var(--sidebar-hover-overlay); }
+        /* 4. Latest News - Golden Yellow */
+        .sidebar-wrapper .metismenu > li:nth-child(4) .parent-icon { color: #F1C40F; }
         .sidebar-wrapper .metismenu > li:nth-child(4).mm-active > a { 
-            background: linear-gradient(45deg, #fd7e14, #ca6510); box-shadow: 0 4px 10px rgba(253, 126, 20, 0.3); 
+            background: linear-gradient(45deg, #F1C40F, #D4AC0D); box-shadow: 0 4px 10px rgba(241, 196, 15, 0.3); 
         }
-
-        /* 5. Success Stories - Green */
-        .sidebar-wrapper .metismenu > li:nth-child(5) .parent-icon { color: #28a745; }
-		.sidebar-wrapper .metismenu > li:nth-child(5) a:hover { color: rgba(255,255,255,0.95) !important; background-color: var(--sidebar-hover-overlay); }
+        /* 5. Photo Gallery - Emerald Green */
+        .sidebar-wrapper .metismenu > li:nth-child(5) .parent-icon { color: #2ECC71; }
         .sidebar-wrapper .metismenu > li:nth-child(5).mm-active > a { 
-            background: linear-gradient(45deg, #28a745, #1e7e34); box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3); 
+            background: linear-gradient(45deg, #2ECC71, #27AE60); box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3); 
         }
-
-        /* 6. Events / News - Red/Pink */
-        .sidebar-wrapper .metismenu > li:nth-child(6) .parent-icon { color: #e83e8c; }
-		.sidebar-wrapper .metismenu > li:nth-child(6) a:hover { color: rgba(255,255,255,0.95) !important; background-color: var(--sidebar-hover-overlay); }
+        /* 6. YouTube Videos - Red */
+        .sidebar-wrapper .metismenu > li:nth-child(6) .parent-icon { color: #E74C3C; }
         .sidebar-wrapper .metismenu > li:nth-child(6).mm-active > a { 
-            background: linear-gradient(45deg, #e83e8c, #bf266e); box-shadow: 0 4px 10px rgba(232, 62, 140, 0.3); 
+            background: linear-gradient(45deg, #E74C3C, #C0392B); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); 
+        }
+        /* 7. Publications - Teal */
+        .sidebar-wrapper .metismenu > li:nth-child(7) .parent-icon { color: #1ABC9C; }
+        .sidebar-wrapper .metismenu > li:nth-child(7).mm-active > a { 
+            background: linear-gradient(45deg, #1ABC9C, #16A085); box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3); 
+        }
+        /* 8. Strategic Plan - Deep Purple */
+        .sidebar-wrapper .metismenu > li:nth-child(8) .parent-icon { color: #8E44AD; }
+        .sidebar-wrapper .metismenu > li:nth-child(8).mm-active > a { 
+            background: linear-gradient(45deg, #8E44AD, #6C3483); box-shadow: 0 4px 10px rgba(142, 68, 173, 0.3); 
+        }
+        /* 9. Policy & Guideline - Dark Orange */
+        .sidebar-wrapper .metismenu > li:nth-child(9) .parent-icon { color: #E67E22; }
+        .sidebar-wrapper .metismenu > li:nth-child(9).mm-active > a { 
+            background: linear-gradient(45deg, #E67E22, #CA6F1E); box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3); 
+        }
+        /* 10. Team Members - Sky Blue */
+        .sidebar-wrapper .metismenu > li:nth-child(10) .parent-icon { color: #3498DB; }
+        .sidebar-wrapper .metismenu > li:nth-child(10).mm-active > a { 
+            background: linear-gradient(45deg, #3498DB, #2E86C1); box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3); 
+        }
+        /* 11. Origin & Legal - Pink */
+        .sidebar-wrapper .metismenu > li:nth-child(11) .parent-icon { color: #FD79A8; }
+        .sidebar-wrapper .metismenu > li:nth-child(11).mm-active > a { 
+            background: linear-gradient(45deg, #FD79A8, #E84393); box-shadow: 0 4px 10px rgba(253, 121, 168, 0.3); 
+        }
+        /* 12. Transparency - Mint Green */
+        .sidebar-wrapper .metismenu > li:nth-child(12) .parent-icon { color: #00B894; }
+        .sidebar-wrapper .metismenu > li:nth-child(12).mm-active > a { 
+            background: linear-gradient(45deg, #00B894, #00A381); box-shadow: 0 4px 10px rgba(0, 184, 148, 0.3); 
+        }
+        /* 13. Subscribe - Orange */
+        .sidebar-wrapper .metismenu > li:nth-child(13) .parent-icon { color: #F39C12; }
+        .sidebar-wrapper .metismenu > li:nth-child(13).mm-active > a { 
+            background: linear-gradient(45deg, #F39C12, #D68910); box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3); 
+        }
+        /* 14. Donate Now - Rose Red */
+        .sidebar-wrapper .metismenu > li:nth-child(14) .parent-icon { color: #E84393; }
+        .sidebar-wrapper .metismenu > li:nth-child(14).mm-active > a { 
+            background: linear-gradient(45deg, #E84393, #C44569); box-shadow: 0 4px 10px rgba(232, 67, 147, 0.3); 
+        }
+        /* 15. Messages - Ocean Blue */
+        .sidebar-wrapper .metismenu > li:nth-child(15) .parent-icon { color: #0984E3; }
+        .sidebar-wrapper .metismenu > li:nth-child(15).mm-active > a { 
+            background: linear-gradient(45deg, #0984E3, #0871C2); box-shadow: 0 4px 10px rgba(9, 132, 227, 0.3); 
+        }
+        /* 16. Settings - Gray/Steel */
+        .sidebar-wrapper .metismenu > li:nth-child(16) .parent-icon { color: #636E72; }
+        .sidebar-wrapper .metismenu > li:nth-child(16).mm-active > a { 
+            background: linear-gradient(45deg, #636E72, #4B5358); box-shadow: 0 4px 10px rgba(99, 110, 114, 0.3); 
+        }
+        /* 17. Impact - Lime Green */
+        .sidebar-wrapper .metismenu > li:nth-child(17) .parent-icon { color: #A29BFE; }
+        .sidebar-wrapper .metismenu > li:nth-child(17).mm-active > a { 
+            background: linear-gradient(45deg, #A29BFE, #6C5CE7); box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3); 
+        }
+        /* 18. About Us - Cyan */
+        .sidebar-wrapper .metismenu > li:nth-child(18) .parent-icon { color: #00CEC9; }
+        .sidebar-wrapper .metismenu > li:nth-child(18).mm-active > a { 
+            background: linear-gradient(45deg, #00CEC9, #00B3AE); box-shadow: 0 4px 10px rgba(0, 206, 201, 0.3); 
+        }
+        /* 19. Board of Directors - Deep Gold */
+        .sidebar-wrapper .metismenu > li:nth-child(19) .parent-icon { color: #D4AC0D; }
+        .sidebar-wrapper .metismenu > li:nth-child(19).mm-active > a { 
+            background: linear-gradient(45deg, #D4AC0D, #B7950B); box-shadow: 0 4px 10px rgba(212, 172, 13, 0.3); 
+        }
+        /* 20. Career - Purple Pink */
+        .sidebar-wrapper .metismenu > li:nth-child(20) .parent-icon { color: #A55EEA; }
+        .sidebar-wrapper .metismenu > li:nth-child(20).mm-active > a { 
+            background: linear-gradient(45deg, #A55EEA, #8854D0); box-shadow: 0 4px 10px rgba(165, 94, 234, 0.3); 
+        }
+        /* 21. Contact - Soft Red */
+        .sidebar-wrapper .metismenu > li:nth-child(21) .parent-icon { color: #FC427B; }
+        .sidebar-wrapper .metismenu > li:nth-child(21).mm-active > a { 
+            background: linear-gradient(45deg, #FC427B, #E84393); box-shadow: 0 4px 10px rgba(252, 66, 123, 0.3); 
+        }
+        /* 22. Focus Area - Bright Cyan */
+        .sidebar-wrapper .metismenu > li:nth-child(22) .parent-icon { color: #00B8D4; }
+        .sidebar-wrapper .metismenu > li:nth-child(22).mm-active > a { 
+            background: linear-gradient(45deg, #00B8D4, #0097A7); box-shadow: 0 4px 10px rgba(0, 184, 212, 0.3); 
+        }
+        /* 23. Logout - Light Slate */
+        .sidebar-wrapper .metismenu > li:nth-child(23) .parent-icon { color: rgba(255,255,255,0.7); }
+        .sidebar-wrapper .metismenu > li:nth-child(23).mm-active > a { 
+            background: linear-gradient(45deg, #bdc3c7, #95a5a6); box-shadow: 0 4px 10px rgba(149, 165, 166, 0.3); 
         }
 
-        /* General Fallback for anything after 6 - Brand Navy */
-		.sidebar-wrapper .metismenu > li:nth-child(n+7) .parent-icon { color: rgba(255,255,255,0.92); }
-		.sidebar-wrapper .metismenu > li:nth-child(n+7) a:hover { color: rgba(255,255,255,0.95) !important; background-color: rgba(255, 255, 255, 0.12); }
-        .sidebar-wrapper .metismenu > li:nth-child(n+7).mm-active > a { 
-            background: linear-gradient(45deg, var(--brand-navy), #102A43); box-shadow: 0 4px 10px rgba(16, 42, 67, 0.3); 
+        /* All items hover effect */
+        .sidebar-wrapper .metismenu > li a:hover { 
+            color: rgba(255,255,255,0.95) !important; 
+            background-color: var(--sidebar-hover-overlay); 
         }
+        /* Active item text always white */
+        .sidebar-wrapper .metismenu > li.mm-active > a .parent-icon { color: #ffffff !important; }
+        .sidebar-wrapper .metismenu > li.mm-active > a .menu-title { color: #ffffff !important; }
+        .sidebar-wrapper .metismenu > li.mm-active > a { transform: scale(1.02); }
 
         .sidebar-header {
 			background-color: var(--brand-sidebar-green) !important;
@@ -944,6 +1025,8 @@
 			});
         });
     </script>
+
+    @stack('scripts')
 </body>
 
 </html>

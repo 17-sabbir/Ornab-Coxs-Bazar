@@ -16,6 +16,23 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
+                <style>
+                    .focus-area-scroll::-webkit-scrollbar {
+                        width: 8px;
+                    }
+                    .focus-area-scroll::-webkit-scrollbar-track {
+                        background: #f1f1f1;
+                        border-radius: 4px;
+                    }
+                    .focus-area-scroll::-webkit-scrollbar-thumb {
+                        background: #888;
+                        border-radius: 4px;
+                    }
+                    .focus-area-scroll::-webkit-scrollbar-thumb:hover {
+                        background: #555;
+                    }
+                </style>
+                <div class="focus-area-scroll" style="max-height: 500px; overflow-y: auto;">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -69,6 +86,7 @@
                         @endforelse
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

@@ -72,6 +72,20 @@ class galleryController extends Controller
         return view('admin.gallery.index', compact('gallery'));
     }
 
+    // Return unique album names as JSON (for AJAX dropdown)
+    public function albums()
+    {
+        $albums = DB::table('gallery')
+            ->select('album')
+            ->whereNotNull('album')
+            ->where('album', '!=', '')
+            ->distinct()
+            ->orderBy('album', 'asc')
+            ->pluck('album');
+
+        return response()->json($albums);
+    }
+
     // Destroy
     public function destroy($id)
     {

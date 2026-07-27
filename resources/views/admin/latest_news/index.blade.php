@@ -39,7 +39,24 @@
                 @endif
 
                 <!-- Scrollable Table Container -->
-                <div class="table-responsive" style="max-height: 600px; overflow-y: auto; overflow-x: auto;">
+                <div class="table-responsive" style="overflow-x: auto;">
+                    <style>
+                        .focus-area-scroll::-webkit-scrollbar {
+                            width: 8px;
+                        }
+                        .focus-area-scroll::-webkit-scrollbar-track {
+                            background: #f1f1f1;
+                            border-radius: 4px;
+                        }
+                        .focus-area-scroll::-webkit-scrollbar-thumb {
+                            background: #888;
+                            border-radius: 4px;
+                        }
+                        .focus-area-scroll::-webkit-scrollbar-thumb:hover {
+                            background: #555;
+                        }
+                    </style>
+                    <div class="focus-area-scroll" style="max-height: 600px; overflow-y: auto;">
                     <table class="table table-hover mb-0 align-middle">
                         <thead class="table-light" style="position: sticky; top: 0; z-index: 10;">
                             <tr>
@@ -92,6 +109,7 @@
                             <h5 class="text-muted">No News Found</h5>
                         </div>
                     @endif
+                    </div>
                 </div>
             </div>
         </div>
