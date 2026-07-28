@@ -4,12 +4,12 @@
 
   <div class="container pt-5 pb-3 text-center">
       <h1 class="display-3 fw-bold text-uppercase" style="background: linear-gradient(to right, #009688, #8bc34a); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-          Ongoing Project Details
+          {{ ucfirst($project->status ?? 'Project') }} Details
       </h1>
   </div>
   <!-- End Breadcrumbs -->
 
-    <!-- ======= Ongoing Project Section ======= -->
+    <!-- ======= Project Details Section ======= -->
   <section id="contact" class="contact bg-light p-0">
     <div class="container bg-white py-5">
 
@@ -23,34 +23,41 @@
             </div>
             <div class="col-md-8 text-left">
             <h2 class="text-left fw-bold">{{ $project->project_name }}</h2>
-                
+
                 <div class="card bg-light mb-3 mt-3">
                     <div class="card-body">
+                        <div class="mb-2">
+                            <strong>Status:</strong>
+                            <span class="badge ms-2 {{ $project->status == 'ongoing' ? 'bg-success' : 'bg-secondary' }}">
+                                {{ ucfirst($project->status ?? 'N/A') }}
+                            </span>
+                        </div>
+
                         @if($project->locations)
                         <div class="row mb-2">
                             <div class="col-sm-3 fw-bold">Locations:</div>
                           <div class="col-sm-9">{{ $project->locations }}</div>
                         </div>
                         @endif
-                        
+
                         @if($project->project_duration || $project->start_year)
                         <div class="row mb-2">
                             <div class="col-sm-3 fw-bold">Duration:</div>
                           <div class="col-sm-9">{{ project_period($project) }}</div>
                         </div>
                         @endif
-                        
+
                         @if($project->donors)
                         <div class="row mb-2">
                             <div class="col-sm-3 fw-bold">Donors:</div>
-                            <div class="col-sm-9">{{ $project->donors }}</div>
+                          <div class="col-sm-9">{{ $project->donors }}</div>
                         </div>
                         @endif
-                        
+
                         @if($project->remark)
                         <div class="row mb-2">
                             <div class="col-sm-3 fw-bold">Remark:</div>
-                            <div class="col-sm-9">{{ $project->remark }}</div>
+                          <div class="col-sm-9">{{ $project->remark }}</div>
                         </div>
                         @endif
                     </div>
@@ -76,12 +83,12 @@
             </div>
             @endif
             <div class="py-3">
-                <a href="{{ route('ongoing.project') }}" class="btn btn-danger"> <i class="fa fa-angle-left" aria-hidden="true"></i> Back to Ongoing Project</a>
+                <a href="{{ $project->status == 'completed' ? route('project.archieve') : route('ongoing.project') }}" class="btn btn-danger"> <i class="fa fa-angle-left" aria-hidden="true"></i> Back to {{ $project->status == 'completed' ? 'Project Archive' : 'Ongoing Projects' }}</a>
             </div>
         </div>
       </div>
 
     </div>
-  </section><!-- End Ongoing Project Section -->
+  </section><!-- End Project Details Section -->
 
 @endsection

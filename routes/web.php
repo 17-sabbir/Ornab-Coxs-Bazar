@@ -48,11 +48,7 @@ Route::get('/', function () {
     $albumsPreview = $albums->take(6);
     $hasMoreAlbums = $albums->count() > 6;
     $application = DB::table('applications')->get()->first();
-    // Fetch all active programs for homepage key focus area
-    $programs = DB::table('programs')->where('status', 'active')->orderBy('created_at', 'desc')->get();
-    $stories = DB::table('stories')->orderBy('id', 'desc')->get();
 
-    // Dynamic stats: projects count and distinct districts covered by projects
     $projectsCount = DB::table('projects')->count();
 
     // Gather locations from projects and compute distinct upazilas (prefer Upazila names)
@@ -90,8 +86,9 @@ Route::get('/', function () {
 
     // Centralized, admin-editable homepage statistics
     $statistics = application();
+    $stories = DB::table('stories')->orderBy('id', 'desc')->get();
 
-    return view('home', compact('slider', 'project', 'news', 'partners', 'mission_vision', 'albumsPreview', 'hasMoreAlbums', 'application', 'programs', 'stories', 'projectsCount', 'districtsCount', 'statistics'));
+    return view('home', compact('slider', 'project', 'news', 'partners', 'mission_vision', 'albumsPreview', 'hasMoreAlbums', 'application', 'stories', 'projectsCount', 'districtsCount', 'statistics'));
 });
 
 Route::post('user/subscribe', [frontController::class, 'subscribe'])->name('user.subscribe')->middleware('recaptcha');
@@ -112,10 +109,10 @@ Route::get('ongoing/project/view/{id}', [frontController::class, 'project_view']
 Route::get('latest/news/view/{id}', [frontController::class, 'news_view'])->name('latest.news.view');
 Route::get('latest/news/all', [frontController::class, 'news_all'])->name('latest.news.all');
 Route::get('youtube/video', [frontController::class, 'youtube'])->name('youtube.video');
-Route::get('programs', [frontController::class, 'programs'])->name('programs.all');
-Route::get('programs/view/{id}', [frontController::class, 'programsView'])->name('programs.view');
 Route::get('success/stories', [frontController::class, 'stories'])->name('success.stories');
 Route::get('success/stories/view/{id}', [frontController::class, 'storiesView'])->name('success.stories.view');
+
+// Stay Informed
 
 // Stay Informed
 Route::get('strategic/plan', [frontController::class, 'strategic_plan'])->name('strategic.plan');
@@ -148,6 +145,10 @@ Route::get('audit-reports', [frontController::class, 'auditReports'])->name('aud
 
 // Projects
 Route::get('projects', [PageController::class, 'projects'])->name('frontend.projects');
+
+// Focus Areas
+Route::get('focus-areas', [frontController::class, 'focusAreas'])->name('focus.areas');
+Route::get('focus-areas/{slug}', [frontController::class, 'focusAreaDetail'])->name('focus.area.detail');
 
 // SEO
 Route::get('sitemap.xml', [\App\Http\Controllers\Frontend\SitemapController::class, 'index'])->name('sitemap');

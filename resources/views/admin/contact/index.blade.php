@@ -10,6 +10,25 @@
 			</a>
 		</div>
 		<hr/>
+
+        <!-- Search / Filter -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <form method="GET" action="{{ route('contact.index') }}" class="row g-2 align-items-end">
+                    <div class="col-md-6">
+                        <label for="search" class="form-label small text-uppercase fw-bold text-muted">Search</label>
+                        <input type="text" class="form-control" name="search" placeholder="Search by title, address, name, mobile or email..." value="{{ request('search') }}">
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary w-100">Search</button>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="{{ route('contact.index') }}" class="btn btn-outline-secondary w-100">Reset</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <div class="card">
             <div class="card-body">
                 @if (session()->has('success'))
@@ -36,8 +55,6 @@
                                 <td class="align-middle">
                                     @if($contact->type == 'head_office')
                                         <span class="badge bg-success">Head Office</span>
-                                    @elseif($contact->type == 'liaison_office')
-                                        <span class="badge bg-warning text-dark">Liaison Office</span>
                                     @elseif($contact->type == 'branch')
                                         <span class="badge bg-info">Branch</span>
                                     @else
@@ -46,7 +63,7 @@
                                 </td>
                                 <td class="align-middle">{{ $contact->title }}</td>
                                 <td class="align-middle">
-                                    @if($contact->type == 'head_office' || $contact->type == 'liaison_office' || $contact->type == 'branch')
+                                    @if($contact->type == 'head_office' || $contact->type == 'branch')
                                         {{ Str::limit($contact->address, 50) }}
                                     @else
                                         {{ $contact->name }}

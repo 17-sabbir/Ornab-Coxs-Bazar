@@ -61,7 +61,7 @@
                             <h5 class="card-title">{{ $report->title }}</h5>
                             <p class="text-muted mb-2"><i class="far fa-calendar-alt"></i> {{ $report->year }}</p>
                             @if($report->description)
-                                <p class="card-text text-muted small">{{ Str::limit($report->description, 150) }}</p>
+                                <p class="card-text text-muted small">{{ $report->description }}</p>
                             @endif
                             <div class="mt-auto">
                                 @if($report->file_path)

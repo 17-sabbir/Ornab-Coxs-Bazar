@@ -89,7 +89,7 @@ class frontController extends Controller
     // Project Archieve
     public function proj_archieve()
     {
-        $project = Project::where('status', 'completed')->orderBy('created_at', 'desc')->get();
+        $project = Project::query()->where('status', 'completed')->orderBy('created_at', 'desc')->get();
 
         return view('frontend.project_archieve', compact('project'));
     }
@@ -97,7 +97,7 @@ class frontController extends Controller
     // Ongoing Project
     public function ongoing_project()
     {
-        $project = Project::where('status', 'ongoing')
+        $project = Project::query()->where('status', 'ongoing')
             ->orderBy('priority', 'asc')
             ->orderBy('created_at', 'desc')
             ->paginate(15);
@@ -106,7 +106,7 @@ class frontController extends Controller
     }
 
     // __ongoing Project view__//
-    public function project_view($id)
+    public function project_view(int $id)
     {
         $project = Project::with('galleries')->findOrFail($id);
 
@@ -124,28 +124,12 @@ class frontController extends Controller
     // Youtube
     public function youtube()
     {
-        $videos = \App\Models\YoutubeVideo::where('is_active', 1)->orderBy('order', 'asc')->get();
+        $videos = \App\Models\YoutubeVideo::query()->where('is_active', 1)->orderBy('order', 'asc')->get();
 
         return view('frontend.youtube', compact('videos'));
     }
 
-    // Programs
-    public function programs()
-    {
-        $programs = DB::table('programs')->orderBy('id', 'desc')->get();
-
-        return view('frontend.programs', compact('programs'));
-    }
-
-    // Program View
-    public function programsView($id)
-    {
-        $program = DB::table('programs')->where('id', $id)->first();
-
-        return view('frontend.featured_prog_view', compact('program'));
-    }
-
-    // Stories
+    // Youtube
     public function stories()
     {
         $stories = DB::table('stories')->orderBy('id', 'desc')->get();
@@ -154,7 +138,7 @@ class frontController extends Controller
     }
 
     // Story View
-    public function storiesView($id)
+    public function storiesView(int $id)
     {
         $story = DB::table('stories')->where('id', $id)->first();
 
@@ -162,7 +146,7 @@ class frontController extends Controller
     }
 
     // __Latest News view__//
-    public function news_view($id)
+    public function news_view(int $id)
     {
         $news = DB::table('latest_news')->where('id', $id)->first();
 
@@ -374,7 +358,7 @@ class frontController extends Controller
     }
 
     // __Single Album Photos
-    public function album_photos($album)
+    public function album_photos(string $album)
     {
         $query = DB::table('gallery')->orderBy('id', 'desc');
 
@@ -421,5 +405,76 @@ class frontController extends Controller
     {
         $reports = \App\Models\AuditReport::active()->ordered()->get();
         return view('frontend.audit_reports', compact('reports'));
+    }
+
+    // Focus Areas
+    public function focusAreas()
+    {
+        $focusAreas = [
+            [
+                'slug' => 'womens-empowerment',
+                'title' => 'Women\'s Empowerment',
+                'image' => 'https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'short_description' => 'Promoting gender equality and empowerment through education, skill-building, and advocacy for women\'s rights.',
+                'full_description' => 'Our Women\'s Empowerment program is dedicated to promoting gender equality and empowering women through education, skill-building, and advocacy for women\'s rights. We believe that when women are empowered, entire communities thrive. Our initiatives include vocational training, literacy programs, legal awareness campaigns, and microfinance support to help women achieve financial independence and social equality.',
+                'status' => 'active',
+            ],
+            [
+                'slug' => 'youth-development',
+                'title' => 'Youth Development',
+                'image' => 'https://images.pexels.com/photos/2659475/pexels-photo-2659475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'short_description' => 'Empowering the next generation through mentorship, education, and community engagement to foster leadership.',
+                'full_description' => 'Our Youth Development program empowers the next generation through mentorship, education, and community engagement to foster leadership. We provide young people with the skills, knowledge, and opportunities they need to become active, engaged members of their communities. Our programs include leadership workshops, scholarship programs, sports and cultural activities, and career guidance counseling.',
+                'status' => 'active',
+            ],
+            [
+                'slug' => 'healthcare-access',
+                'title' => 'Healthcare Access',
+                'image' => 'https://images.pexels.com/photos/4388165/pexels-photo-4388165.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'short_description' => 'Providing essential healthcare services, awareness campaigns, and medical assistance to underserved communities.',
+                'full_description' => 'Our Healthcare Access program provides essential healthcare services, awareness campaigns, and medical assistance to underserved communities in Bangladesh. We work to bridge the healthcare gap by organizing medical camps, providing free health checkups, distributing medicines, and running awareness campaigns on maternal health, child nutrition, and disease prevention in remote and marginalized communities.',
+                'status' => 'active',
+            ],
+        ];
+
+        return view('frontend.focus_areas', compact('focusAreas'));
+    }
+
+    public function focusAreaDetail(string $slug)
+    {
+        $focusAreas = [
+            [
+                'slug' => 'womens-empowerment',
+                'title' => 'Women\'s Empowerment',
+                'image' => 'https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'short_description' => 'Promoting gender equality and empowerment through education, skill-building, and advocacy for women\'s rights.',
+                'full_description' => 'Our Women\'s Empowerment program is dedicated to promoting gender equality and empowering women through education, skill-building, and advocacy for women\'s rights. We believe that when women are empowered, entire communities thrive. Our initiatives include vocational training, literacy programs, legal awareness campaigns, and microfinance support to help women achieve financial independence and social equality.',
+                'status' => 'active',
+            ],
+            [
+                'slug' => 'youth-development',
+                'title' => 'Youth Development',
+                'image' => 'https://images.pexels.com/photos/2659475/pexels-photo-2659475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'short_description' => 'Empowering the next generation through mentorship, education, and community engagement to foster leadership.',
+                'full_description' => 'Our Youth Development program empowers the next generation through mentorship, education, and community engagement to foster leadership. We provide young people with the skills, knowledge, and opportunities they need to become active, engaged members of their communities. Our programs include leadership workshops, scholarship programs, sports and cultural activities, and career guidance counseling.',
+                'status' => 'active',
+            ],
+            [
+                'slug' => 'healthcare-access',
+                'title' => 'Healthcare Access',
+                'image' => 'https://images.pexels.com/photos/4388165/pexels-photo-4388165.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'short_description' => 'Providing essential healthcare services, awareness campaigns, and medical assistance to underserved communities.',
+                'full_description' => 'Our Healthcare Access program provides essential healthcare services, awareness campaigns, and medical assistance to underserved communities in Bangladesh. We work to bridge the healthcare gap by organizing medical camps, providing free health checkups, distributing medicines, and running awareness campaigns on maternal health, child nutrition, and disease prevention in remote and marginalized communities.',
+                'status' => 'active',
+            ],
+        ];
+
+        $focusArea = collect($focusAreas)->firstWhere('slug', $slug);
+
+        if (!$focusArea) {
+            abort(404);
+        }
+
+        return view('frontend.focus_area_detail', compact('focusArea'));
     }
 }

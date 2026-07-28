@@ -461,10 +461,10 @@ Ornab Coxs Bazar
                 {{-- Left Column: Text --}}
                 <div class="col-lg-5" style="padding: 2rem;">
                     <span class="uerd-impact-badge"><i class="fa-solid fa-bolt me-2"></i> Our Impact</span>
-                    <h2 class="uerd-impact-heading">Over 25 Years of Changing Lives</h2>
+                    <h2 class="uerd-impact-heading">Over 18 Years of Changing Lives</h2>
                     <p class="uerd-impact-text lead mb-4">
-                        Every number creates a story. From the floodplains of Sunamganj to the most remote haor villages, we are building a legacy of hope, resilience, and transformation.
-                        <span style="color: #ffca28; font-weight: 700;">Real Families, Real Change. Sustainable Development for All.</span>
+                        Since 2008, Ornab Cox's Bazar has served underprivileged communities in Cox's Bazar with a focus on women, adolescents, and children. Through education, health, skills training, and community mobilization, we empower families and build sustainable change across the district.
+                        <span style="color: #ffca28; font-weight: 700;">Empowering Communities. Transforming Lives.</span>
                     </p>
                 </div>
 
@@ -563,8 +563,8 @@ Ornab Coxs Bazar
         {{-- Buttons Section (Moved outside the card to a new row) --}}
         <div class="row mt-4">
             <div class="col-12 d-flex justify-content-center gap-3 flex-wrap">
-                <a href="{{ route('programs.all') }}" class="btn btn-success text-white d-inline-flex align-items-center gap-2 uerd-btn-pill" style="background-color: var(--primary-color); border: none;">
-                    Our Programs <i class="fa-solid fa-arrow-right"></i>
+                <a href="http://127.0.0.1:8000/projects" class="btn btn-success text-white d-inline-flex align-items-center gap-2 uerd-btn-pill" style="background-color: var(--primary-color); border: none;">
+                    Our Project <i class="fa-solid fa-arrow-right"></i>
                 </a>
                 <a href="{{ route('invoked.career') }}" class="btn btn-outline-success d-inline-flex align-items-center uerd-btn-pill" style="border-width: 2px;">
                     Get Involved
@@ -730,39 +730,7 @@ Ornab Coxs Bazar
         </div>
 
         <div class="row g-4 focus-scroll-row">
-            {{-- Admin-added programs (shown first) --}}
-            @if(isset($programs) && count($programs) > 0)
-                @foreach($programs as $program)
-                <div class="col-lg-4 col-md-6 focus-scroll-item" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
-                    <div class="program-card h-100">
-                        @if($program->status)
-                            <span class="status-badge">
-                                <i class="fa-solid fa-circle {{ $program->status == 'active' ? 'text-success' : 'text-secondary' }} me-1" style="font-size: 0.6rem;"></i>
-                                {{ ucfirst($program->status) }}
-                            </span>
-                        @endif
-
-                        @if($program->image)
-                            <img src="{{ asset('images/programs/'.$program->image) }}" alt="{{ $program->title }}">
-                        @else
-                            <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="{{ $program->title }}">
-                        @endif
-
-                        <div class="program-card-content">
-                            <h4 class="program-title">{{ $program->title }}</h4>
-                            <p class="program-desc">{{ Str::limit($program->description, 120) }}</p>
-                            <a href="{{ route('programs.view', $program->id) }}" class="program-btn mt-2">
-                                Learn More <i class="fa-solid fa-arrow-right ms-1"></i>
-                            </a>
-                        </div>
-
-                        <a href="{{ route('programs.view', $program->id) }}" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
-                    </div>
-                </div>
-                @endforeach
-            @endif
-
-            {{-- Default focus areas (always shown, after the added ones) --}}
+            {{-- Default focus areas (always shown) --}}
             <div class="col-lg-4 col-md-6 focus-scroll-item" data-aos="fade-up">
                 <div class="program-card h-100">
                     <span class="status-badge"><i class="fa-solid fa-circle text-success me-1" style="font-size: 0.6rem;"></i>Active</span>
@@ -770,9 +738,9 @@ Ornab Coxs Bazar
                     <div class="program-card-content">
                         <h4 class="program-title">Women's Empowerment</h4>
                         <p class="program-desc">Promoting gender equality and empowerment through education, skill-building, and advocacy for women's rights.</p>
-                        <a href="#" class="program-btn mt-2">Learn More <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        <a href="{{ route('focus.area.detail', 'womens-empowerment') }}" class="program-btn mt-2">Learn More <i class="fa-solid fa-arrow-right ms-1"></i></a>
                     </div>
-                    <a href="#" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
+                    <a href="{{ route('focus.area.detail', 'womens-empowerment') }}" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
                 </div>
             </div>
 
@@ -783,9 +751,9 @@ Ornab Coxs Bazar
                     <div class="program-card-content">
                         <h4 class="program-title">Youth Development</h4>
                         <p class="program-desc">Empowering the next generation through mentorship, education, and community engagement to foster leadership.</p>
-                        <a href="#" class="program-btn mt-2">Learn More <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        <a href="{{ route('focus.area.detail', 'youth-development') }}" class="program-btn mt-2">Learn More <i class="fa-solid fa-arrow-right ms-1"></i></a>
                     </div>
-                    <a href="#" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
+                    <a href="{{ route('focus.area.detail', 'youth-development') }}" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
                 </div>
             </div>
 
@@ -796,9 +764,9 @@ Ornab Coxs Bazar
                     <div class="program-card-content">
                         <h4 class="program-title">Healthcare Access</h4>
                         <p class="program-desc">Providing essential healthcare services, awareness campaigns, and medical assistance to underserved communities in Bangladesh.</p>
-                        <a href="#" class="program-btn mt-2">Learn More <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        <a href="{{ route('focus.area.detail', 'healthcare-access') }}" class="program-btn mt-2">Learn More <i class="fa-solid fa-arrow-right ms-1"></i></a>
                     </div>
-                    <a href="#" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
+                    <a href="{{ route('focus.area.detail', 'healthcare-access') }}" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
                 </div>
             </div>
         </div>
@@ -1155,7 +1123,7 @@ Ornab Coxs Bazar
                     <a href="{{ route('contact') }}" class="btn uerd-btn-pill uerd-sponsor-btn d-inline-flex align-items-center gap-2">
                         <i class="fa-regular fa-heart"></i> Become a Sponsor
                     </a>
-                    <a href="{{ route('programs.all') }}" class="btn uerd-btn-pill uerd-sponsor-btn-outline d-inline-flex align-items-center gap-2">
+                    <a href="{{ route('focus.areas') }}" class="btn uerd-btn-pill uerd-sponsor-btn-outline d-inline-flex align-items-center gap-2">
                         Learn About Our Work <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>

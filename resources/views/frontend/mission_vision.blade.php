@@ -3,8 +3,6 @@
 @section('content')
 
     @php
-        // Prefer DB values; fall back to the official organization profile text
-        // so the page always renders fully even if the admin record is empty.
         $defaultMission = 'To strengthen communities\' capacity, address poverty\'s root causes, and ensure dignity, safety, and equal rights for all through justice and equal opportunities.';
         $defaultVision  = 'Establish poverty free society where community people enjoy their lives with dignity, safety, and equal rights.';
         $mission = (!empty($mission_vision) && !empty(trim($mission_vision->mission ?? '')))
@@ -17,8 +15,6 @@
             ? asset('images/mission_vision/'.$mission_vision->background_image)
             : null;
 
-        // Core values: prefer admin-entered DB values (Name | Description per line),
-        // fall back to the official profile values if none are set.
         $coreValues = [];
         if (!empty($mission_vision) && !empty(trim($mission_vision->core_values ?? ''))) {
             foreach (explode("\n", $mission_vision->core_values) as $line) {
@@ -46,7 +42,6 @@
     <!-- ======= Mission & Vision Hero ======= -->
     <section class="mv-hero @if($bg) mv-hero--img @endif" @if($bg) style="background-image: linear-gradient(rgba(16,55,47,.82), rgba(13,95,73,.82)), url('{{ $bg }}');" @endif>
         <div class="container text-center">
-            <span class="mv-eyebrow">Our Purpose</span>
             <h1 class="mv-title">Mission &amp; Vision</h1>
             <p class="mv-lead">The principles that guide every decision we make and shape the future we build together.</p>
         </div>

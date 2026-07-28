@@ -32,7 +32,6 @@ class HomeController extends Controller
         $total_raised = Donation::where('status', 'verified')->sum('amount');
         $total_members = DB::table('team_members')->count();
         $total_news = DB::table('latest_news')->count();
-        $total_programs = DB::table('programs')->count();
 
         $pending_donations_count = Donation::where('status', 'pending')->count();
         $recent_donations = Donation::orderBy('created_at', 'desc')->take(5)->get();
@@ -43,7 +42,6 @@ class HomeController extends Controller
             'total_raised',
             'total_members',
             'total_news',
-            'total_programs',
             'pending_donations_count',
             'recent_donations'
         ));

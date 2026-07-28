@@ -192,15 +192,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('team/edit/{id}', [TeamMemberController::class, 'edit'])->name('team.edit');
     Route::post('team/update/{id}', [TeamMemberController::class, 'update'])->name('team.update');
 
-    // __ Programs __//
-    Route::get('programs/add', [ProgramController::class, 'add'])->name('programs.add');
-    Route::post('programs/store', [ProgramController::class, 'store'])->name('programs.store');
-    Route::get('programs/index', [ProgramController::class, 'index'])->name('programs.index');
-    Route::get('programs/delete/{id}', [ProgramController::class, 'destroy'])->name('programs.delete');
-    Route::get('programs/edit/{id}', [ProgramController::class, 'edit'])->name('programs.edit');
-    Route::post('programs/update/{id}', [ProgramController::class, 'update'])->name('programs.update');
-
-    // __ Success Stories __//
+    // __ Team Members __//
     Route::get('stories/add', [StoryController::class, 'add'])->name('stories.add');
     Route::post('stories/store', [StoryController::class, 'store'])->name('stories.store');
     Route::get('stories/index', [StoryController::class, 'index'])->name('stories.index');

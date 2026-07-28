@@ -767,20 +767,13 @@
 					<div class="menu-title">{{ 'Contact' }}</div>
 				</a>
 			</li>
-	<li>
-		<a href="{{ route('programs.index') }}">
-			<div class="parent-icon"><i class='bx bx-bullseye'></i>
-			</div>
-			<div class="menu-title">{{ 'Focus Area' }}</div>
-		</a>
-	</li>
-	<li>
-		<a href="{{ route('faq.index') }}">
-			<div class="parent-icon"><i class='bx bx-help-circle'></i>
-			</div>
-			<div class="menu-title">{{ 'FAQ' }}</div>
-		</a>
-	</li>
+		<li>
+ 			<a href="{{ route('faq.index') }}">
+ 				<div class="parent-icon"><i class='bx bx-help-circle'></i>
+ 				</div>
+ 				<div class="menu-title">{{ 'FAQ' }}</div>
+ 			</a>
+ 		</li>
                 <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <div class="parent-icon"><i class='bx bx-log-out-circle'></i>
@@ -969,6 +962,100 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(function(){
+            // --- Admin Search Functionality (Sidebar Menu Filter) ---
+            $(".search-control").on("keyup", function() {
+                var query = $(this).val().toLowerCase().trim();
+                var hasQuery = query.length > 0;
+
+                // Get all top-level sidebar items
+                $("#menu > li").each(function() {
+                    var $li = $(this);
+                    var $menuTitle = $li.find("> a .menu-title");
+                    var menuText = $menuTitle.text().toLowerCase();
+                    var $submenu = $li.find("> ul");
+
+                    // Check top-level match
+                    var topMatch = menuText.indexOf(query) > -1;
+
+                    if (hasQuery) {
+                        // Check submenu items
+                        var subMatch = false;
+                        if ($submenu.length) {
+                            $submenu.find("li a").each(function() {
+                                var subText = $(this).text().toLowerCase();
+                                var matches = subText.indexOf(query) > -1;
+                                $(this).toggle(matches);
+                                if (matches) subMatch = true;
+                            });
+                        }
+
+                        // Show/hide the top li based on match
+                        if (topMatch || subMatch) {
+                            $li.show();
+                            // Highlight the matching text
+                            if (topMatch) {
+                                $li.addClass("search-match");
+                                $menuTitle.html(highlightText($menuTitle.text(), query));
+                            } else {
+                                $li.removeClass("search-match");
+                                $menuTitle.html($menuTitle.text());
+                            }
+                            // Expand submenu if sub-items match
+                            if (subMatch && $submenu.length) {
+                                $submenu.addClass("mm-show");
+                                $li.addClass("mm-active");
+                            } else if ($submenu.length) {
+                                $submenu.removeClass("mm-show");
+                                $li.removeClass("mm-active");
+                            }
+                        } else {
+                            $li.hide();
+                            $menuTitle.html($menuTitle.text());
+                        }
+                    } else {
+                        // Reset all
+                        $li.show();
+                        $menuTitle.html($menuTitle.text());
+                        $submenu.find("li a").show();
+                        $submenu.removeClass("mm-show");
+                        $li.removeClass("mm-active search-match");
+                        // Re-apply default active state
+                        var current = window.location.href;
+                        var $link = $li.find("> a").filter(function() {
+                            return this.href == current;
+                        });
+                        if ($link.length) {
+                            $li.addClass("mm-active");
+                            var $parentUl = $li.parent("ul");
+                            if ($parentUl.length) {
+                                $parentUl.addClass("mm-show");
+                                $parentUl.closest("li").addClass("mm-active");
+                            }
+                        }
+                    }
+                });
+
+                // Show/hide "no results" message
+                var visibleItems = $("#menu > li:visible").length;
+                if (hasQuery && visibleItems === 0) {
+                    if ($("#search-no-results").length === 0) {
+                        $("#menu").append('<li id="search-no-results" style="padding:20px;text-align:center;color:rgba(255,255,255,0.5);font-size:0.9rem;"><i class="bx bx-search-alt mb-2" style="font-size:2rem;display:block;"></i>No menu items found</li>');
+                    }
+                } else {
+                    $("#search-no-results").remove();
+                }
+            });
+
+            // Helper: highlight matching text
+            function highlightText(text, query) {
+                var idx = text.toLowerCase().indexOf(query);
+                if (idx === -1) return text;
+                var before = text.substring(0, idx);
+                var match = text.substring(idx, idx + query.length);
+                var after = text.substring(idx + query.length);
+                return before + '<span class="search-highlight">' + match + '</span>' + after;
+            }
+
             // --- 1. SweetAlert2 Delete Confirmation ---
             // Intercept any link with 'delete' in its href
             $(document).on('click', 'a[href*="delete"]', function(e){

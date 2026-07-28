@@ -20,7 +20,6 @@
                             <select name="type" id="type" class="form-select @error('type') is-invalid @enderror" required>
                                 <option value="">Select Type</option>
                                 <option value="head_office" {{ old('type') == 'head_office' ? 'selected' : '' }}>Head Office</option>
-                                <option value="liaison_office" {{ old('type') == 'liaison_office' ? 'selected' : '' }}>Liaison Office</option>
                                 <option value="branch" {{ old('type') == 'branch' ? 'selected' : '' }}>Branch</option>
                                 <option value="person" {{ old('type') == 'person' ? 'selected' : '' }}>Person</option>
                             </select>
@@ -84,39 +83,11 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label for="mobile2" class="form-label">Mobile 2 (Optional)</label>
-                            <input type="text" name="mobile2" class="form-control" id="mobile2" placeholder="017XXXXXXXX" value="{{ old('mobile2') }}">
-                        </div>
-
-                        <div class="col-md-6">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="example@email.com" value="{{ old('email') }}">
                             @error('email')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="email2" class="form-label">Email 2 (Optional)</label>
-                            <input type="email" name="email2" class="form-control" id="email2" placeholder="example@email.com" value="{{ old('email2') }}">
-                        </div>
-
-                        <!-- Optional Fields for Person only -->
-                        <div id="optional-person-fields" style="display: none;">
-                            <div class="col-md-4">
-                                <label for="skype" class="form-label">Skype (Optional)</label>
-                                <input type="text" name="skype" class="form-control" id="skype" placeholder="Skype ID" value="{{ old('skype') }}">
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="whatsapp" class="form-label">WhatsApp (Optional)</label>
-                                <input type="text" name="whatsapp" class="form-control" id="whatsapp" placeholder="WhatsApp number" value="{{ old('whatsapp') }}">
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="twitter" class="form-label">Twitter (Optional)</label>
-                                <input type="text" name="twitter" class="form-control" id="twitter" placeholder="@username" value="{{ old('twitter') }}">
-                            </div>
                         </div>
 
                         <div class="col-12">
@@ -139,48 +110,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const typeSelect = document.getElementById('type');
     const officeFields = document.getElementById('office-fields');
     const personFields = document.getElementById('person-fields');
-    const optionalPersonFields = document.getElementById('optional-person-fields');
     const titleLabel = document.getElementById('title-label');
     const titleRequired = document.getElementById('title-required');
 
     typeSelect.addEventListener('change', function() {
         const type = this.value;
         
-        if (type === 'head_office' || type === 'liaison_office' || type === 'branch') {
+        if (type === 'head_office' || type === 'branch') {
             if (type === 'head_office') {
                 titleLabel.textContent = 'Head Office Name';
-            } else if (type === 'liaison_office') {
-                titleLabel.textContent = 'Liaison Office Name';
             } else {
                 titleLabel.textContent = 'Branch Name';
             }
             titleRequired.style.display = 'none';
             officeFields.style.display = 'block';
             personFields.style.display = 'none';
-            optionalPersonFields.style.display = 'none';
-            // Clear person fields
             document.getElementById('name').value = '';
-            document.getElementById('skype').value = '';
-            document.getElementById('whatsapp').value = '';
-            document.getElementById('twitter').value = '';
         } else if (type === 'person') {
             titleLabel.textContent = 'Designation';
             titleRequired.style.display = 'inline';
             officeFields.style.display = 'none';
             personFields.style.display = 'block';
-            optionalPersonFields.style.display = 'flex';
-            // Clear office fields
             document.getElementById('address').value = '';
         } else {
             titleLabel.textContent = 'Title/Designation';
             titleRequired.style.display = 'none';
             officeFields.style.display = 'none';
             personFields.style.display = 'none';
-            optionalPersonFields.style.display = 'none';
         }
     });
 
-    // Trigger on page load if old value exists
     if (typeSelect.value) {
         typeSelect.dispatchEvent(new Event('change'));
     }

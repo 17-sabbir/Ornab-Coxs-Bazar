@@ -162,9 +162,8 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="programsDropdown">
                     <li><a class="dropdown-item" href="{{ route('frontend.projects') }}">{{ 'Our Projects' }}</a></li>
-                    {{-- <li><a class="dropdown-item" href="{{ route('key.focus.area') }}">Key Focus Area</a></li> --}}
-                    <li><a class="dropdown-item" href="{{ route('ongoing.project') }}">{{ 'Ongoing Programs' }}</a></li>
                     <li><a class="dropdown-item" href="{{ route('project.archieve') }}">{{ 'Project Archieve' }}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('ongoing.project') }}">{{ 'Ongoing Programs' }}</a></li>
                 </ul>
                 </li>
 

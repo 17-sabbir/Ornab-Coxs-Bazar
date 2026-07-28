@@ -24,16 +24,9 @@
                                 <strong>Head Office:</strong> <br>
                                 @php
                                     $headOffice = DB::table('contacts')->where('type', 'head_office')->where('status', 'active')->first();
-                                    $liaisonOffice = DB::table('contacts')->where('type', 'liaison_office')->where('status', 'active')->first();
-
                                     $headOfficeAddress = $headOffice->address ?? ($orgProfile->head_office_address ?? '');
-                                    $liaisonOfficeAddress = $liaisonOffice->address ?? ($orgProfile->liaison_office_address ?? '');
                                 @endphp
                                 <small class="text-secondary">{!! nl2br(e($headOfficeAddress)) !!}</small>
-                            </li>
-                             <li class="list-group-item py-3">
-                                <strong>Liaison Office:</strong> <br>
-                                <small class="text-secondary">{!! nl2br(e($liaisonOfficeAddress)) !!}</small>
                             </li>
                         </ul>
                             <div class="p-3 bg-light">

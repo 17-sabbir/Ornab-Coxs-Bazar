@@ -2,7 +2,7 @@
 @section('content')
 <style>
     .transparency-hero {
-        background: linear-gradient(135deg, #0d9488, #0d5f49);
+        background: linear-gradient(135deg, #1e293b, #0f172a);
         color: #fff;
         padding: 45px 0 70px;
         position: relative;
@@ -20,26 +20,26 @@
         border: none;
         border-radius: 14px;
         overflow: hidden;
-        box-shadow: 0 4px 20px rgba(13,94,73,.10);
+        box-shadow: 0 4px 20px rgba(15,23,42,.10);
         transition: transform .3s ease, box-shadow .3s ease;
     }
-    .report-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(13,94,73,.18); }
+    .report-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(15,23,42,.18); }
     .report-card .icon-box {
         height: 190px;
-        background: linear-gradient(135deg, #e6f7f2, #d3f0e8);
+        background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
         display: flex; align-items: center; justify-content: center;
     }
-    .report-card .icon-box i { font-size: 4rem; color: #0d9488; }
+    .report-card .icon-box i { font-size: 4rem; color: #1e293b; }
     .report-card .btn-download {
-        background: #0d9488; border: none; color: #fff; font-weight: 600;
+        background: #1e293b; border: none; color: #fff; font-weight: 600;
         border-radius: 8px;
     }
-    .report-card .btn-download:hover { background: #0d5f49; }
+    .report-card .btn-download:hover { background: #0f172a; }
 </style>
 
 <section class="transparency-hero">
     <div class="container text-center">
-        <p class="lead mb-0">Audit reports and financial summaries that keep us accountable.</p>
+        <p class="lead mb-0">Audited financial statements, income & expenditure, and audit reports.</p>
     </div>
 </section>
 
@@ -54,14 +54,14 @@
                             <img src="{{ asset('storage/'.$statement->cover_image) }}" class="card-img-top" alt="{{ $statement->title }}" style="height: 200px; object-fit: cover;">
                         @else
                             <div class="icon-box">
-                                <i class="fas fa-chart-pie"></i>
+                                <i class="fas fa-file-invoice-dollar"></i>
                             </div>
                         @endif
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{ $statement->title }}</h5>
                             <p class="text-muted mb-2"><i class="far fa-calendar-alt"></i> {{ $statement->year }}</p>
                             @if($statement->description)
-                                <p class="card-text text-muted small">{{ Str::limit($statement->description, 150) }}</p>
+                                <p class="card-text text-muted small">{{ $statement->description }}</p>
                             @endif
                             <div class="mt-auto">
                                 @if($statement->file_path)

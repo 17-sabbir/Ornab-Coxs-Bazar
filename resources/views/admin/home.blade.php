@@ -55,39 +55,22 @@
         </a>
     </div>
     <div class="col">
-        <a href="{{ route('programs.index') }}" class="text-decoration-none text-dark">
-            <div class="card radius-10 border-start border-0 border-3 border-success card-hover-zoom">
-                <div class="card-body">
-                    <div class="d-flex align-items-center">
-                        <div>
-                            <p class="mb-0 text-secondary font-weight-bold">Focus Area</p>
-                            <h4 class="my-1 text-success">{{ $total_programs }}</h4>
-                        </div>
-                        <div class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto">
-                            <i class='bx bx-bullseye'></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col">
-        <a href="{{ route('admin.donations.index') }}" class="text-decoration-none text-dark">
-            <div class="card radius-10 border-start border-0 border-3 border-warning card-hover-zoom">
-                <div class="card-body">
-                    <div class="d-flex align-items-center">
-                        <div>
-                            <p class="mb-0 text-secondary font-weight-bold">Pending Donations</p>
-                            <h4 class="my-1 text-warning">{{ $pending_donations_count }}</h4>
-                        </div>
-                        <div class="widgets-icons-2 rounded-circle bg-gradient-blooker text-white ms-auto">
-                            <i class='bx bx-time-five'></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
+         <a href="{{ route('admin.donations.index') }}" class="text-decoration-none text-dark">
+             <div class="card radius-10 border-start border-0 border-3 border-warning card-hover-zoom">
+                 <div class="card-body">
+                     <div class="d-flex align-items-center">
+                         <div>
+                             <p class="mb-0 text-secondary font-weight-bold">Pending Donations</p>
+                             <h4 class="my-1 text-warning">{{ $pending_donations_count }}</h4>
+                         </div>
+                         <div class="widgets-icons-2 rounded-circle bg-gradient-blooker text-white ms-auto">
+                             <i class='bx bx-time-five'></i>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </a>
+     </div>
     <div class="col">
         <a href="{{ route('team.index') }}" class="text-decoration-none text-dark">
             <div class="card radius-10 border-start border-0 border-3 border-success card-hover-zoom">

@@ -29,8 +29,9 @@
         <div class="tab-pane fade show active" id="pills-all" role="tabpanel">
             <div class="row g-4">
                 @foreach($projects as $project)
+                @php $projectStatus = strtolower($project->status ?? ''); @endphp
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm border-0 border-top border-4 {{ $project->status == 'ongoing' ? 'border-success' : 'border-secondary' }}">
+                    <div class="card h-100 shadow-sm border-0 border-top border-4 {{ $projectStatus == 'ongoing' ? 'border-success' : 'border-secondary' }}">
                         {{-- Image Section (Top) --}}
                         <div style="height: 220px; overflow: hidden; position: relative;">
                             @if(!empty($project->image))
@@ -40,7 +41,7 @@
                                     <i class="fa-regular fa-folder-open fa-3x text-secondary opacity-25"></i>
                                 </div>
                             @endif
-                            <span class="position-absolute top-0 end-0 m-3 badge {{ $project->status == 'ongoing' ? 'bg-success' : 'bg-secondary' }}">{{ ucfirst($project->status) }}</span>
+                            <span class="position-absolute top-0 end-0 m-3 badge {{ $projectStatus == 'ongoing' ? 'bg-success' : 'bg-secondary' }}">{{ ucfirst($project->status) }}</span>
                         </div>
 
                         <div class="card-body d-flex flex-column">
@@ -75,7 +76,7 @@
         <!-- Ongoing Tab -->
         <div class="tab-pane fade" id="pills-ongoing" role="tabpanel">
              <div class="row g-4">
-                @foreach($projects->where('status', 'ongoing') as $project)
+                @foreach($projects->filter(function($project){ return strtolower($project->status) == 'ongoing'; }) as $project)
                  <div class="col-lg-4 col-md-6">
                     <div class="card h-100 shadow-sm border-0 border-top border-4 border-success">
                         {{-- Image Section (Top) --}}
@@ -122,7 +123,7 @@
         <!-- Completed Tab -->
         <div class="tab-pane fade" id="pills-completed" role="tabpanel">
              <div class="row g-4">
-                @foreach($projects->where('status', 'completed') as $project)
+                @foreach($projects->filter(function($project){ return strtolower($project->status) == 'completed'; }) as $project)
                  <div class="col-lg-4 col-md-6">
                     <div class="card h-100 shadow-sm border-0 border-top border-4 border-secondary">
                         {{-- Image Section (Top) --}}

@@ -5,7 +5,7 @@
   <!-- ======= Policy and Guideline Section ======= -->
   <section class="pg-hero">
     <div class="container text-center">
-      <span class="pg-eyebrow">Governance & Compliance</span>
+      {{-- <span class="pg-eyebrow">Governance & Compliance</span> --}}
       <h1 class="pg-title">Policy and Guideline</h1>
       <p class="pg-lead">The frameworks that guide our accountability, safeguarding, and transparent operations.</p>
     </div>
