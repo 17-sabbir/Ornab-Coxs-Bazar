@@ -2,151 +2,114 @@
 
 @section('content')
 
-  <!-- ======= Modern Gradient Header ======= -->
-  <div class="container pt-5 pb-3 text-center">
-    <h1 class="display-3 fw-bold text-uppercase" style="background: linear-gradient(to right, #009688, #8bc34a); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+<!-- ======= Career Page Header ======= -->
+<div class="container pt-4 pb-3 text-center">
+    <h1 class="fw-bold mb-2" style="font-size: 2.2rem; color: #0d9488; font-family: 'Playfair Display', serif;">
         Career with Ornab Cox's Bazar
     </h1>
-    <p class="lead text-muted mx-auto mt-2" style="max-width: 600px;">
+    <p class="mx-auto mt-2" style="max-width: 600px; color: #6b7280; font-size: 0.95rem; line-height: 1.7;">
         Join our team of dedicated professionals working to eliminate poverty and gender discrimination.
     </p>
-  </div>
+</div>
 
-  <!-- ======= Interactive Career Section ======= -->
-  <section class="modern-container bg-white">
-    <div class="container" data-aos="fade-up">
+<!-- ======= Career Content ======= -->
+<section class="pt-2 pb-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Left Column -->
+            <div class="col-lg-7">
+                <div class="pe-lg-4">
+                    <!-- About Us (Dynamic) -->
+                    <div class="mb-4">
+                        <h3 class="fw-bold mb-3" style="color: #10372f; font-size: 1.3rem; border-left: 4px solid #0d9488; padding-left: 12px;">
+                            About Us
+                        </h3>
+                        <div class="text-secondary" style="line-height: 1.85; font-size: 0.95rem; text-align: justify;">
+                            {!! $about_us->about_us ?? '<p>Ornab Cox\'s Bazar is a non-government, non-profit, and non-political voluntary social development organization committed to community welfare, resilience, and sustainable development. We work together with disadvantaged communities to create sustainable change.</p>' !!}
+                        </div>
+                    </div>
 
-      <div class="row g-5">
-          <!-- Left Column: Content -->
-          <div class="col-lg-7">
-              <div class="pe-lg-4">
-                  <div class="mb-5">
-                      <h3 class="fw-bold text-dark border-start border-5 border-primary ps-3 mb-3">About Us</h3>
-                      <p class="text-secondary lead text-justify">
-                          <strong>Ornab Cox's Bazar</strong> is a non-government, non-profit, and non-political voluntary social development organization committed to community welfare, resilience, and sustainable development. 
-                          We work together with disadvantaged communities to create sustainable change.
-                      </p>
-                  </div>
+                    <!-- Office Hours -->
+                    <div class="p-4 rounded-4" style="background: #064e3b; color: #fff;">
+                        <h5 class="fw-bold mb-3" style="font-size: 1.05rem;">
+                            <i class="fa-regular fa-clock me-2" style="color: #fbbf24;"></i> Office Hours
+                        </h5>
+                        <ul class="list-unstyled mb-0" style="line-height: 2; font-size: 0.9rem;">
+                            <li>
+                                <i class="fa-solid fa-check me-2" style="color: #34d399;"></i>
+                                Saturday to Thursday: 09:00 AM to 05:00 PM
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-minus me-2" style="color: #94a3b8;"></i>
+                                Friday: Weekly Holiday
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-                  <div class="row g-4 mb-5">
-                      <div class="col-md-6">
-                            <div class="card h-100 border-0 shadow-sm bg-light hover-lift">
-                                <div class="card-body p-4">
-                                    <div class="icon-circle bg-white text-primary shadow-sm mb-3">
-                                        <i class="fa-solid fa-people-arrows fa-lg"></i>
-                                    </div>
-                                    <h5 class="fw-bold">Work Environment</h5>
-                                    <p class="small text-muted mb-0">
-                                        A structured, non-bureaucratic system where dignity, security, and gender balance are prioritized.
-                                    </p>
-                                </div>
+            <!-- Right Column -->
+            <div class="col-lg-5">
+                <!-- Recruitment Contact -->
+                <div class="card border-0 shadow-lg mb-4 overflow-hidden" style="border-radius: 16px; background: #064e3b;">
+                    <div class="card-body p-5">
+                        <h4 class="fw-bold mb-3" style="color: #fff; font-size: 1.2rem;">Recruitment Contact</h4>
+                        <p class="mb-4" style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7;">
+                            Please reach out to our head office for any recruitment inquiries.
+                        </p>
+
+                        @php $headOffice = DB::table('contacts')->where('type', 'head_office')->where('status', 'active')->first(); @endphp
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0 me-3" style="width: 36px; height: 36px; background: rgba(255,255,255,0.15); color: #fbbf24;">
+                                <i class="fa-solid fa-map-location-dot"></i>
                             </div>
-                      </div>
-                      <div class="col-md-6">
-                            <div class="card h-100 border-0 shadow-sm bg-light hover-lift">
-                                <div class="card-body p-4">
-                                    <div class="icon-circle bg-white text-success shadow-sm mb-3">
-                                        <i class="fa-solid fa-users fa-lg"></i>
-                                    </div>
-                                    <h5 class="fw-bold">Staff Strength</h5>
-                                    <p class="small text-muted mb-0">
-                                        A dedicated team of full-time staff and volunteers responsible for impactful field activities.
-                                    </p>
-                                </div>
+                            <div style="color: rgba(255,255,255,0.9); font-size: 0.9rem; line-height: 1.6;">
+                                <strong style="color: #fff;">Head Office:</strong><br>
+                                {{ $headOffice->address ?? '' }}
                             </div>
-                      </div>
-                  </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0 me-3" style="width: 36px; height: 36px; background: rgba(255,255,255,0.15); color: #fbbf24;">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">{{ $headOffice->email ?? '' }}</span>
+                        </div>
+                    </div>
+                </div>
 
-                  <div class="bg-primary bg-opacity-10 p-4 rounded-4 mb-4">
-                      <h5 class="fw-bold text-dark mb-3"><i class="fa-regular fa-clock me-2"></i> Office Hours</h5>
-                      <ul class="list-unstyled mb-0 text-dark">
-                          <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Saturday to Thursday: 09:00 AM to 05:00 PM</li>
-                          <li><i class="fa-solid fa-minus text-secondary me-2"></i> Friday: Weekly Holiday</li>
-                      </ul>
-                  </div>
-
-              </div>
-          </div>
-
-          <!-- Right Column: Contact & Downloads -->
-          <div class="col-lg-5">
-              
-              <!-- Contact Card -->
-              <div class="card border-0 shadow-lg mb-5 bg-dark text-white overflow-hidden position-relative">
-                  <div class="position-absolute top-0 end-0 bg-primary w-100 h-100 opacity-10" style="transform: skewX(-20deg) translateX(50%);"></div>
-                  <div class="card-body p-5 position-relative z-1">
-                      <h4 class="fw-bold mb-4">Recruitment Contact</h4>
-                      <p class="mb-4 text-white-50">Please reach out to our head office for any recruitment inquiries.</p>
-                      
-                      @php $headOffice = DB::table('contacts')->where('type', 'head_office')->where('status', 'active')->first(); @endphp
-                      <div class="d-flex align-items-start mb-3">
-                          <i class="fa-solid fa-map-location-dot mt-1 me-3 text-warning"></i>
-                          <span>
-                              <strong>Head Office:</strong><br>
-                              {{ $headOffice->address ?? '' }}
-                          </span>
-                      </div>
-                      <div class="d-flex align-items-center">
-                          <i class="fa-solid fa-envelope me-3 text-warning"></i>
-                          <span>{{ $headOffice->email ?? '' }}</span>
-                      </div>
-                  </div>
-              </div>
-
-               <!-- Downloads Section -->
-               <h4 class="fw-bold text-dark mb-3">Available Downloads</h4>
-               <div class="d-flex flex-column gap-3">
-                    @foreach ($career as $key => $data)
-                        <a href="{{ asset('images/invoked/'.$data->file) }}" target="_blank" class="download-link text-decoration-none">
-                            <div class="card border-0 shadow-sm p-3 d-flex flex-row align-items-center bg-white transition-all link-card">
-                                <div class="rounded-circle bg-light p-3 me-3 d-flex align-items-center justify-content-center text-danger">
-                                    <i class="fa-solid fa-file-pdf fs-4"></i>
+                <!-- Available Downloads -->
+                <h4 class="fw-bold mb-3" style="color: #10372f; font-size: 1.1rem;">Available Downloads</h4>
+                <div class="d-flex flex-column gap-3">
+                    @foreach ($career as $data)
+                        <a href="{{ asset('images/invoked/'.$data->file) }}" target="_blank" class="text-decoration-none">
+                            <div class="card border-0 shadow-sm p-3 d-flex flex-row align-items-center bg-white" style="border-radius: 12px; transition: all 0.3s ease; border-left: 4px solid #0d9488 !important;">
+                                <div class="d-flex align-items-center justify-content-center rounded-circle me-3 flex-shrink-0" style="width: 44px; height: 44px; background: #fef2f2; color: #dc2626;">
+                                    <i class="fa-solid fa-file-pdf fa-lg"></i>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h6 class="fw-bold text-dark mb-1">{{ $data->name }}</h6>
-                                    <small class="text-muted">Click to download file</small>
+                                    <h6 class="fw-bold mb-1" style="color: #1f2937; font-size: 0.9rem;">{{ $data->name }}</h6>
+                                    <small style="color: #9ca3af; font-size: 0.8rem;">PDF Document</small>
                                 </div>
-                                <div class="text-primary">
-                                    <i class="fa-solid fa-cloud-arrow-down"></i>
+                                <div class="flex-shrink-0">
+                                    <i class="fa-solid fa-download" style="color: #0d9488;"></i>
                                 </div>
                             </div>
                         </a>
                     @endforeach
                     @if(count($career) == 0)
-                        <div class="alert alert-light border text-center">No active job circulars available.</div>
+                        <div class="alert alert-light border text-center" style="border-radius: 12px; font-size: 0.9rem;">No active job circulars available.</div>
                     @endif
-               </div>
-
-          </div>
-      </div>
-
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <style>
-      .icon-circle {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-      }
-      .hover-lift {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .hover-lift:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-      }
-      .link-card {
-          transition: all 0.2s ease;
-          border-left: 4px solid transparent !important;
-      }
-      .download-link:hover .link-card {
-           transform: translateX(5px);
-           border-left-color: var(--modern-primary) !important;
-           background-color: #f8f9fa !important;
-      }
-  </style>
+<style>
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.08) !important;
+    }
+</style>
+
 @endsection

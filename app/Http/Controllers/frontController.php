@@ -181,8 +181,9 @@ class frontController extends Controller
     public function career()
     {
         $career = DB::table('invoked')->get();
+        $about_us = DB::table('about_us')->first();
 
-        return view('frontend.career', compact('career'));
+        return view('frontend.career', compact('career', 'about_us'));
     }
 
     // Volunteer Opportunities
