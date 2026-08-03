@@ -45,10 +45,21 @@
                                     @endif
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h6 class="fw-bold mb-1" style="color: #1a1a1a; font-size: 0.95rem;">{{ $contact->title ?: ucfirst(str_replace('_', ' ', $contact->type)) }}</h6>
-                                    <div class="mb-1" style="color: #6b7280; font-size: 0.85rem; line-height: 1.5;">
-                                        <i class="fa-solid fa-location-dot me-1" style="color: #0F766E;"></i> {{ $contact->address }}
-                                    </div>
+                                    @if($contact->type == 'person')
+                                        <h6 class="fw-bold mb-1" style="color: #1a1a1a; font-size: 0.95rem;">{{ $contact->name ?: ucfirst(str_replace('_', ' ', $contact->type)) }}</h6>
+                                        @if($contact->title)
+                                            <div class="mb-1" style="color: #6b7280; font-size: 0.85rem; line-height: 1.5;">
+                                                <i class="fa-solid fa-briefcase me-1" style="color: #0F766E;"></i> {{ $contact->title }}
+                                            </div>
+                                        @endif
+                                    @else
+                                        <h6 class="fw-bold mb-1" style="color: #1a1a1a; font-size: 0.95rem;">{{ $contact->title ?: ucfirst(str_replace('_', ' ', $contact->type)) }}</h6>
+                                        @if($contact->address)
+                                            <div class="mb-1" style="color: #6b7280; font-size: 0.85rem; line-height: 1.5;">
+                                                <i class="fa-solid fa-location-dot me-1" style="color: #0F766E;"></i> {{ $contact->address }}
+                                            </div>
+                                        @endif
+                                    @endif
                                     @if($contact->mobile)
                                         <div class="mb-1" style="color: #6b7280; font-size: 0.85rem;">
                                             <i class="fa-solid fa-phone me-1" style="color: #0F766E;"></i> {{ $contact->mobile }}

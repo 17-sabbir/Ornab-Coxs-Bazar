@@ -48,40 +48,42 @@
                     <tbody>
                         @forelse($directors as $key => $director)
                         <tr>
-                            <td>{{ $key + 1 }}</td>
-                            <td>
+                            <td class="text-center align-middle">{{ $key + 1 }}</td>
+                            <td class="text-center align-middle">
                                 @if($director->image)
                                     <img src="{{ asset('images/board_of_directors/'.$director->image) }}" width="50" height="50" style="object-fit:cover;border-radius:50%;">
                                 @else
                                     <span class="text-muted">No Image</span>
                                 @endif
                             </td>
-                            <td>{{ $director->name }}</td>
-                            <td>{{ $director->designation }}</td>
-                            <td>{{ $director->order }}</td>
-                            <td>
+                            <td class="align-middle">{{ $director->name }}</td>
+                            <td class="align-middle">{{ $director->designation }}</td>
+                            <td class="text-center align-middle">{{ $director->order }}</td>
+                            <td class="text-center align-middle">
                                 @if($director->is_active)
                                     <span class="badge bg-success">Active</span>
                                 @else
                                     <span class="badge bg-secondary">Inactive</span>
                                 @endif
                             </td>
-                            <td>
-                                <a href="{{ route('admin.board_of_directors.edit', $director) }}" class="btn btn-sm btn-info">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <form action="{{ route('admin.board_of_directors.destroy', $director) }}" method="POST" class="d-inline" onsubmit="return confirm('Delete this member?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </form>
+                            <td class="text-center align-middle">
+                                <div class="d-flex gap-1 justify-content-center">
+                                    <a href="{{ route('admin.board_of_directors.edit', $director) }}" class="btn btn-sm btn-primary" title="Edit">
+                                        <i class="bx bx-edit"></i>
+                                    </a>
+                                    <form action="{{ route('admin.board_of_directors.destroy', $director) }}" method="POST" class="d-inline" onsubmit="return confirm('Delete this member?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger" title="Delete">
+                                            <i class="bx bx-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="8" class="text-center">No board members found.</td>
+                            <td colspan="7" class="text-center text-muted py-4">No board members found.</td>
                         </tr>
                         @endforelse
                     </tbody>

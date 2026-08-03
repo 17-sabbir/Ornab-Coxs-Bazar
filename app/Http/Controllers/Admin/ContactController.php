@@ -9,22 +9,9 @@ use Illuminate\Support\Facades\DB;
 class ContactController extends Controller
 {
     // Index - All Contacts
-    public function index(Request $request)
+    public function index()
     {
-        $query = DB::table('contacts');
-
-        if ($request->filled('search')) {
-            $search = $request->search;
-            $query->where(function ($q) use ($search) {
-                $q->where('title', 'like', "%{$search}%")
-                  ->orWhere('address', 'like', "%{$search}%")
-                  ->orWhere('name', 'like', "%{$search}%")
-                  ->orWhere('mobile', 'like', "%{$search}%")
-                  ->orWhere('email', 'like', "%{$search}%");
-            });
-        }
-
-        $contacts = $query->orderBy('id', 'desc')->get();
+        $contacts = DB::table('contacts')->orderBy('id', 'desc')->get();
         return view('admin.contact.index', compact('contacts'));
     }
 
