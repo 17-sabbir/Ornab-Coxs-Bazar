@@ -10,7 +10,7 @@
             <!-- Left: Hero Text -->
             <div class="col-lg-5 mb-4 mb-lg-0">
                 <h6 class="text-uppercase fw-bold mb-2" style="color: #0F766E; letter-spacing: 1.5px; font-size: 0.85rem;">Get in Touch</h6>
-                <h1 class="fw-bold mb-3" style="font-size: 2.8rem; line-height: 1.2; color: #1a1a1a; font-family: 'Playfair Display', serif;">
+                <h1 class="fw-bold mb-3" style="font-size: 2.8rem; line-height: 1.2; color: #1a1a1a; font-family: var(--font-heading);">
                     Contact<br>Ornab Cox's Bazar
                 </h1>
                 <p class="mb-4" style="color: #6b7280; line-height: 1.7; font-size: 0.95rem;">

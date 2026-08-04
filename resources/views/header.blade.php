@@ -100,14 +100,14 @@
         }
         
         .brand-title {
-            font-family: 'Playfair Display', serif;
+            font-family: var(--font-heading);
             font-weight: 800;
             font-size: 1.1rem; /* reduced */
             letter-spacing: -0.5px;
         }
 
         .brand-subtitle {
-            font-family: 'DM Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.75rem; /* reduced */
             font-weight: 500;
             opacity: 0.9;

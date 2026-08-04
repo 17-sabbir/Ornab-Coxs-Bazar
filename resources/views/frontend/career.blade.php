@@ -4,7 +4,7 @@
 
 <!-- ======= Career Page Header ======= -->
 <div class="container pt-4 pb-3 text-center">
-    <h1 class="fw-bold mb-2" style="font-size: 2.2rem; color: #0d9488; font-family: 'Playfair Display', serif;">
+    <h1 class="fw-bold mb-2" style="font-size: 2.2rem; color: #0d9488; font-family: var(--font-heading);">
         Career with Ornab Cox's Bazar
     </h1>
     <p class="mx-auto mt-2" style="max-width: 600px; color: #6b7280; font-size: 0.95rem; line-height: 1.7;">

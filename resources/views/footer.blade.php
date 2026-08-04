@@ -6,7 +6,7 @@
     <style>
         /* ===== GLOBAL ===== */
         .ornab-footer-wrapper {
-            font-family: 'DM Sans', sans-serif;
+            font-family: var(--font-body);
         }
 
         /* ===== MAIN BACKGROUND ===== */
@@ -43,7 +43,7 @@
         /* ===== COLUMN HEADINGS ===== */
         .ornab-heading {
             color: #ffffff;
-            font-family: 'Playfair Display', serif;
+            font-family: var(--font-heading);
             font-weight: 700;
             font-size: 1.15rem;
             letter-spacing: 0.3px;
@@ -88,7 +88,7 @@
             color: #ffffff;
             font-size: 1.25rem;
             font-weight: 700;
-            font-family: 'Playfair Display', serif;
+            font-family: var(--font-heading);
             line-height: 1.2;
         }
         .ornab-brand-tagline {
@@ -238,7 +238,7 @@
         .ornab-bottom-text {
             color: rgba(255,255,255,0.45);
             font-size: 0.82rem;
-            font-family: 'DM Sans', sans-serif;
+            font-family: var(--font-body);
             letter-spacing: 0.2px;
         }
         .ornab-bottom-divider {

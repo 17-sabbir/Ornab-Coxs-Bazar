@@ -12,7 +12,9 @@
     <meta name="keywords" content="@yield('seo_keywords', '')">
     @yield('seo_og')
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     {{-- bootstrap css --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -22,6 +24,17 @@
 
     {{-- Global Branding --}}
     <link rel="stylesheet" href="{{ asset('css/branding.css') }}">
+
+    <style>
+        /* Frontend fonts: Poppins (headings) + Inter (body) */
+        body { font-family: var(--font-body) !important; }
+        h1, h2, h3, h4, h5, h6,
+        .h1, .h2, .h3, .h4, .h5, .h6,
+        .display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
+        .navbar-brand, .card-title, .modal-title {
+            font-family: var(--font-heading) !important;
+        }
+    </style>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

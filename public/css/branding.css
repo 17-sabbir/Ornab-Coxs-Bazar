@@ -43,6 +43,14 @@
     /* Backward compat */
     --brand-navy: var(--secondary-color);
     /* Backward compat */
+
+    /* Typography tokens — Frontend fonts */
+    --font-heading: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+    /* Bootstrap 5 body font override */
+    --bs-body-font-family: var(--font-body);
+    --bs-font-sans-serif: var(--font-body);
 }
 
 /* Base utility overrides for specificity */

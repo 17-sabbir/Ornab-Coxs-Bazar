@@ -49,7 +49,7 @@
                              <h2 class="display-6 fw-bold text-dark mb-4">A Vision for Tomorrow</h2>
 
                              <div class="position-relative ps-4 border-start border-2 border-danger">
-                                 <p class="text-muted" style="font-family: 'Georgia', serif; font-size: 1.15rem; line-height: 1.8;">
+                                 <p class="text-muted" style="font-family: var(--font-body); font-size: 1.15rem; line-height: 1.8;">
                                     {!! nl2br(e($message->message)) !!}
                                  </p>
                              </div>

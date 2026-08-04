@@ -36,6 +36,11 @@
             ];
         @endphp
         <script type="application/ld+json">{!! json_encode($orgSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
+    {{-- Frontend fonts: Poppins (headings) + Inter (body) --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     {{-- bootstrap css --}}
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -48,18 +53,19 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <style>
-        /* Import Vibrant Vision Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800;900&display=swap');
-
+        /* Frontend fonts: Poppins (headings) + Inter (body) */
         body {
-            font-family: 'DM Sans', sans-serif !important;
+            font-family: var(--font-body) !important;
             background-color: #F8FAFC; /* Canvas */
             color: #131920; /* Ink */
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .navbar-brand {
-            font-family: 'Playfair Display', serif !important;
+        h1, h2, h3, h4, h5, h6,
+        .h1, .h2, .h3, .h4, .h5, .h6,
+        .display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
+        .navbar-brand, .card-title, .modal-title {
+            font-family: var(--font-heading) !important;
         }
 
         :root {

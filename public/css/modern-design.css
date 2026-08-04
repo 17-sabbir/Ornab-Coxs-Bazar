@@ -1,5 +1,5 @@
 /* Modern Design System for UERD */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/* Frontend fonts (Poppins/Inter) are loaded globally in main.blade.php and branded via --font-body/--font-heading tokens */
 
 :root {
     --modern-primary: #158368;
@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: var(--font-body) !important;
     background-color: #f1f5f9;
     color: #334155;
 }

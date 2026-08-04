@@ -27,7 +27,7 @@ Ornab Coxs Bazar
     }
     
     .hero-title {
-        font-family: 'Playfair Display', serif; 
+        font-family: var(--font-heading); 
         font-size: 3rem; 
         font-weight: 800;
         line-height: 1.1;
