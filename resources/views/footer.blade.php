@@ -295,7 +295,7 @@
 
     {{-- ===== MAIN FOOTER CONTENT ===== --}}
     <div class="ornab-footer-main">
-        <div class="container px-3 py-5 position-relative" style="z-index: 1;">
+        <div class="container px-3 py-4 position-relative" style="z-index: 1;">
             <div class="row g-4">
 
                 {{-- COLUMN 1: Brand --}}

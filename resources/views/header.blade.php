@@ -206,10 +206,9 @@
 
                 </ul>
 
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center" style="column-gap: 20px;">
+                <ul class="navbar-nav mb-1 mb-lg-0 align-items-lg-center" style="column-gap: 4px; margin-left: 4px;">
                 <!-- Contact -->
-                <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link text-dark" style="font-weight: 500; font-size: 1.05rem;">{{ 'Contact' }}</a></li>
-                    <li class="nav-item"><a href="{{ route('donate') }}" class="btn d-inline-flex align-items-center justify-content-center gap-2 text-white" style="border-radius: 50px; background-color: #EA9918; border: none; padding: 10px 30px; font-weight: 600; font-size: 1.05rem; box-shadow: none;"><i class="fa-regular fa-heart"></i> {{ 'Donate' }}</a></li>
+                <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link fw-bold text-dark" style="font-size: 1.05rem;">{{ 'Contact' }}</a></li>
                 </ul>
             </div>
         </div>

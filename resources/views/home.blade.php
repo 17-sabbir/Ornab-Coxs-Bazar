@@ -19,7 +19,7 @@ Ornab Coxs Bazar
         letter-spacing: 2px;
         color: var(--brand-gold); /* Highlight */
         border: 1px solid rgba(252, 211, 47, 0.3);
-        margin-bottom: 25px;
+        margin-bottom: 16px;
         text-transform: uppercase;
         font-weight: 700;
         box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -31,7 +31,7 @@ Ornab Coxs Bazar
         font-size: 3rem; 
         font-weight: 800;
         line-height: 1.1;
-        margin-bottom: 25px;
+        margin-bottom: 16px;
         letter-spacing: -0.02em;
         max-width: 900px;
         text-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -70,14 +70,61 @@ Ornab Coxs Bazar
     .hero-desc {
         font-size: 1.25rem;
         max-width: 700px;
-        margin-bottom: 40px;
+        margin-bottom: 24px;
         line-height: 1.6;
         color: #ffffff; /* Ensure white color */
         text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Improved shadow for visibility */
     }
+
+    /* Curved bottom edge on the hero slider */
+    .hero-curve {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    /* Scroll-down indicator, centered over the curve */
+    .hero-scroll-indicator {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 28px;
+        height: 44px;
+        border: 2px solid rgba(255, 255, 255, 0.85);
+        border-radius: 16px;
+        display: flex;
+        justify-content: center;
+        padding-top: 8px;
+        z-index: 3;
+        cursor: pointer;
+    }
+
+    .hero-scroll-indicator .dot {
+        width: 4px;
+        height: 10px;
+        background: #ffffff;
+        border-radius: 2px;
+        animation: hero-scroll-bounce 1.6s infinite;
+    }
+
+    @@keyframes hero-scroll-bounce {
+        0%   { opacity: 1; transform: translateY(0); }
+        60%  { opacity: 0.2; transform: translateY(10px); }
+        100% { opacity: 0; transform: translateY(10px); }
+    }
+
+    @@media (max-width: 575.98px) {
+        .hero-curve { height: 60px; }
+        .hero-scroll-indicator { bottom: 14px; width: 24px; height: 36px; }
+    }
     
     .btn-hero-primary {
-        background-color: var(--brand-orange);
+        background-color: var(--primary-color, #198754);
         color: white;
         border: none;
         border-radius: 9999px;
@@ -88,21 +135,21 @@ Ornab Coxs Bazar
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        box-shadow: 0 4px 14px 0 rgba(249, 116, 21, 0.39);
+        box-shadow: 0 4px 14px 0 rgba(25, 135, 84, 0.39);
     }
-    
+
     .btn-hero-primary:hover {
-        background-color: #ff8c3a;
+        background-color: #157347;
         transform: translateY(-2px);
         color: white;
-        box-shadow: 0 6px 20px rgba(249, 116, 21, 0.23);
+        box-shadow: 0 6px 20px rgba(25, 135, 84, 0.35);
     }
-    
+
     .btn-hero-secondary {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(10, 15, 12, 0.55);
         backdrop-filter: blur(10px);
         color: white;
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.25);
         border-radius: 9999px;
         padding: 14px 32px;
         font-weight: 600;
@@ -110,11 +157,12 @@ Ornab Coxs Bazar
         margin-left: 20px;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .btn-hero-secondary:hover {
-        background-color: white;
-        color: #1a202c;
+        background-color: rgba(10, 15, 12, 0.75);
         transform: translateY(-2px);
+        color: white;
+        border-color: rgba(255, 255, 255, 0.45);
     }
 
     /* Watch/Story pill button (matches provided design) */
@@ -209,27 +257,27 @@ Ornab Coxs Bazar
     }
 
     .uerd-section {
-        padding: 4rem 0; /* More white space */
+        padding: 2rem 0;
     }
     @@media (min-width: 992px) {
         .uerd-section {
-            padding: 6rem 0;
+            padding: 2.5rem 0;
         }
     }
 
     /* Reduce stacked section gap (used only where applied) */
     .uerd-section-tight-top {
-        padding-top: 2.25rem;
+        padding-top: 1.5rem;
     }
     .uerd-section-tight-bottom {
-        padding-bottom: 2.25rem;
+        padding-bottom: 1.5rem;
     }
     @@media (min-width: 992px) {
         .uerd-section-tight-top {
-            padding-top: 3rem;
+            padding-top: 2rem;
         }
         .uerd-section-tight-bottom {
-            padding-bottom: 3rem;
+            padding-bottom: 2rem;
         }
     }
 
@@ -281,6 +329,16 @@ Ornab Coxs Bazar
                 {{-- Dark Gradient Overlay --}}
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);"></div>
 
+                {{-- Curved shape --}}
+                <svg class="hero-curve" viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,120 L0,45 Q600,175 1200,45 L1200,120 Z" fill="#ffffff"></path>
+                </svg>
+
+                {{-- Scroll indicator --}}
+                <div class="hero-scroll-indicator" onclick="document.querySelector('.uerd-soft-section')?.scrollIntoView({behavior:'smooth'})">
+                    <span class="dot"></span>
+                </div>
+
                 <div class="container-fluid h-100 position-absolute top-0 start-0 px-0">
                     <div class="d-flex flex-column justify-content-center h-100 text-white">
                         <div class="hero-indented"> <!-- Indented Content -->
@@ -291,6 +349,15 @@ Ornab Coxs Bazar
                             <p class="hero-desc">
                                 <span class="js-typewriter hero-desc-text" data-text="{{ e($slider->description) }}">{{ $slider->description }}</span>
                             </p>
+
+                            <div class="d-flex flex-wrap gap-3 align-items-center mt-3">
+                                <a href="{{ route('frontend.projects') }}" class="btn btn-hero-primary">
+                                    Explore Our Projects <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <a href="{{ route('donate') }}" class="btn btn-hero-secondary">
+                                    Donate Now <i class="fa-solid fa-heart"></i>
+                                </a>
+                            </div>
                         </div> <!-- End Indented Content -->
                     </div>
                 </div>
@@ -315,7 +382,7 @@ Ornab Coxs Bazar
 {{-- End of who we are --}}
 
 {{-- Highlights (from provided design) --}}
-<div class="uerd-soft-section uerd-section" style="padding-top: 2rem; padding-bottom: 2rem;">
+<div class="uerd-soft-section uerd-section" style="padding-top: 1.5rem; padding-bottom: 1.5rem; margin-top: -20px;">
     <style>
         /* Highlights cards (matches provided screenshot) */
         .uerd-highlights-card {
@@ -360,145 +427,137 @@ Ornab Coxs Bazar
     <section class="uerd-impact-section position-relative">
         <style>
             .uerd-impact-section {
-                /* Background image with strong Orange/Yellow gradient overlay */
-                background: linear-gradient(135deg, rgba(255, 160, 0, 0.92) 0%, rgba(255, 111, 0, 0.96) 100%),
-                            url('{{ asset("img/impact.jpg") }}');
-                background-size: cover;
-                background-position: center;
-                /* background-attachment: fixed; Optional: Parallax effect */
-                padding: 1rem 2rem; /* Side padding (mobile/tablet) */
-                color: #ffffff;
+                background-color: transparent;
+                padding: 1.25rem 1.5rem;
+                color: var(--text-dark, #0A2540);
             }
             @media (min-width: 992px) {
-                .uerd-impact-section {
-                    padding-left: 4rem;
-                    padding-right: 4rem;
-                }
+                .uerd-impact-section { padding-left: 2rem; padding-right: 2rem; }
             }
             @media (min-width: 1400px) {
-                .uerd-impact-section {
-                    padding-left: 6rem;
-                    padding-right: 6rem;
-                }
+                .uerd-impact-section { padding-left: 2.5rem; padding-right: 2.5rem; }
             }
+
             .uerd-impact-badge {
-                display: inline-block;
-                padding: 8px 20px;
-                background: rgba(255, 255, 255, 0.2);
-                backdrop-filter: blur(8px);
-                border: 1px solid rgba(255, 255, 255, 0.5);
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 6px 16px;
+                background: #ffffff;
+                border: 1px solid rgba(25, 135, 84, 0.18);
                 border-radius: 50px;
-                font-size: 0.85rem;
+                font-size: 0.78rem;
                 font-weight: 800;
                 text-transform: uppercase;
-                letter-spacing: 1.5px;
-                margin-bottom: 24px;
-                color: #fff;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                letter-spacing: 1.2px;
+                margin-bottom: 16px;
+                color: #198754;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             }
+
             .uerd-impact-heading {
-                font-size: 3.5rem;
+                font-size: 2.6rem;
                 font-weight: 800;
-                line-height: 1.1;
-                margin-bottom: 24px;
-                text-shadow: 0 4px 20px rgba(0,0,0,0.15);
-                color: #ffffff; /* Pure white for impact */
+                line-height: 1.15;
+                margin-bottom: 16px;
+                color: var(--text-dark, #0A2540);
             }
+            .uerd-impact-heading .uerd-impact-heading-accent {
+                color: #198754;
+            }
+
             .uerd-impact-text {
-                font-size: 1.15rem;
+                font-size: 1.05rem;
                 line-height: 1.8;
-                opacity: 0.95;
-                font-weight: 500;
-                color: rgba(255, 255, 255, 0.95); /* Slightly off-white for readability */
-                text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+                font-weight: 400;
+                color: #64748b;
                 max-width: 90%;
             }
-            /* Glassmorphism Cards */
+
             .uerd-glass-card {
-                background: rgba(255, 255, 255, 0.15);
-                backdrop-filter: blur(16px);
-                -webkit-backdrop-filter: blur(16px);
-                border: 1px solid rgba(255, 255, 255, 0.35);
-                border-radius: 24px;
-                padding: 35px 25px;
+                background: #ffffff;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                border-radius: 20px;
+                padding: 24px 20px;
                 text-align: center;
                 height: 100%;
-                transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
             }
             .uerd-glass-card:hover {
-                transform: translateY(-8px);
-                background: rgba(255, 255, 255, 0.25);
-                border-color: rgba(255, 255, 255, 0.6);
+                transform: translateY(-6px);
+                box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
             }
-            .uerd-glass-stat {
-                font-size: 3rem;
-                font-weight: 900;
-                margin-bottom: 8px;
-                line-height: 1;
-                text-shadow: 0 4px 15px rgba(0,0,0,0.2);
-                color: #ffffff;
-            }
-            .uerd-glass-label {
-                font-size: 0.95rem;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                font-weight: 700;
-                opacity: 0.9;
-                color: rgba(255, 255, 255, 0.9);
-            }
+
             .uerd-glass-icon {
-                font-size: 1.8rem;
-                margin-bottom: 16px;
-                opacity: 1;
-                color: #ffffff;
-                filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+                width: 46px;
+                height: 46px;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(25, 135, 84, 0.10);
+                color: #198754;
+                font-size: 1.3rem;
+                margin-bottom: 14px;
+            }
+
+            .uerd-glass-stat {
+                font-size: 2.2rem;
+                font-weight: 900;
+                margin-bottom: 4px;
+                line-height: 1;
+                color: var(--text-dark, #0A2540);
+            }
+
+            .uerd-glass-label {
+                font-size: 0.85rem;
+                text-transform: none;
+                letter-spacing: 0.2px;
+                font-weight: 600;
+                color: #64748b;
             }
         </style>
-        
+
         <div class="container">
             <div class="row align-items-center g-5">
-                {{-- Left Column: Text --}}
-                <div class="col-lg-5" style="padding: 2rem;">
-                    <span class="uerd-impact-badge"><i class="fa-solid fa-bolt me-2"></i> Our Impact</span>
-                    <h2 class="uerd-impact-heading">Over 18 Years of Changing Lives</h2>
+                <div class="col-lg-5" style="padding: 1.5rem;">
+                    <span class="uerd-impact-badge"><i class="fa-solid fa-check"></i> Our Impact</span>
+                    <h2 class="uerd-impact-heading">Over 18 Years of <span class="uerd-impact-heading-accent">Changing Lives</span></h2>
                     <p class="uerd-impact-text lead mb-4">
-                        Since 2008, Ornab Cox's Bazar has served underprivileged communities in Cox's Bazar with a focus on women, adolescents, and children. Through education, health, skills training, and community mobilization, we empower families and build sustainable change across the district.
-                        <span style="color: #ffca28; font-weight: 700;">Empowering Communities. Transforming Lives.</span>
+                        Since 2008, Ornab Cox's Bazar has served underprivileged communities in Cox's Bazar, with a focus on women, adolescents, and children. Through education, health, skills training, and community mobilization, we empower families and build sustainable change across the district.
                     </p>
+                    <a href="{{ route('about.us') }}" class="btn uerd-btn-pill d-inline-flex align-items-center gap-2" style="background-color: #0f5132; color: #fff; font-weight: 700;">
+                        Learn More About Us <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                {{-- Right Column: Stats Grid --}}
-                <div class="col-lg-7" style="padding: 2rem;">
+                <div class="col-lg-7" style="padding: 1.5rem;">
                     <div class="row g-4">
-                        {{-- Stat 1 --}}
                         <div class="col-6">
                             <div class="uerd-glass-card">
-                                <i class="fa-regular fa-hand-holding-heart uerd-glass-icon"></i>
+                                <div class="uerd-glass-icon"><i class="fa-regular fa-hand-holding-heart"></i></div>
                                 <div class="uerd-glass-stat count-up" data-target="{{ $statistics->statistics_donors ?? 0 }}" data-suffix="+">0</div>
                                 <div class="uerd-glass-label">Donors</div>
                             </div>
                         </div>
-                        {{-- Stat 2 --}}
                         <div class="col-6">
                             <div class="uerd-glass-card">
-                                <i class="fa-solid fa-people-carry-box uerd-glass-icon"></i>
+                                <div class="uerd-glass-icon"><i class="fa-solid fa-people-carry-box"></i></div>
                                 <div class="uerd-glass-stat count-up" data-target="{{ $statistics->statistics_beneficiaries ?? 0 }}" data-suffix="+">0</div>
                                 <div class="uerd-glass-label">Beneficiaries</div>
                             </div>
                         </div>
-                        {{-- Stat 3 --}}
                         <div class="col-6">
                             <div class="uerd-glass-card">
-                                <i class="fa-solid fa-hands-holding-circle uerd-glass-icon"></i>
+                                <div class="uerd-glass-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
                                 <div class="uerd-glass-stat count-up" data-target="{{ $statistics->statistics_projects ?? ($projectsCount ?? 0) }}" data-suffix="+">0</div>
                                 <div class="uerd-glass-label">Projects</div>
                             </div>
                         </div>
-                        {{-- Stat 4 --}}
                         <div class="col-6">
                             <div class="uerd-glass-card">
-                                <i class="fa-solid fa-users-viewfinder uerd-glass-icon"></i>
+                                <div class="uerd-glass-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
                                 <div class="uerd-glass-stat count-up" data-target="{{ $statistics->statistics_volunteers ?? 0 }}" data-suffix="+">0</div>
                                 <div class="uerd-glass-label">Volunteers</div>
                             </div>
@@ -508,15 +567,12 @@ Ornab Coxs Bazar
             </div>
         </div>
 
-        {{-- Increment Counter Script --}}
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-                // Integer Counters
                 const counters = document.querySelectorAll('.count-up');
-                // Decimal Counters (for 1.3M+)
                 const decimalCounters = document.querySelectorAll('.count-up-decimal');
                 const options = { threshold: 0.5 };
-                
+
                 const observer = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
@@ -524,21 +580,21 @@ Ornab Coxs Bazar
                             const target = +counter.getAttribute('data-target');
                             const isDecimal = counter.classList.contains('count-up-decimal');
                             const suffix = counter.getAttribute('data-suffix') || '';
-                            const duration = 2000; 
-                            const increment = target / (duration / 16); 
-                            
+                            const duration = 2000;
+                            const increment = target / (duration / 16);
+
                             let current = 0;
                             const updateCounter = () => {
                                 current += increment;
                                 if (current < target) {
-                                    if(isDecimal) {
-                                         counter.innerText = current.toFixed(1) + suffix;
+                                    if (isDecimal) {
+                                        counter.innerText = current.toFixed(1) + suffix;
                                     } else {
-                                         counter.innerText = (target < 10 ? Math.ceil(current).toString().padStart(2, '0') : Math.ceil(current)) + suffix;
+                                        counter.innerText = (target < 10 ? Math.ceil(current).toString().padStart(2, '0') : Math.ceil(current)) + suffix;
                                     }
                                     requestAnimationFrame(updateCounter);
                                 } else {
-                                    if(isDecimal) {
+                                    if (isDecimal) {
                                         counter.innerText = target.toFixed(1) + suffix;
                                     } else {
                                         counter.innerText = (target < 10 ? target.toString().padStart(2, '0') : target) + suffix;
@@ -550,38 +606,20 @@ Ornab Coxs Bazar
                         }
                     });
                 }, options);
-                
+
                 counters.forEach(c => observer.observe(c));
                 decimalCounters.forEach(c => observer.observe(c));
             });
         </script>
     </section>
 
-    {{-- Removed bg-white from container to let card backgrounds show --}}
-    <div class="container-fluid px-0">
-
-        {{-- Buttons Section (Moved outside the card to a new row) --}}
-        <div class="row mt-4">
-            <div class="col-12 d-flex justify-content-center gap-3 flex-wrap">
-                <a href="http://127.0.0.1:8000/projects" class="btn btn-success text-white d-inline-flex align-items-center gap-2 uerd-btn-pill" style="background-color: var(--primary-color); border: none;">
-                    Our Project <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="{{ route('invoked.career') }}" class="btn btn-outline-success d-inline-flex align-items-center uerd-btn-pill" style="border-width: 2px;">
-                    Get Involved
-                </a>
-                <a href="{{ route('contact') }}" class="btn btn-outline-success d-inline-flex align-items-center uerd-btn-pill" style="border-width: 2px;">
-                    Contact Us
-                </a>
-            </div>
-        </div>
-
-    </div>
+</section>
 </div>
 {{-- End Highlights --}}
 
 
 {{-- Focus Area --}}
-<div class="py-5" style="background-color: #f8f9fa;">
+<div class="py-3" style="background-color: #f8f9fa;">
     <style>
         .program-card {
             border-radius: 15px;
@@ -620,7 +658,7 @@ Ornab Coxs Bazar
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 2rem;
+            padding: 1.5rem;
             z-index: 2;
             color: white;
             transform: translateY(10px);
@@ -720,7 +758,7 @@ Ornab Coxs Bazar
     </style>
     
     <div class="container">
-        <div class="row justify-content-center mb-5">
+        <div class="row justify-content-center mb-4">
             <div class="col-lg-8 text-center pt-3">
                 <div class="d-flex justify-content-center mt-4">
                     <div style="width: 60px; height: 4px; background: var(--primary-color, #198754); border-radius: 2px;"></div>
@@ -860,7 +898,7 @@ Ornab Coxs Bazar
             @endforeach
         </div>
 
-        <div class="d-flex justify-content-center pt-4">
+        <div class="d-flex justify-content-center pt-3">
             <a href="{{ route('ongoing.project') }}" class="btn btn-outline-success uerd-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
                 View All Projects <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -1010,7 +1048,7 @@ Ornab Coxs Bazar
     </style>
 
     <div class="container px-2">
-        <div class="text-center mb-4">
+        <div class="text-center mb-3">
             <div class="mb-2">
                 <span class="uerd-news-pill">Stay informed</span>
             </div>
@@ -1072,7 +1110,7 @@ Ornab Coxs Bazar
             </div>
         </div>
 
-        <div class="d-flex justify-content-center pt-5">
+        <div class="d-flex justify-content-center pt-4">
             <a href="{{ route('latest.news.all') }}" class="btn btn-outline-success uerd-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
                 View All News &amp; Events <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -1087,7 +1125,7 @@ Ornab Coxs Bazar
         .uerd-sponsor-card {
             background: linear-gradient(135deg, #0d9488, #158368);
             border-radius: 22px;
-            padding: 3rem 2rem;
+             padding: 2rem 1.5rem;
             color: #fff;
             box-shadow: 0 18px 45px rgba(13,148,136,.22);
             max-width: 940px;
@@ -1110,7 +1148,7 @@ Ornab Coxs Bazar
         }
         .uerd-sponsor-btn-outline:hover { background: rgba(255,255,255,.12); color: #fff; }
     </style>
-    <div class="uerd-section pt-5 pb-5">
+    <div class="uerd-section pt-4 pb-4">
         <div class="container px-2">
             <div class="uerd-sponsor-card text-center">
                 <div class="uerd-sponsor-icon"><i class="fa-regular fa-heart fs-4"></i></div>
@@ -1137,7 +1175,7 @@ Ornab Coxs Bazar
 
 
 {{-- Photo Gallery --}}
-<div class="uerd-soft-section uerd-section pt-5 pb-5">
+<div class="uerd-soft-section uerd-section pt-4 pb-4">
     <style>
         .uerd-gallery-pill {
             display: inline-flex;
@@ -1201,7 +1239,7 @@ Ornab Coxs Bazar
     </style>
 
     <div class="container px-2">
-        <div class="text-center mb-4">
+        <div class="text-center mb-3">
             <div class="mb-2">
                 <span class="uerd-gallery-pill">Photo gallery</span>
             </div>
@@ -1247,7 +1285,7 @@ Ornab Coxs Bazar
             </div>
         </div>
 
-        <div class="d-flex justify-content-center pt-4">
+        <div class="d-flex justify-content-center pt-3">
             <a href="{{ route('photo.all') }}" class="btn btn-outline-success uerd-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
                 All Photos <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -1343,7 +1381,7 @@ Ornab Coxs Bazar
     </style>
 
     <div class="container px-2">
-        <div class="text-center mb-4">
+        <div class="text-center mb-3">
             <div class="mb-2">
                 <span class="uerd-partner-pill">Trusted by</span>
             </div>
@@ -1435,7 +1473,7 @@ Ornab Coxs Bazar
             border-radius: 22px;
             border: 1px solid rgba(0, 0, 0, 0.06);
             box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-            padding: 44px 28px;
+             padding: 28px 24px;
         }
 
         .uerd-story-layout {
@@ -1566,7 +1604,7 @@ Ornab Coxs Bazar
             height: 18px;
         }
         #testimonialCarousel .carousel-indicators {
-            margin-bottom: 32px;
+            margin-bottom: 20px;
         }
         #testimonialCarousel .carousel-indicators [data-bs-target] {
             width: 6px;
@@ -1584,12 +1622,12 @@ Ornab Coxs Bazar
     </style>
 
     <div class="container px-2">
-        <div class="text-center mb-4">
+        <div class="text-center mb-3">
             <h2 class="uerd-sponsor-title mb-2">Success Stories</h2>
         </div>
 
         {{-- Rating Filter --}}
-        <div class="text-center mb-5">
+        <div class="text-center mb-4">
             <button class="btn uerd-story-filter me-2 filter-btn" data-rating="5">5 ★</button>
             <button class="btn uerd-story-filter me-2 filter-btn" data-rating="4">4 ★</button>
             <button class="btn uerd-story-filter me-2 filter-btn" data-rating="3">3 ★</button>
@@ -1714,9 +1752,9 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 {{-- subscription part --}}
-<div class="bg-light pt-5 pb-5">
-    <div class="container bg-white pb-5 rounded">
-        <div class="py-5">
+<div class="bg-light pt-4 pb-4">
+    <div class="container bg-white pb-4 rounded">
+        <div class="py-4">
             <h3 class="text-center"><span class="text-danger">Stay</span> connected <span class="text-danger"> with us</span></h3>
             <p class="text-center text-secondary">Keep in touch with our activities throughout the world by subscribing to our e-newsletter.</p>
         </div>

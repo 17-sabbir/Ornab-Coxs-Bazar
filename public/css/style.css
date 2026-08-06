@@ -110,7 +110,7 @@ ul {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 40px 0;
   overflow: hidden;
   position: relative;
 }
@@ -146,7 +146,7 @@ section {
 }
 
 .section-bg {
-  padding: 120px 0;
+  padding: 60px 0;
   color: #fff;
 }
 
