@@ -279,12 +279,6 @@ class frontController extends Controller
         return redirect()->back()->with('success', 'Thank you for your donation! We will verify it soon.');
     }
 
-    // Fundraising
-    public function fundraising()
-    {
-        return view('frontend.fundraising');
-    }
-
     // Get Contact
     public function contact()
     {

@@ -185,7 +185,8 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="involvedDropdown">
                     <li><a class="dropdown-item" href="{{ route('invoked.career') }}">{{ 'Career' }}</a></li>
-                    <li><a class="dropdown-item" href="{{ route('fundraising') }}">{{ 'Fundraising Campaign' }}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('donate') }}">{{ 'Donation' }}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('volunteer.index') }}">{{ 'Volunteer' }}</a></li>
                 </ul>
                 </li>
 
