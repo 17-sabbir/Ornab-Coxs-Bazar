@@ -39,8 +39,9 @@ class frontController extends Controller
     public function vision_mission()
     {
         $mission_vision = DB::table('mission_vision')->first();
+        $about = DB::table('about_us')->first();
 
-        return view('frontend.mission_vision', compact('mission_vision'));
+        return view('frontend.mission_vision', compact('mission_vision', 'about'));
     }
 
     // team members
