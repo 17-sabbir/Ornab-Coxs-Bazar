@@ -122,7 +122,6 @@ Route::get('publication', [frontController::class, 'publication'])->name('public
 // Involved
 Route::get('get_invoked/career', [frontController::class, 'career'])->name('invoked.career');
 Route::get('get_invoked/volunteer', [frontController::class, 'volOpportunities'])->name('volunteer.index');
-Route::get('volunteer/apply', [frontController::class, 'volunteerForm'])->name('volunteer.apply');
 Route::post('volunteer/apply/submit', [frontController::class, 'volunteerSubmit'])->name('volunteer.submit')->middleware('recaptcha');
 Route::get('donate', [frontController::class, 'donate'])->name('donate');
 Route::post('donation/submit', [frontController::class, 'donationSubmit'])->name('donation.submit')->middleware('recaptcha');

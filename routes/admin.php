@@ -28,7 +28,7 @@ use App\Http\Controllers\Admin\ProjectListController;
 use App\Http\Controllers\Admin\subscribeController;
 use App\Http\Controllers\Admin\TeamMemberController;
 use App\Http\Controllers\Admin\VolunteerApplicationController;
-use App\Http\Controllers\Admin\VolunteerController;
+use App\Http\Controllers\Admin\VolunteerInfoController;
 use App\Http\Controllers\Admin\AnnualReportController;
 use App\Http\Controllers\Admin\FinancialStatementController;
 use App\Http\Controllers\Admin\AuditReportController;
@@ -208,14 +208,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('faq/edit/{id}', [FaqController::class, 'edit'])->name('faq.edit');
     Route::post('faq/update/{id}', [FaqController::class, 'update'])->name('faq.update');
 
-    // __ Volunteers __//
-    Route::get('volunteers/add', [VolunteerController::class, 'add'])->name('volunteers.add');
-    Route::post('volunteers/store', [VolunteerController::class, 'store'])->name('volunteers.store');
-    Route::get('volunteers/index', [VolunteerController::class, 'index'])->name('volunteers.index');
-    Route::get('volunteers/delete/{id}', [VolunteerController::class, 'destroy'])->name('volunteers.delete');
-    Route::get('volunteers/edit/{id}', [VolunteerController::class, 'edit'])->name('volunteers.edit');
-    Route::post('volunteers/update/{id}', [VolunteerController::class, 'update'])->name('volunteers.update');
-
     // __ Volunteer Applications (from public form) __//
     Route::get('volunteer-applications', [VolunteerApplicationController::class, 'index'])->name('admin.volunteer_applications.index');
     Route::get('volunteer-applications/delete/{id}', [VolunteerApplicationController::class, 'destroy'])->name('admin.volunteer_applications.delete');
@@ -265,6 +257,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('board-of-directors/{boardOfDirector}/edit', [BoardOfDirectorController::class, 'edit'])->name('admin.board_of_directors.edit');
     Route::put('board-of-directors/{boardOfDirector}', [BoardOfDirectorController::class, 'update'])->name('admin.board_of_directors.update');
     Route::delete('board-of-directors/{boardOfDirector}', [BoardOfDirectorController::class, 'destroy'])->name('admin.board_of_directors.destroy');
+
+    // __ Volunteer Info (Volunteer Page Content) __//
+    Route::get('volunteer-info', [VolunteerInfoController::class, 'index'])->name('admin.volunteer_info.index');
+    Route::post('volunteer-info', [VolunteerInfoController::class, 'store'])->name('admin.volunteer_info.store');
+    Route::get('volunteer-info/{id}/edit', [VolunteerInfoController::class, 'edit'])->name('admin.volunteer_info.edit');
+    Route::put('volunteer-info/{id}', [VolunteerInfoController::class, 'update'])->name('admin.volunteer_info.update');
+    Route::post('volunteer-applications/{id}/status', [VolunteerInfoController::class, 'updateApplicationStatus'])->name('admin.volunteer_applications.update_status');
 
     // __ Legal Registrations (Legal Reg. Status) __//
     Route::get('legal-registrations', [LegalRegistrationController::class, 'index'])->name('admin.legal_registrations.index');

@@ -2,77 +2,142 @@
 
 @section('content')
 
-  <!-- ======= Modern Breadcrumbs ======= -->
-  <section class="modern-breadcrumbs">
-    <div class="container text-center">
-      <h2>Volunteer Opportunities</h2>
-      <ol class="d-inline-flex justify-content-center">
-        <li><a href="{{ url('/') }}">Home</a></li>
-        <li class="current">Get Involved</li>
-      </ol>
-      <div class="mt-3">
-        <a href="{{ route('volunteer.apply') }}" class="btn btn-light rounded-pill px-4 fw-bold shadow-sm">
-          <i class="fa-solid fa-hand-holding-heart me-2"></i> Apply to Volunteer
-        </a>
-      </div>
-    </div>
-  </section>
+<!-- ======= Volunteer Info Sections ======= -->
+<section class="py-5" style="background: #f4f7f5;">
+    <div class="container">
+        @if($volunteerInfo)
+            @php
+                $sections = [
+                    ['title' => 'What You Can Do', 'content' => $volunteerInfo->what_you_can_do, 'icon' => 'fa-hands-helping', 'color' => '#0d9488'],
+                    ['title' => 'Eligibility & Commitment', 'content' => $volunteerInfo->eligibility, 'icon' => 'fa-clipboard-check', 'color' => '#0d9488'],
+                    ['title' => 'Benefits', 'content' => $volunteerInfo->benefits, 'icon' => 'fa-gift', 'color' => '#0d9488'],
+                ];
+            @endphp
 
-  <!-- ======= Modern Content Section ======= -->
-  <section class="modern-container">
-    <div class="container" data-aos="fade-up">
-
-      <div class="row g-4">
-        @if(isset($volunteers) && count($volunteers) > 0)
-            @foreach($volunteers as $volunteer)
-            <div class="col-lg-6">
-                <div class="modern-card h-100 p-4">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <h4 class="fw-bold m-0 text-primary">{{ $volunteer->title }}</h4>
-                        @if($volunteer->status == 'open')
-                            <span class="badge bg-success rounded-pill px-3 py-2">Open</span>
-                        @else
-                            <span class="badge bg-secondary rounded-pill px-3 py-2">Closed</span>
-                        @endif
+            @foreach($sections as $index => $section)
+                @if(!empty(trim($section['content'])))
+                <div class="row align-items-center g-5 mb-5 {{ $index % 2 == 1 ? 'flex-lg-row-reverse' : '' }}">
+                    <div class="col-lg-7">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; background: {{ $section['color'] }}; color: #fff; flex: 0 0 auto;">
+                                <i class="fa-solid {{ $section['icon'] }}"></i>
+                            </div>
+                            <h2 class="fw-bold mb-0" style="color: #10372f;">{{ $section['title'] }}</h2>
+                        </div>
+                        <div class="text-secondary" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
+                            {!! $section['content'] !!}
+                        </div>
                     </div>
-                    
-                    @if($volunteer->location)
-                    <div class="text-muted mb-3 small">
-                        <i class="fa-solid fa-location-dot me-1 text-accent"></i> {{ $volunteer->location }}
-                    </div>
-                    @endif
-                    
-                    <p class="modern-text mb-4">{{ $volunteer->description }}</p>
-                    
-                    @if($volunteer->requirements)
-                    <div class="bg-light p-3 rounded-3 mb-4 border">
-                        <h6 class="fw-bold text-dark mb-2"><i class="fa-solid fa-list-check me-2 text-primary"></i> Requirements:</h6>
-                        <p class="small mb-0 text-muted">{{ $volunteer->requirements }}</p>
-                    </div>
-                    @endif
-                    
-                    <div class="mt-auto pt-3 border-top">
-                        @if($volunteer->status == 'open')
-                            <a href="{{ route('contact') }}" class="btn btn-modern w-100">Apply Now <i class="fa-solid fa-arrow-right ms-2"></i></a>
-                        @else
-                            <button disabled class="btn btn-light w-100 text-muted">Applications Closed</button>
-                        @endif
+                    <div class="col-lg-5">
+                        <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #eafaf5, #d3f0e8); min-height: 280px;">
+                            <i class="fa-solid {{ $section['icon'] }}" style="font-size: 5rem; color: {{ $section['color'] }}; opacity: .35;"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
+                @endif
             @endforeach
         @else
-            <div class="col-12 text-center py-5">
-                <div class="modern-card">
-                    <i class="fa-solid fa-file-circle-xmark display-4 text-muted mb-3"></i>
-                    <h3>No Open Positions</h3>
-                    <p class="text-muted">There are currently no volunteer opportunities available. Please check back later.</p>
+            <div class="text-center py-5">
+                <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center mx-auto" style="background: linear-gradient(135deg, #eafaf5, #d3f0e8); max-width: 500px; min-height: 300px;">
+                    <div>
+                        <i class="fa-solid fa-hand-holding-heart" style="font-size: 5rem; color: #0d9488; opacity: .35;"></i>
+                        <h3 class="mt-3" style="color: #10372f;">Volunteer Information Coming Soon</h3>
+                        <p class="text-muted">We are updating our volunteer information. Please check back later.</p>
+                    </div>
                 </div>
             </div>
         @endif
-      </div>
-
     </div>
-  </section>
+</section>
+
+<!-- ======= Volunteer Application Form ======= -->
+<section id="apply-form" class="py-5" style="background: #fff;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold" style="color: #10372f;">Become a Volunteer</h2>
+                    <p class="text-muted">Fill out the form below and our team will contact you soon.</p>
+                </div>
+
+                <div class="card border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4 p-md-5">
+                        @if(session('success'))
+                            <div class="alert alert-success rounded-3 px-4 mb-4 border-0 bg-success bg-opacity-10 text-success">
+                                <i class="fa-solid fa-check-circle me-2"></i> {{ session('success') }}
+                            </div>
+                        @endif
+
+                        <form action="{{ route('volunteer.submit') }}" method="post">
+                            @csrf
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label fw-bold small text-uppercase">Full Name <span class="text-danger">*</span></label>
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your full name" value="{{ old('name') }}" required>
+                                    @error('name')<span class="text-danger small">{{ $message }}</span>@enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label fw-bold small text-uppercase">Phone <span class="text-danger">*</span></label>
+                                    <input type="text" name="phone" class="form-control" id="phone" placeholder="+880 1XXX-XXXXXX" value="{{ old('phone') }}" required>
+                                    @error('phone')<span class="text-danger small">{{ $message }}</span>@enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label fw-bold small text-uppercase">Email <span class="text-danger">*</span></label>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com" value="{{ old('email') }}" required>
+                                    @error('email')<span class="text-danger small">{{ $message }}</span>@enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="location" class="form-label fw-bold small text-uppercase">Address</label>
+                                    <input type="text" name="location" class="form-control" id="location" placeholder="District / Upazila" value="{{ old('location') }}">
+                                    @error('location')<span class="text-danger small">{{ $message }}</span>@enderror
+                                </div>
+                                <div class="col-12">
+                                    <label for="interest" class="form-label fw-bold small text-uppercase">Area of Interest <span class="text-danger">*</span></label>
+                                    <select name="interest" class="form-select" id="interest" required>
+                                        <option value="">Select an area</option>
+                                        @php
+                                            $interests = [
+                                                'Education & Training',
+                                                'Health & Nutrition',
+                                                'Women Empowerment',
+                                                'Disaster Response',
+                                                'Community Mobilization',
+                                                'Fundraising & Events',
+                                                'IT & Communications',
+                                                'Other',
+                                            ];
+                                        @endphp
+                                        @foreach($interests as $interest)
+                                            <option value="{{ $interest }}" {{ old('interest') == $interest ? 'selected' : '' }}>{{ $interest }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('interest')<span class="text-danger small">{{ $message }}</span>@enderror
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label fw-bold small text-uppercase">Why do you want to volunteer? <span class="text-muted">(optional)</span></label>
+                                    <textarea name="message" class="form-control" id="message" rows="4" placeholder="Tell us a little about yourself...">{{ old('message') }}</textarea>
+                                    @error('message')<span class="text-danger small">{{ $message }}</span>@enderror
+                                </div>
+                                @if(config('recaptcha.enabled'))
+                                <div class="col-12">
+                                    {!! NoCaptcha::display() !!}
+                                    @if($errors->has('g-recaptcha-response'))
+                                        <span class="text-danger small">{{ $errors->first('g-recaptcha-response') }}</span>
+                                    @endif
+                                </div>
+                                @endif
+                                <div class="col-12 mt-2">
+                                    <button type="submit" class="btn w-100 py-3 fw-bold text-white shadow-lg" style="background: linear-gradient(90deg, #158368 0%, #0d5f49 100%); border-radius: 12px;">
+                                        Submit Application <i class="fa-solid fa-paper-plane ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
 
 @endsection
+

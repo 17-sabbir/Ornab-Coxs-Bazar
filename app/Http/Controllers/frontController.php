@@ -187,29 +187,13 @@ class frontController extends Controller
         return view('frontend.career', compact('career', 'about_us'));
     }
 
-    // Volunteer Opportunities
+    // Volunteer Page
     public function volOpportunities()
     {
-        $volunteers = DB::table('volunteers')->where('status', 'open')->orderBy('id', 'desc')->get();
+        $volunteerInfo = DB::table('volunteer_info')->first();
+        $applications = DB::table('volunteer_applications')->orderBy('created_at', 'desc')->get();
 
-        return view('frontend.volunteer_opportunities', compact('volunteers'));
-    }
-
-    // Volunteer Application Form (Get Involved)
-    public function volunteerForm()
-    {
-        $interests = [
-            'Education & Training',
-            'Health & Nutrition',
-            'Women Empowerment',
-            'Disaster Response',
-            'Community Mobilization',
-            'Fundraising & Events',
-            'IT & Communications',
-            'Other',
-        ];
-
-        return view('frontend.volunteer_form', compact('interests'));
+        return view('frontend.volunteer_opportunities', compact('volunteerInfo', 'applications'));
     }
 
     // Volunteer Application Submit

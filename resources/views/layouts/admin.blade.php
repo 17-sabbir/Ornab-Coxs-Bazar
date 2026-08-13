@@ -399,7 +399,7 @@
         /* Modern Table Design - Clean & Trustworthy */
         .table-responsive {
             border-radius: 8px;
-            overflow: hidden;
+            overflow: auto;
         }
 
         .table thead th {
@@ -761,12 +761,19 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{ route('contact.index') }}">
-					<div class="parent-icon"><i class='fadeIn animated bx bx-phone-call'></i>
-					</div>
-					<div class="menu-title">{{ 'Contact' }}</div>
-				</a>
-			</li>
+ 				<a href="{{ route('admin.volunteer_info.index') }}">
+ 					<div class="parent-icon"><i class='fadeIn animated bx bx-heart'></i>
+ 					</div>
+ 					<div class="menu-title">{{ 'Volunteer' }}</div>
+ 				</a>
+ 			</li>
+ 			<li>
+ 				<a href="{{ route('contact.index') }}">
+ 					<div class="parent-icon"><i class='fadeIn animated bx bx-phone-call'></i>
+ 					</div>
+ 					<div class="menu-title">{{ 'Contact' }}</div>
+ 				</a>
+ 			</li>
 		<li>
  			<a href="{{ route('faq.index') }}">
  				<div class="parent-icon"><i class='bx bx-help-circle'></i>
