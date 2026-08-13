@@ -848,8 +848,8 @@ Ornab Coxs Bazar
 
     <div class="container">
         <div class="pb-2 text-center">
-            <h3 class="text-center mt-0">Ongoing <span class="text-danger">Projects</span></h3>
-            <p class="text-center text-secondary mb-0">Ornab Coxs Bazar's ongoing projects actively address community needs, fostering sustainable development in Cox's Bazar.</p>
+            <h3 class="text-center mt-3">Ongoing <span class="text-danger">Projects</span></h3>
+            <p class="text-center text-secondary mb-5">Ornab Coxs Bazar's ongoing projects actively address community needs, fostering sustainable development in Cox's Bazar.</p>
         </div>
 
         <div class="row g-4">
