@@ -19,7 +19,9 @@ class sliderController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
+            'title_bn' => 'nullable',
             'description' => 'required',
+            'description_bn' => 'nullable',
             'image' => 'required|image',
             'order' => 'required|integer|min:1|unique:slider,order',
         ]);
@@ -32,7 +34,9 @@ class sliderController extends Controller
 
         $slider = [
             'title' => $request->title,
+            'title_bn' => $request->title_bn,
             'description' => $request->description,
+            'description_bn' => $request->description_bn,
             'image' => $imageName,
             'order' => $request->order,
         ];
@@ -79,7 +83,9 @@ class sliderController extends Controller
         $slider = DB::table('slider')->where('id', $id)->first();
         $validated = $request->validate([
             'title' => 'required',
+            'title_bn' => 'nullable',
             'description' => 'required',
+            'description_bn' => 'nullable',
             'order' => 'required|integer|min:1|unique:slider,order,'.$id,
         ]);
 
@@ -98,7 +104,9 @@ class sliderController extends Controller
 
         $slider = [
             'title' => $request->title,
+            'title_bn' => $request->title_bn,
             'description' => $request->description,
+            'description_bn' => $request->description_bn,
             'image' => $imageName,
             'order' => $request->order,
         ];

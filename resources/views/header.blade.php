@@ -118,6 +118,63 @@
         body:not(.is-home) .site-header {
             position: relative;
         }
+
+        /* Language Toggle Button */
+        .lang-toggle-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 9999px;
+            padding: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            height: 38px;
+            overflow: hidden;
+        }
+
+        .lang-toggle-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
+        }
+
+        .lang-option {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+            user-select: none;
+            white-space: nowrap;
+            line-height: 1.2;
+            padding: 0 4px;
+        }
+
+        .lang-option.active {
+            color: #ffffff;
+        }
+
+        .lang-slider {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: calc(50% - 3px);
+            height: calc(100% - 6px);
+            background: var(--primary-color);
+            border-radius: 9999px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        }
+
+        .lang-toggle-btn.bn-active .lang-slider {
+            transform: translateX(100%);
+        }
     </style>
     <div class="container-fluid px-2 px-lg-3">
         <nav class="navbar navbar-expand-xl navbar-light py-2 py-lg-3" style="position: static;">
@@ -208,6 +265,14 @@
                 </ul>
 
                 <ul class="navbar-nav mb-1 mb-lg-0 align-items-lg-center" style="column-gap: 4px; margin-left: 4px;">
+                <!-- Language Switcher -->
+                <li class="nav-item">
+                    <button id="langToggle" class="lang-toggle-btn" title="Switch Language">
+                        <span class="lang-slider"></span>
+                        <span class="lang-option" data-lang="en">EN</span>
+                        <span class="lang-option" data-lang="bn">BN</span>
+                    </button>
+                </li>
                 <!-- Contact -->
                 <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link fw-bold text-dark" style="font-size: 1.05rem;">{{ 'Contact' }}</a></li>
                 </ul>

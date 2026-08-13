@@ -6,8 +6,8 @@
 <div class="container py-5">
     <div class="row">
         <div class="col-12 text-center mb-5">
-            <h2 class="display-5 fw-bold text-danger">Development Projects at a Glance</h2>
-            <p class="lead text-secondary">A comprehensive overview of our current and past initiatives</p>
+            <h2 class="display-5 fw-bold text-danger">Our Development Journey</h2>
+            <p class="lead text-secondary">Explore a selection of our current and past projects, showcasing our ideas, innovation, and impact.</p>
         </div>
     </div>
 

@@ -343,11 +343,11 @@ Ornab Coxs Bazar
                     <div class="d-flex flex-column justify-content-center h-100 text-white">
                         <div class="hero-indented"> <!-- Indented Content -->
                             <h2 class="hero-title">
-                                <span class="js-typewriter typewriter-cursor hero-title-text" data-text="{{ e($slider->title) }}">{{ $slider->title }}</span>
+                                <span class="js-typewriter typewriter-cursor hero-title-text notranslate" data-text="{{ e($slider->title) }}" data-text-bn="{{ e($slider->title_bn) }}">{{ $slider->title }}</span>
                             </h2>
 
                             <p class="hero-desc">
-                                <span class="js-typewriter hero-desc-text" data-text="{{ e($slider->description) }}">{{ $slider->description }}</span>
+                                <span class="js-typewriter hero-desc-text notranslate" data-text="{{ e($slider->description) }}" data-text-bn="{{ e($slider->description_bn) }}">{{ $slider->description }}</span>
                             </p>
 
                             <div class="d-flex flex-wrap gap-3 align-items-center mt-3">
@@ -1855,8 +1855,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const titleEl = activeItem.querySelector('.hero-title-text');
             const descEl = activeItem.querySelector('.hero-desc-text');
 
-            const titleText = titleEl ? (titleEl.getAttribute('data-text') || titleEl.textContent || '') : '';
-            const descText = descEl ? (descEl.getAttribute('data-text') || descEl.textContent || '') : '';
+            const isBangla = document.cookie.split('; ').some(row => row.startsWith('googtrans=') && row.includes('/en/bn'));
+
+            const titleText = titleEl ? (isBangla ? (titleEl.getAttribute('data-text-bn') || titleEl.getAttribute('data-text') || titleEl.textContent || '') : (titleEl.getAttribute('data-text') || titleEl.textContent || '')) : '';
+            const descText = descEl ? (isBangla ? (descEl.getAttribute('data-text-bn') || descEl.getAttribute('data-text') || descEl.textContent || '') : (descEl.getAttribute('data-text') || descEl.textContent || '')) : '';
 
             if (prefersReducedMotion) {
                 if (titleEl) titleEl.textContent = titleText;

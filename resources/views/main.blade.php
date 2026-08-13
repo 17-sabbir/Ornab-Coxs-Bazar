@@ -187,6 +187,51 @@
             scroll-behavior: smooth;
         }
     </style>
+
+    {{-- Google Translate UI hide styles --}}
+    <style>
+        .goog-te-banner-frame.skiptranslate,
+        iframe.goog-te-banner-frame,
+        .goog-te-gadget-icon,
+        .goog-te-balloon-frame,
+        .goog-tooltip,
+        .goog-tooltip:hover,
+        .goog-te-gadget-simple,
+        .goog-te-gadget span,
+        .goog-te-ftab,
+        .goog-te-ftab-link,
+        .goog-te-menu-frame,
+        .goog-te-spinner-pos,
+        #goog-gt-tt,
+        .goog-text-highlight {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+        body {
+            top: 0 !important;
+            position: static !important;
+        }
+
+        #google_translate_element {
+            position: fixed !important;
+            right: 16px !important;
+            bottom: 16px !important;
+            left: auto !important;
+            top: auto !important;
+            z-index: 9999 !important;
+        }
+
+        .goog-te-gadget {
+            position: fixed !important;
+            right: 16px !important;
+            bottom: 16px !important;
+            left: auto !important;
+            top: auto !important;
+            z-index: 9999 !important;
+        }
+    </style>
+
     @stack('css')
 </head>
 <body class="@yield('body_class')">
@@ -203,11 +248,204 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    {{-- <script>
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
+
+    {{-- Google Translate Widget --}}
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,bn',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        // Load Google Translate script
+        var gtScript = document.createElement('script');
+        gtScript.type = 'text/javascript';
+        gtScript.async = true;
+        gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gtScript);
+    </script>
+    <div id="google_translate_element"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var langToggle = document.getElementById('langToggle');
+            var hideGoogleTranslate = function() {
+                var iframes = document.querySelectorAll('iframe.goog-te-banner-frame, iframe.goog-te-floatbar-frame, .goog-te-banner-frame, .goog-te-floatbar');
+                iframes.forEach(function(iframe) {
+                    iframe.style.setProperty('display', 'none', 'important');
+                    iframe.style.setProperty('visibility', 'hidden', 'important');
+                    iframe.style.setProperty('opacity', '0', 'important');
+                    iframe.style.setProperty('position', 'fixed', 'important');
+                    iframe.style.setProperty('top', '-9999px', 'important');
+                    iframe.style.setProperty('z-index', '-9999', 'important');
+                    iframe.style.setProperty('pointer-events', 'none', 'important');
+                });
+
+                var gadgets = document.querySelectorAll('.goog-te-gadget, .goog-te-floatbar, .skiptranslate');
+                gadgets.forEach(function(gadget) {
+                    gadget.style.setProperty('display', 'none', 'important');
+                    gadget.style.setProperty('visibility', 'hidden', 'important');
+                    gadget.style.setProperty('opacity', '0', 'important');
+                    gadget.style.setProperty('position', 'absolute', 'important');
+                    gadget.style.setProperty('top', '-9999px', 'important');
+                });
+
+                // Google re-applies the loading spinner's own inline style (with !important)
+                // while translation is in progress, which beats our stylesheet rule.
+                // We have to fight it the same way it fights us: force-hide via JS on every
+                // tick, and remove it from the DOM outright so it can't reappear.
+                var spinners = document.querySelectorAll('.goog-te-spinner-pos, .goog-te-spinner-animation, .goog-te-spinner');
+                spinners.forEach(function(spinner) {
+                    spinner.style.setProperty('display', 'none', 'important');
+                    spinner.style.setProperty('visibility', 'hidden', 'important');
+                    spinner.style.setProperty('opacity', '0', 'important');
+                    if (spinner.parentNode) {
+                        spinner.parentNode.removeChild(spinner);
+                    }
+                });
+
+                document.body.style.setProperty('top', '0px', 'important');
+                document.body.style.setProperty('position', 'static', 'important');
+            };
+
+            hideGoogleTranslate();
+            setInterval(hideGoogleTranslate, 300);
+
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.addedNodes) {
+                        mutation.addedNodes.forEach(function(node) {
+                            if (node.nodeType === 1) {
+                                if (node.className && typeof node.className === 'string' && 
+                                    (node.className.includes('goog-te') || node.className.includes('skiptranslate'))) {
+                                    hideGoogleTranslate();
+                                }
+                                if (node.querySelectorAll) {
+                                    var gtElements = node.querySelectorAll('.goog-te-banner-frame, .goog-te-gadget, .goog-te-floatbar, .skiptranslate, .goog-te-spinner-pos, .goog-te-spinner-animation, .goog-te-spinner');
+                                    if (gtElements.length > 0) {
+                                        hideGoogleTranslate();
+                                    }
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    setTimeout(function() {
+                        observer.observe(document.body, { childList: true, subtree: true });
+                    }, 100);
+                });
+            } else {
+                setTimeout(function() {
+                    observer.observe(document.body, { childList: true, subtree: true });
+                }, 100);
+            }
+
+            window.addEventListener('load', function() {
+                setTimeout(hideGoogleTranslate, 100);
+                setTimeout(hideGoogleTranslate, 500);
+                setTimeout(hideGoogleTranslate, 1000);
+                setTimeout(hideGoogleTranslate, 2000);
+            });
+
+            // --- Cookie-based language switching ---
+            function getGoogTransCookie() {
+                var match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]*)/);
+                return match ? decodeURIComponent(match[1]) : '';
+            }
+
+            function setGoogTransCookie(targetLang) {
+                var value = targetLang ? ('/en/' + targetLang) : '';
+                var hostname = window.location.hostname;
+                var isLocalHost = (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '');
+
+                if (!value) {
+                    document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+                    if (!isLocalHost) {
+                        document.cookie = 'googtrans=; path=/; domain=' + hostname + '; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+                        document.cookie = 'googtrans=; path=/; domain=.' + hostname + '; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+                    }
+                    return;
+                }
+
+                document.cookie = 'googtrans=' + value + '; path=/';
+                if (!isLocalHost) {
+                    document.cookie = 'googtrans=' + value + '; path=/; domain=' + hostname;
+                    document.cookie = 'googtrans=' + value + '; path=/; domain=.' + hostname;
+                }
+            }
+
+            // Reflect current state in the toggle label on load
+            (function initLangLabel() {
+                var current = getGoogTransCookie();
+                var enOption = langToggle ? langToggle.querySelector('[data-lang="en"]') : null;
+                var bnOption = langToggle ? langToggle.querySelector('[data-lang="bn"]') : null;
+                var isBN = current === '/en/bn';
+
+                if (isBN) {
+                    if (langToggle) langToggle.classList.add('bn-active');
+                    if (bnOption) {
+                        bnOption.classList.add('active');
+                        bnOption.textContent = 'বাংলা';
+                    }
+                    if (enOption) {
+                        enOption.classList.remove('active');
+                        enOption.textContent = 'ইংরেজি';
+                    }
+                } else {
+                    if (langToggle) langToggle.classList.remove('bn-active');
+                    if (enOption) {
+                        enOption.classList.add('active');
+                        enOption.textContent = 'EN';
+                    }
+                    if (bnOption) {
+                        bnOption.classList.remove('active');
+                        bnOption.textContent = 'BN';
+                    }
+                }
+            })();
+
+            if (langToggle) {
+                langToggle.addEventListener('click', function() {
+                    var current = getGoogTransCookie();
+                    var enOption = langToggle.querySelector('[data-lang="en"]');
+                    var bnOption = langToggle.querySelector('[data-lang="bn"]');
+                    var isBN = current === '/en/bn';
+
+                    if (!isBN) {
+                        setGoogTransCookie('bn');
+                        langToggle.classList.add('bn-active');
+                        if (bnOption) {
+                            bnOption.classList.add('active');
+                            bnOption.textContent = 'বাংলা';
+                        }
+                        if (enOption) {
+                            enOption.classList.remove('active');
+                            enOption.textContent = 'ইংরেজি';
+                        }
+                    } else {
+                        setGoogTransCookie(null);
+                        langToggle.classList.remove('bn-active');
+                        if (enOption) {
+                            enOption.classList.add('active');
+                            enOption.textContent = 'EN';
+                        }
+                        if (bnOption) {
+                            bnOption.classList.remove('active');
+                            bnOption.textContent = 'BN';
+                        }
+                    }
+                    window.location.reload();
+                });
+            }
         });
-    </script> --}}
+    </script>
 
     @stack('js')
 

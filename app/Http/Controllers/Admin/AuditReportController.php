@@ -109,6 +109,7 @@ class AuditReportController extends Controller
             Storage::disk('public')->delete($auditReport->pdf_file);
         }
 
+        /** @intelephense-ignore P1005 */
         $auditReport->delete();
 
         return redirect()->route('admin.audit_reports.index')

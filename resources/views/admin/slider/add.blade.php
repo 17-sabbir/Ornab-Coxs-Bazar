@@ -23,6 +23,13 @@
                             @enderror
                         </div>
                         <div class="col-md-12">
+                            <label for="title_bn" class="form-label">Title (Bangla)</label>
+                            <input type="text" name="title_bn" class="form-control @error('title_bn') is-invalid @enderror" id="title_bn" value="{{ old('title_bn') }}" placeholder="স্লাইডের শিরোনাম বাংলায় লিখুন">
+                            @error('title_bn')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-12">
                             <label for="img" class="form-label">Image<span class="text-danger">*</span></label>
                             <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="img">
                             @error('image')
@@ -35,6 +42,13 @@
                             <label for="description" class="form-label">Description<span class="text-danger">*</span></label>
                             <textarea id="description" name="description" class="form-control @error('description') is-invalid @enderror" rows="3" placeholder="Enter Description">{{ old('description') }}</textarea>
                             @error('description')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-12">
+                            <label for="description_bn" class="form-label">Description (Bangla)</label>
+                            <textarea id="description_bn" name="description_bn" class="form-control @error('description_bn') is-invalid @enderror" rows="3" placeholder="বর্ণনা বাংলায় লিখুন">{{ old('description_bn') }}</textarea>
+                            @error('description_bn')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
