@@ -82,6 +82,20 @@
                 </div>
             </div>
             @endif
+
+            @if($project->reports && $project->reports->count())
+            <div class="col-12 py-3">
+                <h5 class="fw-bold">All Reports</h5>
+                <div class="list-group">
+                    @foreach($project->reports as $report)
+                    <a href="{{ route('projects.reports.download', $report->id) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        <span><i class="fa-solid fa-file-pdf text-danger me-2"></i> {{ $report->file }}</span>
+                        <span class="badge bg-success rounded-pill">Download</span>
+                    </a>
+                    @endforeach
+                </div>
+            </div>
+            @endif
             <div class="py-3">
                 <a href="{{ $project->status == 'completed' ? route('project.archieve') : route('ongoing.project') }}" class="btn btn-danger"> <i class="fa fa-angle-left" aria-hidden="true"></i> Back to {{ $project->status == 'completed' ? 'Project Archive' : 'Ongoing Projects' }}</a>
             </div>

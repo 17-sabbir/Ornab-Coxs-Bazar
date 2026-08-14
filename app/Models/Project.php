@@ -12,4 +12,9 @@ class Project extends Model
     {
         return $this->hasMany(ProjectGallery::class);
     }
+
+    public function reports()
+    {
+        return $this->hasMany(ProjectReport::class);
+    }
 }

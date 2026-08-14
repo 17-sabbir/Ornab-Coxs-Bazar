@@ -30,7 +30,8 @@ class policyController extends Controller
 
         $file = [
             'title' => $request->title,
-            'file' => $fileName
+            'file' => $fileName,
+            'download_allowed' => (bool) $request->input('download_allowed', 0)
         ];
 
         DB::table('policy_guideline')->insert($file);
@@ -91,7 +92,8 @@ class policyController extends Controller
 
         $policy_guideline = [
             'title' => $request->title,
-            'file' => $fileName
+            'file' => $fileName,
+            'download_allowed' => (bool) $request->input('download_allowed', 0)
         ];
 
         DB::table('policy_guideline')->where('id', $id)->update($policy_guideline);

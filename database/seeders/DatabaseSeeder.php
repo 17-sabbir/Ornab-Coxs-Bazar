@@ -13,15 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // Centralized website settings row (branding, contacts, statistics)
-        $this->call(ApplicationsTableSeeder::class);
-
         // Create admin user
-        \App\Models\User::create([
-            'name' => 'Admin',
-            'email' => 'ornob@gmail.com',
-            'password' => bcrypt('admin123'),
-            'email_verified_at' => now(),
-        ]);
+        \App\Models\User::updateOrCreate(
+            ['email' => 'ornob@gmail.com'],
+            [
+                'name' => 'Admin',
+                'password' => bcrypt('admin123'),
+                'email_verified_at' => now(),
+            ]
+        );
     }
 }

@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\aboutusController;
 use App\Http\Controllers\Admin\applicationController;
-use App\Http\Controllers\Admin\ChiefMessageController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DonationCampaignController;
 use App\Http\Controllers\Admin\DonationController;
@@ -224,6 +223,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     // Projects
     Route::resource('projects', ProjectListController::class)->names('admin.projects');
     Route::patch('projects/{project}/toggle-status', [ProjectListController::class, 'toggleStatus'])->name('admin.projects.toggle-status');
+    Route::get('projects/gallery/{id}/delete', [ProjectListController::class, 'deleteGallery'])->name('admin.projects.delete-gallery');
+    Route::delete('projects/reports/{report}', [ProjectListController::class, 'deleteReport'])->name('admin.projects.reports.destroy');
 
     // __ Annual Reports __//
     Route::resource('annual-reports', AnnualReportController::class)->names('admin.annual_reports');

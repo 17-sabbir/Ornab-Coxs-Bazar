@@ -25,9 +25,13 @@
             @if(!empty($data->description))
               <p class="pg-card-text">{{ Str::limit($data->description, 110) }}</p>
             @endif
-            <a href="{{ asset('images/policy_guideline/'.$data->file) }}" target="_blank" class="pg-card-btn">
+            @if($data->download_allowed)
+            <a href="{{ route('policy.download', $data->id) }}" class="pg-card-btn">
               <i class="fa-solid fa-cloud-arrow-down me-2"></i> Download PDF
             </a>
+            @else
+            <span class="text-muted small">Download not available</span>
+            @endif
           </div>
         </div>
         @endforeach

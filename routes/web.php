@@ -114,6 +114,7 @@ Route::get('youtube/video', [frontController::class, 'youtube'])->name('youtube.
 // Stay Informed
 Route::get('strategic/plan', [frontController::class, 'strategic_plan'])->name('strategic.plan');
 Route::get('policy/guideline', [frontController::class, 'policy_guideline'])->name('policy.guideline');
+Route::get('policy/download/{id}', [frontController::class, 'downloadPolicy'])->name('policy.download');
 Route::get('publication', [frontController::class, 'publication'])->name('publication');
 
 // Involved
@@ -140,6 +141,7 @@ Route::get('audit-reports', [frontController::class, 'auditReports'])->name('aud
 
 // Projects
 Route::get('projects', [PageController::class, 'projects'])->name('frontend.projects');
+Route::get('projects/reports/{report}/download', [frontController::class, 'downloadProjectReport'])->name('projects.reports.download');
 
 // Focus Areas
 Route::get('focus-areas', [frontController::class, 'focusAreas'])->name('focus.areas');

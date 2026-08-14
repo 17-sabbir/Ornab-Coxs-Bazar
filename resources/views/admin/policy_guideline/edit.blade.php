@@ -30,6 +30,13 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
+<div class="col-md-12">
+                            <label class="form-label">Allow Download</label>
+                            <select name="download_allowed" class="form-select">
+                                <option value="1" {{ ($file->download_allowed ?? true) ? 'selected' : '' }}>Yes</option>
+                                <option value="0" {{ !($file->download_allowed ?? true) ? 'selected' : '' }}>No</option>
+                            </select>
+                        </div>
                         <div class="col-12">
                             <button class="btn btn-primary" type="submit">Submit</button>
                         </div>

@@ -1161,8 +1161,8 @@ Ornab Coxs Bazar
                     <a href="{{ route('contact') }}" class="btn uerd-btn-pill uerd-sponsor-btn d-inline-flex align-items-center gap-2">
                         <i class="fa-regular fa-heart"></i> Become a Sponsor
                     </a>
-                    <a href="{{ route('focus.areas') }}" class="btn uerd-btn-pill uerd-sponsor-btn-outline d-inline-flex align-items-center gap-2">
-                        Learn About Our Work <i class="fa-solid fa-arrow-right"></i>
+                    <a href="{{ route('frontend.projects') }}" class="btn uerd-btn-pill uerd-sponsor-btn-outline d-inline-flex align-items-center gap-2">
+                        Learn About Our Project <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>

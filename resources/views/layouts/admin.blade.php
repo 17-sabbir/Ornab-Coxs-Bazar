@@ -933,15 +933,28 @@
 			</div>
 		</header>
 		<!--end header -->
-		<!--start page wrapper -->
-		<div class="page-wrapper">
-			<div class="page-content">
+ 		<!--start page wrapper -->
+ 		<div class="page-wrapper">
+ 			<div class="page-content">
 
-                @yield('content')
+ 				@if(session('success'))
+ 				<div class="alert alert-success alert-dismissible fade show" role="alert">
+ 					{{ session('success') }}
+ 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ 				</div>
+ 				@endif
+ 				@if(session('error'))
+ 				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+ 					{{ session('error') }}
+ 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ 				</div>
+ 				@endif
 
-            </div>
-		</div>
-		<!--end page wrapper -->
+                 @yield('content')
+
+             </div>
+ 		</div>
+ 		<!--end page wrapper -->
 		<!--start overlay-->
 		<div class="overlay toggle-icon"></div>
 		<!--end overlay-->

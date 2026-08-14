@@ -13,14 +13,24 @@ Create Project
                 <a href="{{ route('admin.projects.index') }}" class="btn btn-light btn-sm text-danger fw-bold">Back to List</a>
             </div>
             <div class="card-body">
+                @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                        @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
-                    <ul class="nav nav-tabs mb-4" id="projectTabs" role="tablist">
-                        <li class="nav-item"><button class="nav-link active" id="en-tab" data-bs-toggle="tab" data-bs-target="#en" type="button">English</button></li>
-                        <li class="nav-item"><button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button">Media</button></li>
-                        <li class="nav-item"><button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button">Details</button></li>
-                    </ul>
+                     <ul class="nav nav-tabs mb-4" id="projectTabs" role="tablist">
+                         <li class="nav-item"><button class="nav-link active" id="en-tab" data-bs-toggle="tab" data-bs-target="#en" type="button">English</button></li>
+                         <li class="nav-item"><button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button">Media</button></li>
+                         <li class="nav-item"><button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button">Details</button></li>
+                         <li class="nav-item"><button class="nav-link" id="reports-tab" data-bs-toggle="tab" data-bs-target="#reports" type="button">Reports</button></li>
+                     </ul>
 
                     <div class="tab-content">
                         <!-- English -->
@@ -115,14 +125,16 @@ Create Project
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="is_featured" value="1" id="featuredSwitch">
-                                    <label class="form-check-label" for="featuredSwitch">Featured</label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
                                 <label class="form-label">Remark</label>
                                 <textarea class="form-control" name="remark" rows="2"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Reports -->
+                        <div class="tab-pane fade" id="reports">
+                            <div class="mb-3">
+                                <label class="form-label">Upload Report (PDF)</label>
+                                <input type="file" name="report_file" class="form-control" accept="application/pdf">
                             </div>
                         </div>
                     </div>

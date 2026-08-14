@@ -8,6 +8,22 @@ use Illuminate\Support\Facades\DB;
 
 class frontController extends Controller
 {
+    public function downloadPolicy($id)
+    {
+        $policy = DB::table('policy_guideline')->where('id', $id)->first();
+
+        if (!$policy || !$policy->download_allowed) {
+            return redirect()->back()->with('error', 'Download is not available for this document.');
+        }
+
+        $filePath = public_path('images/policy_guideline/' . $policy->file);
+
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        return response()->download($filePath);
+    }
     // about us
     public function about_us()
     {
@@ -61,15 +77,7 @@ class frontController extends Controller
         return view('frontend.origin_affilation', compact('affilation', 'legalRegistrations'));
     }
 
-    // Message form Cheif Executive
-    public function cheif_msg()
-    {
-        $message = DB::table('chief_executive_message')->orderBy('id', 'desc')->first();
-
-        return view('frontend.cheif_message', compact('message'));
-    }
-
-    // Board of Directors
+    // origin and legal affilation
     public function boardOfDirectors()
     {
         $directors = \App\Models\BoardOfDirector::active()->ordered()->get();
@@ -109,7 +117,7 @@ class frontController extends Controller
     // __ongoing Project view__//
     public function project_view(int $id)
     {
-        $project = Project::with('galleries')->findOrFail($id);
+        $project = Project::with('galleries', 'reports')->findOrFail($id);
 
         return view('frontend.project_view', compact('project'));
     }
@@ -440,5 +448,16 @@ class frontController extends Controller
         }
 
         return view('frontend.focus_area_detail', compact('focusArea'));
+    }
+
+    public function downloadProjectReport(\App\Models\ProjectReport $report)
+    {
+        $filePath = public_path('images/project/reports/' . $report->file);
+
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        return response()->download($filePath);
     }
 }

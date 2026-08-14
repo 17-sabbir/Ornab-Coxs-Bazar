@@ -13,15 +13,25 @@ Edit Project
                 <a href="{{ route('admin.projects.index') }}" class="btn btn-light btn-sm text-danger fw-bold">Back to List</a>
             </div>
             <div class="card-body">
+                @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                        @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <form action="{{ route('admin.projects.update', $project->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
-                    <ul class="nav nav-tabs mb-4" id="projectTabs" role="tablist">
-                        <li class="nav-item"><button class="nav-link active" id="en-tab" data-bs-toggle="tab" data-bs-target="#en" type="button">English</button></li>
-                        <li class="nav-item"><button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button">Media</button></li>
-                        <li class="nav-item"><button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button">Details</button></li>
-                    </ul>
+                     <ul class="nav nav-tabs mb-4" id="projectTabs" role="tablist">
+                         <li class="nav-item"><button class="nav-link active" id="en-tab" data-bs-toggle="tab" data-bs-target="#en" type="button">English</button></li>
+                         <li class="nav-item"><button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button">Media</button></li>
+                         <li class="nav-item"><button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button">Details</button></li>
+                         <li class="nav-item"><button class="nav-link" id="reports-tab" data-bs-toggle="tab" data-bs-target="#reports" type="button">Reports</button></li>
+                     </ul>
 
                     <div class="tab-content">
                         <!-- English -->
@@ -142,15 +152,31 @@ Edit Project
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="is_featured" value="1" id="featuredSwitch" {{ $project->is_featured ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="featuredSwitch">Featured</label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
                                 <label class="form-label">Remark</label>
                                 <textarea class="form-control" name="remark" rows="2">{{ $project->remark }}</textarea>
                             </div>
+                        </div>
+
+                        <!-- Reports -->
+                        <div class="tab-pane fade" id="reports">
+                            <div class="mb-3">
+                                <label class="form-label">Upload Report (PDF)</label>
+                                <input type="file" name="report_file" class="form-control" accept="application/pdf">
+                                <small class="text-muted">Select a PDF file and click Update Project to save.</small>
+                            </div>
+
+                            @if($project->reports->count() > 0)
+                                <h6 class="fw-bold mb-2">Existing Reports</h6>
+                                <ul class="list-group">
+                                    @foreach($project->reports as $report)
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <a href="{{ asset('images/project/reports/'.$report->file) }}" target="_blank" class="text-decoration-none">{{ $report->file }}</a>
+                                            <button type="button" class="btn btn-sm btn-danger"
+                                                onclick="deleteReport('{{ route('admin.projects.reports.destroy', $report->id) }}')">Delete</button>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
                         </div>
                     </div>
 
@@ -158,8 +184,24 @@ Edit Project
                         <button type="submit" class="btn btn-danger">Update Project</button>
                     </div>
                 </form>
+
+                <!-- Standalone form for deleting a report (kept OUTSIDE the edit form above -->
+                <!-- to avoid invalid nested <form> tags, which break the main submit button). -->
+                <form id="deleteReportForm" method="POST" style="display:none;">
+                    @csrf
+                    @method('DELETE')
+                </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    function deleteReport(url) {
+        if (!confirm('Delete this report?')) return;
+        const form = document.getElementById('deleteReportForm');
+        form.action = url;
+        form.submit();
+    }
+</script>
 @endsection

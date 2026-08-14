@@ -44,10 +44,11 @@ class ProjectListController extends Controller
             'cover_image'      => 'nullable|image|mimes:jpeg,png,jpg,webp,gif',
             'galleries'        => 'nullable|array',
             'galleries.*'      => 'mimes:jpeg,png,jpg,webp,gif',
+            'report_file'      => 'nullable|file|mimes:pdf',
         ]);
 
         $payload = $validated;
-        unset($payload['galleries']);
+        unset($payload['galleries'], $payload['report_file']);
 
         $endRaw = $request->input('end_year');
         $isContinuing = $payload['status'] === 'ongoing';
@@ -98,12 +99,23 @@ class ProjectListController extends Controller
             }
         }
 
+        // Handle report upload
+        if ($request->hasFile('report_file')) {
+            $reportFile = $request->file('report_file');
+            $reportName = 'report_' . rand(1000000, 9999999) . '.' . $reportFile->getClientOriginalExtension();
+            $reportFile->move(public_path('images/project/reports'), $reportName);
+            \App\Models\ProjectReport::create([
+                'project_id' => $project->id,
+                'file'       => $reportName,
+            ]);
+        }
+
         return redirect()->route('admin.projects.index')->with('success', 'Project created successfully.');
     }
 
     public function edit(Project $project)
     {
-        $project->load('galleries');
+        $project->load('galleries', 'reports');
         return view('admin.projects.edit', compact('project'));
     }
 
@@ -131,10 +143,11 @@ class ProjectListController extends Controller
             'cover_image'      => 'nullable|image|mimes:jpeg,png,jpg,webp,gif',
             'galleries'        => 'nullable|array',
             'galleries.*'      => 'mimes:jpeg,png,jpg,webp,gif',
+            'report_file'      => 'nullable|file|mimes:pdf',
         ]);
 
         $payload = $validated;
-        unset($payload['galleries']);
+        unset($payload['galleries'], $payload['report_file']);
 
         $endRaw = $request->input('end_year');
         $isContinuing = $payload['status'] === 'ongoing';
@@ -193,6 +206,17 @@ class ProjectListController extends Controller
             }
         }
 
+        // Handle report upload
+        if ($request->hasFile('report_file')) {
+            $reportFile = $request->file('report_file');
+            $reportName = 'report_' . rand(1000000, 9999999) . '.' . $reportFile->getClientOriginalExtension();
+            $reportFile->move(public_path('images/project/reports'), $reportName);
+            \App\Models\ProjectReport::create([
+                'project_id' => $project->id,
+                'file'       => $reportName,
+            ]);
+        }
+
         return redirect()->route('admin.projects.index')->with('success', 'Project updated successfully.');
     }
 
@@ -203,6 +227,37 @@ class ProjectListController extends Controller
         if (file_exists($path)) @unlink($path);
         $gallery->delete();
         return redirect()->back()->with('success', 'Gallery image deleted.');
+    }
+
+    public function uploadReport(Request $request, Project $project)
+    {
+        $request->validate([
+            'reports' => 'required|array',
+            'reports.*' => 'file|mimes:pdf|max:10240',
+        ]);
+
+        if ($request->hasFile('reports')) {
+            foreach ($request->file('reports') as $file) {
+                $fileName = 'report_' . rand(1000000, 9999999) . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('images/project/reports/'), $fileName);
+
+                $project->reports()->create([
+                    'file' => $fileName,
+                ]);
+            }
+        }
+
+        return redirect()->back()->with('success', 'Report(s) uploaded successfully.');
+    }
+
+    public function deleteReport($id)
+    {
+        $report = \App\Models\ProjectReport::findOrFail($id);
+        $path = public_path('images/project/reports/' . $report->file);
+        if (file_exists($path)) @unlink($path);
+        $report->delete();
+
+        return redirect()->back()->with('success', 'Report deleted successfully.');
     }
 
     public function toggleStatus(Project $project)
@@ -245,7 +300,12 @@ class ProjectListController extends Controller
             if (file_exists($path)) @unlink($path);
         }
 
-        // Delete gallery images
+        foreach ($project->reports as $report) {
+            $path = public_path('images/project/reports/' . $report->file);
+            if (file_exists($path)) @unlink($path);
+        }
+        $project->reports()->delete();
+
         foreach ($project->galleries as $gallery) {
             $path = public_path('images/project/' . $gallery->image);
             if (file_exists($path)) @unlink($path);

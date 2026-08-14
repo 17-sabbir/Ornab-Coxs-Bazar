@@ -66,15 +66,6 @@ return new class extends Migration
                 $table->boolean('is_active')->default(true);
                 $table->timestamps();
             },
-            'chief_executive_message' => function (Blueprint $table) {
-                $table->id();
-                $table->string('name')->nullable();
-                $table->string('designation')->nullable();
-                $table->text('message')->nullable();
-                $table->string('image')->nullable();
-                $table->string('signature')->nullable();
-                $table->timestamps();
-            },
             'policy_guideline' => function (Blueprint $table) {
                 $table->id();
                 $table->string('title');
@@ -112,7 +103,7 @@ return new class extends Migration
     {
         // Only drop tables we created here
         $tables = ['about_us', 'slider', 'partners', 'gallery', 'subscribe',
-                    'legal_affilation', 'chief_executive_message', 'policy_guideline', 'invoked'];
+                    'legal_affilation', 'policy_guideline', 'invoked'];
         foreach ($tables as $table) {
             if (Schema::hasTable($table)) {
                 Schema::dropIfExists($table);
