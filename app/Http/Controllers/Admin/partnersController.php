@@ -17,18 +17,18 @@ class partnersController extends Controller
     public function store(Request $request){
         $validatedData = $request->validate([
             'name' => 'required',
-            'image' => 'required|mimes:jpg,png,gif,jpeg',
+            'logo' => 'required|mimes:jpg,png,gif,jpeg',
         ]);
 
         $partnerImg = '';
-        if($image = $request->file('image')){
+        if($image = $request->file('logo')){
             $partnerImg = rand(10000,99999). 'partner_donor.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/partner/'),$partnerImg);
         }
 
         $partner = [
             'name' => $request->name,
-            'image' => $partnerImg
+            'logo' => $partnerImg
         ];
 
         DB::table('partners')->insert($partner);
@@ -46,7 +46,7 @@ class partnersController extends Controller
 
         $partner = DB::table('partners')->where('id',$id)->first();
 
-        $oldPartner = public_path('images/partner/'.$partner->image);
+        $oldPartner = public_path('images/partner/'.$partner->logo);
 
         if(file_exists($oldPartner)){
             @unlink($oldPartner);
@@ -67,15 +67,15 @@ class partnersController extends Controller
 
         $validatedData = $request->validate([
             'name' => 'required',
-            'image' => 'nullable|mimes:jpg,png,gif,jpeg',
+            'logo' => 'nullable|mimes:jpg,png,gif,jpeg',
         ]);
 
         $partner_donor = DB::table('partners')->where('id',$id)->first();
 
         $imageName = '';
-        $oldImage = public_path('images/partner/'. $partner_donor->image);
+        $oldImage = public_path('images/partner/'. $partner_donor->logo);
 
-        if($image = $request->file('image')){
+        if($image = $request->file('logo')){
             if(file_exists($oldImage)){
                 @unlink($oldImage);
             }
@@ -83,12 +83,12 @@ class partnersController extends Controller
             $image->move(public_path('images/partner/'), $imageName);
         }
         else{
-            $imageName = $partner_donor->image;
+            $imageName = $partner_donor->logo;
         }
 
         $updatedPartner = [
             'name' => $request->name,
-            'image' => $imageName
+            'logo' => $imageName
         ];
 
         DB::table('partners')->where('id',$id)->update($updatedPartner);

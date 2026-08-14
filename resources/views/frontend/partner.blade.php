@@ -13,51 +13,20 @@
   <section class="pt-body">
     <div class="container" data-aos="fade-up">
 
-      @php
-        $networks = $partners->where('type', 'network');
-        $others   = $partners->where('type', '!=', 'network');
-      @endphp
-
-      @if($networks->count())
-      <div class="pt-group-label"><span>Networks & Memberships</span></div>
-      <div class="row g-4 justify-content-center mb-5">
-        @foreach($networks as $partner)
-        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in">
-          <div class="pt-card h-100">
-            <div class="pt-logo">
-              @if($partner->logo)
-                <img src="{{ asset('images/partners/'.$partner->logo) }}" alt="{{ $partner->name }}">
-              @else
-                <i class="fa-solid fa-handshake-angle"></i>
-              @endif
-            </div>
-            <h6 class="pt-name">{{ $partner->name }}</h6>
-            @if($partner->url)
-              <a href="{{ $partner->url }}" target="_blank" class="pt-link">Visit <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a>
-            @endif
-          </div>
-        </div>
-        @endforeach
-      </div>
-      @endif
-
-      @if($others->count())
+      @if($partners->count())
       <div class="pt-group-label"><span>Partners & Donors</span></div>
       <div class="row g-4 justify-content-center">
-        @foreach($others as $partner)
+        @foreach($partners as $partner)
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in">
           <div class="pt-card h-100">
             <div class="pt-logo">
               @if($partner->logo)
-                <img src="{{ asset('images/partners/'.$partner->logo) }}" alt="{{ $partner->name }}">
+                <img src="{{ asset('images/partner/'.$partner->logo) }}" alt="{{ $partner->name }}">
               @else
                 <i class="fa-solid fa-people-group"></i>
               @endif
             </div>
             <h6 class="pt-name">{{ $partner->name }}</h6>
-            @if($partner->url)
-              <a href="{{ $partner->url }}" target="_blank" class="pt-link">Visit <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i></a>
-            @endif
           </div>
         </div>
         @endforeach

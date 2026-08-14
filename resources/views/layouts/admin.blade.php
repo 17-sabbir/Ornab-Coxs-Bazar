@@ -185,6 +185,11 @@
         .sidebar-wrapper .metismenu > li:nth-child(23).mm-active > a { 
             background: linear-gradient(45deg, #bdc3c7, #95a5a6); box-shadow: 0 4px 10px rgba(149, 165, 166, 0.3); 
         }
+        /* 25. Partners/Donors - Indigo */
+        .sidebar-wrapper .metismenu > li:nth-child(25) .parent-icon { color: #6F42C1; }
+        .sidebar-wrapper .metismenu > li:nth-child(25).mm-active > a { 
+            background: linear-gradient(45deg, #6F42C1, #5A32A3); box-shadow: 0 4px 10px rgba(111, 66, 193, 0.3); 
+        }
 
         /* All items hover effect */
         .sidebar-wrapper .metismenu > li a:hover { 
@@ -774,20 +779,27 @@
  					<div class="menu-title">{{ 'Contact' }}</div>
  				</a>
  			</li>
-		<li>
- 			<a href="{{ route('faq.index') }}">
- 				<div class="parent-icon"><i class='bx bx-help-circle'></i>
- 				</div>
- 				<div class="menu-title">{{ 'FAQ' }}</div>
- 			</a>
- 		</li>
-                <li>
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <div class="parent-icon"><i class='bx bx-log-out-circle'></i>
-                        </div>
-						<div class="menu-title">{{ 'Logout' }}</div>
-                    </a>
-                </li>
+        <li>
+            <a href="{{ route('faq.index') }}">
+                <div class="parent-icon"><i class='bx bx-help-circle'></i>
+                </div>
+                <div class="menu-title">{{ 'FAQ' }}</div>
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('partner.index') }}">
+                <div class="parent-icon"><i class='bx bx-group'></i>
+                </div>
+                <div class="menu-title">{{ 'Partners/Donors' }}</div>
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <div class="parent-icon"><i class='bx bx-log-out-circle'></i>
+                </div>
+                <div class="menu-title">{{ 'Logout' }}</div>
+            </a>
+        </li>
 			</ul>
 			<!--end navigation-->
 		</div>

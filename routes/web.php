@@ -86,9 +86,8 @@ Route::get('/', function () {
 
     // Centralized, admin-editable homepage statistics
     $statistics = application();
-    $stories = DB::table('stories')->orderBy('id', 'desc')->get();
 
-    return view('home', compact('slider', 'project', 'news', 'partners', 'mission_vision', 'albumsPreview', 'hasMoreAlbums', 'application', 'stories', 'projectsCount', 'districtsCount', 'statistics'));
+    return view('home', compact('slider', 'project', 'news', 'partners', 'mission_vision', 'albumsPreview', 'hasMoreAlbums', 'application', 'projectsCount', 'districtsCount', 'statistics'));
 });
 
 Route::post('user/subscribe', [frontController::class, 'subscribe'])->name('user.subscribe')->middleware('recaptcha');
@@ -109,8 +108,6 @@ Route::get('ongoing/project/view/{id}', [frontController::class, 'project_view']
 Route::get('latest/news/view/{id}', [frontController::class, 'news_view'])->name('latest.news.view');
 Route::get('latest/news/all', [frontController::class, 'news_all'])->name('latest.news.all');
 Route::get('youtube/video', [frontController::class, 'youtube'])->name('youtube.video');
-Route::get('success/stories', [frontController::class, 'stories'])->name('success.stories');
-Route::get('success/stories/view/{id}', [frontController::class, 'storiesView'])->name('success.stories.view');
 
 // Stay Informed
 

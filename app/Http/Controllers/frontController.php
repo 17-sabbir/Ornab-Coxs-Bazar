@@ -130,22 +130,6 @@ class frontController extends Controller
         return view('frontend.youtube', compact('videos'));
     }
 
-    // Youtube
-    public function stories()
-    {
-        $stories = DB::table('stories')->orderBy('id', 'desc')->get();
-
-        return view('frontend.stories', compact('stories'));
-    }
-
-    // Story View
-    public function storiesView(int $id)
-    {
-        $story = DB::table('stories')->where('id', $id)->first();
-
-        return view('frontend.story_view', compact('story'));
-    }
-
     // __Latest News view__//
     public function news_view(int $id)
     {

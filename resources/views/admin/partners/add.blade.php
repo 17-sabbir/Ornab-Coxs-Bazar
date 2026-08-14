@@ -23,9 +23,9 @@
                             @enderror
                         </div>
                         <div class="col-md-12">
-                            <label for="image" class="form-label">Image<span class="text-danger">*</span></label>
-                            <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
-                            @error('image')
+                            <label for="logo" class="form-label">Logo/Image<span class="text-danger">*</span></label>
+                            <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror">
+                            @error('logo')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>

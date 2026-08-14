@@ -23,10 +23,10 @@
                             @enderror
                         </div>
                         <div class="col-md-12">
-                            <label for="image" class="form-label">Image</label>
-                            <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
-                            <span class="text-info">Old Image: {{ $partner->image }}</span>
-                            @error('image')
+                            <label for="logo" class="form-label">Logo/Image</label>
+                            <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror">
+                            <span class="text-info">Old Logo: {{ $partner->logo }}</span>
+                            @error('logo')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>

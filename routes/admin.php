@@ -22,7 +22,6 @@ use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\PublicationController;
 use App\Http\Controllers\Admin\sliderController;
 use App\Http\Controllers\Admin\YoutubeVideoController;
-use App\Http\Controllers\Admin\StoryController;
 use App\Http\Controllers\Admin\StrategicPlanController;
 use App\Http\Controllers\Admin\ProjectListController;
 use App\Http\Controllers\Admin\subscribeController;
@@ -193,13 +192,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('team/update/{id}', [TeamMemberController::class, 'update'])->name('team.update');
 
     // __ Team Members __//
-    Route::get('stories/add', [StoryController::class, 'add'])->name('stories.add');
-    Route::post('stories/store', [StoryController::class, 'store'])->name('stories.store');
-    Route::get('stories/index', [StoryController::class, 'index'])->name('stories.index');
-    Route::get('stories/delete/{id}', [StoryController::class, 'destroy'])->name('stories.delete');
-    Route::get('stories/edit/{id}', [StoryController::class, 'edit'])->name('stories.edit');
-    Route::post('stories/update/{id}', [StoryController::class, 'update'])->name('stories.update');
-
     // __ FAQ __//
     Route::get('faq/add', [FaqController::class, 'add'])->name('faq.add');
     Route::post('faq/store', [FaqController::class, 'store'])->name('faq.store');

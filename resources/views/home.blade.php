@@ -1047,7 +1047,7 @@ Ornab Coxs Bazar
         }
     </style>
 
-    <div class="container px-2">
+    <div class="container">
         <div class="text-center mb-3">
             <div class="mb-2">
                 <span class="uerd-news-pill">Stay informed</span>
@@ -1149,7 +1149,7 @@ Ornab Coxs Bazar
         .uerd-sponsor-btn-outline:hover { background: rgba(255,255,255,.12); color: #fff; }
     </style>
     <div class="uerd-section pt-4 pb-4">
-        <div class="container px-2">
+        <div class="container">
             <div class="uerd-sponsor-card text-center">
                 <div class="uerd-sponsor-icon"><i class="fa-regular fa-heart fs-4"></i></div>
                 <h2 class="uerd-sponsor-title mb-3">Sponsor for a Growing Fund</h2>
@@ -1238,7 +1238,7 @@ Ornab Coxs Bazar
         }
     </style>
 
-    <div class="container px-2">
+    <div class="container">
         <div class="text-center mb-3">
             <div class="mb-2">
                 <span class="uerd-gallery-pill">Photo gallery</span>
@@ -1296,7 +1296,6 @@ Ornab Coxs Bazar
 
 
 {{-- Donors & Partners --}}
-<?php if (isset($partners) && count($partners) > 0) { ?>
 <div class="bg-white uerd-section pt-4">
     <style>
         .uerd-partner-pill {
@@ -1323,9 +1322,31 @@ Ornab Coxs Bazar
         .uerd-partner-scroll .uerd-hscroll-item {
             width: 220px;
         }
-        @@media (max-width: 575.98px) {
+        .uerd-partner-scroll .uerd-hscroll {
+            overflow: hidden;
+        }
+        .uerd-partner-scroll .uerd-partner-track {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+            animation: uerdPartnerScroll 35s linear infinite;
+        }
+        .uerd-partner-scroll:hover .uerd-partner-track {
+            animation-play-state: paused;
+        }
+        .uerd-partner-scroll .uerd-hscroll-item {
+            flex: 0 0 auto;
+        }
+        @keyframes uerdPartnerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @media (max-width: 575.98px) {
             .uerd-partner-scroll .uerd-hscroll-item {
                 width: 200px;
+            }
+            .uerd-partner-scroll .uerd-partner-track {
+                animation-duration: 50s;
             }
         }
 
@@ -1380,7 +1401,7 @@ Ornab Coxs Bazar
         }
     </style>
 
-    <div class="container px-2">
+    <div class="container">
         <div class="text-center mb-3">
             <div class="mb-2">
                 <span class="uerd-partner-pill">Trusted by</span>
@@ -1391,13 +1412,15 @@ Ornab Coxs Bazar
             </p>
         </div>
 
+        <?php if (isset($partners) && count($partners) > 0) { ?>
         <div class="uerd-hscroll-wrap uerd-partner-scroll">
             <button type="button" class="uerd-hscroll-nav is-prev" aria-label="Scroll partners left" data-hscroll-prev="uerdPartnersScroll">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
 
             <div id="uerdPartnersScroll" class="uerd-hscroll">
-                <?php foreach ($partners as $partner) { ?>
+                <div class="uerd-partner-track">
+                    <?php foreach ($partners as $partner) { ?>
                     <?php
                         $partnerName = $partner->name ?? '';
                     $words = preg_split('/\s+/', trim($partnerName));
@@ -1415,10 +1438,10 @@ Ornab Coxs Bazar
 
                     <div class="uerd-hscroll-item">
                         <div class="uerd-partner-card uerd-card-hover">
-                            <?php if (! empty($partner->image)) { ?>
+                            <?php if (! empty($partner->logo)) { ?>
                                 <div class="uerd-partner-logo">
                                     <img
-                                        src="<?php echo e(asset('images/partner/'.$partner->image)); ?>"
+                                        src="<?php echo e(asset('images/partner/'.$partner->logo)); ?>"
                                         alt="<?php echo e($partnerName); ?>"
                                         loading="lazy"
                                         onerror="this.onerror=null;this.closest('.uerd-partner-logo').style.display='none';"
@@ -1431,7 +1454,8 @@ Ornab Coxs Bazar
                             <div class="uerd-partner-name"><?php echo e($partnerName); ?></div>
                         </div>
                     </div>
-                <?php } ?>
+                    <?php } ?>
+                </div>
             </div>
 
             <button type="button" class="uerd-hscroll-nav is-next" aria-label="Scroll partners right" data-hscroll-next="uerdPartnersScroll">
@@ -1442,314 +1466,13 @@ Ornab Coxs Bazar
                 <div class="uerd-hscroll-indicator" data-hscroll-indicator-for="uerdPartnersScroll"></div>
             </div>
         </div>
+        <?php } else { ?>
+        <p class="text-center text-muted py-4">No partners listed yet.</p>
+        <?php } ?>
     </div>
 </div>
-<?php } ?>
 
 {{-- End of Donors & Partners --}}
-
-<!-- Success Stories -->
-<?php if (isset($stories) && count($stories) > 0) { ?>
-<div class="uerd-soft-section uerd-section uerd-section-tight-bottom pt-4">
-    <style>
-        .uerd-story-filter {
-            border-radius: 999px;
-            padding: 2px 10px;
-            font-weight: 800;
-            border: 1px solid rgba(0, 0, 0, 0.10);
-            background: rgba(255, 255, 255, 0.70);
-        }
-        .uerd-story-filter.active {
-            background-color: #198754 !important;
-            border-color: #198754 !important;
-            color: #ffffff !important;
-        }
-        .uerd-story-wrap {
-            max-width: 920px;
-            margin: 0 auto;
-        }
-        .uerd-story-card {
-            background: #ffffff;
-            border-radius: 22px;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-             padding: 28px 24px;
-        }
-
-        .uerd-story-layout {
-            display: flex;
-            align-items: flex-start;
-            gap: 22px;
-            text-align: left;
-        }
-        .uerd-story-left {
-            width: 170px;
-            flex: 0 0 170px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .uerd-story-right {
-            flex: 1 1 auto;
-            min-width: 0;
-        }
-        .uerd-story-text {
-            max-width: 100%;
-            margin: 0;
-            color: #6c757d;
-            font-style: italic;
-            line-height: 1.85;
-            font-size: 1.05rem;
-        }
-        /* Clamp long story descriptions and provide read-more toggle */
-        .uerd-story-text {
-            max-height: 9.5rem; /* approx 5 lines */
-            overflow: hidden;
-            position: relative;
-            transition: max-height 260ms ease;
-        }
-        .uerd-story-text.expanded {
-            max-height: 2000px;
-        }
-        .uerd-story-text::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 2.4rem;
-            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%);
-            pointer-events: none;
-        }
-        .uerd-story-text.expanded::after { display: none; }
-        .uerd-story-readmore {
-            display: inline-block;
-            margin-top: 8px;
-            color: var(--uerd-green);
-            font-weight: 700;
-            cursor: pointer;
-        }
-        .uerd-story-avatar {
-            width: 130px;
-            height: 130px;
-            border-radius: 999px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #198754;
-            color: #ffffff;
-            font-weight: 900;
-            font-size: 2.2rem;
-        }
-        .uerd-story-avatar-img {
-            width: 130px;
-            height: 130px;
-            border-radius: 999px;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-            border: 2px solid rgba(25, 135, 84, 0.25);
-        }
-        .uerd-story-name {
-            font-weight: 900;
-            letter-spacing: -0.2px;
-        }
-        .uerd-story-role {
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-
-        @@media (max-width: 575.98px) {
-            .uerd-story-layout {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .uerd-story-left {
-                width: auto;
-                flex-basis: auto;
-            }
-            .uerd-story-right {
-                width: 100%;
-                text-align: center;
-            }
-            .uerd-story-text { text-align: center; }
-        }
-        /* Carousel controls & indicators to match screenshot */
-        #testimonialCarousel .carousel-control-prev,
-        #testimonialCarousel .carousel-control-next {
-            width: auto;
-            opacity: 1;
-            top: auto;
-            bottom: 26px;
-            transform: none;
-        }
-        #testimonialCarousel .carousel-control-prev { left: calc(50% - 130px); }
-        #testimonialCarousel .carousel-control-next { left: calc(50% + 92px); }
-        .uerd-story-navbtn {
-            width: 42px;
-            height: 42px;
-            border-radius: 999px;
-            border: 1px solid rgba(0, 0, 0, 0.12);
-            background: rgba(255, 255, 255, 0.85);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: #198754;
-        }
-        #testimonialCarousel .carousel-control-prev-icon,
-        #testimonialCarousel .carousel-control-next-icon {
-            filter: none;
-            width: 18px;
-            height: 18px;
-        }
-        #testimonialCarousel .carousel-indicators {
-            margin-bottom: 20px;
-        }
-        #testimonialCarousel .carousel-indicators [data-bs-target] {
-            width: 6px;
-            height: 6px;
-            border-radius: 999px;
-            border: 0;
-            margin: 0 4px;
-            background-color: rgba(0, 0, 0, 0.18);
-            opacity: 1;
-        }
-        #testimonialCarousel .carousel-indicators .active {
-            width: 18px;
-            background-color: #198754;
-        }
-    </style>
-
-    <div class="container px-2">
-        <div class="text-center mb-3">
-            <h2 class="uerd-sponsor-title mb-2">Success Stories</h2>
-        </div>
-
-        {{-- Rating Filter --}}
-        <div class="text-center mb-4">
-            <button class="btn uerd-story-filter me-2 filter-btn" data-rating="5">5 ★</button>
-            <button class="btn uerd-story-filter me-2 filter-btn" data-rating="4">4 ★</button>
-            <button class="btn uerd-story-filter me-2 filter-btn" data-rating="3">3 ★</button>
-            <button class="btn uerd-story-filter me-2 filter-btn" data-rating="2">2 ★</button>
-            <button class="btn uerd-story-filter me-2 filter-btn" data-rating="1">1 ★</button>
-            <button class="btn uerd-story-filter filter-btn active" data-rating="0">All</button>
-        </div>
-
-        <div class="uerd-story-wrap">
-            <!-- Success Stories Slider -->
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                <?php if (count($stories) > 1) { ?>
-                    <div class="carousel-indicators">
-                        <?php foreach ($stories as $i => $story) { ?>
-                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="<?php echo e($i); ?>" class="<?php echo e($i == 0 ? 'active' : ''); ?>" aria-current="<?php echo e($i == 0 ? 'true' : 'false'); ?>" aria-label="Slide <?php echo e($i + 1); ?>"></button>
-                        <?php } ?>
-                    </div>
-                <?php } ?>
-
-                <div class="carousel-inner">
-                    <?php foreach ($stories as $index => $story) { ?>
-                        <?php $initial = strtoupper(mb_substr(trim($story->beneficiary_name ?? 'U'), 0, 1)); ?>
-                        <div class="carousel-item <?php echo e($index == 0 ? 'active' : ''); ?> story-item" data-rating="<?php echo e($story->rating); ?>">
-                            <div class="uerd-story-card uerd-card-hover">
-                                <div class="uerd-story-layout">
-                                    <div class="uerd-story-left">
-                                        <div class="mb-3">
-                                            <?php if (! empty($story->image)) { ?>
-                                                <img src="<?php echo e(asset('images/stories/'.$story->image)); ?>" class="uerd-story-avatar-img" alt="<?php echo e($story->beneficiary_name); ?>">
-                                            <?php } else { ?>
-                                                <span class="uerd-story-avatar"><?php echo e($initial); ?></span>
-                                            <?php } ?>
-                                        </div>
-                                        <div class="uerd-story-name text-center"><?php echo e($story->beneficiary_name); ?></div>
-                                        <div class="uerd-story-role text-center"><?php echo e($story->beneficiary_title); ?></div>
-                                    </div>
-
-                                    <div class="uerd-story-right">
-                                        <div class="rating mb-3">
-                                            <?php for ($i = 1; $i <= 5; $i++) { ?>
-                                                <?php if ($i <= $story->rating) { ?>
-                                                    <span class="text-warning fs-5">&#9733;</span>
-                                                <?php } else { ?>
-                                                    <span class="text-muted fs-5">&#9733;</span>
-                                                <?php } ?>
-                                            <?php } ?>
-                                        </div>
-
-                                        <p class="uerd-story-text mb-0"><?php echo $story->description; ?></p>
-                                        <?php if (mb_strlen(strip_tags($story->description)) > 240) { ?>
-                                            <a class="uerd-story-readmore" data-story-index="<?php echo e($index); ?>">Read More</a>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?>
-                </div>
-
-                <?php if (count($stories) > 1) { ?>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                        <span class="uerd-story-navbtn" aria-hidden="true">
-                            <span class="carousel-control-prev-icon"></span>
-                        </span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                        <span class="uerd-story-navbtn" aria-hidden="true">
-                            <span class="carousel-control-next-icon"></span>
-                        </span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                <?php } ?>
-            </div>
-        </div>
-        <!-- End of Success Stories Slider -->
-    </div>
-</div>
-<?php } ?>
-<!-- End of Success Stories -->
-
-
-
-<script>
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const selectedRating = this.getAttribute('data-rating');
-
-        // Update active button
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-
-        // Filter stories (keep carousel active item valid)
-        const items = Array.from(document.querySelectorAll('.story-item'));
-        items.forEach(item => {
-            const match = (selectedRating === '0') || (item.getAttribute('data-rating') === selectedRating);
-            item.style.display = match ? '' : 'none';
-            item.classList.remove('active');
-        });
-
-        const firstVisible = items.find(i => i.style.display !== 'none');
-        if (firstVisible) {
-            firstVisible.classList.add('active');
-        }
-    });
-});
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.uerd-story-readmore').forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const right = this.closest('.uerd-story-right');
-            const text = right ? right.querySelector('.uerd-story-text') : null;
-            if (!text) return;
-            const expanded = text.classList.toggle('expanded');
-            this.textContent = expanded ? 'Read Less' : 'Read More';
-        });
-    });
-});
-</script>
 
 {{-- subscription part --}}
 <div class="bg-light pt-4 pb-4">
@@ -1931,6 +1654,12 @@ document.addEventListener('DOMContentLoaded', function () {
         initHScroll('uerdNewsScroll');
         initHScroll('uerdGalleryScroll');
         initHScroll('uerdPartnersScroll');
+
+        const partnerTrack = document.querySelector('.uerd-partner-track');
+        if (partnerTrack) {
+            const items = partnerTrack.innerHTML;
+            partnerTrack.innerHTML = items + items;
+        }
     });
 </script>
 
