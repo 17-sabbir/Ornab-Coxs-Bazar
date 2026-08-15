@@ -23,7 +23,6 @@ class SitemapController extends Controller
             ['url' => route('volunterr.opportunities'), 'priority' => '0.7', 'freq' => 'weekly'],
             ['url' => route('annual.reports'), 'priority' => '0.7', 'freq' => 'monthly'],
             ['url' => route('financial.statements'), 'priority' => '0.7', 'freq' => 'monthly'],
-            ['url' => route('audit.reports'), 'priority' => '0.7', 'freq' => 'monthly'],
         ];
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;

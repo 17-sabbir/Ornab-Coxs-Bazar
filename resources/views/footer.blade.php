@@ -340,6 +340,7 @@
                         <li><a href="{{ route('about.us') }}">{{ 'About us' }}</a></li>
                         <li><a href="{{ route('ongoing.project') }}">{{ 'Projects' }}</a></li>
                         <li><a href="{{ route('latest.news.all') }}">{{ 'Media Center' }}</a></li>
+                        <li><a href="{{ route('annual.reports') }}">{{ 'Transparency' }}</a></li>
                         <li><a href="{{ route('gallery.albums') }}">{{ 'Gallery' }}</a></li>
                     </ul>
                 </div>

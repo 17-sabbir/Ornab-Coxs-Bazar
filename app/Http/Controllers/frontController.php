@@ -130,6 +130,14 @@ class frontController extends Controller
         return view('frontend.news_all', compact('news'));
     }
 
+    // __All Notices__//
+    public function notice_all()
+    {
+        $notices = DB::table('notices')->orderBy('publish_date', 'desc')->orderBy('id', 'desc')->paginate(15);
+
+        return view('frontend.notice_all', compact('notices'));
+    }
+
     // Youtube
     public function youtube()
     {
@@ -144,6 +152,14 @@ class frontController extends Controller
         $news = DB::table('latest_news')->where('id', $id)->first();
 
         return view('frontend.news_view', compact('news'));
+    }
+
+    // __Notice view__//
+    public function notice_view(int $id)
+    {
+        $notice = DB::table('notices')->where('id', $id)->first();
+
+        return view('frontend.notice_view', compact('notice'));
     }
 
     // Strategic Plan
@@ -370,13 +386,6 @@ class frontController extends Controller
     {
         $statements = \App\Models\FinancialStatement::active()->orderBy('year', 'desc')->orderBy('order', 'asc')->get();
         return view('frontend.financial_statements', compact('statements'));
-    }
-
-    // Audit Reports (Transparency)
-    public function auditReports()
-    {
-        $reports = \App\Models\AuditReport::active()->ordered()->get();
-        return view('frontend.audit_reports', compact('reports'));
     }
 
     // Focus Areas

@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\LegalRegistrationController;
 use App\Http\Controllers\Admin\messageController;
 use App\Http\Controllers\Admin\missionController;
 use App\Http\Controllers\Admin\newsController;
+use App\Http\Controllers\Admin\noticeController;
 use App\Http\Controllers\Admin\partnersController;
 use App\Http\Controllers\Admin\PaymentMethodController;
 use App\Http\Controllers\Admin\policyController;
@@ -29,7 +30,6 @@ use App\Http\Controllers\Admin\VolunteerApplicationController;
 use App\Http\Controllers\Admin\VolunteerInfoController;
 use App\Http\Controllers\Admin\AnnualReportController;
 use App\Http\Controllers\Admin\FinancialStatementController;
-use App\Http\Controllers\Admin\AuditReportController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\BoardOfDirectorController;
 use Illuminate\Support\Facades\Auth;
@@ -77,6 +77,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/news/delete/{id}', [newsController::class, 'destroy'])->name('news.delete');
     Route::get('/news/edit/{id}', [newsController::class, 'edit'])->name('news.edit');
     Route::post('/news/update/{id}', [newsController::class, 'update'])->name('news.update');
+
+    // Notices
+    Route::get('/notices/add', [noticeController::class, 'add'])->name('notices.add');
+    Route::post('/notices/store', [noticeController::class, 'store'])->name('notices.store');
+    Route::get('/notices/index', [noticeController::class, 'index'])->name('notices.index');
+    Route::get('/notices/delete/{id}', [noticeController::class, 'destroy'])->name('notices.delete');
+    Route::get('/notices/edit/{id}', [noticeController::class, 'edit'])->name('notices.edit');
+    Route::post('/notices/update/{id}', [noticeController::class, 'update'])->name('notices.update');
 
     // Photo Gallery
     Route::get('/gallery/add', [galleryController::class, 'add'])->name('gallery.add');
@@ -231,9 +239,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     // __ Financial Statements __//
     Route::resource('financial-statements', FinancialStatementController::class)->names('admin.financial_statements');
-
-    // __ Audit Reports __//
-    Route::resource('audit-reports', AuditReportController::class)->names('admin.audit_reports');
 
     // __ Settings __//
     Route::get('settings', [SettingController::class, 'index'])->name('settings.index');

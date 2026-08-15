@@ -76,120 +76,135 @@
         .sidebar-wrapper .metismenu > li:nth-child(1).mm-active > a { 
             background: linear-gradient(45deg, #4A90D9, #357ABD); box-shadow: 0 4px 10px rgba(74, 144, 217, 0.3); 
         }
-        /* 2. Slider - Amethyst Purple */
-        .sidebar-wrapper .metismenu > li:nth-child(2) .parent-icon { color: #9B59B6; }
+        /* 2. About Us - Cyan */
+        .sidebar-wrapper .metismenu > li:nth-child(2) .parent-icon { color: #00CEC9; }
         .sidebar-wrapper .metismenu > li:nth-child(2).mm-active > a { 
-            background: linear-gradient(45deg, #9B59B6, #7D3C98); box-shadow: 0 4px 10px rgba(155, 89, 182, 0.3); 
+            background: linear-gradient(45deg, #00CEC9, #00B3AE); box-shadow: 0 4px 10px rgba(0, 206, 201, 0.3); 
         }
-        /* 3. Projects - Coral Red */
-        .sidebar-wrapper .metismenu > li:nth-child(3) .parent-icon { color: #E74C3C; }
+        /* 3. Board of Directors - Deep Gold */
+        .sidebar-wrapper .metismenu > li:nth-child(3) .parent-icon { color: #D4AC0D; }
         .sidebar-wrapper .metismenu > li:nth-child(3).mm-active > a { 
-            background: linear-gradient(45deg, #E74C3C, #C0392B); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); 
+            background: linear-gradient(45deg, #D4AC0D, #B7950B); box-shadow: 0 4px 10px rgba(212, 172, 13, 0.3); 
         }
-        /* 4. Latest News - Golden Yellow */
-        .sidebar-wrapper .metismenu > li:nth-child(4) .parent-icon { color: #F1C40F; }
+        /* 4. Career - Purple Pink */
+        .sidebar-wrapper .metismenu > li:nth-child(4) .parent-icon { color: #A55EEA; }
         .sidebar-wrapper .metismenu > li:nth-child(4).mm-active > a { 
+            background: linear-gradient(45deg, #A55EEA, #8854D0); box-shadow: 0 4px 10px rgba(165, 94, 234, 0.3); 
+        }
+        /* 5. Contact - Soft Red */
+        .sidebar-wrapper .metismenu > li:nth-child(5) .parent-icon { color: #FC427B; }
+        .sidebar-wrapper .metismenu > li:nth-child(5).mm-active > a { 
+            background: linear-gradient(45deg, #FC427B, #E84393); box-shadow: 0 4px 10px rgba(252, 66, 123, 0.3); 
+        }
+        /* 6. Donate Now - Rose Red */
+        .sidebar-wrapper .metismenu > li:nth-child(6) .parent-icon { color: #E84393; }
+        .sidebar-wrapper .metismenu > li:nth-child(6).mm-active > a { 
+            background: linear-gradient(45deg, #E84393, #C44569); box-shadow: 0 4px 10px rgba(232, 67, 147, 0.3); 
+        }
+        /* 7. FAQ - Bright Cyan */
+        .sidebar-wrapper .metismenu > li:nth-child(7) .parent-icon { color: #00B8D4; }
+        .sidebar-wrapper .metismenu > li:nth-child(7).mm-active > a { 
+            background: linear-gradient(45deg, #00B8D4, #0097A7); box-shadow: 0 4px 10px rgba(0, 184, 212, 0.3); 
+        }
+        /* 8. Impact - Purple */
+        .sidebar-wrapper .metismenu > li:nth-child(8) .parent-icon { color: #A29BFE; }
+        .sidebar-wrapper .metismenu > li:nth-child(8).mm-active > a { 
+            background: linear-gradient(45deg, #A29BFE, #6C5CE7); box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3); 
+        }
+        /* 9. Latest News - Golden Yellow */
+        .sidebar-wrapper .metismenu > li:nth-child(9) .parent-icon { color: #F1C40F; }
+        .sidebar-wrapper .metismenu > li:nth-child(9).mm-active > a { 
             background: linear-gradient(45deg, #F1C40F, #D4AC0D); box-shadow: 0 4px 10px rgba(241, 196, 15, 0.3); 
         }
-        /* 5. Photo Gallery - Emerald Green */
-        .sidebar-wrapper .metismenu > li:nth-child(5) .parent-icon { color: #2ECC71; }
-        .sidebar-wrapper .metismenu > li:nth-child(5).mm-active > a { 
-            background: linear-gradient(45deg, #2ECC71, #27AE60); box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3); 
-        }
-        /* 6. YouTube Videos - Red */
-        .sidebar-wrapper .metismenu > li:nth-child(6) .parent-icon { color: #E74C3C; }
-        .sidebar-wrapper .metismenu > li:nth-child(6).mm-active > a { 
-            background: linear-gradient(45deg, #E74C3C, #C0392B); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); 
-        }
-        /* 7. Publications - Teal */
-        .sidebar-wrapper .metismenu > li:nth-child(7) .parent-icon { color: #1ABC9C; }
-        .sidebar-wrapper .metismenu > li:nth-child(7).mm-active > a { 
-            background: linear-gradient(45deg, #1ABC9C, #16A085); box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3); 
-        }
-        /* 8. Strategic Plan - Deep Purple */
-        .sidebar-wrapper .metismenu > li:nth-child(8) .parent-icon { color: #8E44AD; }
-        .sidebar-wrapper .metismenu > li:nth-child(8).mm-active > a { 
-            background: linear-gradient(45deg, #8E44AD, #6C3483); box-shadow: 0 4px 10px rgba(142, 68, 173, 0.3); 
-        }
-        /* 9. Policy & Guideline - Dark Orange */
-        .sidebar-wrapper .metismenu > li:nth-child(9) .parent-icon { color: #E67E22; }
-        .sidebar-wrapper .metismenu > li:nth-child(9).mm-active > a { 
-            background: linear-gradient(45deg, #E67E22, #CA6F1E); box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3); 
-        }
-        /* 10. Team Members - Sky Blue */
+        /* 10. Legal Registration Status - Sky Blue */
         .sidebar-wrapper .metismenu > li:nth-child(10) .parent-icon { color: #3498DB; }
         .sidebar-wrapper .metismenu > li:nth-child(10).mm-active > a { 
             background: linear-gradient(45deg, #3498DB, #2E86C1); box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3); 
         }
-        /* 11. Origin & Legal - Pink */
-        .sidebar-wrapper .metismenu > li:nth-child(11) .parent-icon { color: #FD79A8; }
+        /* 11. Messages - Ocean Blue */
+        .sidebar-wrapper .metismenu > li:nth-child(11) .parent-icon { color: #0984E3; }
         .sidebar-wrapper .metismenu > li:nth-child(11).mm-active > a { 
-            background: linear-gradient(45deg, #FD79A8, #E84393); box-shadow: 0 4px 10px rgba(253, 121, 168, 0.3); 
-        }
-        /* 12. Transparency - Mint Green */
-        .sidebar-wrapper .metismenu > li:nth-child(12) .parent-icon { color: #00B894; }
-        .sidebar-wrapper .metismenu > li:nth-child(12).mm-active > a { 
-            background: linear-gradient(45deg, #00B894, #00A381); box-shadow: 0 4px 10px rgba(0, 184, 148, 0.3); 
-        }
-        /* 13. Subscribe - Orange */
-        .sidebar-wrapper .metismenu > li:nth-child(13) .parent-icon { color: #F39C12; }
-        .sidebar-wrapper .metismenu > li:nth-child(13).mm-active > a { 
-            background: linear-gradient(45deg, #F39C12, #D68910); box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3); 
-        }
-        /* 14. Donate Now - Rose Red */
-        .sidebar-wrapper .metismenu > li:nth-child(14) .parent-icon { color: #E84393; }
-        .sidebar-wrapper .metismenu > li:nth-child(14).mm-active > a { 
-            background: linear-gradient(45deg, #E84393, #C44569); box-shadow: 0 4px 10px rgba(232, 67, 147, 0.3); 
-        }
-        /* 15. Messages - Ocean Blue */
-        .sidebar-wrapper .metismenu > li:nth-child(15) .parent-icon { color: #0984E3; }
-        .sidebar-wrapper .metismenu > li:nth-child(15).mm-active > a { 
             background: linear-gradient(45deg, #0984E3, #0871C2); box-shadow: 0 4px 10px rgba(9, 132, 227, 0.3); 
         }
-        /* 16. Settings - Gray/Steel */
-        .sidebar-wrapper .metismenu > li:nth-child(16) .parent-icon { color: #636E72; }
+        /* 12. Notices - Emerald Green */
+        .sidebar-wrapper .metismenu > li:nth-child(12) .parent-icon { color: #2ECC71; }
+        .sidebar-wrapper .metismenu > li:nth-child(12).mm-active > a { 
+            background: linear-gradient(45deg, #2ECC71, #27AE60); box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3); 
+        }
+        /* 13. Origin & Legal Affiliation - Pink */
+        .sidebar-wrapper .metismenu > li:nth-child(13) .parent-icon { color: #FD79A8; }
+        .sidebar-wrapper .metismenu > li:nth-child(13).mm-active > a { 
+            background: linear-gradient(45deg, #FD79A8, #E84393); box-shadow: 0 4px 10px rgba(253, 121, 168, 0.3); 
+        }
+        /* 14. Partners & Donors - Indigo */
+        .sidebar-wrapper .metismenu > li:nth-child(14) .parent-icon { color: #6F42C1; }
+        .sidebar-wrapper .metismenu > li:nth-child(14).mm-active > a { 
+            background: linear-gradient(45deg, #6F42C1, #5A32A3); box-shadow: 0 4px 10px rgba(111, 66, 193, 0.3); 
+        }
+        /* 15. Photo Gallery - Teal */
+        .sidebar-wrapper .metismenu > li:nth-child(15) .parent-icon { color: #1ABC9C; }
+        .sidebar-wrapper .metismenu > li:nth-child(15).mm-active > a { 
+            background: linear-gradient(45deg, #1ABC9C, #16A085); box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3); 
+        }
+        /* 16. Policy & Guideline - Dark Orange */
+        .sidebar-wrapper .metismenu > li:nth-child(16) .parent-icon { color: #E67E22; }
         .sidebar-wrapper .metismenu > li:nth-child(16).mm-active > a { 
+            background: linear-gradient(45deg, #E67E22, #CA6F1E); box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3); 
+        }
+        /* 17. Projects - Coral Red */
+        .sidebar-wrapper .metismenu > li:nth-child(17) .parent-icon { color: #E74C3C; }
+        .sidebar-wrapper .metismenu > li:nth-child(17).mm-active > a { 
+            background: linear-gradient(45deg, #E74C3C, #C0392B); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); 
+        }
+        /* 18. Publications - Amethyst Purple */
+        .sidebar-wrapper .metismenu > li:nth-child(18) .parent-icon { color: #9B59B6; }
+        .sidebar-wrapper .metismenu > li:nth-child(18).mm-active > a { 
+            background: linear-gradient(45deg, #9B59B6, #7D3C98); box-shadow: 0 4px 10px rgba(155, 89, 182, 0.3); 
+        }
+        /* 19. Settings - Gray/Steel */
+        .sidebar-wrapper .metismenu > li:nth-child(19) .parent-icon { color: #636E72; }
+        .sidebar-wrapper .metismenu > li:nth-child(19).mm-active > a { 
             background: linear-gradient(45deg, #636E72, #4B5358); box-shadow: 0 4px 10px rgba(99, 110, 114, 0.3); 
         }
-        /* 17. Impact - Lime Green */
-        .sidebar-wrapper .metismenu > li:nth-child(17) .parent-icon { color: #A29BFE; }
-        .sidebar-wrapper .metismenu > li:nth-child(17).mm-active > a { 
-            background: linear-gradient(45deg, #A29BFE, #6C5CE7); box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3); 
-        }
-        /* 18. About Us - Cyan */
-        .sidebar-wrapper .metismenu > li:nth-child(18) .parent-icon { color: #00CEC9; }
-        .sidebar-wrapper .metismenu > li:nth-child(18).mm-active > a { 
-            background: linear-gradient(45deg, #00CEC9, #00B3AE); box-shadow: 0 4px 10px rgba(0, 206, 201, 0.3); 
-        }
-        /* 19. Board of Directors - Deep Gold */
-        .sidebar-wrapper .metismenu > li:nth-child(19) .parent-icon { color: #D4AC0D; }
-        .sidebar-wrapper .metismenu > li:nth-child(19).mm-active > a { 
-            background: linear-gradient(45deg, #D4AC0D, #B7950B); box-shadow: 0 4px 10px rgba(212, 172, 13, 0.3); 
-        }
-        /* 20. Career - Purple Pink */
-        .sidebar-wrapper .metismenu > li:nth-child(20) .parent-icon { color: #A55EEA; }
+        /* 20. Slider - Deep Purple */
+        .sidebar-wrapper .metismenu > li:nth-child(20) .parent-icon { color: #8E44AD; }
         .sidebar-wrapper .metismenu > li:nth-child(20).mm-active > a { 
-            background: linear-gradient(45deg, #A55EEA, #8854D0); box-shadow: 0 4px 10px rgba(165, 94, 234, 0.3); 
+            background: linear-gradient(45deg, #8E44AD, #6C3483); box-shadow: 0 4px 10px rgba(142, 68, 173, 0.3); 
         }
-        /* 21. Contact - Soft Red */
-        .sidebar-wrapper .metismenu > li:nth-child(21) .parent-icon { color: #FC427B; }
+        /* 21. Strategic Plan - Navy */
+        .sidebar-wrapper .metismenu > li:nth-child(21) .parent-icon { color: #34495E; }
         .sidebar-wrapper .metismenu > li:nth-child(21).mm-active > a { 
-            background: linear-gradient(45deg, #FC427B, #E84393); box-shadow: 0 4px 10px rgba(252, 66, 123, 0.3); 
+            background: linear-gradient(45deg, #34495E, #2C3E50); box-shadow: 0 4px 10px rgba(52, 73, 94, 0.3); 
         }
-        /* 22. Focus Area - Bright Cyan */
-        .sidebar-wrapper .metismenu > li:nth-child(22) .parent-icon { color: #00B8D4; }
+        /* 22. Subscribe - Orange */
+        .sidebar-wrapper .metismenu > li:nth-child(22) .parent-icon { color: #F39C12; }
         .sidebar-wrapper .metismenu > li:nth-child(22).mm-active > a { 
-            background: linear-gradient(45deg, #00B8D4, #0097A7); box-shadow: 0 4px 10px rgba(0, 184, 212, 0.3); 
+            background: linear-gradient(45deg, #F39C12, #D68910); box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3); 
         }
-        /* 23. Logout - Light Slate */
-        .sidebar-wrapper .metismenu > li:nth-child(23) .parent-icon { color: rgba(255,255,255,0.7); }
+        /* 23. Team Members - Blue */
+        .sidebar-wrapper .metismenu > li:nth-child(23) .parent-icon { color: #2980B9; }
         .sidebar-wrapper .metismenu > li:nth-child(23).mm-active > a { 
-            background: linear-gradient(45deg, #bdc3c7, #95a5a6); box-shadow: 0 4px 10px rgba(149, 165, 166, 0.3); 
+            background: linear-gradient(45deg, #2980B9, #2471A3); box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3); 
         }
-        /* 25. Partners/Donors - Indigo */
-        .sidebar-wrapper .metismenu > li:nth-child(25) .parent-icon { color: #6F42C1; }
+        /* 24. Transparency - Mint Green */
+        .sidebar-wrapper .metismenu > li:nth-child(24) .parent-icon { color: #00B894; }
+        .sidebar-wrapper .metismenu > li:nth-child(24).mm-active > a { 
+            background: linear-gradient(45deg, #00B894, #00A381); box-shadow: 0 4px 10px rgba(0, 184, 148, 0.3); 
+        }
+        /* 25. Volunteer - Pink */
+        .sidebar-wrapper .metismenu > li:nth-child(25) .parent-icon { color: #E91E63; }
         .sidebar-wrapper .metismenu > li:nth-child(25).mm-active > a { 
-            background: linear-gradient(45deg, #6F42C1, #5A32A3); box-shadow: 0 4px 10px rgba(111, 66, 193, 0.3); 
+            background: linear-gradient(45deg, #E91E63, #C2185B); box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3); 
+        }
+        /* 26. YouTube Videos - Red */
+        .sidebar-wrapper .metismenu > li:nth-child(26) .parent-icon { color: #E74C3C; }
+        .sidebar-wrapper .metismenu > li:nth-child(26).mm-active > a { 
+            background: linear-gradient(45deg, #E74C3C, #C0392B); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); 
+        }
+        /* 27. Logout - Light Slate */
+        .sidebar-wrapper .metismenu > li:nth-child(27) .parent-icon { color: rgba(255,255,255,0.7); }
+        .sidebar-wrapper .metismenu > li:nth-child(27).mm-active > a { 
+            background: linear-gradient(45deg, #bdc3c7, #95a5a6); box-shadow: 0 4px 10px rgba(149, 165, 166, 0.3); 
         }
 
         /* Brand Navy Active Override */
@@ -654,68 +669,81 @@
 					<div class="menu-title">{{ 'Dashboard' }}</div>
 				</a>
 			</li>
-		<li>
-			<a href="{{ route('slider.index') }}">
-					<div class="parent-icon"><i class="fadeIn animated bx bx-slider-alt"></i>
+			<li>
+				<a href="{{ route('about.us.edit') }}">
+					<div class="parent-icon"><i class='bx bx-info-circle'></i>
 					</div>
-					<div class="menu-title">{{ 'Slider' }}</div>
+					<div class="menu-title">{{ 'About Us' }}</div>
 				</a>
 			</li>
-
-		<li>
-			<a href="{{ route('admin.projects.index') }}">
-					<div class="parent-icon"><i class="fadeIn animated bx bx-shape-square"></i>
+			<li>
+				<a href="{{ route('admin.board_of_directors.index') }}">
+					<div class="parent-icon"><i class='bx bx-group'></i>
 					</div>
-					<div class="menu-title">{{ 'Projects' }}</div>
+					<div class="menu-title">Board of Directors</div>
 				</a>
 			</li>
-		<li>
-			<a href="{{ route('news.index') }}">
+			<li>
+				<a href="{{ route('invoked.index') }}">
+					<div class="parent-icon"><i class='fadeIn animated bx bx-star'></i>
+					</div>
+					<div class="menu-title">{{ 'Career' }}</div>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('contact.index') }}">
+					<div class="parent-icon"><i class='fadeIn animated bx bx-phone-call'></i>
+					</div>
+					<div class="menu-title">{{ 'Contact' }}</div>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('admin.donations.index') }}">
+					<div class="parent-icon"><i class='fadeIn animated bx bx-donate-heart'></i>
+					</div>
+					<div class="menu-title">{{ 'Donate Now' }}</div>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('faq.index') }}">
+					<div class="parent-icon"><i class='bx bx-help-circle'></i>
+					</div>
+					<div class="menu-title">{{ 'FAQ' }}</div>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('admin.impact') }}">
+					<div class="parent-icon"><i class='bx bx-bar-chart-alt-2'></i>
+					</div>
+					<div class="menu-title">{{ 'Impact' }}</div>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('news.index') }}">
 					<div class="parent-icon"><i class="fadeIn animated bx bx-news"></i>
 					</div>
 					<div class="menu-title">{{ 'Latest News' }}</div>
 				</a>
 			</li>
-		<li>
-			<a href="{{ route('gallery.index') }}">
-				<div class="parent-icon"><i class="lni lni-image"></i>
-				</div>
-				<div class="menu-title">{{ 'Photo Gallery' }}</div>
-			</a>
-		</li>
-		<li>
-			<a href="{{ route('youtube.index') }}">
-					<div class="parent-icon"><i class="fadeIn animated bx bxl-youtube"></i>
+			<li>
+				<a href="{{ route('admin.legal_registrations.index') }}">
+					<div class="parent-icon"><i class="bx bx-certification"></i>
 					</div>
-					<div class="menu-title">{{ 'YouTube Videos' }}</div>
+					<div class="menu-title">{{ 'Legal Registration Status' }}</div>
 				</a>
 			</li>
-		<li>
-			<a href="{{ route('publications.index') }}">
-					<div class="parent-icon"><i class="fadeIn animated bx bx-file-blank"></i>
+			<li>
+				<a href="{{ route('message.index') }}">
+					<div class="parent-icon"><i class="fadeIn animated bx bx-message-detail"></i>
 					</div>
-					<div class="menu-title">{{ 'Publications' }}</div>
+					<div class="menu-title">{{ 'Messages' }}</div>
 				</a>
 			</li>
-		<li>
-			<a href="{{ route('strategic_plans.index') }}">
-				<div class="parent-icon"><i class="fadeIn animated bx bx-map-alt"></i>
-				</div>
-				<div class="menu-title">{{ 'Strategic Plan' }}</div>
-			</a>
-		</li>
-		<li>
-			<a href="{{ route('policy.index') }}">
-				<div class="parent-icon"><i class="fadeIn animated bx bx-book-content"></i>
-				</div>
-				<div class="menu-title">{{ 'Policy & Guideline' }}</div>
-			</a>
-		</li>
-		<li>
-				<a href="{{ route('team.index') }}">
-					<div class="parent-icon"><i class="bx bx-group"></i>
+			<li>
+				<a href="{{ route('notices.index') }}">
+					<div class="parent-icon"><i class="fadeIn animated bx bx-notification"></i>
 					</div>
-					<div class="menu-title">{{ 'Team Members' }}</div>
+					<div class="menu-title">{{ 'Notices' }}</div>
 				</a>
 			</li>
 			<li>
@@ -726,23 +754,61 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{ route('admin.legal_registrations.index') }}">
-					<div class="parent-icon"><i class="bx bx-certification"></i>
+				<a href="{{ route('partner.index') }}">
+					<div class="parent-icon"><i class='bx bx-group'></i>
 					</div>
-					<div class="menu-title">{{ 'Legal Registration Status' }}</div>
+					<div class="menu-title">{{ 'Partners & Donors' }}</div>
 				</a>
 			</li>
- 			<li>
- 				<a href="javascript:;" class="has-arrow">
- 					<div class="parent-icon"><i class="bx bx-check-shield"></i>
- 					</div>
- 					<div class="menu-title">{{ 'Transparency' }}</div>
- 				</a>
- 				<ul>
- 					<li><a href="{{ route('admin.annual_reports.index') }}"><i class="bx bx-right-arrow-alt"></i>Annual Reports</a></li>
- 					<li><a href="{{ route('admin.financial_statements.index') }}"><i class="bx bx-right-arrow-alt"></i>Financial Statements</a></li>
- 				</ul>
- 			</li>
+			<li>
+				<a href="{{ route('gallery.index') }}">
+					<div class="parent-icon"><i class="lni lni-image"></i>
+					</div>
+					<div class="menu-title">{{ 'Photo Gallery' }}</div>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('policy.index') }}">
+					<div class="parent-icon"><i class="fadeIn animated bx bx-book-content"></i>
+					</div>
+					<div class="menu-title">{{ 'Policy & Guideline' }}</div>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('admin.projects.index') }}">
+					<div class="parent-icon"><i class="fadeIn animated bx bx-shape-square"></i>
+					</div>
+					<div class="menu-title">{{ 'Projects' }}</div>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('publications.index') }}">
+					<div class="parent-icon"><i class="fadeIn animated bx bx-file-blank"></i>
+					</div>
+					<div class="menu-title">{{ 'Publications' }}</div>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('logo.create') }}">
+					<div class="parent-icon"><i class='bx bx-cog'></i>
+					</div>
+					<div class="menu-title">{{ 'Settings' }}</div>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('slider.index') }}">
+					<div class="parent-icon"><i class="fadeIn animated bx bx-slider-alt"></i>
+					</div>
+					<div class="menu-title">{{ 'Slider' }}</div>
+				</a>
+			</li>
+			<li>
+				<a href="{{ route('strategic_plans.index') }}">
+					<div class="parent-icon"><i class="fadeIn animated bx bx-map-alt"></i>
+					</div>
+					<div class="menu-title">{{ 'Strategic Plan' }}</div>
+				</a>
+			</li>
 			<li>
 				<a href="{{ route('subscribe.all') }}">
 					<div class="parent-icon"><i class="fadeIn animated bx bx-bell"></i>
@@ -750,97 +816,45 @@
 					<div class="menu-title">{{ 'Subscribe' }}</div>
 				</a>
 			</li>
-		<li>
-			<a href="{{ route('admin.donations.index') }}">
-				<div class="parent-icon"><i class="fadeIn animated bx bx-donate-heart"></i>
-				</div>
-				<div class="menu-title">{{ 'Donate Now' }}</div>
-			</a>
-		</li>
-		<li>
-			<a href="{{ route('message.index') }}">
-				<div class="parent-icon"><i class="fadeIn animated bx bx-message-detail"></i>
-				</div>
-				<div class="menu-title">{{ 'Messages' }}</div>
-			</a>
-		</li>
-		<li>
-			<a href="{{ route('logo.create') }}">
-					<div class="parent-icon"><i class='bx bx-cog'></i>
+			<li>
+				<a href="{{ route('team.index') }}">
+					<div class="parent-icon"><i class="bx bx-group"></i>
 					</div>
-					<div class="menu-title">{{ 'Settings' }}</div>
+					<div class="menu-title">{{ 'Team Members' }}</div>
 				</a>
 			</li>
 			<li>
-				<a href="{{ route('admin.impact') }}">
-					<div class="parent-icon"><i class='bx bx-bar-chart-alt-2'></i>
-					</div>
-					<div class="menu-title">{{ 'Impact' }}</div>
-				</a>
-			</li>
-				{{-- <li>
-					<a href="{{ route('logo.create') }}">
-						<div class="parent-icon"><i class='bx bx-cookie'></i>
-						</div>
-						<div class="menu-title">Application</div>
-					</a>
-				</li> --}}
+  				<a href="javascript:;" class="has-arrow">
+  					<div class="parent-icon"><i class="bx bx-check-shield"></i>
+  					</div>
+  					<div class="menu-title">{{ 'Transparency' }}</div>
+  				</a>
+  				<ul>
+  					<li><a href="{{ route('admin.annual_reports.index') }}"><i class="bx bx-right-arrow-alt"></i>Annual Reports</a></li>
+  					<li><a href="{{ route('admin.financial_statements.index') }}"><i class="bx bx-right-arrow-alt"></i>Financial Statements</a></li>
+  				</ul>
+  			</li>
 			<li>
-				<a href="{{ route('about.us.edit') }}">
-					<div class="parent-icon"><i class='bx bx-info-circle'></i>
-					</div>
-					<div class="menu-title">{{ 'About Us' }}</div>
-				</a>
-			</li>
-				<li>
-					<a href="{{ route('admin.board_of_directors.index') }}">
-						<div class="parent-icon"><i class='bx bx-group'></i>
-						</div>
-						<div class="menu-title">Board of Directors</div>
-					</a>
-				</li>
+  				<a href="{{ route('admin.volunteer_info.index') }}">
+  					<div class="parent-icon"><i class='fadeIn animated bx bx-heart'></i>
+  					</div>
+  					<div class="menu-title">{{ 'Volunteer' }}</div>
+  				</a>
+  			</li>
 			<li>
-				<a href="{{ route('invoked.index') }}">
-					<div class="parent-icon"><i class='fadeIn animated bx bx-star'></i>
+				<a href="{{ route('youtube.index') }}">
+					<div class="parent-icon"><i class="fadeIn animated bx bxl-youtube"></i>
 					</div>
-					<div class="menu-title">{{ 'Career' }}</div>
+					<div class="menu-title">{{ 'YouTube Videos' }}</div>
 				</a>
 			</li>
 			<li>
- 				<a href="{{ route('admin.volunteer_info.index') }}">
- 					<div class="parent-icon"><i class='fadeIn animated bx bx-heart'></i>
- 					</div>
- 					<div class="menu-title">{{ 'Volunteer' }}</div>
- 				</a>
- 			</li>
- 			<li>
- 				<a href="{{ route('contact.index') }}">
- 					<div class="parent-icon"><i class='fadeIn animated bx bx-phone-call'></i>
- 					</div>
- 					<div class="menu-title">{{ 'Contact' }}</div>
- 				</a>
- 			</li>
-        <li>
-            <a href="{{ route('faq.index') }}">
-                <div class="parent-icon"><i class='bx bx-help-circle'></i>
-                </div>
-                <div class="menu-title">{{ 'FAQ' }}</div>
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('partner.index') }}">
-                <div class="parent-icon"><i class='bx bx-group'></i>
-                </div>
-                <div class="menu-title">{{ 'Partners/Donors' }}</div>
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <div class="parent-icon"><i class='bx bx-log-out-circle'></i>
-                </div>
-                <div class="menu-title">{{ 'Logout' }}</div>
-            </a>
-        </li>
+				<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+					<div class="parent-icon"><i class='bx bx-log-out-circle'></i>
+					</div>
+					<div class="menu-title">{{ 'Logout' }}</div>
+				</a>
+			</li>
 			</ul>
 			<!--end navigation-->
 		</div>
@@ -1018,10 +1032,10 @@
 	<script src="{{ asset('admin/assets/plugins/chartjs/js/Chart.min.js') }}"></script>
 	<script src="{{ asset('admin/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
     <script src="{{ asset('admin/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js') }}"></script>
+	<script src="{{ asset('admin/assets/js/jquery.easy-pie-chart/jquery.easypiechart.min.js') }}"></script>
 	<script src="{{ asset('admin/assets/plugins/sparkline-charts/jquery.sparkline.min.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/jquery-knob/excanvas.js') }}"></script>
-	<script src="{{ asset('admin/assets/plugins/jquery-knob/jquery.knob.js') }}"></script>
+	<script src="{{ asset('admin/assets/js/jquery-knob/excanvas.js') }}"></script>
+	<script src="{{ asset('admin/assets/js/jquery-knob/jquery.knob.js') }}"></script>
 	  <script>
 		  $(function() {
 			  $(".knob").knob();

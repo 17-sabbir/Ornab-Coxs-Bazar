@@ -106,6 +106,8 @@ Route::get('ongoing/project', [frontController::class, 'ongoing_project'])->name
 Route::get('ongoing/project/view/{id}', [frontController::class, 'project_view'])->name('ongoing.project.view');
 Route::get('latest/news/view/{id}', [frontController::class, 'news_view'])->name('latest.news.view');
 Route::get('latest/news/all', [frontController::class, 'news_all'])->name('latest.news.all');
+Route::get('notices/all', [frontController::class, 'notice_all'])->name('notices.all');
+Route::get('notices/view/{id}', [frontController::class, 'notice_view'])->name('notices.view');
 Route::get('youtube/video', [frontController::class, 'youtube'])->name('youtube.video');
 
 // Stay Informed
@@ -136,7 +138,6 @@ Route::get('faq', [frontController::class, 'faq'])->name('faq');
 // Transparency
 Route::get('annual-reports', [frontController::class, 'annualReports'])->name('annual.reports');
 Route::get('financial-statements', [frontController::class, 'financialStatements'])->name('financial.statements');
-Route::get('audit-reports', [frontController::class, 'auditReports'])->name('audit.reports');
 
 // Projects
 Route::get('projects', [PageController::class, 'projects'])->name('frontend.projects');

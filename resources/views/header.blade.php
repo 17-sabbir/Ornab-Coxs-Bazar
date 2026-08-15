@@ -236,8 +236,11 @@
                     {{ 'Transparency' }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="transparencyDropdown">
+                    <li><a class="dropdown-item" href="{{ route('publication') }}">{{ 'Publications' }}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('strategic.plan') }}">{{ 'Strategic Plan' }}</a></li>
                     <li><a class="dropdown-item" href="{{ route('annual.reports') }}">{{ 'Annual Reports' }}</a></li>
                     <li><a class="dropdown-item" href="{{ route('financial.statements') }}">{{ 'Financial Statements' }}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('policy.guideline') }}">{{ 'Policy & Guideline' }}</a></li>
                 </ul>
                 </li>
 
@@ -259,12 +262,10 @@
                     {{ 'Media Center' }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                    <li><a class="dropdown-item" href="{{ route('notices.all') }}">{{ 'Notices' }}</a></li>
                     <li><a class="dropdown-item" href="{{ route('latest.news.all') }}">{{ 'Latest News' }}</a></li>
                     <li><a class="dropdown-item" href="{{ route('gallery.albums') }}">{{ 'Photo Gallery' }}</a></li>
                     <li><a class="dropdown-item" href="{{ route('youtube.video') }}">{{ 'Youtube Videos' }}</a></li>
-                    <li><a class="dropdown-item" href="{{ route('publication') }}">{{ 'Publications' }}</a></li>
-                    <li><a class="dropdown-item" href="{{ route('strategic.plan') }}">{{ 'Strategic Plan' }}</a></li>
-                    <li><a class="dropdown-item" href="{{ route('policy.guideline') }}">{{ 'Policy & Guideline' }}</a></li>
                 </ul>
                 </li>
 
