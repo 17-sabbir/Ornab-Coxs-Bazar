@@ -1,13 +1,15 @@
 @extends('main')
 
 @section('content')
-
+<style>
+.uerd-page-title { color: var(--brand-navy) !important; }
+</style>
 
     <!-- ======= Project Archieve Section ======= -->
   <section id="contact" class="contact bg-light p-0">
     <div class="container bg-white py-5" data-aos="fade-up">
       <div class="section-title">
-        <h2>Youtube <i class="fa-brands fa-youtube" style="color: red;"></i> </h2>
+        <h2 class="uerd-page-title">Youtube <i class="fa-brands fa-youtube" style="color: red;"></i> </h2>
             <div class="row">
                 @if(isset($videos) && $videos->count())
                     @foreach($videos as $v)

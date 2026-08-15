@@ -13,12 +13,12 @@
             bottom: 0.2rem;
             height: 3px;
             border-radius: 999px;
-            background: var(--brand-orange);
+            background: var(--brand-coral);
             transform: scaleX(0);
             transform-origin: center;
             transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 1;
-            box-shadow: 0 2px 4px rgba(249, 116, 21, 0.4);
+            box-shadow: 0 2px 4px rgba(242, 169, 126, 0.4);
         }
         .site-header .nav-link:hover::after,
         .site-header .nav-link:focus-visible::after,
@@ -27,16 +27,18 @@
         }
 
         @media (min-width: 992px) and (max-width: 1399.98px) {
-            .navbar .navbar-nav { column-gap: 4px !important; }
-            .navbar .navbar-nav .nav-link { padding-left: .5rem; padding-right: .5rem; }
-            .navbar .navbar-brand span { font-size: 17px !important; }
+            .navbar .navbar-nav { column-gap: 3px !important; }
+            .navbar .navbar-nav .nav-link { padding-left: .45rem; padding-right: .45rem; }
+            .navbar .navbar-brand span { font-size: 16px !important; }
         }
         
-        /* Home Page Header Styles */
+        /* Home Page Header Styles - Fixed Light Header */
         body.is-home .site-header {
-            background-color: transparent;
-            border-bottom: none !important;
-            padding-top: 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--brand-border) !important;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
         }
         
         body.is-home .site-header .navbar {
@@ -44,37 +46,20 @@
             backdrop-filter: none !important;
             border-bottom: none !important;
             box-shadow: none !important;
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
         body.is-home .site-header .nav-link,
         body.is-home .site-header .navbar-brand span {
-            color: #ffffff !important;
-            text-shadow: 0 1px 12px rgba(0,0,0,0.2);
-        }
-
-        body.is-home.scrolled .site-header {
-            padding-top: 0;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); /* Soft glass shadow */
-        }
-
-        body.is-home.scrolled .site-header .navbar {
-             background-color: transparent !important;
-        }
-
-        body.is-home.scrolled .site-header .nav-link, 
-        body.is-home.scrolled .site-header .navbar-brand * {
-            color: var(--secondary-color) !important; /* Ink */
+            color: var(--brand-text) !important;
             text-shadow: none;
         }
         
         /* Logo Styles */
         .brand-logo-container {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             /* background: linear-gradient(135deg, var(--primary-color), #0d5f49); */
             background: #fff; /* Ensure white background for transparent images if any, also nice for logos */
             border-radius: 50%;
@@ -82,7 +67,7 @@
             align-items: center;
             justify-content: center;
             margin-right: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Subtle shadow for depth */
             overflow: hidden; /* Ensure image stays inside */
         }
         
@@ -102,16 +87,18 @@
         .brand-title {
             font-family: var(--font-heading);
             font-weight: 800;
-            font-size: 1.1rem; /* reduced */
+            font-size: 1.05rem; /* moderate */
             letter-spacing: -0.5px;
+            line-height: 1.15;
         }
 
         .brand-subtitle {
             font-family: var(--font-body);
-            font-size: 0.75rem; /* reduced */
+            font-size: 0.75rem; /* moderate */
             font-weight: 500;
             opacity: 0.9;
             margin-top: 2px;
+            line-height: 1.2;
         }
         
         /* Ensure normal pages keep default look */
@@ -127,17 +114,17 @@
             background: transparent;
             border: 2px solid var(--primary-color);
             border-radius: 9999px;
-            padding: 3px;
+            padding: 2px;
             cursor: pointer;
             transition: all 0.3s ease;
-            min-width: 120px;
-            height: 38px;
+            min-width: 110px;
+            height: 34px;
             overflow: hidden;
         }
 
         .lang-toggle-btn:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
+            box-shadow: 0 4px 12px rgba(79, 168, 201, 0.2);
         }
 
         .lang-option {
@@ -175,9 +162,28 @@
         .lang-toggle-btn.bn-active .lang-slider {
             transform: translateX(100%);
         }
+
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background: var(--brand-navy);
+            }
+            .navbar-collapse .nav-link,
+            .navbar-collapse .dropdown-item,
+            .navbar-collapse .dropdown-menu {
+                background: var(--brand-navy);
+                color: #fff !important;
+            }
+            .navbar-collapse .nav-link:hover,
+            .navbar-collapse .nav-link:focus,
+            .navbar-collapse .nav-link.active,
+            .navbar-collapse .dropdown-item:hover,
+            .navbar-collapse .dropdown-item:focus {
+                color: var(--brand-coral) !important;
+            }
+        }
     </style>
     <div class="container-fluid px-2 px-lg-3">
-        <nav class="navbar navbar-expand-xl navbar-light py-2 py-lg-3" style="position: static;">
+        <nav class="navbar navbar-expand-xl navbar-light py-1 py-lg-2" style="position: static;">
         <div class="container-fluid px-0">
             <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}" style="gap: 0; padding: 0;">
                 <div class="brand-logo-container">
@@ -274,7 +280,7 @@
                     </button>
                 </li>
                 <!-- Contact -->
-                <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link fw-bold text-dark" style="font-size: 1.05rem;">{{ 'Contact' }}</a></li>
+                <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link fw-bold text-dark" style="font-size: 1.02rem;">{{ 'Contact' }}</a></li>
                 </ul>
             </div>
         </div>
@@ -285,22 +291,7 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function(){
-        // Header Scroll Effect for Home Page
-        if(document.body.classList.contains('is-home')){
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    document.body.classList.add('scrolled');
-                } else {
-                    document.body.classList.remove('scrolled');
-                }
-            });
-            // Initial check
-            if (window.scrollY > 50) {
-                document.body.classList.add('scrolled');
-            }
-        }
-    });
+    // Scroll effect removed: header now stays in fixed light state on all pages.
 </script>
 
 <script>

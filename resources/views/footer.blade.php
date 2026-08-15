@@ -11,7 +11,7 @@
 
         /* ===== MAIN BACKGROUND ===== */
         .ornab-footer-main {
-            background: linear-gradient(160deg, #062F2A 0%, #0A3D36 50%, #0E4C42 100%);
+            background: linear-gradient(135deg, #0D1F4D, #122B6B);
             color: rgba(255, 255, 255, 0.75);
             position: relative;
             overflow: hidden;
@@ -35,7 +35,7 @@
             left: -60px;
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(249,116,21,0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -57,8 +57,8 @@
             left: 0;
             bottom: 0;
             width: 34px;
-            height: 3px;
-            background: var(--brand-orange, #F97415);
+            height: 2px;
+            background: var(--brand-coral);
             border-radius: 4px;
         }
 
@@ -114,7 +114,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.10);
             display: inline-flex;
             align-items: center;
@@ -125,11 +125,11 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .ornab-social-link:hover {
-            background: var(--brand-orange, #F97415);
-            border-color: var(--brand-orange, #F97415);
+            background: var(--brand-coral);
+            border-color: var(--brand-coral);
             color: #ffffff;
             transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(249,116,21,0.30);
+            box-shadow: 0 6px 18px rgba(242, 169, 126, 0.30);
         }
 
         /* ===== QUICK LINKS ===== */
@@ -142,7 +142,7 @@
             margin-bottom: 4px;
         }
         .ornab-links a {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.75);
             text-decoration: none;
             font-size: 0.9rem;
             display: inline-block;
@@ -151,8 +151,10 @@
             position: relative;
         }
         .ornab-links a:hover {
-            color: var(--brand-orange, #F97415);
+            color: var(--brand-teal);
             padding-left: 6px;
+            text-decoration: underline;
+            text-underline-offset: 4px;
         }
 
         /* ===== FAQ ITEMS ===== */
@@ -171,27 +173,27 @@
             height: 28px;
             min-width: 28px;
             border-radius: 50%;
-            background: rgba(249,116,21,0.12);
+            background: rgba(79, 168, 201, 0.12);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--brand-orange, #F97415);
+            color: var(--brand-teal);
             font-size: 0.75rem;
             flex-shrink: 0;
             margin-top: 2px;
         }
         .ornab-faq-text {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.75);
             font-size: 0.88rem;
             line-height: 1.5;
         }
         .ornab-faq-text a {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.75);
             text-decoration: none;
             transition: color 0.3s ease;
         }
         .ornab-faq-text a:hover {
-            color: var(--brand-orange, #F97415);
+            color: var(--brand-teal);
         }
 
         /* ===== CONTACT ITEMS ===== */
@@ -200,7 +202,7 @@
             align-items: flex-start;
             gap: 14px;
             padding: 8px 0;
-            color: rgba(255,255,255,0.65);
+            color: rgba(255,255,255,0.75);
             font-size: 0.9rem;
             line-height: 1.6;
         }
@@ -209,22 +211,22 @@
             height: 34px;
             min-width: 34px;
             border-radius: 10px;
-            background: rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.08);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--brand-orange, #F97415);
+            color: var(--brand-teal);
             font-size: 0.9rem;
             transition: all 0.3s ease;
         }
         .ornab-contact-item:hover .ornab-contact-icon {
-            background: var(--brand-orange, #F97415);
+            background: var(--brand-teal);
             color: #ffffff;
         }
 
         /* ===== BOTTOM BAR ===== */
         .ornab-footer-bottom {
-            background: #042520;
+            background: #0A1B45;
             border-top: 1px solid rgba(255,255,255,0.05);
             padding: 18px 0;
         }
@@ -236,7 +238,7 @@
             gap: 10px;
         }
         .ornab-bottom-text {
-            color: rgba(255,255,255,0.45);
+            color: rgba(255,255,255,0.6);
             font-size: 0.82rem;
             font-family: var(--font-body);
             letter-spacing: 0.2px;
@@ -246,13 +248,13 @@
             margin: 0 6px;
         }
         .ornab-bottom-links a {
-            color: rgba(255,255,255,0.45);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
             font-size: 0.82rem;
             transition: color 0.3s ease;
         }
         .ornab-bottom-links a:hover {
-            color: var(--brand-orange, #F97415);
+            color: var(--brand-teal);
         }
 
         /* ===== BACK TO TOP ===== */
@@ -264,7 +266,7 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: var(--brand-orange, #F97415);
+            background: var(--brand-coral);
             border: none;
             color: #ffffff;
             display: flex;
@@ -272,12 +274,12 @@
             justify-content: center;
             font-size: 1.05rem;
             text-decoration: none;
-            box-shadow: 0 4px 18px rgba(249,116,21,0.35);
+            box-shadow: 0 4px 18px rgba(242, 169, 126, 0.35);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .ornab-back-top:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 28px rgba(249,116,21,0.45);
+            box-shadow: 0 8px 28px rgba(242, 169, 126, 0.45);
             color: #ffffff;
         }
 

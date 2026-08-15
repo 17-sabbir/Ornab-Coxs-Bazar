@@ -56,8 +56,8 @@
         /* Frontend fonts: Poppins (headings) + Inter (body) */
         body {
             font-family: var(--font-body) !important;
-            background-color: #F8FAFC; /* Canvas */
-            color: #131920; /* Ink */
+            background-color: var(--brand-bg); /* Canvas */
+            color: var(--brand-text); /* Ink */
             -webkit-font-smoothing: antialiased;
         }
 
@@ -97,7 +97,7 @@
         }
         
         .btn-danger {
-            background-color: #E61932; /* Urgency Rose */
+            background-color: var(--brand-coral); /* Urgency Rose */
             border: none;
             box-shadow: 0 4px 14px 0 rgba(230, 25, 50, 0.39);
         }
@@ -105,7 +105,7 @@
         .btn-primary {
             background: var(--uerd-primary) !important;
             border: 1px solid var(--uerd-primary) !important;
-            color: #ffffff !important;
+            color: var(--brand-white) !important;
             box-shadow: 0 4px 14px 0 rgba(21, 131, 104, 0.39); /* Teal Glow */
         }
         .btn-primary:hover {
@@ -116,7 +116,7 @@
         .btn-warning {
             background: var(--uerd-accent) !important;
             border-color: var(--uerd-accent) !important;
-            color: #ffffff !important; /* Better contrast */
+            color: var(--brand-white) !important; /* Better contrast */
             box-shadow: 0 4px 14px 0 rgba(249, 116, 21, 0.39); /* Orange Glow */
         }
         .btn-warning:hover {
@@ -152,7 +152,7 @@
         }
         p {
             line-height: 1.7;
-            color: #555;
+            color: var(--brand-text);
         }
 
         /* Custom Scrollbar */

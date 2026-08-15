@@ -73,7 +73,7 @@
                                 <div class="au-doc-icon"><i class="fa-solid fa-file-contract"></i></div>
                                 <div class="flex-grow-1">
                                     <h6 class="mb-1">{{ $data->title }}</h6>
-                                    <small class="text-muted"><i class="fa-solid fa-download me-1"></i> Click to view document</small>
+                                    <small class="uerd-body-muted"><i class="fa-solid fa-download me-1"></i> Click to view document</small>
                                 </div>
                                 <i class="fa-solid fa-chevron-right au-doc-arrow"></i>
                             </a>
@@ -86,25 +86,29 @@
     </section>
 
     <style>
-        .au-hero2 { background: linear-gradient(135deg, #e3f2fd, #e0f7fa); padding: 44px 0 30px; text-align: center; }
-        .au-lead2 { color: #0b4a6f; font-size: 1.5rem; font-weight: 600; max-width: 760px; margin: 0 auto; line-height: 1.6; }
-        .au-body { background: #fff; padding: 60px 0 80px; }
-        .au-eyebrow { display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #0d9488; background: rgba(13,148,136,.1); padding: .3rem .9rem; border-radius: 50px; margin-bottom: 1rem; }
-        .au-heading { font-weight: 700; color: #10372f; margin-bottom: 1.2rem; }
-        .au-heading-sm { font-weight: 700; color: #10372f; margin-bottom: 1.4rem; }
-        .au-text { color: #4a5a55; font-size: 1.02rem; }
+        .uerd-page-title { color: var(--brand-navy) !important; }
+        .uerd-body-text { color: var(--brand-text) !important; }
+        .uerd-icon-circle { background: var(--brand-green) !important; color: #fff !important; }
+        .uerd-section-alt { background: var(--brand-bg) !important; }
+        .au-hero2 { background: #fff; padding: 44px 0 30px; text-align: center; }
+        .au-lead2 { color: var(--brand-navy); font-size: 1.5rem; font-weight: 600; max-width: 760px; margin: 0 auto; line-height: 1.6; }
+        .au-body { background: var(--brand-bg); padding: 60px 0 80px; }
+        .au-eyebrow { display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--brand-green); background: rgba(76,122,61,.1); padding: .3rem .9rem; border-radius: 50px; margin-bottom: 1rem; }
+        .au-heading { font-weight: 700; color: var(--brand-navy); margin-bottom: 1.2rem; }
+        .au-heading-sm { font-weight: 700; color: var(--brand-navy); margin-bottom: 1.4rem; }
+        .au-text { color: var(--brand-text); font-size: 1.02rem; }
         .au-text p { margin-bottom: 1rem; }
-        .au-reg-table { border: 1px solid #eef1f0; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 26px rgba(16,55,47,.06); }
-        .au-reg-table thead th { background: #0d9488; color: #fff; font-weight: 600; text-transform: uppercase; font-size: .78rem; letter-spacing: .5px; border: none; }
-        .au-reg-table tbody td { vertical-align: middle; color: #10372f; font-size: .95rem; border-bottom: 1px solid #f0f4f8; }
+        .au-reg-table { border: 1px solid var(--brand-border); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 26px rgba(18,43,107,.06); }
+        .au-reg-table thead th { background: var(--brand-navy); color: #fff; font-weight: 600; text-transform: uppercase; font-size: .78rem; letter-spacing: .5px; border: none; }
+        .au-reg-table tbody td { vertical-align: middle; color: var(--brand-navy); font-size: .95rem; border-bottom: 1px solid var(--brand-border); }
         .au-reg-table tbody tr:last-child td { border-bottom: none; }
-        .au-reg-table tbody tr:hover { background: #f1f5f9; }
-        .au-doc { display: flex; align-items: center; gap: 1rem; text-decoration: none; background: #fff; border: 1px solid #eef1f0; border-radius: 14px; padding: 1rem 1.2rem; box-shadow: 0 4px 16px rgba(16,55,47,.05); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-        .au-doc:hover { transform: translateX(6px); box-shadow: 0 10px 24px rgba(13,148,136,.14); border-color: #0d9488; }
-        .au-doc-icon { width: 52px; height: 52px; border-radius: 12px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(13,148,136,.1); color: #0d9488; font-size: 1.3rem; }
-        .au-doc h6 { margin: 0; color: #10372f; font-weight: 700; }
-        .au-doc small { color: #8a958f; }
-        .au-doc-arrow { margin-left: auto; color: #0d9488; transition: transform .25s ease; }
+        .au-reg-table tbody tr:hover { background: var(--brand-bg); }
+        .au-doc { display: flex; align-items: center; gap: 1rem; text-decoration: none; background: #fff; border: 1px solid var(--brand-border); border-radius: 14px; padding: 1rem 1.2rem; box-shadow: 0 4px 16px rgba(18,43,107,.05); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+        .au-doc:hover { transform: translateX(6px); box-shadow: 0 10px 24px rgba(76,122,61,.14); border-color: var(--brand-green); }
+        .au-doc-icon { width: 52px; height: 52px; border-radius: 12px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(76,122,61,.1); color: var(--brand-green); font-size: 1.3rem; }
+        .au-doc h6 { margin: 0; color: var(--brand-navy); font-weight: 700; }
+        .au-doc small { color: var(--brand-text); opacity: 0.6; }
+        .au-doc-arrow { margin-left: auto; color: var(--brand-green); transition: transform .25s ease; }
         .au-doc:hover .au-doc-arrow { transform: translateX(4px); }
     </style>
 

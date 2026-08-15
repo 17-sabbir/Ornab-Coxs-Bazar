@@ -37,18 +37,18 @@
     @endphp
 
     <!-- ======= Mission & Vision Sections ======= -->
-    <section class="py-5" style="background: #f4f7f5;">
+    <section class="py-5" style="background: #fff;">
         <div class="container">
 
             <div class="row align-items-center g-5 mb-3">
                 <div class="col-lg-7">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; background: #0d9488; color: #fff; flex: 0 0 auto;">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle uerd-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
                             <i class="fa-solid fa-bullseye"></i>
                         </div>
-                        <h2 class="fw-bold mb-0" style="color: #10372f;">Our Mission</h2>
+                        <h2 class="fw-bold mb-0 uerd-page-title">Our Mission</h2>
                     </div>
-                    <div class="text-secondary" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
+                    <div class="uerd-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
                         {{ $mission }}
                     </div>
                 </div>
@@ -56,8 +56,8 @@
                     @if(!empty($about->mission_image))
                         <img src="{{ asset('images/about_us/'.$about->mission_image) }}" alt="Our Mission" class="img-fluid rounded-4 shadow-sm w-100" style="object-fit: cover; max-height: 380px;">
                     @else
-                        <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #eafaf5, #d3f0e8); min-height: 380px;">
-                            <i class="fa-solid fa-bullseye" style="font-size: 5rem; color: #0d9488; opacity: .35;"></i>
+                        <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, var(--brand-bg), #fff); min-height: 380px;">
+                            <i class="fa-solid fa-bullseye" style="font-size: 5rem; color: var(--brand-green); opacity: .35;"></i>
                         </div>
                     @endif
                 </div>
@@ -66,12 +66,12 @@
             <div class="row align-items-center g-5 mb-3 flex-lg-row-reverse">
                 <div class="col-lg-7">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; background: #0d9488; color: #fff; flex: 0 0 auto;">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle uerd-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
                             <i class="fa-solid fa-eye"></i>
                         </div>
-                        <h2 class="fw-bold mb-0" style="color: #10372f;">Our Vision</h2>
+                        <h2 class="fw-bold mb-0 uerd-page-title">Our Vision</h2>
                     </div>
-                    <div class="text-secondary" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
+                    <div class="uerd-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
                         {{ $vision }}
                     </div>
                 </div>
@@ -79,8 +79,8 @@
                     @if(!empty($about->vision_image))
                         <img src="{{ asset('images/about_us/'.$about->vision_image) }}" alt="Our Vision" class="img-fluid rounded-4 shadow-sm w-100" style="object-fit: cover; max-height: 380px;">
                     @else
-                        <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #eafaf5, #d3f0e8); min-height: 380px;">
-                            <i class="fa-solid fa-eye" style="font-size: 5rem; color: #0d9488; opacity: .35;"></i>
+                        <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, var(--brand-bg), #fff); min-height: 380px;">
+                            <i class="fa-solid fa-eye" style="font-size: 5rem; color: var(--brand-green); opacity: .35;"></i>
                         </div>
                     @endif
                 </div>
@@ -90,7 +90,7 @@
     <!-- End Mission & Vision Sections -->
 
     <!-- ======= Core Values (below Mission & Vision) ======= -->
-    <section style="background: #f4f7f5; padding: 70px 0 90px;">
+    <section class="uerd-section-alt" style="padding: 70px 0 90px;">
         <div class="container">
             <div class="text-center mb-5">
                 {{-- <span class="mv-eyebrow">What We Stand For</span> --}}
@@ -139,11 +139,15 @@
 
 
     <style>
-        .mv-eyebrow { display: inline-block; padding: .35rem 1rem; border-radius: 50px; background: rgba(255,255,255,.15); color: #e6fffb; font-weight: 700; font-size: .8rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; }
-        .mv-section-title { font-weight: 800; color: #10372f; }
-        .mv-value-icon { width: 44px; height: 44px; flex: 0 0 auto; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(13,148,136,.1); color: #0d9488; font-size: 1.1rem; }
-        .mv-value-title { font-weight: 700; color: #10372f; margin: 0 0 .4rem; font-size: 1.02rem; }
-        .mv-value-text { color: #5b6b66; font-size: .92rem; line-height: 1.6; margin: 0; }
+        .mv-eyebrow { display: inline-block; padding: .35rem 1rem; border-radius: 50px; background: rgba(76,122,61,.15); color: var(--brand-green); font-weight: 700; font-size: .8rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; }
+        .mv-section-title { font-weight: 800; color: var(--brand-navy); }
+        .mv-value-icon { width: 44px; height: 44px; flex: 0 0 auto; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(76,122,61,.10); color: var(--brand-green); font-size: 1.1rem; }
+        .mv-value-title { font-weight: 700; color: var(--brand-navy); margin: 0 0 .4rem; font-size: 1.02rem; }
+        .mv-value-text { color: var(--brand-text); font-size: .92rem; line-height: 1.6; margin: 0; }
+        .uerd-icon-circle { background: var(--brand-green) !important; color: #fff !important; }
+        .uerd-body-text { color: var(--brand-text) !important; }
+        .uerd-page-title { color: var(--brand-navy) !important; }
+        .uerd-section-alt { background: var(--brand-bg) !important; }
     </style>
 
 @endsection

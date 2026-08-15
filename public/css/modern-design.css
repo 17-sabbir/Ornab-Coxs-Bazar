@@ -2,7 +2,7 @@
 /* Frontend fonts (Poppins/Inter) are loaded globally in main.blade.php and branded via --font-body/--font-heading tokens */
 
 :root {
-    --modern-primary: #158368;
+    --modern-primary: var(--brand-navy);
     --modern-secondary: #0f172a;
     --modern-accent: #f59e0b;
     --modern-light: #f8fafc;
@@ -22,9 +22,9 @@ body {
 .modern-breadcrumbs {
     position: relative;
     padding: 2rem 0 4rem;
-    background: linear-gradient(135deg, #158368 0%, #0d5f49 100%);
+    background: linear-gradient(135deg, var(--brand-navy) 0%, #0A1B45 100%);
     color: white;
-    box-shadow: 0 4px 20px rgba(21, 131, 104, 0.2);
+    box-shadow: 0 4px 20px rgba(18, 43, 107, 0.2);
     margin-bottom: -3rem;
     /* Overlap content */
     overflow: hidden;
@@ -185,14 +185,14 @@ body {
     border-radius: 50px;
     font-weight: 600;
     border: none;
-    box-shadow: 0 4px 14px 0 rgba(21, 131, 104, 0.39);
+    box-shadow: 0 4px 14px 0 rgba(18, 43, 107, 0.39);
     transition: all 0.3s ease;
 }
 
 .btn-modern:hover {
-    background: #0d5f49;
+    background: #0F377A;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(21, 131, 104, 0.23);
+    box-shadow: 0 6px 20px rgba(18, 43, 107, 0.23);
     color: white;
 }
 
@@ -217,7 +217,7 @@ body {
 .form-control-modern:focus {
     background: white;
     border-color: var(--modern-primary);
-    box-shadow: 0 0 0 4px rgba(21, 131, 104, 0.1);
+    box-shadow: 0 0 0 4px rgba(18, 43, 107, 0.1);
 }
 
 /* --- Team Member --- */

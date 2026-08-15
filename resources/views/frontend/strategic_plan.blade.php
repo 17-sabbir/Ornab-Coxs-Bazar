@@ -1,64 +1,54 @@
 @extends('main')
 
 @section('content')
+<style>
+.uerd-page-title { color: var(--brand-navy) !important; }
+.uerd-body-text { color: var(--brand-text) !important; }
+.uerd-download-link { color: var(--brand-teal); text-decoration: none; font-weight: 600; }
+.uerd-download-link:hover { color: var(--brand-navy); text-decoration: underline; text-underline-offset: 4px; }
+.uerd-list-row { background: #fff; border-bottom: 1px solid var(--brand-border); padding: 1.25rem 0; transition: background .2s ease; }
+.uerd-list-row:hover { background: var(--brand-bg); }
+.uerd-list-row:first-child { border-top: 1px solid var(--brand-border); }
+.uerd-badge-latest { background: var(--brand-coral); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 6px 12px; border-radius: 50px; }
+</style>
 
     <!-- ======= Strategic Plan Section ======= -->
     <section id="contact" class="contact bg-light p-0">
         <div class="container bg-white py-5" data-aos="fade-up">
             <div class="section-title">
-                <h2>Strategic Plan</h2>
+                <h2 class="uerd-page-title">Strategic Plan</h2>
 
-                <div class="row g-4 justify-content-center">
+                <div class="row">
                     @forelse ($strategicPlans as $plan)
                         @if (!empty($plan->pdf_file) || !empty($plan->description))
-                        <div class="col-md-6 col-lg-4">
-                            @if (!empty($plan->pdf_file))
-                            <a href="{{ asset('images/strategic_plans/pdfs/'.$plan->pdf_file) }}" target="_blank" download class="text-decoration-none">
-                            @endif
-                                <div class="modern-card h-100 p-0 overflow-hidden hover-lift d-flex flex-column">
-
-                                    <div class="position-relative bg-light border-bottom p-4 text-center d-flex align-items-center justify-content-center" style="height: 200px;">
-                                        @if (!empty($plan->image))
-                                        <img src="{{ asset('images/strategic_plans/images/'.$plan->image) }}" alt="{{ $plan->title }}" class="img-fluid rounded shadow-sm" style="max-height: 100%; width: auto;">
-                                        @elseif (!empty($plan->pdf_file))
-                                        <div class="text-muted opacity-25">
-                                            <i class="fa-solid fa-file-pdf fa-5x"></i>
-                                        </div>
-                                        @endif
-
-                                        @if (!empty($plan->pdf_file))
-                                        <div class="position-absolute top-0 end-0 p-2">
-                                            <span class="badge bg-danger rounded-pill"><i class="fa-solid fa-download me-1"></i> PDF</span>
-                                        </div>
+                        <div class="col-12">
+                            <div class="uerd-list-row d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center gap-2 mb-1">
+                                        <h5 class="uerd-page-title mb-0">{{ $plan->title }}</h5>
+                                        @if(!empty($plan->pdf_file))
+                                            <span class="uerd-badge-latest">Latest</span>
                                         @endif
                                     </div>
-
-                                    <div class="p-4 flex-grow-1 d-flex flex-column">
-                                        <h5 class="fw-bold text-dark mb-2">{{ $plan->title }}</h5>
-                                        @if (!empty($plan->description))
-                                        <p class="text-secondary small mb-0 flex-grow-1">{{ $plan->description }}</p>
-                                        @endif
-                                    </div>
-
-                                    @if (!empty($plan->pdf_file))
-                                    <div class="p-3 bg-light border-top text-center">
-                                        <span class="fw-bold text-primary small text-uppercase">Click to Download</span>
-                                    </div>
+                                    @if (!empty($plan->description))
+                                        <p class="uerd-body-text mb-0" style="font-size: 0.85rem; color: #6B6258;">{{ Str::limit($plan->description, 100) }}</p>
                                     @endif
-
                                 </div>
-                            @if (!empty($plan->pdf_file))
-                            </a>
-                            @endif
+                                <div class="flex-shrink-0">
+                                    @if (!empty($plan->pdf_file))
+                                        <a href="{{ asset('images/strategic_plans/pdfs/'.$plan->pdf_file) }}" target="_blank" download class="uerd-download-link">
+                                            <i class="fa-solid fa-cloud-arrow-down me-1"></i> View PDF
+                                        </a>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                         @endif
                     @empty
                         <div class="col-12 text-center py-5">
-                            <div class="modern-card">
-                                <i class="fa-solid fa-folder-open display-4 text-muted mb-3 opacity-50"></i>
-                                <h3>No Active Plans</h3>
-                                <p class="text-muted">No strategic plan documents are currently available online.</p>
-                            </div>
+                            <i class="fa-solid fa-folder-open uerd-body-text" style="font-size: 3rem; color: #6B6258;"></i>
+                            <h3 class="mt-3 uerd-page-title">No Active Plans</h3>
+                            <p class="uerd-body-text">No strategic plan documents are currently available online.</p>
                         </div>
                     @endforelse
                 </div>

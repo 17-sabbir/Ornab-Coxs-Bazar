@@ -2434,6 +2434,22 @@ input.search-control-2::placeholder {
 	}
 }
 
+/* ORNAB Brand Button Overrides */
+.btn-primary {
+    background-color: #122B6B;
+    border-color: #122B6B;
+}
+.btn-success {
+    background-color: #4C7A3D;
+    border-color: #4C7A3D;
+    color: #fff;
+}
+.btn-warning {
+    background-color: #F2A97E;
+    border-color: #F2A97E;
+    color: #fff;
+}
+
 @media screen and (max-width:620px) {
 	.topbar .navbar .dropdown-menu::after {
 		display: none

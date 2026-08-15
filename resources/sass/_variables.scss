@@ -1,18 +1,20 @@
 // Branding Colors
-$blue-dark: #102A43; // Primary - Deep Navy Blue
-$slate-grey: #627D98; // Secondary - Slate Grey
-$gold: #F0B429; // Accent - Burnished Gold
-$white: #ffffff; // Clean White
+$blue-dark: #122B6B; // Primary - Deep Navy Blue
+$slate-grey: #4FA8C9; // Secondary - Slate Grey
+$gold: #F2A97E; // Accent - Coral accent (kept for backward compatibility)
+$green: #4C7A3D; // Success - Brand Green
+$white: #FFFFFF; // Clean White
 
 // Override Bootstrap Variables
 $primary: $blue-dark;
 $secondary: $slate-grey;
 $warning: $gold;
+$success: $green;
 $light: $white;
-$dark: #0A2540; // Text color
+$dark: #1A1A1A; // Text color
 
 // Body
-$body-bg: $white;
+$body-bg: #FFF7EE;
 $body-color: $dark;
 
 // Typography

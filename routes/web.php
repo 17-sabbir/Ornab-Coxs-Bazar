@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\frontController;
 use App\Http\Controllers\Frontend\PageController;
-use App\Models\Organogram;
 use App\Models\Project;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;

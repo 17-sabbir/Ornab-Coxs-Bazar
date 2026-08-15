@@ -32,14 +32,15 @@
         /* ----------------------------------------------------------------- */
         
         :root {
-            --brand-navy: #102A43;
-            --brand-slate: #627D98;
-            --brand-gold: #F0B429;
+            --brand-navy: #122B6B;
+            --brand-teal: #4FA8C9;
+            --brand-coral: #F2A97E;
+            --brand-green: #4C7A3D;
             --brand-white: #ffffff;
-            --brand-bg-light: #f8f9fa; /* Clean light gray for content area */
-			--brand-sidebar-green: #2E8B66;
-			--brand-sidebar-green-dark: #257052;
-			--sidebar-hover-overlay: rgba(255, 255, 255, 0.12);
+            --brand-bg-light: #FFF7EE;
+            --brand-sidebar-green: #122B6B;
+            --brand-sidebar-green-dark: #0F377A;
+            --sidebar-hover-overlay: rgba(79, 168, 201, 0.12);
         }
 
         body {
@@ -65,7 +66,7 @@
 		.sidebar-wrapper .metismenu > li:nth-child(4) { --submenu-accent: #fd7e14; }
 		.sidebar-wrapper .metismenu > li:nth-child(5) { --submenu-accent: #28a745; }
 		.sidebar-wrapper .metismenu > li:nth-child(6) { --submenu-accent: #e83e8c; }
-		.sidebar-wrapper .metismenu > li:nth-child(n+7) { --submenu-accent: var(--brand-gold); }
+		.sidebar-wrapper .metismenu > li:nth-child(n+7) { --submenu-accent: var(--brand-coral); }
 
         /* ============================================= */
         /* EACH SIDEBAR ITEM - DISTINCT VIBRANT COLOR     */
@@ -191,6 +192,12 @@
             background: linear-gradient(45deg, #6F42C1, #5A32A3); box-shadow: 0 4px 10px rgba(111, 66, 193, 0.3); 
         }
 
+        /* Brand Navy Active Override */
+        .sidebar-wrapper .metismenu > li.mm-active > a {
+            background: #122B6B !important;
+            box-shadow: 0 4px 12px rgba(18, 43, 107, 0.35) !important;
+        }
+
         /* All items hover effect */
         .sidebar-wrapper .metismenu > li a:hover { 
             color: rgba(255,255,255,0.95) !important; 
@@ -218,6 +225,10 @@
             color: #fff !important;
             font-weight: 800;
             letter-spacing: 0.5px;
+        }
+
+        .toggle-icon {
+            color: #fff !important;
         }
 
         /* MENU ITEMS - INTERACTIVE & GLASSY */
@@ -444,25 +455,38 @@
         .btn-primary {
             background-color: var(--brand-navy);
             border-color: var(--brand-navy);
-            box-shadow: 0 4px 6px rgba(16, 42, 67, 0.2);
+            box-shadow: 0 4px 6px rgba(18, 43, 107, 0.2);
         }
 
         .btn-primary:hover {
-            background-color: #0a1c2e; /* Darker Navy */
-            border-color: #0a1c2e;
+            background-color: #0F377A;
+            border-color: #0F377A;
             transform: translateY(-1px);
         }
 
-        /* Secondary Action / Warning (Gold) */
+        /* Success Action Button (Green) */
+        .btn-success {
+            background-color: #4C7A3D;
+            border-color: #4C7A3D;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background-color: #3d6632;
+            border-color: #3d6632;
+            color: #fff;
+        }
+
+        /* Warning Action Button (Coral) */
         .btn-warning {
-            background-color: var(--brand-gold);
-            border-color: var(--brand-gold);
+            background-color: #F2A97E;
+            border-color: #F2A97E;
             color: #fff;
         }
 
         .btn-warning:hover {
-            background-color: #d9a220;
-            border-color: #d9a220;
+            background-color: #DF9B74;
+            border-color: #DF9B74;
             color: #fff;
         }
 
@@ -495,27 +519,44 @@
             box-shadow: 0 0 0 3px rgba(16, 42, 67, 0.1); /* Navy glow */
         }
 
-        /* HEADER & TOPBAR - Clean & Minimal */
+        /* HEADER & TOPBAR - Brand Navy */
         header .topbar {
-            background-color: #ffffff;
-            box-shadow: 0 1px 10px rgba(0,0,0,0.05); /* Soft shadow */
+            background-color: #122B6B;
+            box-shadow: 0 1px 10px rgba(18, 43, 107, 0.15);
             height: 60px;
         }
 
-        .mobile-toggle-menu {
-            color: var(--brand-navy); /* Ensure menu icon is visible */
-            background-color: rgba(16, 42, 67, 0.05);
-            border-radius: 4px;
+        header .topbar .navbar-nav .nav-link {
+            color: rgba(255,255,255,0.85);
         }
 
-        /* User Box in Header */
-        .user-box .user-info .user-name {
-            color: var(--brand-navy);
+        header .topbar .user-info .user-name {
+            color: #fff;
             font-weight: 600;
         }
         
-        .user-box .user-info .designattion {
-            color: var(--brand-slate);
+        header .topbar .user-info .designattion {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .mobile-toggle-menu {
+            color: #fff;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        header .search-bar input {
+            color: #fff;
+            background-color: rgba(255,255,255,0.1) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+        }
+
+        header .search-bar input::placeholder {
+            color: rgba(255,255,255,0.6) !important;
+        }
+
+        header .search-show {
+            color: #fff;
         }
 
         /* ----------------------------------------------------------------- */
@@ -1099,13 +1140,13 @@
                     text: "You won't be able to revert this!",
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#F0B429', // Brand Gold
-                    cancelButtonColor: '#627D98', // Brand Slate
-                    confirmButtonText: '<span style="color:#102A43; font-weight:bold;">Yes, delete it!</span>',
+                    confirmButtonColor: '#F2A97E',
+                    cancelButtonColor: '#4FA8C9',
+                    confirmButtonText: '<span style="color:#122B6B; font-weight:bold;">Yes, delete it!</span>',
                     cancelButtonText: 'Cancel',
                     background: '#ffffff',
-                    color: '#102A43', // Brand Navy Text
-                    iconColor: '#F0B429', // Brand Gold Icon
+                    color: '#122B6B',
+                    iconColor: '#F2A97E',
                     width: '300px', // Smaller width
                     padding: '1em', // Compact padding
                     customClass: {

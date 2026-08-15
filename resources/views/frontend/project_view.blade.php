@@ -1,9 +1,15 @@
 @extends('main')
 
 @section('content')
-
+<style>
+.uerd-page-title { color: var(--brand-navy) !important; }
+.uerd-status-ongoing { background: rgba(76,122,61,.10) !important; color: var(--brand-green) !important; }
+.uerd-status-completed { background: rgba(79,168,201,.10) !important; color: var(--brand-teal) !important; }
+.uerd-back-btn { background: var(--brand-navy); color: #fff; border: none; }
+.uerd-back-btn:hover { background: #0f377a; color: #fff; }
+</style>
   <div class="container pt-5 pb-3 text-center">
-      <h1 class="display-3 fw-bold text-uppercase" style="background: linear-gradient(to right, #009688, #8bc34a); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      <h1 class="display-3 fw-bold text-uppercase uerd-page-title">
           {{ ucfirst($project->status ?? 'Project') }} Details
       </h1>
   </div>
@@ -28,7 +34,7 @@
                     <div class="card-body">
                         <div class="mb-2">
                             <strong>Status:</strong>
-                            <span class="badge ms-2 {{ $project->status == 'ongoing' ? 'bg-success' : 'bg-secondary' }}">
+                            <span class="badge ms-2 {{ $project->status == 'ongoing' ? 'uerd-status-ongoing' : 'uerd-status-completed' }}">
                                 {{ ucfirst($project->status ?? 'N/A') }}
                             </span>
                         </div>
@@ -89,15 +95,15 @@
                 <div class="list-group">
                     @foreach($project->reports as $report)
                     <a href="{{ route('projects.reports.download', $report->id) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                        <span><i class="fa-solid fa-file-pdf text-danger me-2"></i> {{ $report->file }}</span>
-                        <span class="badge bg-success rounded-pill">Download</span>
+                        <span><i class="fa-solid fa-file-pdf me-2"></i> {{ $report->file }}</span>
+                        <span class="badge rounded-pill" style="background: rgba(76,122,61,.10); color: var(--brand-green);">Download</span>
                     </a>
                     @endforeach
                 </div>
             </div>
             @endif
             <div class="py-3">
-                <a href="{{ $project->status == 'completed' ? route('project.archieve') : route('ongoing.project') }}" class="btn btn-danger"> <i class="fa fa-angle-left" aria-hidden="true"></i> Back to {{ $project->status == 'completed' ? 'Project Archive' : 'Ongoing Projects' }}</a>
+                <a href="{{ $project->status == 'completed' ? route('project.archieve') : route('ongoing.project') }}" class="btn uerd-back-btn"> <i class="fa fa-angle-left" aria-hidden="true"></i> Back to {{ $project->status == 'completed' ? 'Project Archive' : 'Ongoing Projects' }}</a>
             </div>
         </div>
       </div>

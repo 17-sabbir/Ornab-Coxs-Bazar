@@ -1,14 +1,19 @@
 @extends('main')
 
 @section('content')
-
-
+<style>
+.uerd-page-title { color: var(--brand-navy) !important; }
+.uerd-meta-text { color: #6B6258 !important; }
+.uerd-download-btn { background: var(--brand-coral); color: #fff; border: none; font-weight: 600; border-radius: 50px; padding: 10px 24px; display: inline-flex; align-items: center; gap: 8px; transition: all .3s ease; text-decoration: none; }
+.uerd-download-btn:hover { background: #DF9B74; color: #fff; text-decoration: none; }
+.uerd-disabled-btn { background: #e9ecef; color: #6c757d; border: none; font-weight: 600; border-radius: 50px; padding: 10px 24px; }
+</style>
 
 <!-- ======= Publication Section ======= -->
   <section id="publication" class="contact bg-light p-0">
     <div class="container bg-white py-5" data-aos="fade-up">
       <div class="section-title">
-        <h2>Publications</h2>
+        <h2 class="uerd-page-title">Publications</h2>
         @if(isset($publications) && count($publications) > 0)
             <div class="row p-3">
                 @foreach($publications as $publication)
@@ -20,8 +25,8 @@
                                  alt="{{ $publication->title }}" 
                                  style="height: 200px; object-fit: cover;">
                         @else
-                            <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary text-white" 
-                                 style="height: 200px;">
+                             <div class="card-img-top d-flex align-items-center justify-content-center bg-light uerd-meta-text" 
+                                  style="height: 200px;">
                                 <i class="fa-solid fa-file-pdf fa-3x"></i>
                             </div>
                         @endif
@@ -32,12 +37,12 @@
                                 @if($publication->pdf_file)
                                     <a href="{{ asset('images/publications/pdfs/'.$publication->pdf_file) }}" 
                                        target="_blank" 
-                                       class="btn btn-warning border border-dark w-100" 
-                                       style="font-size: 16px; font-weight:500; box-shadow: 3px 3px 0 rgba(0,0,0,1);">
-                                        <i class="fa-solid fa-cloud-arrow-down"></i> Download
-                                    </a>
+                                       class="uerd-download-btn w-100" 
+                                       style="font-size: 16px; font-weight:500;">
+                                         <i class="fa-solid fa-cloud-arrow-down"></i> Download
+                                     </a>
                                 @else
-                                    <button class="btn btn-secondary w-100" disabled>
+                                    <button class="uerd-disabled-btn w-100" disabled>
                                         <i class="fa-solid fa-file-pdf"></i> No PDF Available
                                     </button>
                                 @endif
@@ -52,9 +57,9 @@
             </div>
         @else
             <div class="text-center py-5">
-                <i class="fa-solid fa-file-pdf fa-4x text-muted mb-3"></i>
-                <p class="fs-4 text-secondary">No publications available at the moment.</p>
-                <p class="text-muted">Please check back later for new publications.</p>
+                <i class="fa-solid fa-file-pdf fa-4x uerd-meta-text mb-3"></i>
+                <p class="fs-4 uerd-meta-text">No publications available at the moment.</p>
+                <p class="uerd-meta-text">Please check back later for new publications.</p>
             </div>
         @endif
       </div>

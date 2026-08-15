@@ -1,33 +1,48 @@
 @extends('main')
 
 @section('content')
+<style>
+.uerd-page-title { color: var(--brand-navy) !important; }
+.uerd-body-text { color: var(--brand-text) !important; }
+.uerd-role-text { color: var(--brand-teal); font-size: 0.85rem; font-weight: 600; }
+.uerd-profile-card { background: #fff; border: 1px solid var(--brand-border); border-radius: 18px; overflow: hidden; box-shadow: 0 4px 12px rgba(18,43,107,.06); transition: transform .3s ease, box-shadow .3s ease; }
+.uerd-profile-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(18,43,107,.10); }
+.uerd-profile-img { position: relative; height: 230px; overflow: hidden; background: var(--brand-bg); }
+.uerd-profile-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.uerd-profile-card:hover .uerd-profile-img img { transform: scale(1.08); }
+.uerd-profile-fallback { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; font-weight: 700; background: var(--brand-teal); color: #fff; }
+.uerd-profile-body { padding: 1.6rem; text-align: center; }
+.uerd-profile-body h4 { font-weight: 700; color: var(--brand-navy); margin-bottom: .4rem; }
+.uerd-bio { color: var(--brand-text); opacity: 0.7; line-height: 1.7; text-align: justify; }
+.uerd-hero { background: var(--brand-navy); color: #fff; padding: 44px 0 30px; text-align: center; }
+</style>
 
     <!-- ======= Board of Directors (About Us) ======= -->
-    <section class="au-hero2">
+    <section class="uerd-hero">
         <div class="container text-center">
-            <p class="au-lead2">The leadership guiding our mission and vision forward.</p>
+            <p class="lead mb-0 text-white">The leadership guiding our mission and vision forward.</p>
         </div>
     </section>
 
-    <section class="au-body">
+    <section class="py-5" style="background: #fff;">
         <div class="container">
             @if($directors->count() > 0)
                 <div class="row g-4">
                     @foreach($directors as $director)
                         <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                            <div class="au-profile h-100">
-                                <div class="au-profile-img">
+                            <div class="uerd-profile-card h-100">
+                                <div class="uerd-profile-img">
                                     @if($director->image)
                                         <img src="{{ asset('images/board_of_directors/'.$director->image) }}" alt="{{ $director->name }}">
                                     @else
-                                        <div class="au-profile-fallback" style="background: linear-gradient(135deg, #0d9488, #0d5f49); color: #fff;">{{ strtoupper(substr($director->name, 0, 1)) }}</div>
+                                        <div class="uerd-profile-fallback">{{ strtoupper(substr($director->name, 0, 1)) }}</div>
                                     @endif
                                 </div>
-                                <div class="au-profile-body">
-                                    <h4>{{ $director->name }}</h4>
-                                    <p class="text-muted mb-3">{{ $director->designation }}</p>
+                                <div class="uerd-profile-body">
+                                    <h4 class="uerd-page-title">{{ $director->name }}</h4>
+                                    <p class="uerd-role-text mb-3">{{ $director->designation }}</p>
                                     @if($director->bio)
-                                        <p class="small au-bio">{{ Str::limit($director->bio, 200) }}</p>
+                                        <p class="small uerd-bio">{{ Str::limit($director->bio, 200) }}</p>
                                     @endif
                                 </div>
                             </div>
@@ -36,25 +51,10 @@
                 </div>
             @else
                 <div class="text-center py-5">
-                    <h4>No data available.</h4>
+                    <h4 class="uerd-page-title">No data available.</h4>
                 </div>
             @endif
         </div>
     </section>
-
-    <style>
-        .au-hero2 { background: linear-gradient(135deg, #e3f2fd, #e0f7fa); padding: 44px 0 30px; text-align: center; }
-        .au-lead2 { color: #0b4a6f; font-size: 1.5rem; font-weight: 600; max-width: 760px; margin: 0 auto; line-height: 1.6; }
-        .au-body { background: #fff; padding: 60px 0 80px; }
-        .au-profile { border: 1px solid #eef1f0; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 8px 24px rgba(16,55,47,.06); transition: transform .3s ease, box-shadow .3s ease; }
-        .au-profile:hover { transform: translateY(-10px); box-shadow: 0 22px 45px rgba(13,148,136,.18); }
-        .au-profile-img { position: relative; height: 230px; overflow: hidden; background: #eef1f0; }
-        .au-profile-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-        .au-profile:hover .au-profile-img img { transform: scale(1.08); }
-        .au-profile-fallback { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; font-weight: 700; }
-        .au-profile-body { padding: 1.6rem; text-align: center; }
-        .au-profile-body h4 { font-weight: 700; color: #10372f; margin-bottom: .4rem; }
-        .au-bio { color: #4a5a55; line-height: 1.7; text-align: justify; }
-    </style>
 
 @endsection
