@@ -20,8 +20,8 @@ class PublicationController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'thumbnail' => 'nullable|mimes:jpg,png,jpeg,gif|max:512',
-            'pdf_file' => 'nullable|mimes:pdf|max:10240',
+            'thumbnail' => 'nullable|mimes:jpg,png,jpeg,gif',
+            'pdf_file' => 'nullable|mimes:pdf',
         ]);
 
         $thumbnailName = '';
@@ -67,8 +67,8 @@ class PublicationController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'thumbnail' => 'nullable|mimes:jpg,png,jpeg,gif|max:512',
-            'pdf_file' => 'nullable|mimes:pdf|max:10240',
+            'thumbnail' => 'nullable|mimes:jpg,png,jpeg,gif',
+            'pdf_file' => 'nullable|mimes:pdf',
         ]);
 
         $publication = DB::table('publications')->where('id', $id)->first();

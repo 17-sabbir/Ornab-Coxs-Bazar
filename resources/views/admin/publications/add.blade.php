@@ -23,7 +23,7 @@
                         <div class="col-md-12">
                             <label for="thumbnail" class="form-label">Thumbnail Image</label>
                             <input type="file" name="thumbnail" class="form-control @error('thumbnail') is-invalid @enderror" id="thumbnail">
-                            <span class="text-info">Thumbnail image maximum size 512 KB. Supported formats: JPG, PNG, JPEG, GIF</span>
+                            <span class="text-info">Supported formats: JPG, PNG, JPEG, GIF</span>
                             @error('thumbnail')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -31,7 +31,7 @@
                         <div class="col-md-12">
                             <label for="pdf_file" class="form-label">PDF File</label>
                             <input type="file" name="pdf_file" class="form-control @error('pdf_file') is-invalid @enderror" id="pdf_file">
-                            <span class="text-info">PDF file maximum size 10 MB</span>
+                            <span class="text-info">PDF file</span>
                             @error('pdf_file')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
