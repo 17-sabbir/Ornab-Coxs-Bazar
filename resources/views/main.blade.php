@@ -69,9 +69,9 @@
         }
 
         :root {
-            --uerd-primary: var(--primary-color);
-            --uerd-secondary: var(--secondary-color);
-            --uerd-accent: var(--accent-color);
+            --ornab-primary: var(--primary-color);
+            --ornab-secondary: var(--secondary-color);
+            --ornab-accent: var(--accent-color);
         }
         
         /* Glass Navbar & Header Improvements */
@@ -103,8 +103,8 @@
         }
         
         .btn-primary {
-            background: var(--uerd-primary) !important;
-            border: 1px solid var(--uerd-primary) !important;
+            background: var(--ornab-primary) !important;
+            border: 1px solid var(--ornab-primary) !important;
             color: var(--brand-white) !important;
             box-shadow: 0 4px 14px 0 rgba(21, 131, 104, 0.39); /* Teal Glow */
         }
@@ -114,8 +114,8 @@
         }
 
         .btn-warning {
-            background: var(--uerd-accent) !important;
-            border-color: var(--uerd-accent) !important;
+            background: var(--ornab-accent) !important;
+            border-color: var(--ornab-accent) !important;
             color: var(--brand-white) !important; /* Better contrast */
             box-shadow: 0 4px 14px 0 rgba(249, 116, 21, 0.39); /* Orange Glow */
         }
@@ -163,7 +163,7 @@
             background: #f1f1f1;
         }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--uerd-primary), var(--uerd-accent));
+            background: linear-gradient(180deg, var(--ornab-primary), var(--ornab-accent));
             border-radius: 5px;
         }
 

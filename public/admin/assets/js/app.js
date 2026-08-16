@@ -83,18 +83,18 @@ $(function () {
 	});
 
 	// Theme Customizer (persist + combine: mode + header + sidebar)
-	var UERD_THEME_KEYS = {
-		mode: "uerd_admin_theme_mode",
-		header: "uerd_admin_header_color",
-		sidebar: "uerd_admin_sidebar_bg"
+	var ORNAB_THEME_KEYS = {
+		mode: "ornab_admin_theme_mode",
+		header: "ornab_admin_header_color",
+		sidebar: "ornab_admin_sidebar_bg"
 	};
-	var UERD_THEME_MODES = ["light-theme", "dark-theme", "semi-dark", "minimal-theme"];
-	var UERD_HEADER_COLORS = ["headercolor1", "headercolor2", "headercolor3", "headercolor4", "headercolor5", "headercolor6", "headercolor7", "headercolor8"];
-	var UERD_SIDEBAR_COLORS = ["sidebarcolor1", "sidebarcolor2", "sidebarcolor3", "sidebarcolor4", "sidebarcolor5", "sidebarcolor6", "sidebarcolor7", "sidebarcolor8"];
+	var ORNAB_THEME_MODES = ["light-theme", "dark-theme", "semi-dark", "minimal-theme"];
+	var ORNAB_HEADER_COLORS = ["headercolor1", "headercolor2", "headercolor3", "headercolor4", "headercolor5", "headercolor6", "headercolor7", "headercolor8"];
+	var ORNAB_SIDEBAR_COLORS = ["sidebarcolor1", "sidebarcolor2", "sidebarcolor3", "sidebarcolor4", "sidebarcolor5", "sidebarcolor6", "sidebarcolor7", "sidebarcolor8"];
 
-	function uerdStorageAvailable() {
+	function ornabStorageAvailable() {
 		try {
-			var key = "__uerd_ls_test__";
+			var key = "__ornab_ls_test__";
 			window.localStorage.setItem(key, "1");
 			window.localStorage.removeItem(key);
 			return true;
@@ -103,70 +103,70 @@ $(function () {
 		}
 	}
 
-	function uerdGetStoredValue(key, allowed) {
-		if (!uerdStorageAvailable()) return null;
+	function ornabGetStoredValue(key, allowed) {
+		if (!ornabStorageAvailable()) return null;
 		var value = window.localStorage.getItem(key);
 		return allowed.indexOf(value) !== -1 ? value : null;
 	}
 
-	function uerdSetStoredValue(key, value) {
-		if (!uerdStorageAvailable()) return;
+	function ornabSetStoredValue(key, value) {
+		if (!ornabStorageAvailable()) return;
 		window.localStorage.setItem(key, value);
 	}
-	function uerdRemoveStoredValue(key) {
-		if (!uerdStorageAvailable()) return;
+	function ornabRemoveStoredValue(key) {
+		if (!ornabStorageAvailable()) return;
 		window.localStorage.removeItem(key);
 	}
 
-	var uerdThemeMode = uerdGetStoredValue(UERD_THEME_KEYS.mode, UERD_THEME_MODES) || "light-theme";
-	var uerdHeaderColor = uerdGetStoredValue(UERD_THEME_KEYS.header, UERD_HEADER_COLORS);
-	var uerdSidebarColor = uerdGetStoredValue(UERD_THEME_KEYS.sidebar, UERD_SIDEBAR_COLORS);
+	var ornabThemeMode = ornabGetStoredValue(ORNAB_THEME_KEYS.mode, ORNAB_THEME_MODES) || "light-theme";
+	var ornabHeaderColor = ornabGetStoredValue(ORNAB_THEME_KEYS.header, ORNAB_HEADER_COLORS);
+	var ornabSidebarColor = ornabGetStoredValue(ORNAB_THEME_KEYS.sidebar, ORNAB_SIDEBAR_COLORS);
 
-	function uerdApplyTheme() {
+	function ornabApplyTheme() {
 		var $html = $("html");
 
-		$html.removeClass(UERD_THEME_MODES.join(" ")).addClass(uerdThemeMode);
+		$html.removeClass(ORNAB_THEME_MODES.join(" ")).addClass(ornabThemeMode);
 
-		$html.removeClass("color-header").removeClass(UERD_HEADER_COLORS.join(" "));
-		if (uerdHeaderColor) $html.addClass("color-header").addClass(uerdHeaderColor);
+		$html.removeClass("color-header").removeClass(ORNAB_HEADER_COLORS.join(" "));
+		if (ornabHeaderColor) $html.addClass("color-header").addClass(ornabHeaderColor);
 
-		$html.removeClass("color-sidebar").removeClass(UERD_SIDEBAR_COLORS.join(" "));
-		if (uerdSidebarColor) $html.addClass("color-sidebar").addClass(uerdSidebarColor);
+		$html.removeClass("color-sidebar").removeClass(ORNAB_SIDEBAR_COLORS.join(" "));
+		if (ornabSidebarColor) $html.addClass("color-sidebar").addClass(ornabSidebarColor);
 
-		$("#lightmode").prop("checked", uerdThemeMode === "light-theme");
-		$("#darkmode").prop("checked", uerdThemeMode === "dark-theme");
-		$("#semidark").prop("checked", uerdThemeMode === "semi-dark");
-		$("#minimaltheme").prop("checked", uerdThemeMode === "minimal-theme");
+		$("#lightmode").prop("checked", ornabThemeMode === "light-theme");
+		$("#darkmode").prop("checked", ornabThemeMode === "dark-theme");
+		$("#semidark").prop("checked", ornabThemeMode === "semi-dark");
+		$("#minimaltheme").prop("checked", ornabThemeMode === "minimal-theme");
 	}
 
-	function uerdSetThemeMode(mode) {
-		uerdThemeMode = mode;
-		uerdSetStoredValue(UERD_THEME_KEYS.mode, mode);
-		uerdApplyTheme();
+	function ornabSetThemeMode(mode) {
+		ornabThemeMode = mode;
+		ornabSetStoredValue(ORNAB_THEME_KEYS.mode, mode);
+		ornabApplyTheme();
 	}
-	function uerdSetHeaderColor(colorClass) {
-		uerdHeaderColor = colorClass;
-		uerdSetStoredValue(UERD_THEME_KEYS.header, colorClass);
-		uerdApplyTheme();
+	function ornabSetHeaderColor(colorClass) {
+		ornabHeaderColor = colorClass;
+		ornabSetStoredValue(ORNAB_THEME_KEYS.header, colorClass);
+		ornabApplyTheme();
 	}
-	function uerdSetSidebarColor(colorClass) {
-		uerdSidebarColor = colorClass;
-		uerdSetStoredValue(UERD_THEME_KEYS.sidebar, colorClass);
-		uerdApplyTheme();
+	function ornabSetSidebarColor(colorClass) {
+		ornabSidebarColor = colorClass;
+		ornabSetStoredValue(ORNAB_THEME_KEYS.sidebar, colorClass);
+		ornabApplyTheme();
 	}
 
-	function uerdResetThemeCustomizer() {
-		uerdThemeMode = "light-theme";
-		uerdHeaderColor = null;
-		uerdSidebarColor = null;
-		uerdRemoveStoredValue(UERD_THEME_KEYS.mode);
-		uerdRemoveStoredValue(UERD_THEME_KEYS.header);
-		uerdRemoveStoredValue(UERD_THEME_KEYS.sidebar);
-		uerdApplyTheme();
+	function ornabResetThemeCustomizer() {
+		ornabThemeMode = "light-theme";
+		ornabHeaderColor = null;
+		ornabSidebarColor = null;
+		ornabRemoveStoredValue(ORNAB_THEME_KEYS.mode);
+		ornabRemoveStoredValue(ORNAB_THEME_KEYS.header);
+		ornabRemoveStoredValue(ORNAB_THEME_KEYS.sidebar);
+		ornabApplyTheme();
 	}
 
 	// Apply persisted values on load
-	uerdApplyTheme();
+	ornabApplyTheme();
 
 	// Switcher toggle
 	$(".switcher-btn").on("click", function () {
@@ -175,33 +175,33 @@ $(function () {
 	$(".close-switcher").on("click", function () {
 		$(".switcher-wrapper").removeClass("switcher-toggled");
 	});
-	$("#uerd-theme-reset").on("click", function () {
-		uerdResetThemeCustomizer();
+	$("#ornab-theme-reset").on("click", function () {
+		ornabResetThemeCustomizer();
 	});
 
 	// Theme mode radios
-	$("#lightmode").on("click", function () { uerdSetThemeMode("light-theme"); });
-	$("#darkmode").on("click", function () { uerdSetThemeMode("dark-theme"); });
-	$("#semidark").on("click", function () { uerdSetThemeMode("semi-dark"); });
-	$("#minimaltheme").on("click", function () { uerdSetThemeMode("minimal-theme"); });
+	$("#lightmode").on("click", function () { ornabSetThemeMode("light-theme"); });
+	$("#darkmode").on("click", function () { ornabSetThemeMode("dark-theme"); });
+	$("#semidark").on("click", function () { ornabSetThemeMode("semi-dark"); });
+	$("#minimaltheme").on("click", function () { ornabSetThemeMode("minimal-theme"); });
 
 	// Header colors
-	$("#headercolor1").on("click", function () { uerdSetHeaderColor("headercolor1"); });
-	$("#headercolor2").on("click", function () { uerdSetHeaderColor("headercolor2"); });
-	$("#headercolor3").on("click", function () { uerdSetHeaderColor("headercolor3"); });
-	$("#headercolor4").on("click", function () { uerdSetHeaderColor("headercolor4"); });
-	$("#headercolor5").on("click", function () { uerdSetHeaderColor("headercolor5"); });
-	$("#headercolor6").on("click", function () { uerdSetHeaderColor("headercolor6"); });
-	$("#headercolor7").on("click", function () { uerdSetHeaderColor("headercolor7"); });
-	$("#headercolor8").on("click", function () { uerdSetHeaderColor("headercolor8"); });
+	$("#headercolor1").on("click", function () { ornabSetHeaderColor("headercolor1"); });
+	$("#headercolor2").on("click", function () { ornabSetHeaderColor("headercolor2"); });
+	$("#headercolor3").on("click", function () { ornabSetHeaderColor("headercolor3"); });
+	$("#headercolor4").on("click", function () { ornabSetHeaderColor("headercolor4"); });
+	$("#headercolor5").on("click", function () { ornabSetHeaderColor("headercolor5"); });
+	$("#headercolor6").on("click", function () { ornabSetHeaderColor("headercolor6"); });
+	$("#headercolor7").on("click", function () { ornabSetHeaderColor("headercolor7"); });
+	$("#headercolor8").on("click", function () { ornabSetHeaderColor("headercolor8"); });
 
 	// Sidebar background colors
-	$("#sidebarcolor1").on("click", function () { uerdSetSidebarColor("sidebarcolor1"); });
-	$("#sidebarcolor2").on("click", function () { uerdSetSidebarColor("sidebarcolor2"); });
-	$("#sidebarcolor3").on("click", function () { uerdSetSidebarColor("sidebarcolor3"); });
-	$("#sidebarcolor4").on("click", function () { uerdSetSidebarColor("sidebarcolor4"); });
-	$("#sidebarcolor5").on("click", function () { uerdSetSidebarColor("sidebarcolor5"); });
-	$("#sidebarcolor6").on("click", function () { uerdSetSidebarColor("sidebarcolor6"); });
-	$("#sidebarcolor7").on("click", function () { uerdSetSidebarColor("sidebarcolor7"); });
-	$("#sidebarcolor8").on("click", function () { uerdSetSidebarColor("sidebarcolor8"); });
+	$("#sidebarcolor1").on("click", function () { ornabSetSidebarColor("sidebarcolor1"); });
+	$("#sidebarcolor2").on("click", function () { ornabSetSidebarColor("sidebarcolor2"); });
+	$("#sidebarcolor3").on("click", function () { ornabSetSidebarColor("sidebarcolor3"); });
+	$("#sidebarcolor4").on("click", function () { ornabSetSidebarColor("sidebarcolor4"); });
+	$("#sidebarcolor5").on("click", function () { ornabSetSidebarColor("sidebarcolor5"); });
+	$("#sidebarcolor6").on("click", function () { ornabSetSidebarColor("sidebarcolor6"); });
+	$("#sidebarcolor7").on("click", function () { ornabSetSidebarColor("sidebarcolor7"); });
+	$("#sidebarcolor8").on("click", function () { ornabSetSidebarColor("sidebarcolor8"); });
 });

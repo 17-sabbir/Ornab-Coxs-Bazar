@@ -247,45 +247,45 @@ Ornab Coxs Bazar
 {{-- Home design tokens (color + spacing consistency) --}}
 <style>
     :root {
-        --uerd-green: var(--brand-navy);
-        --uerd-accent: var(--brand-coral);
-        --uerd-accent-strong: #DF9B74; /* Darker Coral */
-        --uerd-soft-bg: rgba(18, 43, 107, 0.04); /* Soft Navy Bg */
-        --uerd-muted: #64748b; /* Slate 500 */
-        --uerd-card-border: var(--brand-border);
-        --uerd-card-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.05); /* Softer, larger shadow */
+        --ornab-green: var(--brand-navy);
+        --ornab-accent: var(--brand-coral);
+        --ornab-accent-strong: #DF9B74; /* Darker Coral */
+        --ornab-soft-bg: rgba(18, 43, 107, 0.04); /* Soft Navy Bg */
+        --ornab-muted: #64748b; /* Slate 500 */
+        --ornab-card-border: var(--brand-border);
+        --ornab-card-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.05); /* Softer, larger shadow */
     }
 
-    .uerd-section {
+    .ornab-section {
         padding: 2rem 0;
     }
     @@media (min-width: 992px) {
-        .uerd-section {
+        .ornab-section {
             padding: 2.5rem 0;
         }
     }
 
     /* Reduce stacked section gap (used only where applied) */
-    .uerd-section-tight-top {
+    .ornab-section-tight-top {
         padding-top: 1.5rem;
     }
-    .uerd-section-tight-bottom {
+    .ornab-section-tight-bottom {
         padding-bottom: 1.5rem;
     }
     @@media (min-width: 992px) {
-        .uerd-section-tight-top {
+        .ornab-section-tight-top {
             padding-top: 2rem;
         }
-        .uerd-section-tight-bottom {
+        .ornab-section-tight-bottom {
             padding-bottom: 2rem;
         }
     }
 
-    .uerd-soft-section {
-        background-color: var(--uerd-soft-bg);
+    .ornab-soft-section {
+        background-color: var(--ornab-soft-bg);
     }
 
-    .uerd-btn-pill {
+    .ornab-btn-pill {
         border-radius: 9999px;
         padding: 14px 32px;
         font-weight: 700;
@@ -294,25 +294,25 @@ Ornab Coxs Bazar
         letter-spacing: 0.3px;
     }
 
-    .uerd-btn-pill:hover {
+    .ornab-btn-pill:hover {
         transform: translateY(-2px);
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
     }
 
-    .uerd-card-hover {
+    .ornab-card-hover {
         border-radius: 0.875rem; /* Rounded xl */
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 1px solid var(--uerd-card-border);
+        border: 1px solid var(--ornab-card-border);
         background: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(8px);
     }
-    .uerd-card-hover:hover {
+    .ornab-card-hover:hover {
         transform: translateY(-4px);
         box-shadow: 0 20px 40px -4px rgba(18, 43, 107, 0.08); /* Colored shadow hint */
         border-color: rgba(18, 43, 107, 0.15);
     }
 
-    .uerd-cta-text {
+    .ornab-cta-text {
         background-color: transparent !important;
         color: var(--brand-teal) !important;
         text-decoration: none;
@@ -320,7 +320,7 @@ Ornab Coxs Bazar
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
-    .uerd-cta-text:hover {
+    .ornab-cta-text:hover {
         text-decoration: underline;
         text-underline-offset: 4px;
         color: var(--brand-navy) !important;
@@ -338,7 +338,7 @@ Ornab Coxs Bazar
         @foreach ($slider as $skey => $slider)
         <div class="carousel-item @if($skey == 0) active @endif">
             <div style="position: relative; height: 100vh; overflow: hidden;"> <!-- Full viewport height -->
-                <img src="{{ asset('images/slider/'.$slider->image) }}" class="d-block w-100" alt="UERD" style="object-fit: cover; height: 100%; width: 100%;">
+                <img src="{{ asset('images/slider/'.$slider->image) }}" class="d-block w-100" alt="ORNAB" style="object-fit: cover; height: 100%; width: 100%;">
                 
                 {{-- Navy-to-Coral Gradient Overlay --}}
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(18,43,107,0.75) 0%, rgba(242,169,126,0.25) 100%);"></div>
@@ -349,7 +349,7 @@ Ornab Coxs Bazar
                 </svg>
 
                 {{-- Scroll indicator --}}
-                <div class="hero-scroll-indicator" onclick="document.querySelector('.uerd-soft-section')?.scrollIntoView({behavior:'smooth'})">
+                <div class="hero-scroll-indicator" onclick="document.querySelector('.ornab-soft-section')?.scrollIntoView({behavior:'smooth'})">
                     <span class="dot"></span>
                 </div>
 
@@ -396,10 +396,10 @@ Ornab Coxs Bazar
 {{-- End of who we are --}}
 
 {{-- Highlights (from provided design) --}}
-<div class="uerd-soft-section uerd-section" style="padding-top: 1.5rem; padding-bottom: 1.5rem; margin-top: -20px;">
+<div class="ornab-soft-section ornab-section" style="padding-top: 1.5rem; padding-bottom: 1.5rem; margin-top: -20px;">
     <style>
         /* Highlights cards (matches provided screenshot) */
-        .uerd-highlights-card {
+        .ornab-highlights-card {
             border-radius: 2.25rem;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(0,0,0,0.05);
@@ -407,12 +407,12 @@ Ornab Coxs Bazar
             overflow: hidden;
         }
         
-        .uerd-highlights-card:hover {
+        .ornab-highlights-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1) !important;
         }
 
-        .uerd-highlights-icon {
+        .ornab-highlights-icon {
             width: 50px;
             height: 50px;
             border-radius: 12px;
@@ -423,36 +423,36 @@ Ornab Coxs Bazar
             transition: transform 0.4s ease;
         }
         
-        .uerd-highlights-card:hover .uerd-highlights-icon {
+        .ornab-highlights-card:hover .ornab-highlights-icon {
             transform: scale(1.1) rotate(5deg);
         }
 
-        .uerd-highlights-underline {
+        .ornab-highlights-underline {
             width: 72px;
             height: 5px;
             border-radius: 3px;
-            background-color: var(--uerd-accent-strong);
+            background-color: var(--ornab-accent-strong);
         }
     </style>
 
     {{-- First "Our Impact" section removed as requested --}}
     
     {{-- Our Impact Section (New Insertion) --}}
-    <section class="uerd-impact-section position-relative">
+    <section class="ornab-impact-section position-relative">
         <style>
-            .uerd-impact-section {
+            .ornab-impact-section {
                 background-color: transparent;
                 padding: 1.25rem 1.5rem;
                 color: var(--brand-text);
             }
             @media (min-width: 992px) {
-                .uerd-impact-section { padding-left: 2rem; padding-right: 2rem; }
+                .ornab-impact-section { padding-left: 2rem; padding-right: 2rem; }
             }
             @media (min-width: 1400px) {
-                .uerd-impact-section { padding-left: 2.5rem; padding-right: 2.5rem; }
+                .ornab-impact-section { padding-left: 2.5rem; padding-right: 2.5rem; }
             }
 
-            .uerd-impact-badge {
+            .ornab-impact-badge {
                 display: inline-flex;
                 align-items: center;
                 gap: 6px;
@@ -469,18 +469,18 @@ Ornab Coxs Bazar
                 box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             }
 
-            .uerd-impact-heading {
+            .ornab-impact-heading {
                 font-size: 2.6rem;
                 font-weight: 800;
                 line-height: 1.15;
                 margin-bottom: 16px;
                 color: var(--brand-navy);
             }
-            .uerd-impact-heading .uerd-impact-heading-accent {
+            .ornab-impact-heading .ornab-impact-heading-accent {
                 color: var(--brand-coral);
             }
 
-            .uerd-impact-text {
+            .ornab-impact-text {
                 font-size: 1.05rem;
                 line-height: 1.8;
                 font-weight: 400;
@@ -488,7 +488,7 @@ Ornab Coxs Bazar
                 max-width: 90%;
             }
 
-            .uerd-glass-card {
+            .ornab-glass-card {
                 background: #ffffff;
                 border: 1px solid var(--brand-border);
                 border-radius: 20px;
@@ -498,12 +498,12 @@ Ornab Coxs Bazar
                 transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
                 box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
             }
-            .uerd-glass-card:hover {
+            .ornab-glass-card:hover {
                 transform: translateY(-6px);
                 box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
             }
 
-            .uerd-impact-section .row > .col-6:nth-child(odd) .uerd-glass-icon {
+            .ornab-impact-section .row > .col-6:nth-child(odd) .ornab-glass-icon {
                 width: 46px;
                 height: 46px;
                 border-radius: 50%;
@@ -515,7 +515,7 @@ Ornab Coxs Bazar
                 font-size: 1.3rem;
                 margin-bottom: 14px;
             }
-            .uerd-impact-section .row > .col-6:nth-child(even) .uerd-glass-icon {
+            .ornab-impact-section .row > .col-6:nth-child(even) .ornab-glass-icon {
                 width: 46px;
                 height: 46px;
                 border-radius: 50%;
@@ -528,7 +528,7 @@ Ornab Coxs Bazar
                 margin-bottom: 14px;
             }
 
-            .uerd-glass-stat {
+            .ornab-glass-stat {
                 font-size: 2.2rem;
                 font-weight: 900;
                 margin-bottom: 4px;
@@ -536,7 +536,7 @@ Ornab Coxs Bazar
                 color: var(--brand-navy);
             }
 
-            .uerd-glass-label {
+            .ornab-glass-label {
                 font-size: 0.85rem;
                 text-transform: none;
                 letter-spacing: 0.2px;
@@ -548,12 +548,12 @@ Ornab Coxs Bazar
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-5" style="padding: 1.5rem;">
-                    <span class="uerd-impact-badge"><i class="fa-solid fa-check"></i> Our Impact</span>
-                    <h2 class="uerd-impact-heading">Over 18 Years of <span class="uerd-impact-heading-accent">Changing Lives</span></h2>
-                    <p class="uerd-impact-text lead mb-4">
+                    <span class="ornab-impact-badge"><i class="fa-solid fa-check"></i> Our Impact</span>
+                    <h2 class="ornab-impact-heading">Over 18 Years of <span class="ornab-impact-heading-accent">Changing Lives</span></h2>
+                    <p class="ornab-impact-text lead mb-4">
                         Since 2008, Ornab Cox's Bazar has served underprivileged communities in Cox's Bazar, with a focus on women, adolescents, and children. Through education, health, skills training, and community mobilization, we empower families and build sustainable change across the district.
                     </p>
-                    <a href="{{ route('about.us') }}" class="uerd-cta-text d-inline-flex align-items-center gap-2" style="font-weight: 700;">
+                    <a href="{{ route('about.us') }}" class="ornab-cta-text d-inline-flex align-items-center gap-2" style="font-weight: 700;">
                         Learn More About Us <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
@@ -561,31 +561,31 @@ Ornab Coxs Bazar
                 <div class="col-lg-7" style="padding: 1.5rem;">
                     <div class="row g-4">
                         <div class="col-6">
-                            <div class="uerd-glass-card">
-                                <div class="uerd-glass-icon"><i class="fa-regular fa-hand-holding-heart"></i></div>
-                                <div class="uerd-glass-stat count-up" data-target="{{ $statistics->statistics_donors ?? 0 }}" data-suffix="+">0</div>
-                                <div class="uerd-glass-label">Donors</div>
+                            <div class="ornab-glass-card">
+                                <div class="ornab-glass-icon"><i class="fa-regular fa-hand-holding-heart"></i></div>
+                                <div class="ornab-glass-stat count-up" data-target="{{ $statistics->statistics_donors ?? 0 }}" data-suffix="+">0</div>
+                                <div class="ornab-glass-label">Donors</div>
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="uerd-glass-card">
-                                <div class="uerd-glass-icon"><i class="fa-solid fa-people-carry-box"></i></div>
-                                <div class="uerd-glass-stat count-up" data-target="{{ $statistics->statistics_beneficiaries ?? 0 }}" data-suffix="+">0</div>
-                                <div class="uerd-glass-label">Beneficiaries</div>
+                            <div class="ornab-glass-card">
+                                <div class="ornab-glass-icon"><i class="fa-solid fa-people-carry-box"></i></div>
+                                <div class="ornab-glass-stat count-up" data-target="{{ $statistics->statistics_beneficiaries ?? 0 }}" data-suffix="+">0</div>
+                                <div class="ornab-glass-label">Beneficiaries</div>
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="uerd-glass-card">
-                                <div class="uerd-glass-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
-                                <div class="uerd-glass-stat count-up" data-target="{{ $statistics->statistics_projects ?? ($projectsCount ?? 0) }}" data-suffix="+">0</div>
-                                <div class="uerd-glass-label">Projects</div>
+                            <div class="ornab-glass-card">
+                                <div class="ornab-glass-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+                                <div class="ornab-glass-stat count-up" data-target="{{ $statistics->statistics_projects ?? ($projectsCount ?? 0) }}" data-suffix="+">0</div>
+                                <div class="ornab-glass-label">Projects</div>
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="uerd-glass-card">
-                                <div class="uerd-glass-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
-                                <div class="uerd-glass-stat count-up" data-target="{{ $statistics->statistics_volunteers ?? 0 }}" data-suffix="+">0</div>
-                                <div class="uerd-glass-label">Volunteers</div>
+                            <div class="ornab-glass-card">
+                                <div class="ornab-glass-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+                                <div class="ornab-glass-stat count-up" data-target="{{ $statistics->statistics_volunteers ?? 0 }}" data-suffix="+">0</div>
+                                <div class="ornab-glass-label">Volunteers</div>
                             </div>
                         </div>
                     </div>
@@ -840,21 +840,21 @@ Ornab Coxs Bazar
 {{-- End of Focus Area --}}
 
 {{-- Ongoing Project --}}
-<div class="uerd-soft-section uerd-section uerd-section-tight-top uerd-section-tight-bottom">
+<div class="ornab-soft-section ornab-section ornab-section-tight-top ornab-section-tight-bottom">
     <style>
-        .uerd-ongoing-card {
+        .ornab-ongoing-card {
             border-radius: 1.25rem;
             border: 1px solid var(--brand-border);
             box-shadow: 0 8px 18px rgba(18, 43, 107, 0.06);
             overflow: hidden;
         }
-        .uerd-ongoing-card.is-mint {
+        .ornab-ongoing-card.is-mint {
             background: linear-gradient(180deg, rgba(79, 168, 201, 0.10) 0%, rgba(255, 255, 255, 0.92) 70%);
         }
-        .uerd-ongoing-card.is-sand {
+        .ornab-ongoing-card.is-sand {
             background: linear-gradient(180deg, rgba(242, 169, 126, 0.12) 0%, rgba(255, 255, 255, 0.92) 70%);
         }
-        .uerd-ongoing-icon {
+        .ornab-ongoing-icon {
             width: 46px;
             height: 46px;
             border-radius: 12px;
@@ -863,12 +863,12 @@ Ornab Coxs Bazar
             justify-content: center;
             flex: 0 0 auto;
         }
-        .uerd-ongoing-readmore {
+        .ornab-ongoing-readmore {
             color: var(--brand-teal);
             text-decoration: none;
             font-weight: 700;
         }
-        .uerd-ongoing-readmore:hover {
+        .ornab-ongoing-readmore:hover {
             text-decoration: underline;
         }
     </style>
@@ -884,14 +884,14 @@ Ornab Coxs Bazar
                 @if($key < 4)
                 @php($bgClass = $key % 2 === 0 ? 'is-mint' : 'is-sand')
                 <div class="col-lg-4 col-md-6 {{ $key == 3 ? 'd-lg-none' : '' }}">
-                    <div class="uerd-ongoing-card uerd-card-hover {{ $bgClass }} p-4 h-100 d-flex flex-column">
+                    <div class="ornab-ongoing-card ornab-card-hover {{ $bgClass }} p-4 h-100 d-flex flex-column">
                                 <div class="d-flex gap-3 align-items-start">
                                     @if(!empty($item->image))
-                                        <div class="uerd-ongoing-icon shadow-sm" style="width:56px;height:56px;border-radius:12px;overflow:hidden;flex:0 0 auto;">
+                                        <div class="ornab-ongoing-icon shadow-sm" style="width:56px;height:56px;border-radius:12px;overflow:hidden;flex:0 0 auto;">
                                             <img src="{{ asset('images/project/'.$item->image) }}" alt="{{ $item->title ?? $item->project_name ?? 'Project' }}" style="width:100%;height:100%;object-fit:cover;display:block;">
                                         </div>
                                     @else
-                                        <div class="uerd-ongoing-icon bg-success text-white shadow-sm">
+                                        <div class="ornab-ongoing-icon bg-success text-white shadow-sm">
                                             <i class="fa-regular fa-folder-open"></i>
                                         </div>
                                     @endif
@@ -909,13 +909,13 @@ Ornab Coxs Bazar
                                 </div>
 
                         <div class="pt-3">
-                            <p class="mb-0" style="color: var(--uerd-muted); line-height: 1.65;">
+                            <p class="mb-0" style="color: var(--ornab-muted); line-height: 1.65;">
                                 {{ Str::limit($item->objectives, 120, '...') }}
                             </p>
                         </div>
 
                         <div class="mt-auto pt-3">
-                            <a href="{{ route('ongoing.project.view', $item->id) }}" class="uerd-ongoing-readmore d-inline-flex align-items-center gap-2">
+                            <a href="{{ route('ongoing.project.view', $item->id) }}" class="ornab-ongoing-readmore d-inline-flex align-items-center gap-2">
                                 Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
@@ -926,7 +926,7 @@ Ornab Coxs Bazar
         </div>
 
         <div class="d-flex justify-content-center pt-3">
-            <a href="{{ route('ongoing.project') }}" class="btn btn-outline-success uerd-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
+            <a href="{{ route('ongoing.project') }}" class="btn btn-outline-success ornab-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
                 View All Projects <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
@@ -936,9 +936,9 @@ Ornab Coxs Bazar
 
 
 {{-- Latest News and Events --}}
-<div class="uerd-soft-section uerd-section uerd-section-tight-top">
+<div class="ornab-soft-section ornab-section ornab-section-tight-top">
     <style>
-        .uerd-news-pill {
+        .ornab-news-pill {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -951,59 +951,59 @@ Ornab Coxs Bazar
             font-size: 0.65rem;
             text-transform: uppercase;
         }
-        .uerd-news-subtitle {
+        .ornab-news-subtitle {
             max-width: 820px;
             margin: 0 auto;
-            color: var(--uerd-muted);
+            color: var(--ornab-muted);
             line-height: 1.7;
             font-size: 0.95rem;
         }
-        .uerd-news-card {
+        .ornab-news-card {
             border-radius: 14px;
             background-color: #ffffff;
-            border: 1px solid var(--uerd-card-border);
-            box-shadow: var(--uerd-card-shadow);
+            border: 1px solid var(--ornab-card-border);
+            box-shadow: var(--ornab-card-shadow);
         }
 
-        .uerd-news-thumb {
+        .ornab-news-thumb {
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
             background: rgba(16, 42, 67, 0.06);
             aspect-ratio: 16 / 9;
         }
-        .uerd-news-thumb img {
+        .ornab-news-thumb img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 260ms ease;
         }
-        .uerd-news-card:hover .uerd-news-thumb img {
+        .ornab-news-card:hover .ornab-news-thumb img {
             transform: scale(1.04);
         }
-        .uerd-news-badge {
+        .ornab-news-badge {
             background-color: rgba(18, 43, 107, 0.08);
             color: var(--brand-navy);
             border: 1px solid rgba(18, 43, 107, 0.15);
             font-weight: 700;
         }
-        .uerd-news-title {
+        .ornab-news-title {
             font-weight: 800;
             letter-spacing: -0.25px;
         }
-        .uerd-news-link {
+        .ornab-news-link {
             color: var(--brand-teal);
             text-decoration: none;
             font-weight: 700;
         }
-        .uerd-news-link:hover {
+        .ornab-news-link:hover {
             text-decoration: underline;
         }
 
-        .uerd-hscroll-wrap {
+        .ornab-hscroll-wrap {
             position: relative;
         }
-        .uerd-hscroll {
+        .ornab-hscroll {
             display: flex;
             gap: 1.25rem;
             overflow-x: auto;
@@ -1011,24 +1011,24 @@ Ornab Coxs Bazar
             scroll-behavior: smooth;
             padding: 0 34px;
         }
-        .uerd-hscroll::-webkit-scrollbar { display: none; }
-        .uerd-hscroll { -ms-overflow-style: none; scrollbar-width: none; }
+        .ornab-hscroll::-webkit-scrollbar { display: none; }
+        .ornab-hscroll { -ms-overflow-style: none; scrollbar-width: none; }
 
-        .uerd-hscroll-item {
+        .ornab-hscroll-item {
             flex: 0 0 auto;
             width: 320px;
             scroll-snap-align: start;
         }
         @@media (max-width: 575.98px) {
-            .uerd-hscroll {
+            .ornab-hscroll {
                 padding: 0 22px;
             }
-            .uerd-hscroll-item {
+            .ornab-hscroll-item {
                 width: 280px;
             }
         }
 
-        .uerd-hscroll-nav {
+        .ornab-hscroll-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -1041,16 +1041,16 @@ Ornab Coxs Bazar
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: var(--uerd-card-shadow);
+            box-shadow: var(--ornab-card-shadow);
             z-index: 2;
         }
-        .uerd-hscroll-nav:hover {
+        .ornab-hscroll-nav:hover {
             border-color: rgba(18, 43, 107, 0.45);
         }
-        .uerd-hscroll-nav.is-prev { left: 8px; }
-        .uerd-hscroll-nav.is-next { right: 8px; }
+        .ornab-hscroll-nav.is-prev { left: 8px; }
+        .ornab-hscroll-nav.is-next { right: 8px; }
 
-        .uerd-hscroll-track {
+        .ornab-hscroll-track {
             height: 10px;
             background: rgba(18, 43, 107, 0.10);
             border-radius: 999px;
@@ -1059,11 +1059,11 @@ Ornab Coxs Bazar
             margin: 16px 34px 0;
         }
         @@media (max-width: 575.98px) {
-            .uerd-hscroll-track {
+            .ornab-hscroll-track {
                 margin: 14px 22px 0;
             }
         }
-        .uerd-hscroll-indicator {
+        .ornab-hscroll-indicator {
             position: absolute;
             top: 0;
             left: 0;
@@ -1077,24 +1077,24 @@ Ornab Coxs Bazar
     <div class="container">
         <div class="text-center mb-3">
             <div class="mb-2">
-                <span class="uerd-news-pill">Stay informed</span>
+                <span class="ornab-news-pill">Stay informed</span>
             </div>
-            <h2 class="uerd-sponsor-title mb-2" style="color: var(--brand-navy);">Latest News &amp; Events</h2>
-            <p class="uerd-news-subtitle mb-0">
+            <h2 class="ornab-sponsor-title mb-2" style="color: var(--brand-navy);">Latest News &amp; Events</h2>
+            <p class="ornab-news-subtitle mb-0">
                 Stay connected with our latest stories, announcements, and community impact updates from Cox's Bazar.
             </p>
         </div>
 
-        <div class="uerd-hscroll-wrap">
-            <button type="button" class="uerd-hscroll-nav is-prev" aria-label="Scroll news left" data-hscroll-prev="uerdNewsScroll">
+        <div class="ornab-hscroll-wrap">
+            <button type="button" class="ornab-hscroll-nav is-prev" aria-label="Scroll news left" data-hscroll-prev="ornabNewsScroll">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
 
-            <div id="uerdNewsScroll" class="uerd-hscroll">
+            <div id="ornabNewsScroll" class="ornab-hscroll">
                 @foreach ($news as $key => $data)
-                    <div class="uerd-hscroll-item">
-                        <div class="uerd-news-card uerd-card-hover p-4 h-100 d-flex flex-column">
-                            <div class="uerd-news-thumb mb-3">
+                    <div class="ornab-hscroll-item">
+                        <div class="ornab-news-card ornab-card-hover p-4 h-100 d-flex flex-column">
+                            <div class="ornab-news-thumb mb-3">
                                 <img
                                     src="{{ !empty($data->image) ? asset('images/news/'.$data->image) : asset('img/mission.jpg') }}"
                                     alt="{{ $data->title ?? 'News image' }}"
@@ -1104,7 +1104,7 @@ Ornab Coxs Bazar
                             </div>
 
                             <div class="d-flex align-items-center justify-content-between mb-3">
-                                <span class="badge rounded-pill uerd-news-badge">
+                                <span class="badge rounded-pill ornab-news-badge">
                                     {{ (property_exists($data, 'category') && !empty($data->category)) ? $data->category : 'News' }}
                                 </span>
                                 <div class="small text-secondary" style="white-space: nowrap;">
@@ -1113,13 +1113,13 @@ Ornab Coxs Bazar
                                 </div>
                             </div>
 
-                            <h5 class="uerd-news-title mb-2">{{ Str::limit($data->title ?? '', 55, '...') }}</h5>
-                            <p class="mb-0" style="color: var(--uerd-muted); line-height: 1.65;">
+                            <h5 class="ornab-news-title mb-2">{{ Str::limit($data->title ?? '', 55, '...') }}</h5>
+                            <p class="mb-0" style="color: var(--ornab-muted); line-height: 1.65;">
                                 {{ Str::limit(strip_tags($data->description ?? ''), 120, '...') }}
                             </p>
 
                             <div class="mt-auto pt-3">
-                                <a href="{{ route('latest.news.view', $data->id) }}" class="uerd-news-link d-inline-flex align-items-center gap-2">
+                                <a href="{{ route('latest.news.view', $data->id) }}" class="ornab-news-link d-inline-flex align-items-center gap-2">
                                     Read More <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -1128,17 +1128,17 @@ Ornab Coxs Bazar
                 @endforeach
             </div>
 
-            <button type="button" class="uerd-hscroll-nav is-next" aria-label="Scroll news right" data-hscroll-next="uerdNewsScroll">
+            <button type="button" class="ornab-hscroll-nav is-next" aria-label="Scroll news right" data-hscroll-next="ornabNewsScroll">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
 
-            <div class="uerd-hscroll-track" aria-hidden="true" data-hscroll-track-for="uerdNewsScroll">
-                <div class="uerd-hscroll-indicator" data-hscroll-indicator-for="uerdNewsScroll"></div>
+            <div class="ornab-hscroll-track" aria-hidden="true" data-hscroll-track-for="ornabNewsScroll">
+                <div class="ornab-hscroll-indicator" data-hscroll-indicator-for="ornabNewsScroll"></div>
             </div>
         </div>
 
         <div class="d-flex justify-content-center pt-4">
-            <a href="{{ route('latest.news.all') }}" class="btn btn-outline-success uerd-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
+            <a href="{{ route('latest.news.all') }}" class="btn btn-outline-success ornab-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
                 View All News &amp; Events <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
@@ -1147,9 +1147,9 @@ Ornab Coxs Bazar
 {{-- End of Latest News and Events --}}
 
 {{-- Sponsor (moved below Latest News & Events, redesigned) --}}
-<div class="uerd-sponsor-wrap">
+<div class="ornab-sponsor-wrap">
     <style>
-        .uerd-sponsor-card {
+        .ornab-sponsor-card {
             background: linear-gradient(135deg, #122B6B, #1a3f8a);
             border-radius: 22px;
              padding: 2rem 1.5rem;
@@ -1158,37 +1158,37 @@ Ornab Coxs Bazar
             max-width: 940px;
             margin: 0 auto;
         }
-        .uerd-sponsor-icon {
+        .ornab-sponsor-icon {
             width: 66px; height: 66px; border-radius: 18px;
             display: inline-flex; align-items: center; justify-content: center;
             background: rgba(255,255,255,.18); color: #fff; font-size: 1.6rem;
             margin-bottom: 1.3rem;
         }
-        .uerd-sponsor-title { font-weight: 800; letter-spacing: -.5px; }
-        .uerd-sponsor-desc { color: rgba(255,255,255,.92); max-width: 760px; margin: 0 auto 1.6rem; line-height: 1.8; }
-        .uerd-sponsor-btn {
+        .ornab-sponsor-title { font-weight: 800; letter-spacing: -.5px; }
+        .ornab-sponsor-desc { color: rgba(255,255,255,.92); max-width: 760px; margin: 0 auto 1.6rem; line-height: 1.8; }
+        .ornab-sponsor-btn {
             background: #fff; color: var(--brand-navy); border: none; font-weight: 600;
         }
-        .uerd-sponsor-btn:hover { background: var(--brand-bg); color: var(--brand-navy); }
-        .uerd-sponsor-btn-outline {
+        .ornab-sponsor-btn:hover { background: var(--brand-bg); color: var(--brand-navy); }
+        .ornab-sponsor-btn-outline {
             background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); font-weight: 600;
         }
-        .uerd-sponsor-btn-outline:hover { background: rgba(255,255,255,.12); color: #fff; }
+        .ornab-sponsor-btn-outline:hover { background: rgba(255,255,255,.12); color: #fff; }
     </style>
-    <div class="uerd-section pt-4 pb-4">
+    <div class="ornab-section pt-4 pb-4">
         <div class="container">
-            <div class="uerd-sponsor-card text-center">
-                <div class="uerd-sponsor-icon"><i class="fa-regular fa-heart fs-4"></i></div>
-                <h2 class="uerd-sponsor-title mb-3" style="color: #ffffff;">Sponsor for a Growing Fund</h2>
-                <p class="uerd-sponsor-desc mb-4">
+            <div class="ornab-sponsor-card text-center">
+                <div class="ornab-sponsor-icon"><i class="fa-regular fa-heart fs-4"></i></div>
+                <h2 class="ornab-sponsor-title mb-3" style="color: #ffffff;">Sponsor for a Growing Fund</h2>
+                <p class="ornab-sponsor-desc mb-4">
                     Sponsor Ornab Coxs Bazar's growing fund to fuel impactful initiatives in Cox's Bazar. Your support drives essential programs in healthcare, education,
                     and community resilience — making a lasting difference in lives.
                 </p>
                 <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="{{ route('contact') }}" class="btn uerd-btn-pill uerd-sponsor-btn d-inline-flex align-items-center gap-2">
+                    <a href="{{ route('contact') }}" class="btn ornab-btn-pill ornab-sponsor-btn d-inline-flex align-items-center gap-2">
                         <i class="fa-regular fa-heart"></i> Become a Sponsor
                     </a>
-                    <a href="{{ route('frontend.projects') }}" class="btn uerd-btn-pill uerd-sponsor-btn-outline d-inline-flex align-items-center gap-2">
+                    <a href="{{ route('frontend.projects') }}" class="btn ornab-btn-pill ornab-sponsor-btn-outline d-inline-flex align-items-center gap-2">
                         Learn About Our Project <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
@@ -1202,9 +1202,9 @@ Ornab Coxs Bazar
 
 
 {{-- Photo Gallery --}}
-<div class="uerd-soft-section uerd-section pt-4 pb-4">
+<div class="ornab-soft-section ornab-section pt-4 pb-4">
     <style>
-        .uerd-gallery-pill {
+        .ornab-gallery-pill {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -1217,49 +1217,49 @@ Ornab Coxs Bazar
             font-size: 0.65rem;
             text-transform: uppercase;
         }
-        .uerd-gallery-subtitle {
+        .ornab-gallery-subtitle {
             max-width: 820px;
             margin: 0 auto;
-            color: var(--uerd-muted);
+            color: var(--ornab-muted);
             line-height: 1.7;
             font-size: 0.95rem;
         }
-        .uerd-gallery-card {
+        .ornab-gallery-card {
             border-radius: 16px;
             overflow: hidden;
             background-color: #fff;
             border: 1px solid var(--brand-border);
             box-shadow: 0 10px 24px rgba(18, 43, 107, 0.06);
         }
-        .uerd-gallery-cover {
+        .ornab-gallery-cover {
             width: 100%;
             height: 210px;
             object-fit: cover;
             object-position: center;
             display: block;
         }
-        .uerd-gallery-album-title {
+        .ornab-gallery-album-title {
             font-weight: 800;
             letter-spacing: -0.2px;
         }
-        .uerd-gallery-meta {
+        .ornab-gallery-meta {
             font-size: 12px;
-            color: var(--uerd-muted);
+            color: var(--ornab-muted);
         }
-        .uerd-gallery-more {
+        .ornab-gallery-more {
             color: var(--brand-teal);
             font-weight: 700;
             text-decoration: none;
         }
-        .uerd-gallery-more:hover {
+        .ornab-gallery-more:hover {
             text-decoration: underline;
         }
 
-        .uerd-gallery-scroll .uerd-hscroll-item {
+        .ornab-gallery-scroll .ornab-hscroll-item {
             width: 270px;
         }
         @@media (max-width: 575.98px) {
-            .uerd-gallery-scroll .uerd-hscroll-item {
+            .ornab-gallery-scroll .ornab-hscroll-item {
                 width: 240px;
             }
         }
@@ -1268,31 +1268,31 @@ Ornab Coxs Bazar
     <div class="container">
         <div class="text-center mb-3">
             <div class="mb-2">
-                <span class="uerd-gallery-pill">Photo gallery</span>
+                <span class="ornab-gallery-pill">Photo gallery</span>
             </div>
-            <h2 class="uerd-sponsor-title mb-2" style="color: var(--brand-navy);">Photo Gallery</h2>
-            <p class="uerd-gallery-subtitle mb-0">
+            <h2 class="ornab-sponsor-title mb-2" style="color: var(--brand-navy);">Photo Gallery</h2>
+            <p class="ornab-gallery-subtitle mb-0">
                 Explore moments from Ornab Coxs Bazar's field activities, community programs, and events across Cox's Bazar.
             </p>
         </div>
 
     
 
-        <div class="uerd-hscroll-wrap uerd-gallery-scroll">
-            <button type="button" class="uerd-hscroll-nav is-prev" aria-label="Scroll gallery left" data-hscroll-prev="uerdGalleryScroll">
+        <div class="ornab-hscroll-wrap ornab-gallery-scroll">
+            <button type="button" class="ornab-hscroll-nav is-prev" aria-label="Scroll gallery left" data-hscroll-prev="ornabGalleryScroll">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
 
-            <div id="uerdGalleryScroll" class="uerd-hscroll">
+            <div id="ornabGalleryScroll" class="ornab-hscroll">
                 @foreach (($albumsPreview ?? []) as $album)
-                    <div class="uerd-hscroll-item">
+                    <div class="ornab-hscroll-item">
                         <a href="{{ route('gallery.album', ['album' => $album->name]) }}" class="text-decoration-none text-dark">
-                            <div class="uerd-gallery-card uerd-card-hover h-100">
-                                <img src="{{ asset('images/gallery/'.($album->cover_image ?? '')) }}" class="uerd-gallery-cover" alt="{{ $album->name }}">
+                            <div class="ornab-gallery-card ornab-card-hover h-100">
+                                <img src="{{ asset('images/gallery/'.($album->cover_image ?? '')) }}" class="ornab-gallery-cover" alt="{{ $album->name }}">
                                 <div class="p-3">
                                     <div class="d-flex align-items-start justify-content-between gap-3">
-                                        <div class="uerd-gallery-album-title">{{ $album->name }}</div>
-                                        <div class="uerd-gallery-meta" style="white-space: nowrap;">
+                                        <div class="ornab-gallery-album-title">{{ $album->name }}</div>
+                                        <div class="ornab-gallery-meta" style="white-space: nowrap;">
                                             <i class="fa-regular fa-images"></i> {{ $album->photo_count }} Photos
                                         </div>
                                     </div>
@@ -1303,17 +1303,17 @@ Ornab Coxs Bazar
                 @endforeach
             </div>
 
-            <button type="button" class="uerd-hscroll-nav is-next" aria-label="Scroll gallery right" data-hscroll-next="uerdGalleryScroll">
+            <button type="button" class="ornab-hscroll-nav is-next" aria-label="Scroll gallery right" data-hscroll-next="ornabGalleryScroll">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
 
-            <div class="uerd-hscroll-track" aria-hidden="true" data-hscroll-track-for="uerdGalleryScroll">
-                <div class="uerd-hscroll-indicator" data-hscroll-indicator-for="uerdGalleryScroll"></div>
+            <div class="ornab-hscroll-track" aria-hidden="true" data-hscroll-track-for="ornabGalleryScroll">
+                <div class="ornab-hscroll-indicator" data-hscroll-indicator-for="ornabGalleryScroll"></div>
             </div>
         </div>
 
         <div class="d-flex justify-content-center pt-3">
-            <a href="{{ route('photo.all') }}" class="btn btn-outline-success uerd-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
+            <a href="{{ route('photo.all') }}" class="btn btn-outline-success ornab-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
                 All Photos <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
@@ -1323,9 +1323,9 @@ Ornab Coxs Bazar
 
 
 {{-- Donors & Partners --}}
-<div class="uerd-section pt-4" style="background-color: var(--brand-bg);">
+<div class="ornab-section pt-4" style="background-color: var(--brand-bg);">
     <style>
-        .uerd-partner-pill {
+        .ornab-partner-pill {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -1338,50 +1338,50 @@ Ornab Coxs Bazar
             font-size: 0.7rem;
             text-transform: uppercase;
         }
-        .uerd-partner-subtitle {
+        .ornab-partner-subtitle {
             max-width: 820px;
             margin: 0 auto;
-            color: var(--uerd-muted);
+            color: var(--ornab-muted);
             line-height: 1.7;
             font-size: 0.98rem;
         }
 
-        .uerd-partner-scroll .uerd-hscroll-item {
+        .ornab-partner-scroll .ornab-hscroll-item {
             width: 220px;
         }
-        .uerd-partner-scroll .uerd-hscroll {
+        .ornab-partner-scroll .ornab-hscroll {
             overflow: hidden;
         }
-        .uerd-partner-scroll .uerd-partner-track {
+        .ornab-partner-scroll .ornab-partner-track {
             display: flex;
             gap: 16px;
             width: max-content;
-            animation: uerdPartnerScroll 35s linear infinite;
+            animation: ornabPartnerScroll 35s linear infinite;
         }
-        .uerd-partner-scroll:hover .uerd-partner-track {
+        .ornab-partner-scroll:hover .ornab-partner-track {
             animation-play-state: paused;
         }
-        .uerd-partner-scroll .uerd-hscroll-item {
+        .ornab-partner-scroll .ornab-hscroll-item {
             flex: 0 0 auto;
         }
-        @keyframes uerdPartnerScroll {
+        @keyframes ornabPartnerScroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
         @media (max-width: 575.98px) {
-            .uerd-partner-scroll .uerd-hscroll-item {
+            .ornab-partner-scroll .ornab-hscroll-item {
                 width: 200px;
             }
-            .uerd-partner-scroll .uerd-partner-track {
+            .ornab-partner-scroll .ornab-partner-track {
                 animation-duration: 50s;
             }
         }
 
-        .uerd-partner-card {
+        .ornab-partner-card {
             border-radius: 18px;
             background: #fff;
             border: 1px solid var(--brand-border);
-            box-shadow: var(--uerd-card-shadow);
+            box-shadow: var(--ornab-card-shadow);
             padding: 18px 16px;
             height: 100%;
             display: flex;
@@ -1392,14 +1392,14 @@ Ornab Coxs Bazar
             text-align: center;
         }
 
-        .uerd-partner-logo {
+        .ornab-partner-logo {
             height: 44px;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .uerd-partner-logo img {
+        .ornab-partner-logo img {
             max-height: 44px;
             max-width: 140px;
             width: auto;
@@ -1407,7 +1407,7 @@ Ornab Coxs Bazar
             object-fit: contain;
         }
 
-        .uerd-partner-mark {
+        .ornab-partner-mark {
             width: 54px;
             height: 54px;
             border-radius: 16px;
@@ -1421,7 +1421,7 @@ Ornab Coxs Bazar
             background: rgba(18, 43, 107, 0.06);
         }
 
-        .uerd-partner-name {
+        .ornab-partner-name {
             font-weight: 800;
             color: #111827;
             line-height: 1.2;
@@ -1431,22 +1431,22 @@ Ornab Coxs Bazar
     <div class="container">
         <div class="text-center mb-3">
             <div class="mb-2">
-                <span class="uerd-partner-pill">Trusted by</span>
+                <span class="ornab-partner-pill">Trusted by</span>
             </div>
-            <h2 class="uerd-sponsor-title mb-2" style="color: var(--brand-navy);">Donors &amp; Partners</h2>
-            <p class="uerd-partner-subtitle mb-0">
+            <h2 class="ornab-sponsor-title mb-2" style="color: var(--brand-navy);">Donors &amp; Partners</h2>
+            <p class="ornab-partner-subtitle mb-0">
                 Trusted by leading organizations worldwide — together, we amplify our impact.
             </p>
         </div>
 
         <?php if (isset($partners) && count($partners) > 0) { ?>
-        <div class="uerd-hscroll-wrap uerd-partner-scroll">
-            <button type="button" class="uerd-hscroll-nav is-prev" aria-label="Scroll partners left" data-hscroll-prev="uerdPartnersScroll">
+        <div class="ornab-hscroll-wrap ornab-partner-scroll">
+            <button type="button" class="ornab-hscroll-nav is-prev" aria-label="Scroll partners left" data-hscroll-prev="ornabPartnersScroll">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
 
-            <div id="uerdPartnersScroll" class="uerd-hscroll">
-                <div class="uerd-partner-track">
+            <div id="ornabPartnersScroll" class="ornab-hscroll">
+                <div class="ornab-partner-track">
                     <?php foreach ($partners as $partner) { ?>
                     <?php
                         $partnerName = $partner->name ?? '';
@@ -1463,34 +1463,34 @@ Ornab Coxs Bazar
                     }
                     ?>
 
-                    <div class="uerd-hscroll-item">
-                        <div class="uerd-partner-card uerd-card-hover">
+                    <div class="ornab-hscroll-item">
+                        <div class="ornab-partner-card ornab-card-hover">
                             <?php if (! empty($partner->logo)) { ?>
-                                <div class="uerd-partner-logo">
+                                <div class="ornab-partner-logo">
                                     <img
                                         src="<?php echo e(asset('images/partner/'.$partner->logo)); ?>"
                                         alt="<?php echo e($partnerName); ?>"
                                         loading="lazy"
-                                        onerror="this.onerror=null;this.closest('.uerd-partner-logo').style.display='none';"
+                                        onerror="this.onerror=null;this.closest('.ornab-partner-logo').style.display='none';"
                                     >
                                 </div>
                             <?php } else { ?>
-                                <div class="uerd-partner-mark"><?php echo e($initials); ?></div>
+                                <div class="ornab-partner-mark"><?php echo e($initials); ?></div>
                             <?php } ?>
 
-                            <div class="uerd-partner-name"><?php echo e($partnerName); ?></div>
+                            <div class="ornab-partner-name"><?php echo e($partnerName); ?></div>
                         </div>
                     </div>
                     <?php } ?>
                 </div>
             </div>
 
-            <button type="button" class="uerd-hscroll-nav is-next" aria-label="Scroll partners right" data-hscroll-next="uerdPartnersScroll">
+            <button type="button" class="ornab-hscroll-nav is-next" aria-label="Scroll partners right" data-hscroll-next="ornabPartnersScroll">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
 
-            <div class="uerd-hscroll-track" aria-hidden="true" data-hscroll-track-for="uerdPartnersScroll">
-                <div class="uerd-hscroll-indicator" data-hscroll-indicator-for="uerdPartnersScroll"></div>
+            <div class="ornab-hscroll-track" aria-hidden="true" data-hscroll-track-for="ornabPartnersScroll">
+                <div class="ornab-hscroll-indicator" data-hscroll-indicator-for="ornabPartnersScroll"></div>
             </div>
         </div>
         <?php } else { ?>
@@ -1678,11 +1678,11 @@ Ornab Coxs Bazar
             updateUI();
         }
 
-        initHScroll('uerdNewsScroll');
-        initHScroll('uerdGalleryScroll');
-        initHScroll('uerdPartnersScroll');
+        initHScroll('ornabNewsScroll');
+        initHScroll('ornabGalleryScroll');
+        initHScroll('ornabPartnersScroll');
 
-        const partnerTrack = document.querySelector('.uerd-partner-track');
+        const partnerTrack = document.querySelector('.ornab-partner-track');
         if (partnerTrack) {
             const items = partnerTrack.innerHTML;
             partnerTrack.innerHTML = items + items;

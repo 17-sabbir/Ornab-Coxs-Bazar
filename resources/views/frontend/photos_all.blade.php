@@ -2,10 +2,10 @@
 
 @section('content')
 <style>
-.uerd-page-title { color: var(--brand-navy) !important; }
-.uerd-meta-text { color: #6B6258 !important; }
-.uerd-read-more { color: var(--brand-teal); text-decoration: none; font-weight: 600; }
-.uerd-read-more:hover { color: var(--brand-navy); text-decoration: underline; text-underline-offset: 4px; }
+.ornab-page-title { color: var(--brand-navy) !important; }
+.ornab-meta-text { color: #6B6258 !important; }
+.ornab-read-more { color: var(--brand-teal); text-decoration: none; font-weight: 600; }
+.ornab-read-more:hover { color: var(--brand-navy); text-decoration: underline; text-underline-offset: 4px; }
 .bg-gradient-brand-overlay { background: rgba(18,43,107,0.55); transition: opacity 0.3s ease; }
 .photo-card:hover .photo-info { opacity: 1 !important; }
 .photo-card:hover .transition-transform { transform: scale(1.1); }
@@ -16,15 +16,15 @@
 
   <!-- ======= Modern Gradient Header ======= -->
   <div class="container pt-5 pb-3 text-center">
-    <h1 class="display-3 fw-bold text-uppercase uerd-page-title">
+    <h1 class="display-3 fw-bold text-uppercase ornab-page-title">
         All Photos
     </h1>
-    <p class="lead uerd-meta-text mx-auto mt-2" style="max-width: 600px;">
+    <p class="lead ornab-meta-text mx-auto mt-2" style="max-width: 600px;">
         A comprehensive collection of all our visual memories.
     </p>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb justify-content-center">
-          <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-decoration-none uerd-meta-text">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-decoration-none ornab-meta-text">Home</a></li>
           <li class="breadcrumb-item active" aria-current="page">All Photos</li>
       </ol>
     </nav>
@@ -36,7 +36,7 @@
     @forelse ($photosByAlbum as $albumName => $items)
         <div class="mb-5">
             <div class="d-flex align-items-center mb-4 border-bottom pb-2">
-                <h3 class="fw-bold uerd-meta-text m-0">
+                <h3 class="fw-bold ornab-meta-text m-0">
                     <i class="fa-solid fa-folder-open me-2" style="color: var(--brand-navy);"></i> {{ $albumName }}
                 </h3>
             </div>
@@ -81,8 +81,8 @@
     @empty
         <div class="col-12 py-5 text-center">
             <img src="{{ asset('images/defaults/no-data.svg') }}" class="img-fluid mb-3" style="max-height: 200px;" onError="this.style.display='none'">
-            <h4 class="uerd-meta-text fw-bold">No Photos Available</h4>
-            <p class="uerd-meta-text">Currently, there are no photos in the gallery.</p>
+            <h4 class="ornab-meta-text fw-bold">No Photos Available</h4>
+            <p class="ornab-meta-text">Currently, there are no photos in the gallery.</p>
         </div>
     @endforelse
 

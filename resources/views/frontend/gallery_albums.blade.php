@@ -2,10 +2,10 @@
 
 @section('content')
 <style>
-.uerd-page-title { color: var(--brand-navy) !important; }
-.uerd-meta-text { color: #6B6258 !important; }
-.uerd-read-more { color: var(--brand-teal); text-decoration: none; font-weight: 600; }
-.uerd-read-more:hover { color: var(--brand-navy); text-decoration: underline; text-underline-offset: 4px; }
+.ornab-page-title { color: var(--brand-navy) !important; }
+.ornab-meta-text { color: #6B6258 !important; }
+.ornab-read-more { color: var(--brand-teal); text-decoration: none; font-weight: 600; }
+.ornab-read-more:hover { color: var(--brand-navy); text-decoration: underline; text-underline-offset: 4px; }
 .bg-gradient-brand-overlay { background: linear-gradient(to top, rgba(18,43,107,0.75), transparent); }
 .album-info { background: linear-gradient(to top, rgba(18,43,107,0.75), transparent) !important; }
 </style>
@@ -14,10 +14,10 @@
     <section id="contact" class="contact bg-light p-0">
         <div class="container bg-white py-5" data-aos="fade-up">
             <div class="section-title">
-                <h2 class="uerd-page-title">Photo Gallery</h2>
+                <h2 class="ornab-page-title">Photo Gallery</h2>
 
                 <div class="d-flex justify-content-end mb-4">
-                    <a href="{{ route('photo.all') }}" class="uerd-read-more rounded-pill px-4 py-2 fw-bold">
+                    <a href="{{ route('photo.all') }}" class="ornab-read-more rounded-pill px-4 py-2 fw-bold">
                         <i class="fa-solid fa-images me-2"></i> View All Photos
                     </a>
                 </div>
@@ -32,7 +32,7 @@
                                         @if(!empty($album->cover_image))
                                         <img src="{{ asset('images/gallery/'.$album->cover_image) }}" class="card-img-top object-fit-cover transition-transform" alt="{{ $album->name }}">
                                         @else
-                                         <div class="bg-light d-flex align-items-center justify-content-center uerd-meta-text">
+                                         <div class="bg-light d-flex align-items-center justify-content-center ornab-meta-text">
                                             <i class="fa-regular fa-image fa-3x opacity-25"></i>
                                         </div>
                                         @endif
@@ -53,10 +53,10 @@
                     @empty
                         <div class="col-12 py-5 text-center">
                             <div class="d-inline-block p-4 bg-light rounded-circle mb-3">
-                                <i class="fa-regular fa-images fa-3x uerd-meta-text opacity-50"></i>
+                                <i class="fa-regular fa-images fa-3x ornab-meta-text opacity-50"></i>
                             </div>
-                            <h4 class="uerd-meta-text fw-bold">No Albums Found</h4>
-                            <p class="uerd-meta-text">We haven't uploaded any albums yet.</p>
+                            <h4 class="ornab-meta-text fw-bold">No Albums Found</h4>
+                            <p class="ornab-meta-text">We haven't uploaded any albums yet.</p>
                         </div>
                     @endforelse
                 </div>

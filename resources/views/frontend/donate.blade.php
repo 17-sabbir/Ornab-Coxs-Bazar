@@ -2,34 +2,34 @@
 
 @section('content')
 <style>
-.uerd-page-title { color: var(--brand-navy) !important; }
-.uerd-donate-btn { background: var(--brand-coral); color: #fff; border: none; font-weight: 700; font-size: 1.15rem; padding: 16px 32px; border-radius: 50px; transition: all .3s ease; }
-.uerd-donate-btn:hover { background: #DF9B74; color: #fff; }
-.uerd-amount-btn { background: #fff; border: 1px solid var(--brand-border); color: var(--brand-text); font-weight: 600; border-radius: 50px; padding: 10px 24px; transition: all .3s ease; min-width: 80px; }
-.uerd-amount-btn:hover, .uerd-amount-btn.selected { background: var(--brand-navy); color: #fff; border-color: var(--brand-navy); }
-.uerd-success-msg { background: rgba(76,122,61,.08); color: var(--brand-green); border: 1px solid rgba(76,122,61,.15); }
-.uerd-form-control:focus { border-color: var(--brand-teal) !important; box-shadow: 0 0 0 0.25rem rgba(79,168,201,.25) !important; }
-.uerd-card-header { background: var(--brand-navy); color: #fff; }
-.uerd-hero-text { color: var(--brand-coral); }
+.ornab-page-title { color: var(--brand-navy) !important; }
+.ornab-donate-btn { background: var(--brand-coral); color: #fff; border: none; font-weight: 700; font-size: 1.15rem; padding: 16px 32px; border-radius: 50px; transition: all .3s ease; }
+.ornab-donate-btn:hover { background: #DF9B74; color: #fff; }
+.ornab-amount-btn { background: #fff; border: 1px solid var(--brand-border); color: var(--brand-text); font-weight: 600; border-radius: 50px; padding: 10px 24px; transition: all .3s ease; min-width: 80px; }
+.ornab-amount-btn:hover, .ornab-amount-btn.selected { background: var(--brand-navy); color: #fff; border-color: var(--brand-navy); }
+.ornab-success-msg { background: rgba(76,122,61,.08); color: var(--brand-green); border: 1px solid rgba(76,122,61,.15); }
+.ornab-form-control:focus { border-color: var(--brand-teal) !important; box-shadow: 0 0 0 0.25rem rgba(79,168,201,.25) !important; }
+.ornab-card-header { background: var(--brand-navy); color: #fff; }
+.ornab-hero-text { color: var(--brand-coral); }
 </style>
 
     <!-- ======= Project Archieve Section ======= -->
   <section id="contact" class="contact bg-light p-0">
     <div class="container bg-white py-5" data-aos="fade-up">
       <div class="section-title">
-        <h2 class="uerd-page-title">Donate</h2>
+        <h2 class="ornab-page-title">Donate</h2>
         <div style="background-image: url('{{ asset('img/donation.jpg') }}')" class="py-5">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-12 mx-auto text-center">
-                        <h6 class="uerd-hero-text text-center">We need your cooperation</h6>
+                        <h6 class="ornab-hero-text text-center">We need your cooperation</h6>
                         <h1 class="text-white text-center">Be a part of our mission to raise funds for impactful humanitarian causes.</h1>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row py-5 p-3 justify-content-center">
-            <h5 class="fs-2 uerd-page-title">Please donate to us using the following payment methods.</h5>
+            <h5 class="fs-2 ornab-page-title">Please donate to us using the following payment methods.</h5>
             
             @if($paymentMethods->count() > 0)
                 @foreach($paymentMethods as $method)
@@ -74,12 +74,12 @@
         <div class="row py-5 p-3">
             <div class="col-md-8 mx-auto">
                 <div class="card border">
-                    <div class="card-header uerd-card-header">
+                    <div class="card-header ornab-card-header">
                         <h4 class="mb-0">Submit Your Donation Information</h4>
                     </div>
                     <div class="card-body">
                         @if (session()->has('success'))
-                            <div class="alert uerd-success-msg alert-dismissible fade show">
+                            <div class="alert ornab-success-msg alert-dismissible fade show">
                                 <i class="fa-solid fa-check-circle"></i> {{ session()->get('success') }}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                             </div>
@@ -163,14 +163,14 @@
                             <div class="mb-3">
                                 <label class="form-label">Quick Amount</label>
                                 <div class="d-flex flex-wrap gap-2 mb-3">
-                                    <button type="button" class="uerd-amount-btn" data-amount="500">৳500</button>
-                                    <button type="button" class="uerd-amount-btn" data-amount="1000">৳1000</button>
-                                    <button type="button" class="uerd-amount-btn" data-amount="2000">৳2000</button>
-                                    <button type="button" class="uerd-amount-btn" data-amount="5000">৳5000</button>
+                                    <button type="button" class="ornab-amount-btn" data-amount="500">৳500</button>
+                                    <button type="button" class="ornab-amount-btn" data-amount="1000">৳1000</button>
+                                    <button type="button" class="ornab-amount-btn" data-amount="2000">৳2000</button>
+                                    <button type="button" class="ornab-amount-btn" data-amount="5000">৳5000</button>
                                 </div>
                                 <label for="amount" class="form-label">Donation Amount (৳) <span class="text-danger">*</span></label>
                                 <input type="number" name="amount" id="amount" 
-                                       class="form-control uerd-form-control @error('amount') is-invalid @enderror" 
+                                       class="form-control ornab-form-control @error('amount') is-invalid @enderror" 
                                        placeholder="Enter amount in BDT" 
                                        min="1" step="0.01"
                                        value="{{ old('amount') }}" required>
@@ -204,7 +204,7 @@
                                 </div>
                             @endif
 
-                            <button type="submit" class="btn uerd-donate-btn btn-lg w-100">
+                            <button type="submit" class="btn ornab-donate-btn btn-lg w-100">
                                 <i class="fa-solid fa-paper-plane"></i> Submit Donation Information
                             </button>
                         </form>
@@ -220,7 +220,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const amountInput = document.getElementById('amount');
-      const amountBtns = document.querySelectorAll('.uerd-amount-btn');
+      const amountBtns = document.querySelectorAll('.ornab-amount-btn');
       amountBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
           amountBtns.forEach(function (b) { b.classList.remove('selected'); });

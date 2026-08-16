@@ -73,7 +73,7 @@
                                 <div class="au-doc-icon"><i class="fa-solid fa-file-contract"></i></div>
                                 <div class="flex-grow-1">
                                     <h6 class="mb-1">{{ $data->title }}</h6>
-                                    <small class="uerd-body-muted"><i class="fa-solid fa-download me-1"></i> Click to view document</small>
+                                    <small class="ornab-body-muted"><i class="fa-solid fa-download me-1"></i> Click to view document</small>
                                 </div>
                                 <i class="fa-solid fa-chevron-right au-doc-arrow"></i>
                             </a>
@@ -86,10 +86,10 @@
     </section>
 
     <style>
-        .uerd-page-title { color: var(--brand-navy) !important; }
-        .uerd-body-text { color: var(--brand-text) !important; }
-        .uerd-icon-circle { background: var(--brand-green) !important; color: #fff !important; }
-        .uerd-section-alt { background: var(--brand-bg) !important; }
+        .ornab-page-title { color: var(--brand-navy) !important; }
+        .ornab-body-text { color: var(--brand-text) !important; }
+        .ornab-icon-circle { background: var(--brand-green) !important; color: #fff !important; }
+        .ornab-section-alt { background: var(--brand-bg) !important; }
         .au-hero2 { background: #fff; padding: 44px 0 30px; text-align: center; }
         .au-lead2 { color: var(--brand-navy); font-size: 1.5rem; font-weight: 600; max-width: 760px; margin: 0 auto; line-height: 1.6; }
         .au-body { background: var(--brand-bg); padding: 60px 0 80px; }

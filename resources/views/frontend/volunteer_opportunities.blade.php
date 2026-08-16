@@ -2,13 +2,13 @@
 
 @section('content')
 <style>
-.uerd-page-title { color: var(--brand-navy) !important; }
-.uerd-body-text { color: var(--brand-text) !important; }
-.uerd-contact-icon { background: var(--brand-teal) !important; color: #fff !important; }
-.uerd-submit-btn { background: var(--brand-navy); color: #fff; border: none; font-weight: 700; border-radius: 12px; padding: 14px 32px; transition: all .3s ease; }
-.uerd-submit-btn:hover { background: var(--brand-teal); color: #fff; }
-.uerd-success-msg { background: rgba(76,122,61,.08); color: var(--brand-green); border: 1px solid rgba(76,122,61,.15); }
-.uerd-form-control:focus { border-color: var(--brand-teal) !important; box-shadow: 0 0 0 0.25rem rgba(79,168,201,.25) !important; }
+.ornab-page-title { color: var(--brand-navy) !important; }
+.ornab-body-text { color: var(--brand-text) !important; }
+.ornab-contact-icon { background: var(--brand-teal) !important; color: #fff !important; }
+.ornab-submit-btn { background: var(--brand-navy); color: #fff; border: none; font-weight: 700; border-radius: 12px; padding: 14px 32px; transition: all .3s ease; }
+.ornab-submit-btn:hover { background: var(--brand-teal); color: #fff; }
+.ornab-success-msg { background: rgba(76,122,61,.08); color: var(--brand-green); border: 1px solid rgba(76,122,61,.15); }
+.ornab-form-control:focus { border-color: var(--brand-teal) !important; box-shadow: 0 0 0 0.25rem rgba(79,168,201,.25) !important; }
 </style>
 
 <!-- ======= Volunteer Info Sections ======= -->
@@ -31,9 +31,9 @@
                             <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; background: {{ $section['color'] }}; color: #fff; flex: 0 0 auto;">
                                 <i class="fa-solid {{ $section['icon'] }}"></i>
                             </div>
-                             <h2 class="fw-bold mb-0 uerd-page-title">{{ $section['title'] }}</h2>
+                             <h2 class="fw-bold mb-0 ornab-page-title">{{ $section['title'] }}</h2>
                         </div>
-                        <div class="uerd-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
+                        <div class="ornab-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
                             {!! $section['content'] !!}
                         </div>
                     </div>
@@ -50,8 +50,8 @@
                 <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center mx-auto" style="background: linear-gradient(135deg, var(--brand-bg), #fff); max-width: 500px; min-height: 300px;">
                     <div>
                         <i class="fa-solid fa-hand-holding-heart" style="font-size: 5rem; color: var(--brand-teal); opacity: .35;"></i>
-                        <h3 class="mt-3 uerd-page-title">Volunteer Information Coming Soon</h3>
-                        <p class="uerd-body-text">We are updating our volunteer information. Please check back later.</p>
+                        <h3 class="mt-3 ornab-page-title">Volunteer Information Coming Soon</h3>
+                        <p class="ornab-body-text">We are updating our volunteer information. Please check back later.</p>
                     </div>
                 </div>
             </div>
@@ -65,14 +65,14 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="text-center mb-5">
-                    <h2 class="fw-bold uerd-page-title">Become a Volunteer</h2>
-                    <p class="uerd-body-text">Fill out the form below and our team will contact you soon.</p>
+                    <h2 class="fw-bold ornab-page-title">Become a Volunteer</h2>
+                    <p class="ornab-body-text">Fill out the form below and our team will contact you soon.</p>
                 </div>
 
                 <div class="card border-0 shadow-sm rounded-4">
                     <div class="card-body p-4 p-md-5">
                         @if(session('success'))
-                            <div class="alert uerd-success-msg rounded-3 px-4 mb-4 border-0">
+                            <div class="alert ornab-success-msg rounded-3 px-4 mb-4 border-0">
                                 <i class="fa-solid fa-check-circle me-2"></i> {{ session('success') }}
                             </div>
                         @endif
@@ -123,7 +123,7 @@
                                     @error('interest')<span class="text-danger small">{{ $message }}</span>@enderror
                                 </div>
                                 <div class="col-12">
-                                    <label for="message" class="form-label fw-bold small text-uppercase">Why do you want to volunteer? <span class="uerd-body-text">(optional)</span></label>
+                                    <label for="message" class="form-label fw-bold small text-uppercase">Why do you want to volunteer? <span class="ornab-body-text">(optional)</span></label>
                                     <textarea name="message" class="form-control" id="message" rows="4" placeholder="Tell us a little about yourself...">{{ old('message') }}</textarea>
                                     @error('message')<span class="text-danger small">{{ $message }}</span>@enderror
                                 </div>
@@ -136,7 +136,7 @@
                                 </div>
                                 @endif
                                 <div class="col-12 mt-2">
-                                    <button type="submit" class="btn uerd-submit-btn w-100 py-3 fw-bold">
+                                    <button type="submit" class="btn ornab-submit-btn w-100 py-3 fw-bold">
                                         Submit Application <i class="fa-solid fa-paper-plane ms-2"></i>
                                     </button>
                                 </div>
@@ -149,7 +149,7 @@
 </section>
 
 <style>
-    .uerd-form-control:focus { border-color: var(--brand-teal) !important; box-shadow: 0 0 0 0.25rem rgba(79,168,201,.25) !important; }
+    .ornab-form-control:focus { border-color: var(--brand-teal) !important; box-shadow: 0 0 0 0.25rem rgba(79,168,201,.25) !important; }
     .card:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 24px rgba(0,0,0,0.08) !important;

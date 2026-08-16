@@ -43,12 +43,12 @@
             <div class="row align-items-center g-5 mb-3">
                 <div class="col-lg-7">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle uerd-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle ornab-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
                             <i class="fa-solid fa-bullseye"></i>
                         </div>
-                        <h2 class="fw-bold mb-0 uerd-page-title">Our Mission</h2>
+                        <h2 class="fw-bold mb-0 ornab-page-title">Our Mission</h2>
                     </div>
-                    <div class="uerd-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
+                    <div class="ornab-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
                         {{ $mission }}
                     </div>
                 </div>
@@ -66,12 +66,12 @@
             <div class="row align-items-center g-5 mb-3 flex-lg-row-reverse">
                 <div class="col-lg-7">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle uerd-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle ornab-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
                             <i class="fa-solid fa-eye"></i>
                         </div>
-                        <h2 class="fw-bold mb-0 uerd-page-title">Our Vision</h2>
+                        <h2 class="fw-bold mb-0 ornab-page-title">Our Vision</h2>
                     </div>
-                    <div class="uerd-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
+                    <div class="ornab-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
                         {{ $vision }}
                     </div>
                 </div>
@@ -90,7 +90,7 @@
     <!-- End Mission & Vision Sections -->
 
     <!-- ======= Core Values (below Mission & Vision) ======= -->
-    <section class="uerd-section-alt" style="padding: 70px 0 90px;">
+    <section class="ornab-section-alt" style="padding: 70px 0 90px;">
         <div class="container">
             <div class="text-center mb-5">
                 {{-- <span class="mv-eyebrow">What We Stand For</span> --}}
@@ -144,10 +144,10 @@
         .mv-value-icon { width: 44px; height: 44px; flex: 0 0 auto; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(76,122,61,.10); color: var(--brand-green); font-size: 1.1rem; }
         .mv-value-title { font-weight: 700; color: var(--brand-navy); margin: 0 0 .4rem; font-size: 1.02rem; }
         .mv-value-text { color: var(--brand-text); font-size: .92rem; line-height: 1.6; margin: 0; }
-        .uerd-icon-circle { background: var(--brand-green) !important; color: #fff !important; }
-        .uerd-body-text { color: var(--brand-text) !important; }
-        .uerd-page-title { color: var(--brand-navy) !important; }
-        .uerd-section-alt { background: var(--brand-bg) !important; }
+        .ornab-icon-circle { background: var(--brand-green) !important; color: #fff !important; }
+        .ornab-body-text { color: var(--brand-text) !important; }
+        .ornab-page-title { color: var(--brand-navy) !important; }
+        .ornab-section-alt { background: var(--brand-bg) !important; }
     </style>
 
 @endsection

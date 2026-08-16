@@ -2,14 +2,14 @@
 
 @section('content')
 <style>
-.uerd-page-title { color: var(--brand-navy) !important; }
-.uerd-icon-circle { background: var(--brand-green) !important; color: #fff !important; }
-.uerd-body-text { color: var(--brand-text) !important; }
-.uerd-section-alt { background: var(--brand-bg) !important; }
+.ornab-page-title { color: var(--brand-navy) !important; }
+.ornab-icon-circle { background: var(--brand-green) !important; color: #fff !important; }
+.ornab-body-text { color: var(--brand-text) !important; }
+.ornab-section-alt { background: var(--brand-bg) !important; }
 </style>
 
     <!-- ======= About Us ======= -->
-    <section class="py-5 uerd-section-alt">
+    <section class="py-5 ornab-section-alt">
         <div class="container">
             <div class="row align-items-center g-5 mb-5">
                 <div class="col-lg-5">
@@ -21,12 +21,12 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle uerd-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle ornab-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
                             <i class="fa-solid fa-circle-info"></i>
                         </div>
-                        <h2 class="fw-bold mb-0 uerd-page-title">About Ornab Cox's Bazar</h2>
+                        <h2 class="fw-bold mb-0 ornab-page-title">About Ornab Cox's Bazar</h2>
                     </div>
-                    <div class="uerd-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
+                    <div class="ornab-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
                         {!! $about_us->about_us ?? '' !!}
                     </div>
                 </div>
@@ -45,12 +45,12 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle uerd-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle ornab-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
                             <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h2 class="fw-bold mb-0 uerd-page-title">Our Story</h2>
+                        <h2 class="fw-bold mb-0 ornab-page-title">Our Story</h2>
                     </div>
-                    <div class="uerd-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
+                    <div class="ornab-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
                         {!! $about_us->our_story !!}
                     </div>
                 </div>
@@ -66,12 +66,12 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle uerd-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle ornab-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
                             <i class="fa-solid fa-seedling"></i>
                         </div>
-                        <h2 class="fw-bold mb-0 uerd-page-title">Our Philosophy</h2>
+                        <h2 class="fw-bold mb-0 ornab-page-title">Our Philosophy</h2>
                     </div>
-                    <div class="uerd-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
+                    <div class="ornab-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
                         {!! $about_us->philosophy !!}
                     </div>
                 </div>

@@ -2,12 +2,12 @@
 
 @section('content')
 <style>
-.uerd-page-title { color: var(--brand-navy) !important; }
-.uerd-body-text { color: var(--brand-text) !important; }
-.uerd-contact-icon { background: var(--brand-teal) !important; color: #fff !important; }
-.uerd-submit-btn { background: var(--brand-navy); color: #fff; border: none; font-weight: 700; border-radius: 12px; padding: 14px 32px; transition: all .3s ease; }
-.uerd-submit-btn:hover { background: var(--brand-teal); color: #fff; }
-.uerd-form-control:focus { border-color: var(--brand-teal) !important; box-shadow: 0 0 0 0.25rem rgba(79,168,201,.25) !important; }
+.ornab-page-title { color: var(--brand-navy) !important; }
+.ornab-body-text { color: var(--brand-text) !important; }
+.ornab-contact-icon { background: var(--brand-teal) !important; color: #fff !important; }
+.ornab-submit-btn { background: var(--brand-navy); color: #fff; border: none; font-weight: 700; border-radius: 12px; padding: 14px 32px; transition: all .3s ease; }
+.ornab-submit-btn:hover { background: var(--brand-teal); color: #fff; }
+.ornab-form-control:focus { border-color: var(--brand-teal) !important; box-shadow: 0 0 0 0.25rem rgba(79,168,201,.25) !important; }
 </style>
 
 <!-- ======= Contact Page ======= -->
@@ -17,15 +17,15 @@
         <div class="row align-items-start mb-5">
             <!-- Left: Hero Text -->
             <div class="col-lg-5 mb-4 mb-lg-0">
-                <h6 class="text-uppercase fw-bold mb-2 uerd-page-title" style="letter-spacing: 1.5px; font-size: 0.85rem;">Get in Touch</h6>
-                <h1 class="fw-bold mb-3 uerd-page-title" style="font-size: 2.8rem; line-height: 1.2; font-family: var(--font-heading);">
+                <h6 class="text-uppercase fw-bold mb-2 ornab-page-title" style="letter-spacing: 1.5px; font-size: 0.85rem;">Get in Touch</h6>
+                <h1 class="fw-bold mb-3 ornab-page-title" style="font-size: 2.8rem; line-height: 1.2; font-family: var(--font-heading);">
                     Contact<br>Ornab Cox's Bazar
                 </h1>
-                <p class="mb-4 uerd-body-text" style="line-height: 1.7; font-size: 0.95rem;">
+                <p class="mb-4 ornab-body-text" style="line-height: 1.7; font-size: 0.95rem;">
                     Have questions or need assistance? We're here to help! Reach out to us through any of the channels below.
                 </p>
                 <div class="d-none d-lg-block">
-                    <a href="#contact-form" class="btn uerd-submit-btn rounded-pill px-4 py-2">
+                    <a href="#contact-form" class="btn ornab-submit-btn rounded-pill px-4 py-2">
                         We'd love to hear from you <i class="fa-solid fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -41,7 +41,7 @@
                     @foreach($allContacts as $contact)
                         <div class="card border-0 shadow-sm rounded-4 p-3" style="max-width: 100%;">
                             <div class="d-flex align-items-start gap-3">
-                                <div class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0 uerd-contact-icon" style="width: 44px; height: 44px;">
+                                <div class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0 ornab-contact-icon" style="width: 44px; height: 44px;">
                                     @if($contact->type == 'head_office')
                                         <i class="fa-solid fa-building-columns"></i>
                                     @elseif($contact->type == 'branch')
@@ -54,27 +54,27 @@
                                 </div>
                                 <div class="flex-grow-1">
                                     @if($contact->type == 'person')
-                                        <h6 class="fw-bold mb-1 uerd-page-title" style="font-size: 0.95rem;">{{ $contact->name ?: ucfirst(str_replace('_', ' ', $contact->type)) }}</h6>
+                                        <h6 class="fw-bold mb-1 ornab-page-title" style="font-size: 0.95rem;">{{ $contact->name ?: ucfirst(str_replace('_', ' ', $contact->type)) }}</h6>
                                         @if($contact->title)
-                                            <div class="mb-1 uerd-body-text" style="font-size: 0.85rem; line-height: 1.5;">
+                                            <div class="mb-1 ornab-body-text" style="font-size: 0.85rem; line-height: 1.5;">
                                                 <i class="fa-solid fa-briefcase me-1" style="color: var(--brand-teal);"></i> {{ $contact->title }}
                                             </div>
                                         @endif
                                     @else
-                                        <h6 class="fw-bold mb-1 uerd-page-title" style="font-size: 0.95rem;">{{ $contact->title ?: ucfirst(str_replace('_', ' ', $contact->type)) }}</h6>
+                                        <h6 class="fw-bold mb-1 ornab-page-title" style="font-size: 0.95rem;">{{ $contact->title ?: ucfirst(str_replace('_', ' ', $contact->type)) }}</h6>
                                         @if($contact->address)
-                                            <div class="mb-1 uerd-body-text" style="font-size: 0.85rem; line-height: 1.5;">
+                                            <div class="mb-1 ornab-body-text" style="font-size: 0.85rem; line-height: 1.5;">
                                                 <i class="fa-solid fa-location-dot me-1" style="color: var(--brand-teal);"></i> {{ $contact->address }}
                                             </div>
                                         @endif
                                     @endif
                                     @if($contact->mobile)
-                                        <div class="mb-1 uerd-body-text" style="font-size: 0.85rem;">
+                                        <div class="mb-1 ornab-body-text" style="font-size: 0.85rem;">
                                             <i class="fa-solid fa-phone me-1" style="color: var(--brand-teal);"></i> {{ $contact->mobile }}
                                         </div>
                                     @endif
                                     @if($contact->email)
-                                        <div class="uerd-body-text" style="font-size: 0.85rem;">
+                                        <div class="ornab-body-text" style="font-size: 0.85rem;">
                                             <i class="fa-regular fa-envelope me-1" style="color: var(--brand-teal);"></i> {{ $contact->email }}
                                         </div>
                                     @endif
@@ -83,7 +83,7 @@
                         </div>
                     @endforeach
                     @if($allContacts->isEmpty())
-                        <div class="text-center py-4 uerd-body-text">
+                        <div class="text-center py-4 ornab-body-text">
                             <p>No contact information available at the moment.</p>
                         </div>
                     @endif
@@ -147,8 +147,8 @@
 
             <!-- Right Form Panel -->
             <div class="col-lg-7" style="background: #fff; padding: 50px 40px;">
-                 <span class="fw-bold text-uppercase small mb-1 d-block uerd-page-title" style="font-size: 0.85rem; letter-spacing: 1px;">Write to us</span>
-                 <h2 class="fw-bold mb-4 uerd-page-title" style="font-size: 1.5rem;">Send a Message</h2>
+                 <span class="fw-bold text-uppercase small mb-1 d-block ornab-page-title" style="font-size: 0.85rem; letter-spacing: 1px;">Write to us</span>
+                 <h2 class="fw-bold mb-4 ornab-page-title" style="font-size: 1.5rem;">Send a Message</h2>
 
                 @if (session()->has('success'))
                     <div class="alert alert-success rounded-3 px-4 mb-4 border-0" style="background: rgba(76,122,61,.08); color: var(--brand-green);">
@@ -170,18 +170,18 @@
                     @csrf
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="name" class="form-label fw-bold small mb-1 uerd-page-title" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Your Name</label>
-                            <input type="text" name="name" class="form-control uerd-form-control" id="name" placeholder="Robiul Islam" value="{{ old('name') }}" required style="border-radius: 10px; border: 1px solid var(--brand-border); padding: 12px 16px; font-size: 0.9rem;">
+                            <label for="name" class="form-label fw-bold small mb-1 ornab-page-title" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Your Name</label>
+                            <input type="text" name="name" class="form-control ornab-form-control" id="name" placeholder="Robiul Islam" value="{{ old('name') }}" required style="border-radius: 10px; border: 1px solid var(--brand-border); padding: 12px 16px; font-size: 0.9rem;">
                             @error('name')<span class="text-danger small">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-md-6">
-                            <label for="email" class="form-label fw-bold small mb-1 uerd-page-title" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Your Email</label>
-                            <input type="email" name="email" class="form-control uerd-form-control" id="email" placeholder="sabbir@gmail.com" value="{{ old('email') }}" required style="border-radius: 10px; border: 1px solid var(--brand-border); padding: 12px 16px; font-size: 0.9rem;">
+                            <label for="email" class="form-label fw-bold small mb-1 ornab-page-title" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Your Email</label>
+                            <input type="email" name="email" class="form-control ornab-form-control" id="email" placeholder="sabbir@gmail.com" value="{{ old('email') }}" required style="border-radius: 10px; border: 1px solid var(--brand-border); padding: 12px 16px; font-size: 0.9rem;">
                             @error('email')<span class="text-danger small">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-12">
-                            <label for="subject" class="form-label fw-bold small mb-1 uerd-page-title" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Subject</label>
-                            <div class="input-group uerd-form-control" style="border-radius: 10px; border: 1px solid var(--brand-border);">
+                            <label for="subject" class="form-label fw-bold small mb-1 ornab-page-title" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Subject</label>
+                            <div class="input-group ornab-form-control" style="border-radius: 10px; border: 1px solid var(--brand-border);">
                                 <span class="input-group-text border-0" style="background: var(--brand-bg); border-radius: 10px 0 0 10px; color: var(--brand-text);">
                                     <i class="fa-regular fa-circle-question"></i>
                                 </span>
@@ -190,10 +190,10 @@
                             @error('subject')<span class="text-danger small">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-12">
-                            <label for="message" class="form-label fw-bold small mb-1 uerd-page-title" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Message</label>
+                            <label for="message" class="form-label fw-bold small mb-1 ornab-page-title" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Message</label>
                             <div class="position-relative">
-                                <textarea class="form-control uerd-form-control" name="message" rows="5" placeholder="Tell us about your project or inquiry..." required style="border-radius: 10px; border: 1px solid var(--brand-border); padding: 12px 16px; font-size: 0.9rem; resize: vertical;">{{ old('message') }}</textarea>
-                                <span class="position-absolute top-0 end-0 m-2 uerd-body-text small" style="font-size: 0.75rem; color: var(--brand-teal) !important; cursor: pointer;">Guide?</span>
+                                <textarea class="form-control ornab-form-control" name="message" rows="5" placeholder="Tell us about your project or inquiry..." required style="border-radius: 10px; border: 1px solid var(--brand-border); padding: 12px 16px; font-size: 0.9rem; resize: vertical;">{{ old('message') }}</textarea>
+                                <span class="position-absolute top-0 end-0 m-2 ornab-body-text small" style="font-size: 0.75rem; color: var(--brand-teal) !important; cursor: pointer;">Guide?</span>
                             </div>
                             @error('message')<span class="text-danger small">{{ $message }}</span>@enderror
                         </div>
@@ -206,7 +206,7 @@
                                     @endif
                                 </div>
                             @endif
-                            <button type="submit" class="btn uerd-submit-btn w-100 py-3 fw-bold">
+                            <button type="submit" class="btn ornab-submit-btn w-100 py-3 fw-bold">
                                 Send Message <i class="fa-solid fa-paper-plane ms-2"></i>
                             </button>
                         </div>
@@ -223,12 +223,12 @@
 </section>
 
 <style>
-    .contact-page-wrapper .uerd-form-control:focus {
+    .contact-page-wrapper .ornab-form-control:focus {
         outline: none;
         box-shadow: 0 0 0 3px rgba(79,168,201,.25);
         border-color: var(--brand-teal) !important;
     }
-    .contact-page-wrapper textarea.uerd-form-control:focus {
+    .contact-page-wrapper textarea.ornab-form-control:focus {
         outline: none;
         box-shadow: 0 0 0 3px rgba(79,168,201,.25);
         border-color: var(--brand-teal) !important;
