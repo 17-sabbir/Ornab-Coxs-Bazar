@@ -3,7 +3,7 @@
 @section('content')
 
   <!-- ======= Policy and Guideline Section ======= -->
-  <section class="pg-hero" style="background: var(--brand-navy); padding: 56px 0 40px; text-align: center;">
+  <section class="pg-hero" style="background: var(--brand-navy); padding: 46px 0 10px; text-align: center;">
     <div class="container">
       <h1 class="ornab-page-title" style="color: #fff; font-weight: 800; margin-bottom: .6rem;">Policy and Guideline</h1>
       <p class="ornab-body-text" style="color: rgba(255,255,255,0.8); max-width: 640px; margin: 0 auto; font-size: 1.05rem;">The frameworks that guide our accountability, safeguarding, and transparent operations.</p>
