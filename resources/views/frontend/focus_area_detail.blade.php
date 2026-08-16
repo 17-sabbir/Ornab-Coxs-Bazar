@@ -11,18 +11,20 @@
 <section class="ornab-section-alt pt-5 pb-5">
     <div class="container" data-aos="fade-up">
         <div class="text-center mb-5">
-            <h1 class="display-4 fw-bold ornab-page-title">{{ $focusArea['title'] }}</h1>
+            <h1 class="display-4 fw-bold ornab-page-title">{{ $focusArea->title }}</h1>
         </div>
 
         <div class="row align-items-center g-5">
             <div class="col-lg-5">
-                <img src="{{ $focusArea['image'] }}" alt="{{ $focusArea['title'] }}" class="img-fluid rounded-4 shadow-lg w-100" style="max-height: 400px; object-fit: cover;">
+                @if($focusArea->image_path)
+                    <img src="{{ asset('storage/' . $focusArea->image_path) }}" alt="{{ $focusArea->title }}" class="img-fluid rounded-4 shadow-lg w-100" style="max-height: 400px; object-fit: cover;">
+                @endif
             </div>
             <div class="col-lg-7">
                 <div class="ps-lg-4">
                     <span class="badge rounded-pill px-3 py-2 text-uppercase letter-spacing-1 mb-3 ornab-status-active">Active</span>
-                    <h2 class="fw-bold ornab-page-title mb-4">{{ $focusArea['title'] }}</h2>
-                    <p class="lead ornab-body-text mb-4" style="line-height: 1.8;">{{ $focusArea['full_description'] }}</p>
+                    <h2 class="fw-bold ornab-page-title mb-4">{{ $focusArea->title }}</h2>
+                    <p class="lead ornab-body-text mb-4" style="line-height: 1.8;">{{ $focusArea->description }}</p>
                     <a href="{{ route('focus.areas') }}" class="ornab-back-link rounded-pill px-4 py-2 fw-bold">
                         <i class="fa-solid fa-arrow-left me-2"></i> Back to Focus Areas
                     </a>

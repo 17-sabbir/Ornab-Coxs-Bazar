@@ -50,11 +50,9 @@ Route::get('/', function () {
 
     $projectsCount = DB::table('projects')->count();
 
-    // Gather locations from projects and compute distinct upazilas (prefer Upazila names)
     $rawLocations = DB::table('projects')->whereNotNull('locations')->pluck('locations')->toArray();
     $upazilas = [];
     foreach ($rawLocations as $loc) {
-        // Normalize common prepositions into commas so we can split reliably
         $normalized = preg_replace('/\s+of\s+|\s+in\s+/i', ',', $loc);
         $parts = array_filter(array_map('trim', explode(',', $normalized)));
         foreach ($parts as $p) {
@@ -62,31 +60,28 @@ Route::get('/', function () {
                 continue;
             }
 
-            // skip parts that are clearly district labels
             if (preg_match('/\bDistrict\b/i', $p)) {
                 continue;
             }
 
-            // If the part contains the word 'Upazila', extract the name before it
             if (preg_match('/^(.*?)\s*Upazila\b/i', $p, $m)) {
                 $name = trim($m[1]);
             } else {
-                // Otherwise assume the part itself is an upazila/locality (covers formats like "Derai, Sunamgonj")
                 $name = trim($p);
             }
 
             if ($name !== '') {
-                $upazilas[strtolower($name)] = $name; // use lowercase key for uniqueness
+                $upazilas[strtolower($name)] = $name;
             }
         }
     }
-    // Keep the variable name expected by the view (`districtsCount`) but it now counts unique upazilas
     $districtsCount = count($upazilas);
 
-    // Centralized, admin-editable homepage statistics
     $statistics = application();
 
-    return view('home', compact('slider', 'project', 'news', 'partners', 'mission_vision', 'albumsPreview', 'hasMoreAlbums', 'application', 'projectsCount', 'districtsCount', 'statistics'));
+    $focusAreas = \App\Models\FocusArea::active()->ordered()->get();
+
+    return view('home', compact('slider', 'project', 'news', 'partners', 'mission_vision', 'albumsPreview', 'hasMoreAlbums', 'application', 'projectsCount', 'districtsCount', 'statistics', 'focusAreas'));
 });
 
 Route::post('user/subscribe', [frontController::class, 'subscribe'])->name('user.subscribe')->middleware('recaptcha');
@@ -145,7 +140,7 @@ Route::get('projects/reports/{report}/download', [frontController::class, 'downl
 
 // Focus Areas
 Route::get('focus-areas', [frontController::class, 'focusAreas'])->name('focus.areas');
-Route::get('focus-areas/{slug}', [frontController::class, 'focusAreaDetail'])->name('focus.area.detail');
+Route::get('focus-areas/{id}', [frontController::class, 'focusAreaDetail'])->name('focus.area.detail');
 
 // SEO
 Route::get('sitemap.xml', [\App\Http\Controllers\Frontend\SitemapController::class, 'index'])->name('sitemap');

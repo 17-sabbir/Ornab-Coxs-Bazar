@@ -795,45 +795,26 @@ Ornab Coxs Bazar
         </div>
 
         <div class="row g-4 focus-scroll-row">
-            {{-- Default focus areas (always shown) --}}
+            @foreach($focusAreas as $area)
             <div class="col-lg-4 col-md-6 focus-scroll-item" data-aos="fade-up">
                 <div class="program-card h-100">
                     <span class="status-badge"><i class="fa-solid fa-circle me-1" style="font-size: 0.6rem;"></i>Active</span>
-                    <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Women Empowerment">
+                    @if($area->image_path)
+                        <img src="{{ asset('storage/' . $area->image_path) }}" alt="{{ $area->title }}">
+                    @else
+                        <div class="bg-light d-flex align-items-center justify-content-center" style="height: 220px;">
+                            <i class="fa-solid fa-folder-open fa-3x text-muted opacity-25"></i>
+                        </div>
+                    @endif
                     <div class="program-card-content">
-                        <h4 class="program-title">Women's Empowerment</h4>
-                        <p class="program-desc">Promoting gender equality and empowerment through education, skill-building, and advocacy for women's rights.</p>
-                        <a href="{{ route('focus.area.detail', 'womens-empowerment') }}" class="program-btn mt-2">Learn More <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        <h4 class="program-title">{{ $area->title }}</h4>
+                        <p class="program-desc">{{ $area->description }}</p>
+                        <a href="{{ route('focus.area.detail', $area->id) }}" class="program-btn mt-2">Learn More <i class="fa-solid fa-arrow-right ms-1"></i></a>
                     </div>
-                    <a href="{{ route('focus.area.detail', 'womens-empowerment') }}" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
+                    <a href="{{ route('focus.area.detail', $area->id) }}" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
                 </div>
             </div>
-
-            <div class="col-lg-4 col-md-6 focus-scroll-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="program-card h-100">
-                    <span class="status-badge"><i class="fa-solid fa-circle me-1" style="font-size: 0.6rem;"></i>Active</span>
-                    <img src="https://images.pexels.com/photos/2659475/pexels-photo-2659475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Youth Development">
-                    <div class="program-card-content">
-                        <h4 class="program-title">Youth Development</h4>
-                        <p class="program-desc">Empowering the next generation through mentorship, education, and community engagement to foster leadership.</p>
-                        <a href="{{ route('focus.area.detail', 'youth-development') }}" class="program-btn mt-2">Learn More <i class="fa-solid fa-arrow-right ms-1"></i></a>
-                    </div>
-                    <a href="{{ route('focus.area.detail', 'youth-development') }}" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 focus-scroll-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="program-card h-100">
-                     <span class="status-badge"><i class="fa-solid fa-circle me-1" style="font-size: 0.6rem;"></i>Active</span>
-                    <img src="https://images.pexels.com/photos/4388165/pexels-photo-4388165.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Healthcare Access">
-                    <div class="program-card-content">
-                        <h4 class="program-title">Healthcare Access</h4>
-                        <p class="program-desc">Providing essential healthcare services, awareness campaigns, and medical assistance to underserved communities in Bangladesh.</p>
-                        <a href="{{ route('focus.area.detail', 'healthcare-access') }}" class="program-btn mt-2">Learn More <i class="fa-solid fa-arrow-right ms-1"></i></a>
-                    </div>
-                    <a href="{{ route('focus.area.detail', 'healthcare-access') }}" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

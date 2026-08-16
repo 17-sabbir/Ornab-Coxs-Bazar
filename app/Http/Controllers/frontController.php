@@ -391,70 +391,14 @@ class frontController extends Controller
     // Focus Areas
     public function focusAreas()
     {
-        $focusAreas = [
-            [
-                'slug' => 'womens-empowerment',
-                'title' => 'Women\'s Empowerment',
-                'image' => 'https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                'short_description' => 'Promoting gender equality and empowerment through education, skill-building, and advocacy for women\'s rights.',
-                'full_description' => 'Our Women\'s Empowerment program is dedicated to promoting gender equality and empowering women through education, skill-building, and advocacy for women\'s rights. We believe that when women are empowered, entire communities thrive. Our initiatives include vocational training, literacy programs, legal awareness campaigns, and microfinance support to help women achieve financial independence and social equality.',
-                'status' => 'active',
-            ],
-            [
-                'slug' => 'youth-development',
-                'title' => 'Youth Development',
-                'image' => 'https://images.pexels.com/photos/2659475/pexels-photo-2659475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                'short_description' => 'Empowering the next generation through mentorship, education, and community engagement to foster leadership.',
-                'full_description' => 'Our Youth Development program empowers the next generation through mentorship, education, and community engagement to foster leadership. We provide young people with the skills, knowledge, and opportunities they need to become active, engaged members of their communities. Our programs include leadership workshops, scholarship programs, sports and cultural activities, and career guidance counseling.',
-                'status' => 'active',
-            ],
-            [
-                'slug' => 'healthcare-access',
-                'title' => 'Healthcare Access',
-                'image' => 'https://images.pexels.com/photos/4388165/pexels-photo-4388165.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                'short_description' => 'Providing essential healthcare services, awareness campaigns, and medical assistance to underserved communities.',
-                'full_description' => 'Our Healthcare Access program provides essential healthcare services, awareness campaigns, and medical assistance to underserved communities in Bangladesh. We work to bridge the healthcare gap by organizing medical camps, providing free health checkups, distributing medicines, and running awareness campaigns on maternal health, child nutrition, and disease prevention in remote and marginalized communities.',
-                'status' => 'active',
-            ],
-        ];
+        $focusAreas = \App\Models\FocusArea::active()->ordered()->get();
 
         return view('frontend.focus_areas', compact('focusAreas'));
     }
 
-    public function focusAreaDetail(string $slug)
+    public function focusAreaDetail($id)
     {
-        $focusAreas = [
-            [
-                'slug' => 'womens-empowerment',
-                'title' => 'Women\'s Empowerment',
-                'image' => 'https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                'short_description' => 'Promoting gender equality and empowerment through education, skill-building, and advocacy for women\'s rights.',
-                'full_description' => 'Our Women\'s Empowerment program is dedicated to promoting gender equality and empowering women through education, skill-building, and advocacy for women\'s rights. We believe that when women are empowered, entire communities thrive. Our initiatives include vocational training, literacy programs, legal awareness campaigns, and microfinance support to help women achieve financial independence and social equality.',
-                'status' => 'active',
-            ],
-            [
-                'slug' => 'youth-development',
-                'title' => 'Youth Development',
-                'image' => 'https://images.pexels.com/photos/2659475/pexels-photo-2659475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                'short_description' => 'Empowering the next generation through mentorship, education, and community engagement to foster leadership.',
-                'full_description' => 'Our Youth Development program empowers the next generation through mentorship, education, and community engagement to foster leadership. We provide young people with the skills, knowledge, and opportunities they need to become active, engaged members of their communities. Our programs include leadership workshops, scholarship programs, sports and cultural activities, and career guidance counseling.',
-                'status' => 'active',
-            ],
-            [
-                'slug' => 'healthcare-access',
-                'title' => 'Healthcare Access',
-                'image' => 'https://images.pexels.com/photos/4388165/pexels-photo-4388165.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                'short_description' => 'Providing essential healthcare services, awareness campaigns, and medical assistance to underserved communities.',
-                'full_description' => 'Our Healthcare Access program provides essential healthcare services, awareness campaigns, and medical assistance to underserved communities in Bangladesh. We work to bridge the healthcare gap by organizing medical camps, providing free health checkups, distributing medicines, and running awareness campaigns on maternal health, child nutrition, and disease prevention in remote and marginalized communities.',
-                'status' => 'active',
-            ],
-        ];
-
-        $focusArea = collect($focusAreas)->firstWhere('slug', $slug);
-
-        if (!$focusArea) {
-            abort(404);
-        }
+        $focusArea = \App\Models\FocusArea::where('id', $id)->where('is_active', true)->firstOrFail();
 
         return view('frontend.focus_area_detail', compact('focusArea'));
     }

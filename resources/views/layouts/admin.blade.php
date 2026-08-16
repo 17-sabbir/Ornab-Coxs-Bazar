@@ -201,9 +201,14 @@
         .sidebar-wrapper .metismenu > li:nth-child(26).mm-active > a { 
             background: linear-gradient(45deg, #E74C3C, #C0392B); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); 
         }
-        /* 27. Logout - Light Slate */
-        .sidebar-wrapper .metismenu > li:nth-child(27) .parent-icon { color: rgba(255,255,255,0.7); }
+        /* 27. Focus Areas - Purple */
+        .sidebar-wrapper .metismenu > li:nth-child(27) .parent-icon { color: #9B59B6; }
         .sidebar-wrapper .metismenu > li:nth-child(27).mm-active > a { 
+            background: linear-gradient(45deg, #9B59B6, #7D3C98); box-shadow: 0 4px 10px rgba(155, 89, 182, 0.3); 
+        }
+        /* 28. Logout - Light Slate */
+        .sidebar-wrapper .metismenu > li:nth-child(28) .parent-icon { color: rgba(255,255,255,0.7); }
+        .sidebar-wrapper .metismenu > li:nth-child(28).mm-active > a { 
             background: linear-gradient(45deg, #bdc3c7, #95a5a6); box-shadow: 0 4px 10px rgba(149, 165, 166, 0.3); 
         }
 
@@ -841,20 +846,27 @@
   					<div class="menu-title">{{ 'Volunteer' }}</div>
   				</a>
   			</li>
-			<li>
-				<a href="{{ route('youtube.index') }}">
-					<div class="parent-icon"><i class="fadeIn animated bx bxl-youtube"></i>
-					</div>
-					<div class="menu-title">{{ 'YouTube Videos' }}</div>
-				</a>
-			</li>
-			<li>
-				<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-					<div class="parent-icon"><i class='bx bx-log-out-circle'></i>
-					</div>
-					<div class="menu-title">{{ 'Logout' }}</div>
-				</a>
-			</li>
+		<li>
+			<a href="{{ route('youtube.index') }}">
+				<div class="parent-icon"><i class="fadeIn animated bx bxl-youtube"></i>
+				</div>
+				<div class="menu-title">{{ 'YouTube Videos' }}</div>
+			</a>
+		</li>
+		<li>
+			<a href="{{ route('admin.focus_areas.index') }}">
+				<div class="parent-icon"><i class="bx bx-category"></i>
+				</div>
+				<div class="menu-title">{{ 'Focus Areas' }}</div>
+			</a>
+		</li>
+		<li>
+			<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+				<div class="parent-icon"><i class='bx bx-log-out-circle'></i>
+				</div>
+				<div class="menu-title">{{ 'Logout' }}</div>
+			</a>
+		</li>
 			</ul>
 			<!--end navigation-->
 		</div>

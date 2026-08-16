@@ -18,11 +18,17 @@
             @foreach($focusAreas as $area)
             <div class="col-lg-4 col-md-6">
                 <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden ornab-project-card">
-                    <img src="{{ $area['image'] }}" class="card-img-top" alt="{{ $area['title'] }}" style="height: 220px; object-fit: cover;">
+                    @if($area->image_path)
+                        <img src="{{ asset('storage/' . $area->image_path) }}" class="card-img-top" alt="{{ $area->title }}" style="height: 220px; object-fit: cover;">
+                    @else
+                        <div class="card-img-top d-flex align-items-center justify-content-center bg-light" style="height: 220px;">
+                            <i class="fa-solid fa-folder-open fa-3x text-muted opacity-25"></i>
+                        </div>
+                    @endif
                     <div class="card-body d-flex flex-column">
-                        <h5 class="fw-bold ornab-page-title mb-3">{{ $area['title'] }}</h5>
-                        <p class="ornab-body-text mb-4">{{ $area['short_description'] }}</p>
-                        <a href="{{ route('focus.area.detail', $area['slug']) }}" class="ornab-read-more rounded-pill px-4 py-2 fw-bold mt-auto">
+                        <h5 class="fw-bold ornab-page-title mb-3">{{ $area->title }}</h5>
+                        <p class="ornab-body-text mb-4">{{ $area->description }}</p>
+                        <a href="{{ route('focus.area.detail', $area->id) }}" class="ornab-read-more rounded-pill px-4 py-2 fw-bold mt-auto">
                             Learn More <i class="fa-solid fa-arrow-right-long ms-2"></i>
                         </a>
                     </div>
