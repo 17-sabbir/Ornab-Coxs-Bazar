@@ -106,105 +106,105 @@
         .sidebar-wrapper .metismenu > li:nth-child(7).mm-active > a { 
             background: linear-gradient(45deg, #00B8D4, #0097A7); box-shadow: 0 4px 10px rgba(0, 184, 212, 0.3); 
         }
-        /* 8. Impact - Purple */
-        .sidebar-wrapper .metismenu > li:nth-child(8) .parent-icon { color: #A29BFE; }
+        /* 8. Focus Areas - Purple */
+        .sidebar-wrapper .metismenu > li:nth-child(8) .parent-icon { color: #9B59B6; }
         .sidebar-wrapper .metismenu > li:nth-child(8).mm-active > a { 
+            background: linear-gradient(45deg, #9B59B6, #7D3C98); box-shadow: 0 4px 10px rgba(155, 89, 182, 0.3); 
+        }
+        /* 9. Impact - Purple */
+        .sidebar-wrapper .metismenu > li:nth-child(9) .parent-icon { color: #A29BFE; }
+        .sidebar-wrapper .metismenu > li:nth-child(9).mm-active > a { 
             background: linear-gradient(45deg, #A29BFE, #6C5CE7); box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3); 
         }
-        /* 9. Latest News - Golden Yellow */
-        .sidebar-wrapper .metismenu > li:nth-child(9) .parent-icon { color: #F1C40F; }
-        .sidebar-wrapper .metismenu > li:nth-child(9).mm-active > a { 
+        /* 10. Latest News - Golden Yellow */
+        .sidebar-wrapper .metismenu > li:nth-child(10) .parent-icon { color: #F1C40F; }
+        .sidebar-wrapper .metismenu > li:nth-child(10).mm-active > a { 
             background: linear-gradient(45deg, #F1C40F, #D4AC0D); box-shadow: 0 4px 10px rgba(241, 196, 15, 0.3); 
         }
-        /* 10. Legal Registration Status - Sky Blue */
-        .sidebar-wrapper .metismenu > li:nth-child(10) .parent-icon { color: #3498DB; }
-        .sidebar-wrapper .metismenu > li:nth-child(10).mm-active > a { 
+        /* 11. Legal Registration Status - Sky Blue */
+        .sidebar-wrapper .metismenu > li:nth-child(11) .parent-icon { color: #3498DB; }
+        .sidebar-wrapper .metismenu > li:nth-child(11).mm-active > a { 
             background: linear-gradient(45deg, #3498DB, #2E86C1); box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3); 
         }
-        /* 11. Messages - Ocean Blue */
-        .sidebar-wrapper .metismenu > li:nth-child(11) .parent-icon { color: #0984E3; }
-        .sidebar-wrapper .metismenu > li:nth-child(11).mm-active > a { 
+        /* 12. Messages - Ocean Blue */
+        .sidebar-wrapper .metismenu > li:nth-child(12) .parent-icon { color: #0984E3; }
+        .sidebar-wrapper .metismenu > li:nth-child(12).mm-active > a { 
             background: linear-gradient(45deg, #0984E3, #0871C2); box-shadow: 0 4px 10px rgba(9, 132, 227, 0.3); 
         }
-        /* 12. Notices - Emerald Green */
-        .sidebar-wrapper .metismenu > li:nth-child(12) .parent-icon { color: #2ECC71; }
-        .sidebar-wrapper .metismenu > li:nth-child(12).mm-active > a { 
+        /* 13. Notices - Emerald Green */
+        .sidebar-wrapper .metismenu > li:nth-child(13) .parent-icon { color: #2ECC71; }
+        .sidebar-wrapper .metismenu > li:nth-child(13).mm-active > a { 
             background: linear-gradient(45deg, #2ECC71, #27AE60); box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3); 
         }
-        /* 13. Origin & Legal Affiliation - Pink */
-        .sidebar-wrapper .metismenu > li:nth-child(13) .parent-icon { color: #FD79A8; }
-        .sidebar-wrapper .metismenu > li:nth-child(13).mm-active > a { 
+        /* 14. Origin & Legal Affiliation - Pink */
+        .sidebar-wrapper .metismenu > li:nth-child(14) .parent-icon { color: #FD79A8; }
+        .sidebar-wrapper .metismenu > li:nth-child(14).mm-active > a { 
             background: linear-gradient(45deg, #FD79A8, #E84393); box-shadow: 0 4px 10px rgba(253, 121, 168, 0.3); 
         }
-        /* 14. Partners & Donors - Indigo */
-        .sidebar-wrapper .metismenu > li:nth-child(14) .parent-icon { color: #6F42C1; }
-        .sidebar-wrapper .metismenu > li:nth-child(14).mm-active > a { 
+        /* 15. Partners & Donors - Indigo */
+        .sidebar-wrapper .metismenu > li:nth-child(15) .parent-icon { color: #6F42C1; }
+        .sidebar-wrapper .metismenu > li:nth-child(15).mm-active > a { 
             background: linear-gradient(45deg, #6F42C1, #5A32A3); box-shadow: 0 4px 10px rgba(111, 66, 193, 0.3); 
         }
-        /* 15. Photo Gallery - Teal */
-        .sidebar-wrapper .metismenu > li:nth-child(15) .parent-icon { color: #1ABC9C; }
-        .sidebar-wrapper .metismenu > li:nth-child(15).mm-active > a { 
+        /* 16. Photo Gallery - Teal */
+        .sidebar-wrapper .metismenu > li:nth-child(16) .parent-icon { color: #1ABC9C; }
+        .sidebar-wrapper .metismenu > li:nth-child(16).mm-active > a { 
             background: linear-gradient(45deg, #1ABC9C, #16A085); box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3); 
         }
-        /* 16. Policy & Guideline - Dark Orange */
-        .sidebar-wrapper .metismenu > li:nth-child(16) .parent-icon { color: #E67E22; }
-        .sidebar-wrapper .metismenu > li:nth-child(16).mm-active > a { 
+        /* 17. Policy & Guideline - Dark Orange */
+        .sidebar-wrapper .metismenu > li:nth-child(17) .parent-icon { color: #E67E22; }
+        .sidebar-wrapper .metismenu > li:nth-child(17).mm-active > a { 
             background: linear-gradient(45deg, #E67E22, #CA6F1E); box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3); 
         }
-        /* 17. Projects - Coral Red */
-        .sidebar-wrapper .metismenu > li:nth-child(17) .parent-icon { color: #E74C3C; }
-        .sidebar-wrapper .metismenu > li:nth-child(17).mm-active > a { 
+        /* 18. Projects - Coral Red */
+        .sidebar-wrapper .metismenu > li:nth-child(18) .parent-icon { color: #E74C3C; }
+        .sidebar-wrapper .metismenu > li:nth-child(18).mm-active > a { 
             background: linear-gradient(45deg, #E74C3C, #C0392B); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); 
         }
-        /* 18. Publications - Amethyst Purple */
-        .sidebar-wrapper .metismenu > li:nth-child(18) .parent-icon { color: #9B59B6; }
-        .sidebar-wrapper .metismenu > li:nth-child(18).mm-active > a { 
+        /* 19. Publications - Amethyst Purple */
+        .sidebar-wrapper .metismenu > li:nth-child(19) .parent-icon { color: #9B59B6; }
+        .sidebar-wrapper .metismenu > li:nth-child(19).mm-active > a { 
             background: linear-gradient(45deg, #9B59B6, #7D3C98); box-shadow: 0 4px 10px rgba(155, 89, 182, 0.3); 
         }
-        /* 19. Settings - Gray/Steel */
-        .sidebar-wrapper .metismenu > li:nth-child(19) .parent-icon { color: #636E72; }
-        .sidebar-wrapper .metismenu > li:nth-child(19).mm-active > a { 
+        /* 20. Settings - Gray/Steel */
+        .sidebar-wrapper .metismenu > li:nth-child(20) .parent-icon { color: #636E72; }
+        .sidebar-wrapper .metismenu > li:nth-child(20).mm-active > a { 
             background: linear-gradient(45deg, #636E72, #4B5358); box-shadow: 0 4px 10px rgba(99, 110, 114, 0.3); 
         }
-        /* 20. Slider - Deep Purple */
-        .sidebar-wrapper .metismenu > li:nth-child(20) .parent-icon { color: #8E44AD; }
-        .sidebar-wrapper .metismenu > li:nth-child(20).mm-active > a { 
+        /* 21. Slider - Deep Purple */
+        .sidebar-wrapper .metismenu > li:nth-child(21) .parent-icon { color: #8E44AD; }
+        .sidebar-wrapper .metismenu > li:nth-child(21).mm-active > a { 
             background: linear-gradient(45deg, #8E44AD, #6C3483); box-shadow: 0 4px 10px rgba(142, 68, 173, 0.3); 
         }
-        /* 21. Strategic Plan - Navy */
-        .sidebar-wrapper .metismenu > li:nth-child(21) .parent-icon { color: #34495E; }
-        .sidebar-wrapper .metismenu > li:nth-child(21).mm-active > a { 
+        /* 22. Strategic Plan - Navy */
+        .sidebar-wrapper .metismenu > li:nth-child(22) .parent-icon { color: #34495E; }
+        .sidebar-wrapper .metismenu > li:nth-child(22).mm-active > a { 
             background: linear-gradient(45deg, #34495E, #2C3E50); box-shadow: 0 4px 10px rgba(52, 73, 94, 0.3); 
         }
-        /* 22. Subscribe - Orange */
-        .sidebar-wrapper .metismenu > li:nth-child(22) .parent-icon { color: #F39C12; }
-        .sidebar-wrapper .metismenu > li:nth-child(22).mm-active > a { 
+        /* 23. Subscribe - Orange */
+        .sidebar-wrapper .metismenu > li:nth-child(23) .parent-icon { color: #F39C12; }
+        .sidebar-wrapper .metismenu > li:nth-child(23).mm-active > a { 
             background: linear-gradient(45deg, #F39C12, #D68910); box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3); 
         }
-        /* 23. Team Members - Blue */
-        .sidebar-wrapper .metismenu > li:nth-child(23) .parent-icon { color: #2980B9; }
-        .sidebar-wrapper .metismenu > li:nth-child(23).mm-active > a { 
+        /* 24. Team Members - Blue */
+        .sidebar-wrapper .metismenu > li:nth-child(24) .parent-icon { color: #2980B9; }
+        .sidebar-wrapper .metismenu > li:nth-child(24).mm-active > a { 
             background: linear-gradient(45deg, #2980B9, #2471A3); box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3); 
         }
-        /* 24. Transparency - Mint Green */
-        .sidebar-wrapper .metismenu > li:nth-child(24) .parent-icon { color: #00B894; }
-        .sidebar-wrapper .metismenu > li:nth-child(24).mm-active > a { 
+        /* 25. Transparency - Mint Green */
+        .sidebar-wrapper .metismenu > li:nth-child(25) .parent-icon { color: #00B894; }
+        .sidebar-wrapper .metismenu > li:nth-child(25).mm-active > a { 
             background: linear-gradient(45deg, #00B894, #00A381); box-shadow: 0 4px 10px rgba(0, 184, 148, 0.3); 
         }
-        /* 25. Volunteer - Pink */
-        .sidebar-wrapper .metismenu > li:nth-child(25) .parent-icon { color: #E91E63; }
-        .sidebar-wrapper .metismenu > li:nth-child(25).mm-active > a { 
+        /* 26. Volunteer - Pink */
+        .sidebar-wrapper .metismenu > li:nth-child(26) .parent-icon { color: #E91E63; }
+        .sidebar-wrapper .metismenu > li:nth-child(26).mm-active > a { 
             background: linear-gradient(45deg, #E91E63, #C2185B); box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3); 
         }
-        /* 26. YouTube Videos - Red */
-        .sidebar-wrapper .metismenu > li:nth-child(26) .parent-icon { color: #E74C3C; }
-        .sidebar-wrapper .metismenu > li:nth-child(26).mm-active > a { 
-            background: linear-gradient(45deg, #E74C3C, #C0392B); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); 
-        }
-        /* 27. Focus Areas - Purple */
-        .sidebar-wrapper .metismenu > li:nth-child(27) .parent-icon { color: #9B59B6; }
+        /* 27. YouTube Videos - Red */
+        .sidebar-wrapper .metismenu > li:nth-child(27) .parent-icon { color: #E74C3C; }
         .sidebar-wrapper .metismenu > li:nth-child(27).mm-active > a { 
-            background: linear-gradient(45deg, #9B59B6, #7D3C98); box-shadow: 0 4px 10px rgba(155, 89, 182, 0.3); 
+            background: linear-gradient(45deg, #E74C3C, #C0392B); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); 
         }
         /* 28. Logout - Light Slate */
         .sidebar-wrapper .metismenu > li:nth-child(28) .parent-icon { color: rgba(255,255,255,0.7); }
@@ -717,12 +717,19 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{ route('admin.impact') }}">
-					<div class="parent-icon"><i class='bx bx-bar-chart-alt-2'></i>
-					</div>
-					<div class="menu-title">{{ 'Impact' }}</div>
-				</a>
-			</li>
+			<a href="{{ route('admin.focus_areas.index') }}">
+				<div class="parent-icon"><i class="bx bx-category"></i>
+				</div>
+				<div class="menu-title">{{ 'Focus Areas' }}</div>
+			</a>
+		</li>
+		<li>
+			<a href="{{ route('admin.impact') }}">
+				<div class="parent-icon"><i class='bx bx-bar-chart-alt-2'></i>
+				</div>
+				<div class="menu-title">{{ 'Impact' }}</div>
+			</a>
+		</li>
 			<li>
 				<a href="{{ route('news.index') }}">
 					<div class="parent-icon"><i class="fadeIn animated bx bx-news"></i>
@@ -851,13 +858,6 @@
 				<div class="parent-icon"><i class="fadeIn animated bx bxl-youtube"></i>
 				</div>
 				<div class="menu-title">{{ 'YouTube Videos' }}</div>
-			</a>
-		</li>
-		<li>
-			<a href="{{ route('admin.focus_areas.index') }}">
-				<div class="parent-icon"><i class="bx bx-category"></i>
-				</div>
-				<div class="menu-title">{{ 'Focus Areas' }}</div>
 			</a>
 		</li>
 		<li>
