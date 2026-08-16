@@ -32,7 +32,7 @@
                         @endif
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{ $publication->title }}</h5>
-                            <p class="card-text flex-grow-1">{{ Str::limit($publication->description, 100) }}</p>
+                             <p class="card-text flex-grow-1">{{ $publication->description }}</p>
                             <div class="mt-auto">
                                 @if($publication->pdf_file)
                                     <a href="{{ asset('images/publications/pdfs/'.$publication->pdf_file) }}" 

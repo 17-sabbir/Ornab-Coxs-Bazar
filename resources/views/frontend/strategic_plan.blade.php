@@ -31,7 +31,7 @@
                                         @endif
                                     </div>
                                     @if (!empty($plan->description))
-                                        <p class="ornab-body-text mb-0" style="font-size: 0.85rem; color: #6B6258;">{{ Str::limit($plan->description, 100) }}</p>
+                                        <p class="ornab-body-text mb-0" style="font-size: 0.95rem; color: #6B6258;">{{ $plan->description }}</p>
                                     @endif
                                 </div>
                                 <div class="flex-shrink-0">
