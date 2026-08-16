@@ -14,6 +14,6 @@ class PageController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('frontend.pages.projects', compact('projects'));
+        return view('frontend.projects', compact('projects'));
     }
 }
