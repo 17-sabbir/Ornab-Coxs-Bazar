@@ -40,29 +40,6 @@
     <section class="py-5" style="background: #fff;">
         <div class="container">
 
-            <div class="row align-items-center g-5 mb-3">
-                <div class="col-lg-7">
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle ornab-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
-                        <h2 class="fw-bold mb-0 ornab-page-title">Our Mission</h2>
-                    </div>
-                    <div class="ornab-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
-                        {{ $mission }}
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    @if(!empty($about->mission_image))
-                        <img src="{{ asset('images/about_us/'.$about->mission_image) }}" alt="Our Mission" class="img-fluid rounded-4 shadow-sm w-100" style="object-fit: cover; max-height: 380px;">
-                    @else
-                        <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, var(--brand-bg), #fff); min-height: 380px;">
-                            <i class="fa-solid fa-bullseye" style="font-size: 5rem; color: var(--brand-green); opacity: .35;"></i>
-                        </div>
-                    @endif
-                </div>
-            </div>
-
             <div class="row align-items-center g-5 mb-3 flex-lg-row-reverse">
                 <div class="col-lg-7">
                     <div class="d-flex align-items-center gap-3 mb-3">
@@ -81,6 +58,29 @@
                     @else
                         <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, var(--brand-bg), #fff); min-height: 380px;">
                             <i class="fa-solid fa-eye" style="font-size: 5rem; color: var(--brand-green); opacity: .35;"></i>
+                        </div>
+                    @endif
+                </div>
+            </div>
+
+            <div class="row align-items-center g-5 mb-3">
+                <div class="col-lg-7">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle ornab-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h2 class="fw-bold mb-0 ornab-page-title">Our Mission</h2>
+                    </div>
+                    <div class="ornab-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
+                        {{ $mission }}
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    @if(!empty($about->mission_image))
+                        <img src="{{ asset('images/about_us/'.$about->mission_image) }}" alt="Our Mission" class="img-fluid rounded-4 shadow-sm w-100" style="object-fit: cover; max-height: 380px;">
+                    @else
+                        <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, var(--brand-bg), #fff); min-height: 380px;">
+                            <i class="fa-solid fa-bullseye" style="font-size: 5rem; color: var(--brand-green); opacity: .35;"></i>
                         </div>
                     @endif
                 </div>

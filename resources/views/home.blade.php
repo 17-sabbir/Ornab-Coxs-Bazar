@@ -643,6 +643,74 @@ Ornab Coxs Bazar
 </div>
 {{-- End Highlights --}}
 
+{{-- Mission & Vision Section --}}
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center pt-3">
+                <div class="d-flex justify-content-center mt-4">
+                    <div style="width: 60px; height: 4px; background: var(--brand-navy); border-radius: 2px;"></div>
+                </div>
+                <h2 class="fw-bold mt-3 mb-0" style="color: var(--brand-navy); letter-spacing: -0.5px;">Mission & Vision</h2>
+            </div>
+        </div>
+
+        @php
+            $mission_vision_data = $mission_vision ?? null;
+            $defaultMission = 'To strengthen communities\' capacity, address poverty\'s root causes, and ensure dignity, safety, and equal rights for all through justice and equal opportunities.';
+            $defaultVision  = 'Establish poverty free society where community people enjoy their lives with dignity, safety, and equal rights.';
+            $mission = (!empty($mission_vision_data) && !empty(trim($mission_vision_data->mission ?? '')))
+                ? $mission_vision_data->mission
+                : $defaultMission;
+            $vision = (!empty($mission_vision_data) && !empty(trim($mission_vision_data->vision ?? '')))
+                ? $mission_vision_data->vision
+                : $defaultVision;
+        @endphp
+
+        <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+            <div class="col-lg-7">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-green); color: #fff;">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h2 class="fw-bold mb-0" style="color: var(--brand-navy);">Our Vision</h2>
+                </div>
+                <p style="color: var(--brand-text); line-height: 1.95; font-size: 1.02rem; text-align: justify;">{{ $vision }}</p>
+            </div>
+            <div class="col-lg-5">
+                @if(!empty($mission_vision_data->vision_image))
+                    <img src="{{ asset('images/about_us/'.$mission_vision_data->vision_image) }}" alt="Our Vision" class="img-fluid rounded-4 shadow-sm w-100" style="object-fit: cover; max-height: 380px;">
+                @else
+                    <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, var(--brand-bg), #fff); min-height: 380px;">
+                        <i class="fa-solid fa-eye" style="font-size: 5rem; color: var(--brand-green); opacity: .35;"></i>
+                    </div>
+                @endif
+            </div>
+        </div>
+
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-green); color: #fff;">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h2 class="fw-bold mb-0" style="color: var(--brand-navy);">Our Mission</h2>
+                </div>
+                <p style="color: var(--brand-text); line-height: 1.95; font-size: 1.02rem; text-align: justify;">{{ $mission }}</p>
+            </div>
+            <div class="col-lg-5">
+                @if(!empty($mission_vision_data->mission_image))
+                    <img src="{{ asset('images/about_us/'.$mission_vision_data->mission_image) }}" alt="Our Mission" class="img-fluid rounded-4 shadow-sm w-100" style="object-fit: cover; max-height: 380px;">
+                @else
+                    <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, var(--brand-bg), #fff); min-height: 380px;">
+                        <i class="fa-solid fa-bullseye" style="font-size: 5rem; color: var(--brand-green); opacity: .35;"></i>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+</section>
+{{-- End Mission & Vision Section --}}
 
 {{-- Focus Area --}}
 <div class="py-3" style="background-color: var(--brand-bg);">
