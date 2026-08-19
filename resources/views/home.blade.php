@@ -665,47 +665,42 @@ Ornab Coxs Bazar
             $vision = (!empty($mission_vision_data) && !empty(trim($mission_vision_data->vision ?? '')))
                 ? $mission_vision_data->vision
                 : $defaultVision;
+            $visionImage = (!empty($mission_vision_data) && !empty(trim($mission_vision_data->vision_image ?? '')))
+                ? asset('images/about_us/'.$mission_vision_data->vision_image)
+                : null;
+            $missionImage = (!empty($mission_vision_data) && !empty(trim($mission_vision_data->mission_image ?? '')))
+                ? asset('images/about_us/'.$mission_vision_data->mission_image)
+                : null;
         @endphp
 
-        <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
-            <div class="col-lg-7">
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-green); color: #fff;">
-                        <i class="fa-solid fa-eye"></i>
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div @if($visionImage) style="background-image: url('{{ $visionImage }}'); background-size: cover; background-position: center; padding: 2.5rem; border-radius: 12px; min-height: 280px; display: flex; flex-direction: column; justify-content: center; position: relative;" @else style="padding: 1rem 0;" @endif>
+                    @if($visionImage)<div style="position: absolute; inset: 0; background: rgba(255,255,255,0.85); border-radius: 12px;"></div>@endif
+                    <div style="position: relative; z-index: 1;">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-green); color: #fff;">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <h3 class="fw-bold mb-0" style="color: var(--brand-navy);">Our Vision</h3>
+                        </div>
+                        <p style="color: var(--brand-text); line-height: 1.95; font-size: 1.02rem; text-align: justify;">{{ $vision }}</p>
                     </div>
-                    <h2 class="fw-bold mb-0" style="color: var(--brand-navy);">Our Vision</h2>
                 </div>
-                <p style="color: var(--brand-text); line-height: 1.95; font-size: 1.02rem; text-align: justify;">{{ $vision }}</p>
             </div>
-            <div class="col-lg-5">
-                @if(!empty($mission_vision_data->vision_image))
-                    <img src="{{ asset('images/about_us/'.$mission_vision_data->vision_image) }}" alt="Our Vision" class="img-fluid rounded-4 shadow-sm w-100" style="object-fit: cover; max-height: 380px;">
-                @else
-                    <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, var(--brand-bg), #fff); min-height: 380px;">
-                        <i class="fa-solid fa-eye" style="font-size: 5rem; color: var(--brand-green); opacity: .35;"></i>
+            <div class="col-lg-6">
+                <div @if($missionImage) style="background-image: url('{{ $missionImage }}'); background-size: cover; background-position: center; padding: 2.5rem; border-radius: 12px; min-height: 280px; display: flex; flex-direction: column; justify-content: center; position: relative;" @else style="padding: 1rem 0;" @endif>
+                    @if($missionImage)<div style="position: absolute; inset: 0; background: rgba(255,255,255,0.85); border-radius: 12px;"></div>@endif
+                    <div style="position: relative; z-index: 1;">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-green); color: #fff;">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <h3 class="fw-bold mb-0" style="color: var(--brand-navy);">Our Mission</h3>
+                        </div>
+                        <p style="color: var(--brand-text); line-height: 1.95; font-size: 1.02rem; text-align: justify;">{{ $mission }}</p>
                     </div>
-                @endif
-            </div>
-        </div>
-
-        <div class="row align-items-center g-5">
-            <div class="col-lg-7">
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-green); color: #fff;">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-                    <h2 class="fw-bold mb-0" style="color: var(--brand-navy);">Our Mission</h2>
                 </div>
-                <p style="color: var(--brand-text); line-height: 1.95; font-size: 1.02rem; text-align: justify;">{{ $mission }}</p>
-            </div>
-            <div class="col-lg-5">
-                @if(!empty($mission_vision_data->mission_image))
-                    <img src="{{ asset('images/about_us/'.$mission_vision_data->mission_image) }}" alt="Our Mission" class="img-fluid rounded-4 shadow-sm w-100" style="object-fit: cover; max-height: 380px;">
-                @else
-                    <div class="w-100 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, var(--brand-bg), #fff); min-height: 380px;">
-                        <i class="fa-solid fa-bullseye" style="font-size: 5rem; color: var(--brand-green); opacity: .35;"></i>
-                    </div>
-                @endif
             </div>
         </div>
     </div>

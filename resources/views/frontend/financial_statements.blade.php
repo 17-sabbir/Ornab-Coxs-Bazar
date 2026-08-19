@@ -27,10 +27,12 @@
                     <div class="ornab-list-row d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
                         <div class="flex-grow-1">
                             <h5 class="ornab-page-title mb-1">{{ $statement->title }}</h5>
-                            <p class="ornab-body-text mb-0" style="font-size: 0.85rem; color: #6B6258;">
+                            <p class="ornab-body-text mb-1" style="font-size: 0.85rem; color: #6B6258;">
                                 <i class="far fa-calendar-alt me-1"></i> {{ $statement->year }}
-                                @if($statement->description) &nbsp;|&nbsp; {{ Str::limit($statement->description, 80) }} @endif
                             </p>
+                            @if($statement->description)
+                                <p class="ornab-body-text mb-0" style="font-size: 0.9rem; color: var(--brand-text);">{{ $statement->description }}</p>
+                            @endif
                         </div>
                         <div class="flex-shrink-0">
                             @if($statement->file_path)
