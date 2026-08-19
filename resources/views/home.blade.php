@@ -644,7 +644,7 @@ Ornab Coxs Bazar
 {{-- End Highlights --}}
 
 {{-- Mission & Vision Section --}}
-<section class="py-5 bg-white">
+<section class="py-3 style="background: var(--brand-bg);">
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-lg-8 text-center pt-3">
@@ -694,7 +694,7 @@ Ornab Coxs Bazar
                     @if($missionImage)<div style="position: absolute; inset: 0; background: rgba(255,255,255,0.82); border-radius: 12px;"></div>@endif
                     <div style="position: relative; z-index: 1;">
                         <div class="d-flex align-items-center gap-3 mb-3">
-                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-navy); color: #fff;">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-coral); color: #fff;">
                                 <i class="fa-solid fa-bullseye"></i>
                             </div>
                             <h3 class="fw-bold mb-0" style="color: var(--brand-navy);">Our Mission</h3>
