@@ -685,7 +685,7 @@ Ornab Coxs Bazar
                             </div>
                             <h3 class="fw-bold mb-0" style="color: var(--brand-navy);">Our Vision</h3>
                         </div>
-                        <p style="color: var(--brand-text); line-height: 1.95; font-size: 1.02rem; text-align: justify;">{{ $vision }}</p>
+                        <p @if($mission_vision_data && trim($mission_vision_data->vision ?? '') !== '') style="font-weight: 700;" @endif style="color: var(--brand-text); line-height: 1.95; font-size: 1.02rem; text-align: justify;">{{ $vision }}</p>
                     </div>
                 </div>
             </div>
@@ -699,7 +699,7 @@ Ornab Coxs Bazar
                             </div>
                             <h3 class="fw-bold mb-0" style="color: var(--brand-navy);">Our Mission</h3>
                         </div>
-                        <p style="color: var(--brand-text); line-height: 1.95; font-size: 1.02rem; text-align: justify;">{{ $mission }}</p>
+                        <p @if($mission_vision_data && trim($mission_vision_data->mission ?? '') !== '') style="font-weight: 700;" @endif style="color: var(--brand-text); line-height: 1.95; font-size: 1.02rem; text-align: justify;">{{ $mission }}</p>
                     </div>
                 </div>
             </div>
