@@ -657,6 +657,7 @@ Ornab Coxs Bazar
 
         @php
             $mission_vision_data = $mission_vision ?? null;
+            $about_data = $about ?? null;
             $defaultMission = 'To strengthen communities\' capacity, address poverty\'s root causes, and ensure dignity, safety, and equal rights for all through justice and equal opportunities.';
             $defaultVision  = 'Establish poverty free society where community people enjoy their lives with dignity, safety, and equal rights.';
             $mission = (!empty($mission_vision_data) && !empty(trim($mission_vision_data->mission ?? '')))
@@ -665,21 +666,21 @@ Ornab Coxs Bazar
             $vision = (!empty($mission_vision_data) && !empty(trim($mission_vision_data->vision ?? '')))
                 ? $mission_vision_data->vision
                 : $defaultVision;
-            $visionImage = (!empty($mission_vision_data) && !empty(trim($mission_vision_data->vision_image ?? '')))
-                ? asset('images/about_us/'.$mission_vision_data->vision_image)
+            $visionImage = (!empty($about_data) && !empty(trim($about_data->vision_image ?? '')))
+                ? asset('images/about_us/'.$about_data->vision_image)
                 : null;
-            $missionImage = (!empty($mission_vision_data) && !empty(trim($mission_vision_data->mission_image ?? '')))
-                ? asset('images/about_us/'.$mission_vision_data->mission_image)
+            $missionImage = (!empty($about_data) && !empty(trim($about_data->mission_image ?? '')))
+                ? asset('images/about_us/'.$about_data->mission_image)
                 : null;
         @endphp
 
         <div class="row g-5">
             <div class="col-lg-6">
                 <div @if($visionImage) style="background-image: url('{{ $visionImage }}'); background-size: cover; background-position: center; padding: 2.5rem; border-radius: 12px; min-height: 280px; display: flex; flex-direction: column; justify-content: center; position: relative;" @else style="padding: 1rem 0;" @endif>
-                    @if($visionImage)<div style="position: absolute; inset: 0; background: rgba(255,255,255,0.85); border-radius: 12px;"></div>@endif
+                    @if($visionImage)<div style="position: absolute; inset: 0; background: rgba(255,255,255,0.82); border-radius: 12px;"></div>@endif
                     <div style="position: relative; z-index: 1;">
                         <div class="d-flex align-items-center gap-3 mb-3">
-                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-green); color: #fff;">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-navy); color: #fff;">
                                 <i class="fa-solid fa-eye"></i>
                             </div>
                             <h3 class="fw-bold mb-0" style="color: var(--brand-navy);">Our Vision</h3>
@@ -690,10 +691,10 @@ Ornab Coxs Bazar
             </div>
             <div class="col-lg-6">
                 <div @if($missionImage) style="background-image: url('{{ $missionImage }}'); background-size: cover; background-position: center; padding: 2.5rem; border-radius: 12px; min-height: 280px; display: flex; flex-direction: column; justify-content: center; position: relative;" @else style="padding: 1rem 0;" @endif>
-                    @if($missionImage)<div style="position: absolute; inset: 0; background: rgba(255,255,255,0.85); border-radius: 12px;"></div>@endif
+                    @if($missionImage)<div style="position: absolute; inset: 0; background: rgba(255,255,255,0.82); border-radius: 12px;"></div>@endif
                     <div style="position: relative; z-index: 1;">
                         <div class="d-flex align-items-center gap-3 mb-3">
-                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-green); color: #fff;">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 44px; height: 44px; flex: 0 0 auto; background: var(--brand-navy); color: #fff;">
                                 <i class="fa-solid fa-bullseye"></i>
                             </div>
                             <h3 class="fw-bold mb-0" style="color: var(--brand-navy);">Our Mission</h3>

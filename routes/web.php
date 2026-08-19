@@ -22,6 +22,7 @@ Route::get('/', function () {
     $news = DB::table('latest_news')->orderBy('news_date', 'desc')->orderBy('id', 'desc')->take(6)->get();
     $partners = DB::table('partners')->orderBy('id', 'desc')->get();
     $mission_vision = DB::table('mission_vision')->orderBy('id', 'asc')->first();
+    $about = DB::table('about_us')->orderBy('id', 'asc')->first();
     $albumAgg = DB::table('gallery')
         ->select('album', DB::raw('MAX(id) as cover_id'), DB::raw('COUNT(*) as photo_count'))
         ->groupBy('album')
@@ -81,7 +82,7 @@ Route::get('/', function () {
 
     $focusAreas = \App\Models\FocusArea::active()->ordered()->get();
 
-    return view('home', compact('slider', 'project', 'news', 'partners', 'mission_vision', 'albumsPreview', 'hasMoreAlbums', 'application', 'projectsCount', 'districtsCount', 'statistics', 'focusAreas'));
+    return view('home', compact('slider', 'project', 'news', 'partners', 'mission_vision', 'about', 'albumsPreview', 'hasMoreAlbums', 'application', 'projectsCount', 'districtsCount', 'statistics', 'focusAreas'));
 });
 
 Route::post('user/subscribe', [frontController::class, 'subscribe'])->name('user.subscribe')->middleware('recaptcha');
