@@ -162,6 +162,7 @@
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
+        /* dfgvhbjnk */
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--ornab-primary), var(--ornab-accent));
             border-radius: 5px;
