@@ -239,7 +239,7 @@
                     <li><a class="dropdown-item" href="{{ route('publication') }}">{{ 'Publications' }}</a></li>
                     <li><a class="dropdown-item" href="{{ route('strategic.plan') }}">{{ 'Strategic Plan' }}</a></li>
                     <li><a class="dropdown-item" href="{{ route('annual.reports') }}">{{ 'Annual Reports' }}</a></li>
-                    <li><a class="dropdown-item" href="{{ route('financial.statements') }}">{{ 'Financial Statements' }}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('financial.statements') }}">{{ 'Financial & Audit Reports' }}</a></li>
                     <li><a class="dropdown-item" href="{{ route('policy.guideline') }}">{{ 'Policy & Guideline' }}</a></li>
                 </ul>
                 </li>

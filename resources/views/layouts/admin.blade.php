@@ -843,7 +843,7 @@
   				</a>
   				<ul>
   					<li><a href="{{ route('admin.annual_reports.index') }}"><i class="bx bx-right-arrow-alt"></i>Annual Reports</a></li>
-  					<li><a href="{{ route('admin.financial_statements.index') }}"><i class="bx bx-right-arrow-alt"></i>Financial Statements</a></li>
+					<li><a href="{{ route('admin.financial_statements.index') }}"><i class="bx bx-right-arrow-alt"></i>Financial &amp; Audit Reports</a></li>
   				</ul>
   			</li>
 			<li>

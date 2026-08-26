@@ -24,12 +24,14 @@ class FinancialStatementController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|max:255',
-            'year' => 'required|digits:4',
+            'year' => ['required', 'regex:/^\d{4}-\d{4}$/'],
             'description' => 'nullable',
             'file' => 'nullable|mimes:pdf,doc,docx|max:20480',
             'cover_image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'is_active' => 'boolean',
             'order' => 'integer|min:0',
+        ], [
+            'year.regex' => 'The financial year must use the YYYY-YYYY format, for example 2023-2024.',
         ]);
 
         $data = [
@@ -50,7 +52,7 @@ class FinancialStatementController extends Controller
 
         FinancialStatement::create($data);
 
-        return redirect()->route('admin.financial_statements.index')->with('success', 'Financial Statement created successfully.');
+        return redirect()->route('admin.financial_statements.index')->with('success', 'Financial & Audit Report created successfully.');
     }
 
     public function edit(FinancialStatement $financialStatement)
@@ -62,12 +64,14 @@ class FinancialStatementController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|max:255',
-            'year' => 'required|digits:4',
+            'year' => ['required', 'regex:/^\d{4}-\d{4}$/'],
             'description' => 'nullable',
             'file' => 'nullable|mimes:pdf,doc,docx|max:20480',
             'cover_image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'is_active' => 'boolean',
             'order' => 'integer|min:0',
+        ], [
+            'year.regex' => 'The financial year must use the YYYY-YYYY format, for example 2023-2024.',
         ]);
 
         $data = [
@@ -94,7 +98,7 @@ class FinancialStatementController extends Controller
 
         $financialStatement->update($data);
 
-        return redirect()->route('admin.financial_statements.index')->with('success', 'Financial Statement updated successfully.');
+        return redirect()->route('admin.financial_statements.index')->with('success', 'Financial & Audit Report updated successfully.');
     }
 
     public function destroy(FinancialStatement $financialStatement)
@@ -105,8 +109,8 @@ class FinancialStatementController extends Controller
         if ($financialStatement->cover_image) {
             Storage::disk('public')->delete($financialStatement->cover_image);
         }
-        $financialStatement->delete();
+        FinancialStatement::destroy($financialStatement->getKey());
 
-        return redirect()->route('admin.financial_statements.index')->with('success', 'Financial Statement deleted successfully.');
+        return redirect()->route('admin.financial_statements.index')->with('success', 'Financial & Audit Report deleted successfully.');
     }
 }

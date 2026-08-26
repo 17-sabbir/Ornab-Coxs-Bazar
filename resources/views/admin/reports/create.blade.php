@@ -15,14 +15,14 @@
                         @csrf
                         <div class="col-md-6">
                             <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
-                            <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" value="{{ old('title') }}" placeholder="e.g. Annual Report 2024">
+                            <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" value="{{ old('title') }}" placeholder="e.g. Annual Report 2023–2024">
                             @error('title')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col-md-6">
-                            <label for="year" class="form-label">Year <span class="text-danger">*</span></label>
-                            <input type="text" name="year" class="form-control @error('year') is-invalid @enderror" id="year" value="{{ old('year') }}" placeholder="e.g. 2024" maxlength="4">
+                            <label for="year" class="form-label">Reporting Year <span class="text-danger">*</span></label>
+                            <input type="text" name="year" class="form-control @error('year') is-invalid @enderror" id="year" value="{{ old('year') }}" placeholder="e.g. 2023–2024" pattern="[0-9]{4}–[0-9]{4}" maxlength="9" inputmode="numeric">
                             @error('year')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror

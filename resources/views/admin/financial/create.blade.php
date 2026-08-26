@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-xl-9 mx-auto">
-        <h6 class="mb-0 text-uppercase">Add Financial Statement</h6>
+        <h6 class="mb-0 text-uppercase">Add Financial &amp; Audit Report</h6>
         <hr/>
         <div class="card">
             <div class="card-body">
@@ -15,14 +15,14 @@
                         @csrf
                         <div class="col-md-6">
                             <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
-                            <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" value="{{ old('title') }}" placeholder="e.g. Financial Statement 2024">
+                            <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" value="{{ old('title') }}" placeholder="e.g. Financial &amp; Audit Report 2023-2024">
                             @error('title')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col-md-6">
-                            <label for="year" class="form-label">Year <span class="text-danger">*</span></label>
-                            <input type="text" name="year" class="form-control @error('year') is-invalid @enderror" id="year" value="{{ old('year') }}" placeholder="e.g. 2024" maxlength="4">
+                            <label for="year" class="form-label">Financial Year <span class="text-danger">*</span></label>
+                            <input type="text" name="year" class="form-control @error('year') is-invalid @enderror" id="year" value="{{ old('year') }}" placeholder="e.g. 2023-2024" pattern="[0-9]{4}-[0-9]{4}" maxlength="9" inputmode="numeric">
                             @error('year')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror

@@ -24,12 +24,14 @@ class AnnualReportController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|max:255',
-            'year' => 'required|digits:4',
+            'year' => ['required', 'regex:/^\d{4}–\d{4}$/u'],
             'description' => 'nullable',
             'file' => 'nullable|mimes:pdf,doc,docx|max:20480',
             'cover_image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'is_active' => 'boolean',
             'order' => 'integer|min:0',
+        ], [
+            'year.regex' => 'The year must use the YYYY–YYYY format, for example 2023–2024.',
         ]);
 
         $data = [
@@ -62,12 +64,14 @@ class AnnualReportController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|max:255',
-            'year' => 'required|digits:4',
+            'year' => ['required', 'regex:/^\d{4}–\d{4}$/u'],
             'description' => 'nullable',
             'file' => 'nullable|mimes:pdf,doc,docx|max:20480',
             'cover_image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'is_active' => 'boolean',
             'order' => 'integer|min:0',
+        ], [
+            'year.regex' => 'The year must use the YYYY–YYYY format, for example 2023–2024.',
         ]);
 
         $data = [

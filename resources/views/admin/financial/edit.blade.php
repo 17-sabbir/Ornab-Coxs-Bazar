@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-xl-9 mx-auto">
-        <h6 class="mb-0 text-uppercase">Edit Financial Statement</h6>
+        <h6 class="mb-0 text-uppercase">Edit Financial &amp; Audit Report</h6>
         <hr/>
         <div class="card">
             <div class="card-body">
@@ -22,8 +22,8 @@
                             @enderror
                         </div>
                         <div class="col-md-6">
-                            <label for="year" class="form-label">Year <span class="text-danger">*</span></label>
-                            <input type="text" name="year" class="form-control @error('year') is-invalid @enderror" id="year" value="{{ old('year', $financialStatement->year) }}" maxlength="4">
+                            <label for="year" class="form-label">Financial Year <span class="text-danger">*</span></label>
+                            <input type="text" name="year" class="form-control @error('year') is-invalid @enderror" id="year" value="{{ old('year', $financialStatement->year) }}" pattern="[0-9]{4}-[0-9]{4}" maxlength="9" inputmode="numeric">
                             @error('year')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror

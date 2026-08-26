@@ -4,9 +4,9 @@
 <div class="row">
     <div class="col-xl-12 mx-auto">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h6 class="mb-0 text-uppercase">All Financial Statements</h6>
+            <h6 class="mb-0 text-uppercase">All Financial &amp; Audit Reports</h6>
             <a href="{{ route('admin.financial_statements.create') }}" class="btn btn-primary btn-sm rounded-pill px-3">
-                <i class="bx bx-plus-circle me-1"></i> Add Financial Statement
+                <i class="bx bx-plus-circle me-1"></i> Add Financial &amp; Audit Report
             </a>
         </div>
         <hr/>
@@ -39,7 +39,7 @@
                                 <th>SL.</th>
                                 <th>Cover</th>
                                 <th>Title</th>
-                                <th>Year</th>
+                                <th>Financial Year</th>
                                 <th>Order</th>
                                 <th>Status</th>
                                 <th>File</th>
@@ -85,7 +85,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="8" class="text-center text-muted py-4">No financial statements found.</td>
+                                    <td colspan="8" class="text-center text-muted py-4">No financial &amp; audit reports found.</td>
                                 </tr>
                             @endforelse
                         </tbody>

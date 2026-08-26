@@ -14,7 +14,8 @@
 
 <section class="ornab-hero">
     <div class="container text-center">
-        <p class="lead mb-0 text-white">Audited financial statements, income & expenditure, and audit reports.</p>
+        <h1 class="h2 mb-2 text-white">Financial &amp; Audit Reports</h1>
+        <p class="lead mb-0 text-white">Financial statements, income &amp; expenditure, and audit reports.</p>
     </div>
 </section>
 
@@ -28,7 +29,7 @@
                         <div class="flex-grow-1">
                             <h5 class="ornab-page-title mb-1">{{ $statement->title }}</h5>
                             <p class="ornab-body-text mb-1" style="font-size: 0.85rem; color: #6B6258;">
-                                <i class="far fa-calendar-alt me-1"></i> {{ $statement->year }}
+                                <i class="far fa-calendar-alt me-1"></i> Financial Year: {{ $statement->year }}
                             </p>
                             @if($statement->description)
                                 <p class="ornab-body-text mb-0" style="font-size: 0.9rem; color: var(--brand-text);">{{ $statement->description }}</p>
@@ -48,8 +49,8 @@
         @else
             <div class="text-center py-5">
                 <i class="fas fa-chart-bar ornab-body-text" style="font-size: 4rem; color: #6B6258;"></i>
-                <h3 class="mt-3 ornab-page-title">No Statements Yet</h3>
-                <p class="ornab-body-text">Financial statements will be published here soon.</p>
+                <h3 class="mt-3 ornab-page-title">No Reports Yet</h3>
+                <p class="ornab-body-text">Financial &amp; audit reports will be published here soon.</p>
             </div>
         @endif
     </div>
