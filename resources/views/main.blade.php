@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>
-        @yield('title')
-    </title>
+    <title>@yield('title', 'Ornab Cox\'s Bazar — Community Development NGO in Cox\'s Bazar, Bangladesh')</title>
     {{-- favicon --}}
     @php $appSettings = application(); @endphp
     <link rel="shortcut icon" href="{{ $appSettings && !empty($appSettings->fav_icon) ? asset('images/application/'.$appSettings->fav_icon) : asset('images/application/ornab-logo.png') }}" type="image/x-icon">
@@ -14,17 +12,34 @@
             $logoUrl = $appSettings && !empty($appSettings->main_logo)
                 ? asset('images/application/'.$appSettings->main_logo)
                 : asset('images/application/ornab-logo.png');
+            $seoTitle = trim($__env->yieldContent('title')) !== ''
+                ? trim($__env->yieldContent('title'))
+                : config('app.name');
+            $seoDescription = trim($__env->yieldContent('meta_description')) !== ''
+                ? trim($__env->yieldContent('meta_description'))
+                : 'Ornab Cox\'s Bazar is a community development NGO working since 2008 to empower underprivileged communities in Cox\'s Bazar, Bangladesh through education, health, skills training and sustainable development.';
+            $seoImage = trim($__env->yieldContent('og_image')) !== ''
+                ? trim($__env->yieldContent('og_image'))
+                : $logoUrl;
+            $seoUrl = trim($__env->yieldContent('canonical')) !== ''
+                ? trim($__env->yieldContent('canonical'))
+                : url()->current();
         @endphp
 
-        <meta property="og:title" content="{{ config('app.name') }}">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ url('/') }}">
-        <link rel="canonical" href="{{ url('/') }}">
-        <meta property="og:image" content="{{ $logoUrl }}">
+        <meta name="description" content="{{ $seoDescription }}">
+        <link rel="canonical" href="{{ $seoUrl }}">
+
+        <meta property="og:site_name" content="{{ config('app.name') }}">
+        <meta property="og:title" content="{{ $seoTitle }}">
+        <meta property="og:type" content="@yield('og_type', 'website')">
+        <meta property="og:url" content="{{ $seoUrl }}">
+        <meta property="og:description" content="{{ $seoDescription }}">
+        <meta property="og:image" content="{{ $seoImage }}">
 
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="{{ config('app.name') }}">
-        <meta name="twitter:image" content="{{ $logoUrl }}">
+        <meta name="twitter:title" content="{{ $seoTitle }}">
+        <meta name="twitter:description" content="{{ $seoDescription }}">
+        <meta name="twitter:image" content="{{ $seoImage }}">
 
         @php
             $orgSchema = [

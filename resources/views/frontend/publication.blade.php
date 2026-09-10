@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Publications | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Browse publications, reports, and research documents produced by Ornab Cox's Bazar on community development in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -13,7 +21,7 @@
   <section id="publication" class="contact bg-light p-0">
     <div class="container bg-white py-5" data-aos="fade-up">
       <div class="section-title">
-        <h2 class="ornab-page-title">Publications</h2>
+        <h1 class="h2 ornab-page-title">Publications</h1>
         @if(isset($publications) && count($publications) > 0)
             <div class="row p-3">
                 @foreach($publications as $publication)

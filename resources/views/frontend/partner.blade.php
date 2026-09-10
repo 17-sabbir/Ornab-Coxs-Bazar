@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Partners, Donors & Networks | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Explore the partner organizations, donors, and networks working hand-in-hand with Ornab Cox's Bazar to amplify community impact in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }

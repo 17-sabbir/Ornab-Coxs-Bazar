@@ -1,5 +1,19 @@
 @extends('main')
 
+@section('title')
+{{ $focusArea->title }} | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+{{ $focusArea->description ? Str::limit(strip_tags($focusArea->description), 155, '...') : 'Learn how Ornab Cox\'s Bazar creates change in this focus area.' }}
+@endsection
+
+@if(!empty($focusArea->image_path))
+@section('og_image')
+{{ asset('storage/' . $focusArea->image_path) }}
+@endsection
+@endif
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }

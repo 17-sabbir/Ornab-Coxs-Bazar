@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+About Us | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Learn about Ornab Cox's Bazar, a community development NGO working since 2008 to empower women, adolescents, and children in Cox's Bazar, Bangladesh through education, health, and sustainable development.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -24,7 +32,7 @@
                         <div class="d-inline-flex align-items-center justify-content-center rounded-circle ornab-icon-circle" style="width: 44px; height: 44px; flex: 0 0 auto;">
                             <i class="fa-solid fa-circle-info"></i>
                         </div>
-                        <h2 class="fw-bold mb-0 ornab-page-title">About Ornab Cox's Bazar</h2>
+                        <h1 class="h2 fw-bold mb-0 ornab-page-title">About Ornab Cox's Bazar</h1>
                     </div>
                     <div class="ornab-body-text" style="line-height: 1.95; font-size: 1.02rem; text-align: justify;">
                         {!! $about_us->about_us ?? '' !!}

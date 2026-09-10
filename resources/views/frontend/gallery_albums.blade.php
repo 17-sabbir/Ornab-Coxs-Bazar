@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Photo Gallery | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Browse photo albums capturing the activities, events, and community impact of Ornab Cox's Bazar in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -14,7 +22,7 @@
     <section id="contact" class="contact bg-light p-0">
         <div class="container bg-white py-5" data-aos="fade-up">
             <div class="section-title">
-                <h2 class="ornab-page-title">Photo Gallery</h2>
+                <h1 class="h2 ornab-page-title">Photo Gallery</h1>
 
                 <div class="d-flex justify-content-end mb-4">
                     <a href="{{ route('photo.all') }}" class="ornab-read-more rounded-pill px-4 py-2 fw-bold">

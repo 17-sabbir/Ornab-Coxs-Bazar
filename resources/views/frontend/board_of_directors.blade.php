@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Board of Directors | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Meet the board of directors providing leadership and governance to Ornab Cox's Bazar, guiding our mission and vision forward.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -20,6 +28,7 @@
     <!-- ======= Board of Directors (About Us) ======= -->
     <section class="ornab-hero">
         <div class="container text-center">
+            <h1 class="visually-hidden">Board of Directors — Ornab Cox's Bazar</h1>
             <p class="lead mb-0 text-white">The leadership guiding our mission and vision forward.</p>
         </div>
     </section>

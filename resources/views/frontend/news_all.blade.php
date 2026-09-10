@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Latest News & Events | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Stay informed with the latest news, stories, announcements, and community impact updates from Ornab Cox's Bazar in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -15,12 +23,12 @@
     <section id="contact" class="contact bg-light p-0">
         <div class="container bg-white py-5" data-aos="fade-up">
             <div class="section-title">
-                <h2 class="ornab-page-title">Latest News</h2>
+                <h1 class="h2 ornab-page-title">Latest News</h1>
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     @foreach ($news as $key=>$data)
                         <div class="col">
                             <div class="card border-0 shadow">
-                                <img src="{{ asset('images/news/'.$data->image) }}" class="card-img-top" alt="activity" width="100%" height="200px">
+                                <img src="{{ asset('images/news/'.$data->image) }}" class="card-img-top" alt="{{ $data->title }}" width="100%" height="200px">
                                 <div class="card-body ">
                                     <h5 class="card-title text-start">{{ Str::limit($data->title, 25, '...') }}</h5>
                                     <p class="ornab-meta-text text-start" style="font-size: 12px;">

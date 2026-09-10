@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Careers | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Explore career opportunities with Ornab Cox's Bazar and join a dedicated team working to eliminate poverty and gender discrimination in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }

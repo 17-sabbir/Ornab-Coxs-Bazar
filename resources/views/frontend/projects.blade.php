@@ -1,6 +1,10 @@
 @extends('main')
 
-@section('title', 'Our Projects - Ornab Cox\'s Bazar')
+@section('title', 'Our Projects | Ornab Cox\'s Bazar')
+
+@section('meta_description')
+Explore Ornab Cox's Bazar's development projects — ongoing and completed initiatives in education, health, livelihoods, and community resilience across Cox's Bazar, Bangladesh.
+@endsection
 
 @section('content')
 <style>
@@ -20,7 +24,7 @@
 <div class="container py-5">
     <div class="row">
         <div class="col-12 text-center mb-5">
-            <h2 class="display-5 fw-bold ornab-page-title">Our Development Journey</h2>
+            <h1 class="display-5 fw-bold ornab-page-title">Our Development Journey</h1>
             <p class="lead ornab-page-subtitle">Explore a selection of our current and past projects, showcasing our ideas, innovation, and impact.</p>
         </div>
     </div>

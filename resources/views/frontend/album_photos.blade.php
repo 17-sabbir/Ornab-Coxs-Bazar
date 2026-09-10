@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+{{ $album }} Photos | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Explore the "{{ $album }}" photo album — moments captured from Ornab Cox's Bazar's activities and events in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }

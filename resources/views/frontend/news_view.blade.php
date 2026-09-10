@@ -1,5 +1,21 @@
 @extends('main')
 
+@section('title')
+{{ $news->title }} | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+{{ $news->description ? Str::limit(strip_tags($news->description), 155, '...') : 'Latest news and updates from Ornab Cox\'s Bazar.' }}
+@endsection
+
+@section('og_type', 'article')
+
+@if(!empty($news->image))
+@section('og_image')
+{{ asset('images/news/'.$news->image) }}
+@endsection
+@endif
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -26,10 +42,10 @@
 
         <div class="row">
             <div class="col-md-4">
-                <img src="{{ asset('images/news/'.$news->image) }}" class="card-img-top" alt="activity" width="100%">
+                <img src="{{ asset('images/news/'.$news->image) }}" class="card-img-top" alt="{{ $news->title }}" width="100%">
             </div>
             <div class="col-md-8 text-left">
-                <h2 class="text-left ornab-page-title">{{ $news->title }}</h2>
+                <h1 class="h2 text-left ornab-page-title">{{ $news->title }}</h1>
                 <p class="ornab-meta-text" style="font-size: 12px;">
                     <i class="fas fa-calendar-minus"></i>
                     {{ $news->news_date ? \Carbon\Carbon::parse($news->news_date)->format('d F, Y') : date("d M, Y") }}

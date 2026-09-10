@@ -6,10 +6,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="robots" content="noindex, nofollow">
 
     <title>@yield('seo_title', config('app.name', 'Laravel'))</title>
     <meta name="description" content="@yield('seo_description', '')">
-    <meta name="keywords" content="@yield('seo_keywords', '')">
     @yield('seo_og')
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -3,7 +3,11 @@
 @section('body_class', 'is-home')
 
 @section('title')
-Ornab Coxs Bazar
+Ornab Cox's Bazar | Community Development NGO in Cox's Bazar, Bangladesh
+@endsection
+
+@section('meta_description')
+Ornab Cox's Bazar is a non-profit organization empowering underprivileged communities in Cox's Bazar since 2008 through education, health, skills training, and sustainable development programs for women, adolescents, and children.
 @endsection
 
 @section('content')
@@ -338,7 +342,7 @@ Ornab Coxs Bazar
         @foreach ($slider as $skey => $slider)
         <div class="carousel-item @if($skey == 0) active @endif">
             <div style="position: relative; height: 100vh; overflow: hidden;"> <!-- Full viewport height -->
-                <img src="{{ asset('images/slider/'.$slider->image) }}" class="d-block w-100" alt="ORNAB" style="object-fit: cover; height: 100%; width: 100%;">
+                <img src="{{ asset('images/slider/'.$slider->image) }}" class="d-block w-100" alt="{{ $slider->title }}" style="object-fit: cover; height: 100%; width: 100%;">
                 
                 {{-- Navy-to-Coral Gradient Overlay --}}
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(18,43,107,0.75) 0%, rgba(242,169,126,0.25) 100%);"></div>
@@ -356,9 +360,9 @@ Ornab Coxs Bazar
                 <div class="container-fluid h-100 position-absolute top-0 start-0 px-0">
                     <div class="d-flex flex-column justify-content-center h-100 text-white">
                         <div class="hero-indented"> <!-- Indented Content -->
-                            <h2 class="hero-title">
+                            <h1 class="hero-title">
                                 <span class="js-typewriter typewriter-cursor hero-title-text notranslate" data-text="{{ e($slider->title) }}" data-text-bn="{{ e($slider->title_bn) }}">{{ $slider->title }}</span>
-                            </h2>
+                            </h1>
 
                             <p class="hero-desc">
                                 <span class="js-typewriter hero-desc-text notranslate" data-text="{{ e($slider->description) }}" data-text-bn="{{ e($slider->description_bn) }}">{{ $slider->description }}</span>

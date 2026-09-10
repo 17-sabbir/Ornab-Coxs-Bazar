@@ -1,6 +1,10 @@
 @extends('main')
 
-@section('title', 'Project Archive - Ornab Cox\'s Bazar')
+@section('title', 'Project Archive | Ornab Cox\'s Bazar')
+
+@section('meta_description')
+Browse the archive of successfully completed community development projects delivered by Ornab Cox's Bazar across Cox's Bazar district, Bangladesh.
+@endsection
 
 @section('content')
 <style>
@@ -17,7 +21,7 @@
 <div class="container py-5">
     <div class="row">
         <div class="col-12 text-center mb-5">
-            <h2 class="display-5 fw-bold ornab-page-title">Project Archive</h2>
+            <h1 class="display-5 fw-bold ornab-page-title">Project Archive</h1>
             <p class="lead ornab-page-subtitle">A comprehensive list of projects we have successfully delivered for our communities</p>
         </div>
     </div>

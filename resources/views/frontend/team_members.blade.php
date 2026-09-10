@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Our Team | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Meet the dedicated team of professionals driving Ornab Cox's Bazar's mission to eliminate poverty and gender discrimination in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -25,6 +33,7 @@
     <!-- ======= Team Members (About Us) ======= -->
     <section class="ornab-hero">
         <div class="container text-center">
+            <h1 class="visually-hidden">Our Team — Ornab Cox's Bazar</h1>
             <p class="lead mb-0 text-white">Dedicated professionals working together to create lasting impact.</p>
         </div>
     </section>

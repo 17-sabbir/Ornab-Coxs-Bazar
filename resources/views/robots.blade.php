@@ -3,6 +3,10 @@ Allow: /
 Disallow: /admin/
 Disallow: /home
 Disallow: /lang/
+Disallow: /login
+Disallow: /logout
+Disallow: /password
+Disallow: /policy/download/
 
 Sitemap: {{ url('sitemap.xml') }}
 

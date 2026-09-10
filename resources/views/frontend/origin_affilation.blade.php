@@ -1,6 +1,16 @@
 @extends('main')
 
+@section('title')
+Origin & Legal Affiliation | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+View the legal registration status, affiliations, and compliance details that allow Ornab Cox's Bazar to operate transparently in Bangladesh.
+@endsection
+
 @section('content')
+
+    <h1 class="visually-hidden">Origin &amp; Legal Affiliation — Ornab Cox's Bazar</h1>
 
     <!-- ======= Origin & Legal Affiliation (About Us) ======= -->
     <section class="au-hero2">
@@ -16,7 +26,7 @@
             <div class="row g-5 align-items-center mb-5">
                 <div class="col-12" data-aos="fade-up">
                     <span class="au-eyebrow">Legal Reg. Status</span>
-                    <h2 class="au-heading mb-4">Registration & Compliance</h2>
+                    <h2 class="au-heading mb-4">Registration &amp; Compliance</h2>
 
                     @if(isset($legalRegistrations) && $legalRegistrations->count())
                     <div class="table-responsive au-reg-table">

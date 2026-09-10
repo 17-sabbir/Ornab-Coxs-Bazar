@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Policy & Guideline | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Access the policies and guidelines that ensure accountability, safeguarding, and transparent operations at Ornab Cox's Bazar.
+@endsection
+
 @section('content')
 
   <!-- ======= Policy and Guideline Section ======= -->

@@ -1,6 +1,17 @@
 @extends('main')
 
+@section('title')
+Volunteer Opportunities | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Discover volunteer opportunities with Ornab Cox's Bazar — what you can do, eligibility, and the benefits of contributing to community development in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
+
+    <h1 class="visually-hidden">Volunteer Opportunities — Ornab Cox's Bazar</h1>
+
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
 .ornab-body-text { color: var(--brand-text) !important; }

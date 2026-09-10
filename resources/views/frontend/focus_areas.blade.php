@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Focus Areas | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Discover the key focus areas where Ornab Cox's Bazar creates change — education, health, livelihoods, and community resilience in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -10,7 +18,7 @@
 <section class="ornab-section-alt pt-5 pb-5">
     <div class="container" data-aos="fade-up">
         <div class="text-center mb-5 pb-3">
-            <h2 class="display-4 fw-bold ornab-page-title">Key Areas We Work In</h2>
+            <h1 class="display-4 fw-bold ornab-page-title">Key Areas We Work In</h1>
             <p class="lead ornab-body-text mt-3">Discover how we are making a difference across key sectors in Cox's Bazar.</p>
         </div>
 

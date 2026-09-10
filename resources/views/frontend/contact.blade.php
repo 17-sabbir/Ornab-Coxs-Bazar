@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Contact Us | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Get in touch with Ornab Cox's Bazar — find our head office and branch contact details, or send us a message about partnerships, donations, or programs.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }

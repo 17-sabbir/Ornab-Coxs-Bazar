@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+All Photos | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+View a comprehensive collection of photos from Ornab Cox's Bazar's activities, events, and community programs in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -80,7 +88,7 @@
         </div>
     @empty
         <div class="col-12 py-5 text-center">
-            <img src="{{ asset('images/defaults/no-data.svg') }}" class="img-fluid mb-3" style="max-height: 200px;" onError="this.style.display='none'">
+            <img src="{{ asset('images/defaults/no-data.svg') }}" alt="" class="img-fluid mb-3" style="max-height: 200px;" onError="this.style.display='none'">
             <h4 class="ornab-meta-text fw-bold">No Photos Available</h4>
             <p class="ornab-meta-text">Currently, there are no photos in the gallery.</p>
         </div>

@@ -1,6 +1,16 @@
 @extends('main')
 
+@section('title')
+Mission, Vision & Core Values | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Discover the mission, vision, and core values that guide Ornab Cox's Bazar in building a poverty-free society where communities live with dignity, safety, and equal rights.
+@endsection
+
 @section('content')
+
+    <h1 class="visually-hidden">Mission, Vision &amp; Core Values — Ornab Cox's Bazar</h1>
 
     @php
         $defaultMission = 'To strengthen communities\' capacity, address poverty\'s root causes, and ensure dignity, safety, and equal rights for all through justice and equal opportunities.';

@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Video Gallery | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Watch videos showcasing the activities, projects, and community impact of Ornab Cox's Bazar in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -9,7 +17,7 @@
   <section id="contact" class="contact bg-light p-0">
     <div class="container bg-white py-5" data-aos="fade-up">
       <div class="section-title">
-        <h2 class="ornab-page-title">Youtube <i class="fa-brands fa-youtube" style="color: red;"></i> </h2>
+        <h1 class="h2 ornab-page-title">Youtube <i class="fa-brands fa-youtube" style="color: red;"></i> </h1>
             <div class="row">
                 @if(isset($videos) && $videos->count())
                     @foreach($videos as $v)

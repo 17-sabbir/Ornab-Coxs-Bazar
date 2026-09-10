@@ -1,4 +1,13 @@
 @extends('main')
+
+@section('title')
+Financial & Audit Reports | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Access Ornab Cox's Bazar's financial statements, income and expenditure reports, and audit documents demonstrating our transparency.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }

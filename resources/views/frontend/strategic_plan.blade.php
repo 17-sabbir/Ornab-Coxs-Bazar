@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Strategic Plan | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Read the strategic plan guiding Ornab Cox's Bazar's long-term goals, priorities, and approach to community development in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -88,7 +96,7 @@
 <section id="contact" class="contact bg-light p-0">
     <div class="container bg-white py-5" data-aos="fade-up">
         <div class="section-title">
-            <h2 class="ornab-page-title">Strategic Plan</h2>
+            <h1 class="h2 ornab-page-title">Strategic Plan</h1>
         </div>
 
         @forelse ($strategicPlans as $plan)

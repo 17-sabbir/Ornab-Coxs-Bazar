@@ -1,5 +1,25 @@
 @extends('main')
 
+@section('title')
+{{ $project->project_name }} | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+{{ $project->objectives ? Str::limit(strip_tags($project->objectives), 155, '...') : 'Learn about this community development project by Ornab Cox\'s Bazar in Cox\'s Bazar, Bangladesh.' }}
+@endsection
+
+@section('og_type', 'article')
+
+@if(!empty($project->cover_image))
+@section('og_image')
+{{ asset('images/project/'.$project->cover_image) }}
+@endsection
+@elseif(!empty($project->image))
+@section('og_image')
+{{ asset('images/project/'.$project->image) }}
+@endsection
+@endif
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -22,9 +42,9 @@
         <div class="row">
             <div class="col-md-4">
             @if(!empty($project->cover_image))
-              <img src="{{ asset('images/project/'.$project->cover_image) }}" class="card-img-top" alt="project" width="100%">
+              <img src="{{ asset('images/project/'.$project->cover_image) }}" class="card-img-top" alt="{{ $project->project_name }}" width="100%">
             @elseif(!empty($project->image))
-              <img src="{{ asset('images/project/'.$project->image) }}" class="card-img-top" alt="project" width="100%">
+              <img src="{{ asset('images/project/'.$project->image) }}" class="card-img-top" alt="{{ $project->project_name }}" width="100%">
             @endif
             </div>
             <div class="col-md-8 text-left">
@@ -81,7 +101,7 @@
                     @foreach($project->galleries as $photo)
                     <div class="col-6 col-md-3">
                         <a href="{{ asset('images/project/'.$photo->image) }}" target="_blank">
-                            <img src="{{ asset('images/project/'.$photo->image) }}" class="img-fluid rounded border" alt="project photo" style="width:100%;height:160px;object-fit:cover;">
+                            <img src="{{ asset('images/project/'.$photo->image) }}" class="img-fluid rounded border" alt="{{ $project->project_name }} — project photo" style="width:100%;height:160px;object-fit:cover;">
                         </a>
                     </div>
                     @endforeach

@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Notices | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Read official notices and announcements from Ornab Cox's Bazar, including organizational updates and public communications.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -15,13 +23,13 @@
 <section id="contact" class="contact bg-light p-0">
     <div class="container bg-white py-5" data-aos="fade-up">
         <div class="section-title">
-            <h2 class="ornab-page-title">Notices</h2>
+            <h1 class="h2 ornab-page-title">Notices</h1>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 @foreach ($notices as $key=>$data)
                     <div class="col">
                         <div class="card border-0 shadow">
                             @if ($data->image)
-                            <img src="{{ asset('images/notices/'.$data->image) }}" class="card-img-top" alt="notice" width="100%" height="200px" style="object-fit: cover;">
+                            <img src="{{ asset('images/notices/'.$data->image) }}" class="card-img-top" alt="{{ $data->title }}" width="100%" height="200px" style="object-fit: cover;">
                             @endif
                             <div class="card-body ">
                                 <h5 class="card-title text-start">{{ Str::limit($data->title, 25, '...') }}</h5>

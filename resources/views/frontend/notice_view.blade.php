@@ -1,5 +1,21 @@
 @extends('main')
 
+@section('title')
+{{ $notice->title }} | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+{{ $notice->description ? Str::limit(strip_tags($notice->description), 155, '...') : 'Official notice from Ornab Cox\'s Bazar.' }}
+@endsection
+
+@section('og_type', 'article')
+
+@if(!empty($notice->image))
+@section('og_image')
+{{ asset('images/notices/'.$notice->image) }}
+@endsection
+@endif
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -27,11 +43,11 @@
         <div class="row">
             <div class="col-md-4">
                 @if ($notice->image)
-                <img src="{{ asset('images/notices/'.$notice->image) }}" class="card-img-top" alt="notice" width="100%">
+                <img src="{{ asset('images/notices/'.$notice->image) }}" class="card-img-top" alt="{{ $notice->title }}" width="100%">
                 @endif
             </div>
             <div class="col-md-8 text-left">
-                <h2 class="text-left ornab-page-title">{{ $notice->title }}</h2>
+                <h1 class="h2 text-left ornab-page-title">{{ $notice->title }}</h1>
                 <p class="ornab-meta-text" style="font-size: 12px;">
                     <i class="fas fa-calendar-minus"></i>
                     {{ $notice->publish_date ? \Carbon\Carbon::parse($notice->publish_date)->format('d F, Y') : date("d M, Y") }}

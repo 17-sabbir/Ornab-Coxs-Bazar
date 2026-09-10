@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Frequently Asked Questions | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Find answers to frequently asked questions about Ornab Cox's Bazar's programs, donations, volunteering, and community development work.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -15,7 +23,7 @@
         <li><a href="{{ url('/') }}">Home</a></li>
         <li>FAQ</li>
       </ol>
-      <h2 class="ornab-page-title">Frequently Asked Questions</h2>
+      <h1 class="h2 ornab-page-title">Frequently Asked Questions</h1>
     </div>
   </section>
   <!-- End Breadcrumbs -->

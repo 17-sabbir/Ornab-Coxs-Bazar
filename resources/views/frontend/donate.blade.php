@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('title')
+Donate | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Support Ornab Cox's Bazar's humanitarian causes — donate to fund education, healthcare, and community resilience programs in Cox's Bazar, Bangladesh.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }

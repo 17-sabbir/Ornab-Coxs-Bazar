@@ -1,4 +1,13 @@
 @extends('main')
+
+@section('title')
+Annual Reports | Ornab Cox's Bazar
+@endsection
+
+@section('meta_description')
+Download Ornab Cox's Bazar's annual reports to explore our yearly achievements, impact, and financial highlights.
+@endsection
+
 @section('content')
 <style>
 .ornab-page-title { color: var(--brand-navy) !important; }
@@ -14,6 +23,7 @@
 
 <section class="ornab-hero">
     <div class="container text-center">
+        <h1 class="visually-hidden">Annual Reports — Ornab Cox's Bazar</h1>
         <p class="lead mb-0 text-white">Explore our yearly achievements, impact and financial highlights.</p>
     </div>
 </section>
