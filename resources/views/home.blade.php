@@ -3,7 +3,7 @@
 @section('body_class', 'is-home')
 
 @section('title')
-Ornab Cox's Bazar | Community Development NGO in Cox's Bazar, Bangladesh
+Ornab Cox's Bazar |NGO in Cox's Bazar, Bangladesh
 @endsection
 
 @section('meta_description')

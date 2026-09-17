@@ -25,7 +25,7 @@ class FocusAreaController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp',
             'order' => 'nullable|integer|min:0',
             'is_active' => 'nullable|boolean',
         ]);
@@ -59,7 +59,7 @@ class FocusAreaController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp',
             'order' => 'nullable|integer|min:0',
             'is_active' => 'nullable|boolean',
         ]);
