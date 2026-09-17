@@ -20,7 +20,7 @@ class newsController extends Controller
         $validated = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|image',
+            'image' => 'nullable|image',
             'news_date' => 'required|date',
         ]);
 
