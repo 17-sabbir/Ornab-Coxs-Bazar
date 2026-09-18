@@ -132,7 +132,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
     }
     
     .btn-hero-primary {
-        background-color: var(--brand-coral);
+        background-color: var(--brand-navy);
         color: #fff;
         border: none;
         border-radius: 9999px;
@@ -147,7 +147,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
     }
 
     .btn-hero-primary:hover {
-        background-color: #DF9B74;
+        background-color: var(--brand-navy);
         transform: translateY(-2px);
         color: #fff;
         box-shadow: 0 6px 20px rgba(242, 169, 126, 0.35);

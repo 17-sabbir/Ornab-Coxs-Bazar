@@ -86,6 +86,7 @@
         
         .brand-title {
             font-family: var(--font-heading);
+            color: var(--brand-navy) !important;
             font-weight: 800;
             font-size: 1.05rem; /* moderate */
             letter-spacing: -0.5px;
@@ -193,7 +194,6 @@
                 </div>
                 <div class="brand-text">
                     <span class="brand-title">{{ $appSettings->site_name ?? 'Ornab Cox\'s Bazar' }}</span>
-                    <span class="brand-subtitle">Cox's Bazar</span>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
