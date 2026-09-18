@@ -959,7 +959,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
 
     <div class="container">
         <div class="pb-2 text-center">
-            <h3 class="text-center mt-3" style="color: var(--brand-navy);">Ongoing <span>Projects</span></h3>
+            <h3 class="text-center mt-3" style="color: var(--brand-navy);"><b>Ongoing <span>Projects</b></span></h3>
             <p class="text-center text-secondary mb-5">Ornab Coxs Bazar's ongoing projects actively address community needs, fostering sustainable development in Cox's Bazar.</p>
         </div>
 
