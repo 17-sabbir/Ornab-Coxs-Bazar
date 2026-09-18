@@ -1010,7 +1010,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
         </div>
 
         <div class="d-flex justify-content-center pt-3">
-            <a href="{{ route('ongoing.project') }}" class="btn btn-outline-success ornab-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
+            <a href="{{ route('ongoing.project') }}" class="btn btn-outline-primary ornab-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
                 View All Projects <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
@@ -1222,7 +1222,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
         </div>
 
         <div class="d-flex justify-content-center pt-4">
-            <a href="{{ route('latest.news.all') }}" class="btn btn-outline-success ornab-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
+            <a href="{{ route('latest.news.all') }}" class="btn btn-outline-primary ornab-btn-pill d-inline-flex align-items-center gap-2" style="border-width: 2px;">
                 View All News &amp; Events <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
