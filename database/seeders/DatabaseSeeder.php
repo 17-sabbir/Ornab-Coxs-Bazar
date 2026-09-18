@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
     {
         // Create admin user
         \App\Models\User::updateOrCreate(
-            ['email' => 'ornob@gmail.com'],
+            ['email' => 'azim.ornabcoxbd@gmail.com'],
             [
                 'name' => 'Admin',
-                'password' => bcrypt('admin123'),
+                'password' => bcrypt('@Azim007'),
                 'email_verified_at' => now(),
             ]
         );

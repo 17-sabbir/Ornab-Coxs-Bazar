@@ -55,6 +55,10 @@
             color: var(--brand-text) !important;
             text-shadow: none;
         }
+
+        body.is-home .site-header .navbar-brand .brand-title {
+            color: var(--brand-navy) !important;
+        }
         
         /* Logo Styles */
         .brand-logo-container {
