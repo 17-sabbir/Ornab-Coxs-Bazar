@@ -1,5 +1,9 @@
 @extends('main')
 
+@push('css')
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+@endpush
+
 @section('body_class', 'is-home')
 
 @section('title')
@@ -31,7 +35,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
     }
     
     .hero-title {
-        font-family: var(--font-heading); 
+        font-family: 'Playfair Display', var(--font-heading); 
         font-size: 3rem; 
         font-weight: 800;
         line-height: 1.1;
@@ -245,6 +249,37 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
     body.is-home .carousel-control-prev,
     body.is-home .carousel-control-next {
         margin: 0 !important;
+    }
+
+    /* Home page font overrides */
+    body.is-home {
+        font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif !important;
+    }
+    body.is-home p,
+    body.is-home .lead,
+    body.is-home td,
+    body.is-home li,
+    body.is-home .ornab-impact-text,
+    body.is-home .ornab-news-subtitle,
+    body.is-home .ornab-partner-subtitle,
+    body.is-home .ornab-gallery-subtitle {
+        font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif !important;
+    }
+    body.is-home .navbar,
+    body.is-home .navbar-brand,
+    body.is-home .nav-link,
+    body.is-home .site-header .brand-title,
+    body.is-home .site-header .brand-subtitle {
+        font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif !important;
+    }
+    body.is-home .btn,
+    body.is-home .btn-hero-primary,
+    body.is-home .btn-hero-secondary,
+    body.is-home .btn-watch-story,
+    body.is-home .ornab-btn-pill,
+    body.is-home .ornab-sponsor-btn,
+    body.is-home .ornab-sponsor-btn-outline {
+        font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif !important;
     }
 </style>
 
