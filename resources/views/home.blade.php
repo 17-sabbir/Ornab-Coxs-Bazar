@@ -1038,7 +1038,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
         .ornab-news-subtitle {
             max-width: 820px;
             margin: 0 auto;
-            color: var(--ornab-muted);
+            color: var(--secondary-color);
             line-height: 1.7;
             font-size: 0.95rem;
         }
