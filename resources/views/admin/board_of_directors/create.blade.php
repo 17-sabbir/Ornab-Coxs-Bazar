@@ -29,7 +29,7 @@
                         <textarea name="bio" class="form-control" rows="4">{{ old('bio') }}</textarea>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label>Image (Max: 2MB)</label>
+                        <label>Image</label>
                         <input type="file" name="image" class="form-control" accept="image/*">
                     </div>
                     <div class="col-md-4 mb-3">

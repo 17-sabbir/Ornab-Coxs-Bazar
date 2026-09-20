@@ -26,7 +26,7 @@ class BoardOfDirectorController extends Controller
             'name' => 'required|string|max:255',
             'designation' => 'required|string|max:255',
             'bio' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp',
             'order' => 'nullable|integer|min:0',
             'is_active' => 'nullable|boolean',
         ]);
@@ -57,7 +57,7 @@ class BoardOfDirectorController extends Controller
             'name' => 'required|string|max:255',
             'designation' => 'required|string|max:255',
             'bio' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp',
             'order' => 'nullable|integer|min:0',
             'is_active' => 'nullable|boolean',
         ]);

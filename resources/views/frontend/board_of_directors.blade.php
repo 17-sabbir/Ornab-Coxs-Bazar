@@ -51,7 +51,7 @@ Meet the board of directors providing leadership and governance to Ornab Cox's B
                                     <h4 class="ornab-page-title">{{ $director->name }}</h4>
                                     <p class="ornab-role-text mb-3">{{ $director->designation }}</p>
                                     @if($director->bio)
-                                        <p class="small ornab-bio">{{ Str::limit($director->bio, 200) }}</p>
+                                        <p class="small ornab-bio">{{ $director->bio }}</p>
                                     @endif
                                 </div>
                             </div>
