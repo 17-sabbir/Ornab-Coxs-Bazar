@@ -281,6 +281,50 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
     body.is-home .ornab-sponsor-btn-outline {
         font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif !important;
     }
+
+    @media (max-width: 767.98px) {
+        body.is-home .carousel-item > div[style*="height: 100vh"] {
+            height: 100svh !important;
+            min-height: 560px;
+        }
+        body.is-home .hero-title {
+            font-size: 2.15rem;
+            min-height: 4.75rem;
+        }
+        body.is-home .hero-desc {
+            font-size: 1rem;
+            min-height: 4.8rem;
+        }
+        body.is-home .hero-indented {
+            padding: 0 1rem;
+        }
+        body.is-home .btn-hero-primary,
+        body.is-home .btn-hero-secondary {
+            min-height: 44px;
+            padding: 11px 18px;
+            margin-left: 0;
+        }
+        body.is-home .carousel-control-prev,
+        body.is-home .carousel-control-next {
+            width: 44px;
+            height: 44px;
+            margin: 0 8px !important;
+        }
+        body.is-home .carousel-indicators [data-bs-target] {
+            width: 44px;
+            height: 44px;
+            margin: 0 1px;
+            padding: 17px;
+            background-clip: content-box;
+        }
+        body.is-home .carousel-indicators .active {
+            width: 44px;
+        }
+        body.is-home .ornab-hscroll-nav {
+            width: 44px;
+            height: 44px;
+        }
+    }
 </style>
 
 {{-- Home design tokens (color + spacing consistency) --}}
@@ -377,7 +421,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
         @foreach ($slider as $skey => $slider)
         <div class="carousel-item @if($skey == 0) active @endif">
             <div style="position: relative; height: 100vh; overflow: hidden;"> <!-- Full viewport height -->
-                <img src="{{ asset('images/slider/'.$slider->image) }}" class="d-block w-100" alt="{{ $slider->title }}" style="object-fit: cover; height: 100%; width: 100%;">
+                <img src="{{ asset('images/slider/'.$slider->image) }}" class="d-block w-100" alt="{{ $slider->title }}" @if($skey == 0) fetchpriority="high" @else loading="lazy" @endif decoding="async" style="object-fit: cover; height: 100%; width: 100%;">
                 
                 {{-- Navy-to-Coral Gradient Overlay --}}
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(18,43,107,0.75) 0%, rgba(242,169,126,0.25) 100%);"></div>
@@ -903,7 +947,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
                 <div class="program-card h-100">
                     <span class="status-badge"><i class="fa-solid fa-circle me-1" style="font-size: 0.6rem;"></i>Active</span>
                     @if($area->image_path)
-                        <img src="{{ asset('storage/' . $area->image_path) }}" alt="{{ $area->title }}">
+                        <img src="{{ asset('storage/' . $area->image_path) }}" alt="{{ $area->title }}" loading="lazy" decoding="async">
                     @else
                         <div class="bg-light d-flex align-items-center justify-content-center" style="height: 220px;">
                             <i class="fa-solid fa-folder-open fa-3x text-muted opacity-25"></i>
@@ -912,7 +956,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
                     <div class="program-card-content">
                         <h4 class="program-title">{{ $area->title }}</h4>
                         <p class="program-desc">{{ $area->description }}</p>
-                        <a href="{{ route('focus.area.detail', $area->id) }}" class="program-btn mt-2">Learn More <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        <a href="{{ route('focus.area.detail', $area->id) }}" class="program-btn mt-2" aria-label="Learn more about {{ $area->title }}">Learn More <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i></a>
                     </div>
                     <a href="{{ route('focus.area.detail', $area->id) }}" class="position-absolute top-0 start-0 w-100 h-100 z-1"></a>
                 </div>
@@ -972,7 +1016,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
                                 <div class="d-flex gap-3 align-items-start">
                                     @if(!empty($item->image))
                                         <div class="ornab-ongoing-icon shadow-sm" style="width:56px;height:56px;border-radius:12px;overflow:hidden;flex:0 0 auto;">
-                                            <img src="{{ asset('images/project/'.$item->image) }}" alt="{{ $item->title ?? $item->project_name ?? 'Project' }}" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                            <img src="{{ asset('images/project/'.$item->image) }}" alt="{{ $item->title ?? $item->project_name ?? 'Project' }}" loading="lazy" decoding="async" width="56" height="56" style="width:100%;height:100%;object-fit:cover;display:block;">
                                         </div>
                                     @else
                                         <div class="ornab-ongoing-icon bg-success text-white shadow-sm">
@@ -1000,7 +1044,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
 
                         <div class="mt-auto pt-3">
                             <a href="{{ route('ongoing.project.view', $item->id) }}" class="ornab-ongoing-readmore d-inline-flex align-items-center gap-2">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
+                                Read more about {{ Str::limit($item->project_name ?? $item->title ?? 'this project', 40, '...') }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -1180,10 +1224,10 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
                         <div class="ornab-news-card ornab-card-hover p-4 h-100 d-flex flex-column">
                             <div class="ornab-news-thumb mb-3">
                                 <img
-                                    src="{{ !empty($data->image) ? asset('images/news/'.$data->image) : asset('img/mission.jpg') }}"
+                                    src="{{ !empty($data->image) ? asset('images/news/'.$data->image) : asset('img/donation.jpg') }}"
                                     alt="{{ $data->title ?? 'News image' }}"
                                     loading="lazy"
-                                    onerror="this.onerror=null;this.src='{{ asset('img/mission.jpg') }}';"
+                                    onerror="this.onerror=null;this.src='{{ asset('img/donation.jpg') }}';"
                                 >
                             </div>
 
@@ -1204,7 +1248,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
 
                             <div class="mt-auto pt-3">
                                 <a href="{{ route('latest.news.view', $data->id) }}" class="ornab-news-link d-inline-flex align-items-center gap-2">
-                                    Read More <i class="fa-solid fa-arrow-right"></i>
+                                    Read more about {{ Str::limit($data->title ?? 'this news item', 40, '...') }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -1372,7 +1416,7 @@ Ornab Cox's Bazar is a non-profit organization empowering underprivileged commun
                     <div class="ornab-hscroll-item">
                         <a href="{{ route('gallery.album', ['album' => $album->name]) }}" class="text-decoration-none text-dark">
                             <div class="ornab-gallery-card ornab-card-hover h-100">
-                                <img src="{{ asset('images/gallery/'.($album->cover_image ?? '')) }}" class="ornab-gallery-cover" alt="{{ $album->name }}">
+                                <img src="{{ asset('images/gallery/'.($album->cover_image ?? '')) }}" class="ornab-gallery-cover" alt="{{ $album->name }}" loading="lazy" decoding="async">
                                 <div class="p-3">
                                     <div class="d-flex align-items-start justify-content-between gap-3">
                                         <div class="ornab-gallery-album-title">{{ $album->name }}</div>

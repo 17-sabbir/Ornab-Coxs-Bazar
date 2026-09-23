@@ -123,7 +123,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             min-width: 110px;
-            height: 34px;
+            min-height: 44px;
             overflow: hidden;
         }
 
@@ -171,6 +171,12 @@
         @media (max-width: 991.98px) {
             .navbar-collapse {
                 background: var(--brand-navy);
+            }
+            .navbar-collapse .nav-link,
+            .navbar-collapse .dropdown-item {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
             }
             .navbar-collapse .nav-link,
             .navbar-collapse .dropdown-item,

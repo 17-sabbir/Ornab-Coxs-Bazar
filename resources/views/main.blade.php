@@ -66,7 +66,7 @@
     <link rel="stylesheet" href="{{ asset('css/branding.css') }}">
     <link rel="stylesheet" href="{{ asset('css/modern-design.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous" defer></script>
     <style>
         /* Frontend fonts: Poppins (headings) + Inter (body) */
         body {
