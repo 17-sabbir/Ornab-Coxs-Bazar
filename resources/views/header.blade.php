@@ -240,10 +240,10 @@
                 </ul>
                 </li>
 
-                <!-- Transparency -->
+                <!-- Documents & Resources -->
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle fw-bold text-dark" href="#" id="transparencyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ 'Transparency' }}
+                    {{ 'Documents & Resources' }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="transparencyDropdown">
                     <li><a class="dropdown-item" href="{{ route('publication') }}">{{ 'Publications' }}</a></li>
@@ -275,7 +275,7 @@
                     <li><a class="dropdown-item" href="{{ route('notices.all') }}">{{ 'Notices' }}</a></li>
                     <li><a class="dropdown-item" href="{{ route('latest.news.all') }}">{{ 'Latest News' }}</a></li>
                     <li><a class="dropdown-item" href="{{ route('gallery.albums') }}">{{ 'Photo Gallery' }}</a></li>
-                    <li><a class="dropdown-item" href="{{ route('youtube.video') }}">{{ 'Youtube Videos' }}</a></li>
+                    <li><a class="dropdown-item" href="{{ route('youtube.video') }}">{{ 'Our Videos' }}</a></li>
                 </ul>
                 </li>
 

@@ -340,7 +340,7 @@
                         <li><a href="{{ route('about.us') }}">{{ 'About us' }}</a></li>
                         <li><a href="{{ route('ongoing.project') }}">{{ 'Projects' }}</a></li>
                         <li><a href="{{ route('latest.news.all') }}">{{ 'Media Center' }}</a></li>
-                        <li><a href="{{ route('annual.reports') }}">{{ 'Transparency' }}</a></li>
+                        <li><a href="{{ route('annual.reports') }}">{{ 'Documents & Resources' }}</a></li>
                         <li><a href="{{ route('gallery.albums') }}">{{ 'Gallery' }}</a></li>
                     </ul>
                 </div>
@@ -407,9 +407,9 @@
                     {{ $appSettings->copyright_text ?? '© ' . date('Y') . ' Ornab Cox\'s Bazar. All rights reserved.' }}
                 </small>
                 <div class="ornab-bottom-links">
-                    <a href="#">Privacy Policy</a>
+                    <span>Privacy Policy</span>
                     <span class="ornab-bottom-divider">|</span>
-                    <a href="#">Terms & Conditions</a>
+                    <span>Terms &amp; Conditions</span>
                 </div>
             </div>
         </div>
