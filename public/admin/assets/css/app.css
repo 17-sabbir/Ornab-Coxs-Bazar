@@ -2471,3 +2471,57 @@ input.search-control-2::placeholder {
 		display: none
 	}
 }
+
+@media screen and (max-width:767px) {
+	.page-content {
+		padding: 1rem .75rem .5rem
+	}
+
+	.topbar .navbar {
+		padding-left: .75rem;
+		padding-right: .75rem
+	}
+
+	.page-content .card-body {
+		padding: 1rem
+	}
+
+	.page-content .card-header {
+		padding: 1rem
+	}
+
+	.page-content .card:hover {
+		transform: none
+	}
+
+	.page-footer {
+		position: static;
+		margin-left: 0;
+		margin-bottom: 0
+	}
+
+	.table-responsive {
+		-webkit-overflow-scrolling: touch
+	}
+}
+
+@media screen and (max-width:575px) {
+	.page-breadcrumb {
+		padding: .75rem 0
+	}
+
+	.breadcrumb-title {
+		font-size: 18px;
+		border-right: 0
+	}
+
+	.page-content .card-header .d-flex,
+	.page-content .card-body > .d-flex {
+		flex-wrap: wrap;
+		gap: .5rem
+	}
+
+	.page-content .card-body > .d-flex > .ms-auto {
+		margin-left: 0 !important
+	}
+}
